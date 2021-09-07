@@ -1,6 +1,4 @@
-# BIS-3D
-
-![Alt text](img/NL_pH_BIS_avatar.png)
+# BIS-3D <img src="img/NL_pH_BIS_avatar.png" align="right" width = "250" />
 
 This repository contains scripts and metadata used in the manuscript:
 
