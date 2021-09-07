@@ -23,12 +23,12 @@ Only the PFB and LSK datasets contain soil pH data, see [15_soil_BIS_expl_analys
 
 ### Covariates
 
-The covariates were specifically chosen to represent the CLORPT framework, wherein soil is a function of the soil-forming factors climate (CL), organisms (O), relief/topography (R), parent material/geology (P) and time (T; Dokuchaev, 1899; Jenny, 1941). For a descriptive summary of the covariates used in this study, see [covariates_metadata.csv](data/covariates/covariates_metadata.csv).
+The covariates were specifically chosen to represent the CLORPT framework, wherein soil is a function of the soil forming factors climate (CL), organisms (O), relief/topography (R), parent material/geology (P) and time (T; [Dokuchaev, 1899](#references); [Jenny, 1941](#references)). For a descriptive summary of the covariates used in this study, see [covariates_metadata.csv](data/covariates/covariates_metadata.csv) (***Note:*** soil maps were not used as covariates).
 
 
 ### Data accessibility
 
-The model input data do not belong to us and are not provided here. The credentials to access soil point data from the "Bodemkundig Informatie Systeem" (BIS) were removed in the R scripts due to privacy reasons. For accessing soil point data, please see the [Dutch National Key Registry of the Subsurface (BRO, in Dutch)](https://basisregistratieondergrond.nl/)) and more detailed information about the [BIS database from Wageningen Environmental Research](https://www.wur.nl/nl/Onderzoek-Resultaten/Onderzoeksinstituten/Environmental-Research/Faciliteitentools/Bodemkundig-Informatie-Systeem-BIS-Nederland.htm).
+The model input data do not belong to us and are not provided here. The credentials to access soil point data from the "Bodemkundig Informatie Systeem" (BIS) were removed in the R scripts due to privacy reasons. For accessing soil point data, please see the [Dutch National Key Registry of the Subsurface (BRO, in Dutch)](https://basisregistratieondergrond.nl/) and more detailed information about the [BIS database from Wageningen Environmental Research](https://www.wur.nl/nl/Onderzoek-Resultaten/Onderzoeksinstituten/Environmental-Research/Faciliteitentools/Bodemkundig-Informatie-Systeem-BIS-Nederland.htm).
 
 We can only provide metadata (e.g. README and reclassification table files) and not the covariates themselves. Most of the covariates were attained from the ["GeoDesk" of Wageningen University and Research](https://www.wur.nl/en/research-results/research-institutes/environmental-research/facilities-tools/geodesk.htm).
 
@@ -36,7 +36,7 @@ We can only provide metadata (e.g. README and reclassification table files) and 
 
 ## Dataset of model outputs (soil pH maps [25m])
 
-The published dataset of the soil pH maps (model outputs) produced using the workflow in this repository are available for download: [Helfenstein et al. 2021, dataset](https://doi.org/10.4121/16451739.v1). The GeoTIFFs can e.g. be opened in a GIS software. The dataset includes mean predictions and estimates of the 5^th, 50^th (median), and 95^th quantile, as well as the 90% prediction interval (PI90) and a categorical map of the accuracy thresholds ("none", A, AA, AAA) based on *GlobalSoilMap* specifications for Tier 4 products. These maps are available for six standard depth layers from 0 cm to 5 cm, 5 cm to 15 cm, 15 cm to 30 cm, 30 cm to 60 cm, 60 cm to 100 cm and 100 cm to 200 cm, although the calibrated model can be used to predict at any user-defined depth layer between 0 m and 2 m.
+The published dataset of the soil pH maps (model outputs) produced using the workflow in this repository are available for download: [Helfenstein et al. 2021, dataset](https://doi.org/10.4121/16451739.v1). The GeoTIFFs can e.g. be opened in a GIS software. The dataset includes mean predictions and estimates of the 5<sup>th</sup>, 50<sup>th</sup> (median), and 95<sup>th</sup> quantile, as well as the 90% prediction interval (PI90) and a categorical map of the accuracy thresholds ("none", A, AA, AAA) based on *GlobalSoilMap* specifications for Tier 4 products ([Arrouays et al., 2015](#references)). These maps are available for six standard depth layers from 0 cm to 5 cm, 5 cm to 15 cm, 15 cm to 30 cm, 30 cm to 60 cm, 60 cm to 100 cm and 100 cm to 200 cm, although the calibrated model can be used to predict at any user-defined depth layer between 0 m and 2 m.
 
 
 
@@ -62,9 +62,9 @@ The published dataset of the soil pH maps (model outputs) produced using the wor
 * [20_cov_prep_gdal.R](20_cov_prep_gdal.R) - Assemble & prepare predictors (covariates as raster data):
   + Designate coordinate system (projection)
   + Resample covariates so they have the same origin, cell locations and extent
-  + Mask nodata areas (water and areas outside NL) of continuous covariates (categorical covariates masked after reclassification in later script)
+  + Mask nodata areas (water and areas outside NL) of continuous covariates (categorical covariates masked after reclassification in script [22_cov_cat_recl_gdal_par.R](22_cov_cat_recl_gdal_par.R))
   + Assemble into raster stack and save
-* [21_cov_dem_deriv_saga.R](21_cov_dem_deriv_saga.R) - Compute digital elevation model (DEM) derivatives using AHH2 (Dutch DEM, version 2) based on [Hengl & MacMillan, 2019](www.soilmapper.org)
+* [21_cov_dem_deriv_saga.R](21_cov_dem_deriv_saga.R) - Compute digital elevation model (DEM) derivatives using AHH2 (Dutch DEM, version 2) based on [Hengl & MacMillan, 2019](https://soilmapper.org/)
 * [22_cov_cat_recl_gdal_par.R](22_cov_cat_recl_gdal_par.R) - Prepare categorical covariates:
   + Define categorical variables in covariate stack as such
   + Reclassify: combine levels of each categorical covariate into new levels that are more broad
@@ -96,6 +96,14 @@ The published dataset of the soil pH maps (model outputs) produced using the wor
 
 ### Model evaluation (validation/test)
 
+Model were evaluated using accuracy plots (i.e. predicted vs. observed)) and the following metrics: mean error (ME), mean squared error (MSE), root mean squared error (RMSE), model efficiency coefficient (MEC) and the prediction interval coverage probability (PICP) of PI90. Different external accuracy assessment (statistical validation) strategies were used:
+* PFB-OOB: out-of-bag observations using PFB dataset
+* PFB-CV: cross-validation of PFB dataset
+* LSK: independent validation using LSK dataset
+* LSK-SRS: design-based inference of the LSK probability sample separated by depth layer.
+
+For more information, see [Helfenstein et al., submitted](#references).
+
 * [50_model_evaluation_all_depths_PFB-OOB_PFB-CV_LSK.R](50_model_evaluation_all_depths_PFB-OOB_PFB-CV_LSK.R) - Model evaluation across all depths combined:
   + Read in target variable regression matrix and fitted model
   + Use "ranger" pkg to predict mean and all quantiles
@@ -107,11 +115,11 @@ The published dataset of the soil pH maps (model outputs) produced using the wor
   + Include Prediction Interval Coverage Probability (PICP) of PI90 in plots
   + Calculate PICP of all PIs for all strategies (LSK and LSK-SRS are identical).
   + Variable importance plots for (30) most important covariates
-  + (Assess validation results using GSM accuracy thresholds (A, AA, AAA), NOT INCLUDED IN PAPER)
+  + (Assess validation results using GSM accuracy thresholds (A, AA, AAA), ***not included in manuscript***)
 * [51_model_evaluation_depth_layers_PFB-OOB_PFB-CV_LSK_LSK-SRS.R](51_model_evaluation_depth_layers_PFB-OOB_PFB-CV_LSK_LSK-SRS.R) - Model evaluation across all depths separately:
   + Read in target variable regression matrix and fitted model
   + Use "ranger" pkg to predict mean and all quantiles
-  + Evaluate map accuracy using 4 strategies SEPARATED INTO GSM DEPTH LAYERS:
+  + Evaluate map accuracy using 4 strategies ***separated into GSM depth layers***:
     - PFB-OOB: out of bag (OOB) calibration data
     - PFB-CV: hold outs from location-grouped 10-fold CV of calibration data
     - LSK: independent validation/test data: LSK/CCNL
@@ -125,11 +133,11 @@ The published dataset of the soil pH maps (model outputs) produced using the wor
   + Define target variable (response) and target prediction depth
   + Read in fitted quantile regression forest (QRF) model
   + Read in stack of covariates (predictors)
-  + Predict response mean and quantiles (e.g. 50^th^/median, 5^th^ & 95^th^ quantiles) using terra::predict and ranger::predict arguments
+  + Predict response mean and quantiles (e.g. 50<sup>th</sup>/median, 5<sup>th</sup> & 95<sup>th</sup> quantiles) using terra::predict and ranger::predict arguments
   + Calculate PI90 & GSM accuracy thresholds
   + Visualize maps and write rasters of results to disk
 * [61_map_soil_properties.R](70_map_soil_properties.R) - Load stack of predicted target soil property rasters and visualize results as plots using "rasterVis" pkg:
-  + 5^th^, 50^th^ (median) and 95^th^ quantile of QRF
+  + 5<sup>th</sup>, 50<sup>th</sup> (median) and 95<sup>th</sup> quantile of QRF
   + PI90
   + GSM accuracy thresholds
 
@@ -141,7 +149,7 @@ The published dataset of the soil pH maps (model outputs) produced using the wor
   + [QRF_comparison_approaches.R](R/other/QRF_comparison_approaches.R) - Benchmark and test different QRF training and predict functions from different packages
   + [color_schemes.R](R/other/color_schemes.R) - Explore different color schemes for continuous and categorical covariates and soil maps
   + [compare_AHN.R](R/other/compare_AHN.R) - Compare different AHN (digital elevation model (DEM) of the Netherlands) versions by subtracting rasters
-  + [comparison_SoilGrids_evaluation_depth_layers_LSK-SRS.R](R/other/comparison_SoilGrids_evaluation_depth_layers_LSK-SRS.R) - 
+  + [comparison_SoilGrids_evaluation_depth_layers_LSK-SRS.R](R/other/comparison_SoilGrids_evaluation_depth_layers_LSK-SRS.R) - Map accuracy of SoilGrids for NL using LSK-SRS probability sample as a comparison to BIS-3D maps (based on [51_model_evaluation_depth_layers_PFB-OOB_PFB-CV_LSK_LSK-SRS.R](51_model_evaluation_depth_layers_PFB-OOB_PFB-CV_LSK_LSK-SRS.R) script)
   + [extract_from_raster_comparison.R](R/other/extract_from_raster_comparison.R) - Benchmark and compare different extracting methods (i.e. extracting covariate data at soil observation locations)
   + [make_recl_tbl.R](R/other/make_recl_tbl.R) - Make reclassifying metadata table for each categorical covariate based on ID values in raster S4 attribute table. This script was only run once to create a unique template for each categorical covariate reclassification table **prior** to manually describing and aggregating each class ID. ***CAUTION: Running this script will overwrite all the classes of each categorical covariate that were manually inserted based on expert knowledge!***
   + [merge_dbl_cols.R](R/other/merge_dbl_cols.R) - Tests how to merge double columns in soil point data tabular data in a sensible way
@@ -152,28 +160,30 @@ The published dataset of the soil pH maps (model outputs) produced using the wor
 
 * [data](data/) - Input data for modelling workflow (***Note:*** for model inputs accessibility, see [model inputs](#model-inputs))
   + [covariates](data/covariates/) - metadata (e.g. README and reclassification table files) of covariates, which are based on the soil forming factors climate, geology, organism and relief (***Note:*** The soil forming factor time is incorporated indirectly in the other soil forming factors since the covariates represent data from different times).
-    ++ [climate](data/covariates/climate/) - README files ([...]_readme.txt) of covariates related to soil forming factor climate
-    ++ [geology](data/covariates/geology/) - README, reclassification table ([...]_reclassify.csv and [...]_reclassify.xlsx) and attribute table of original classes ([...]_attributes.csv) files of covariates related to soil forming factor geology/parent material
-    ++ [organism](data/covariates/organism/) - README, reclassification table, attribute table of original classes and any other metadata files of covariates related to soil forming factor organism (including land cover and land use)
-    ++ [relief](data/covariates/relief/) - README and reclassification table files of covariates related to soil forming factor relief/topography
-    ++ [soil](data/covariates/soil/) - README and any other files of soil maps (***Note:*** These were not used in modelling framework since we did not want to model/map soil properties with existing soil maps and instead only used the soil forming factors)
-    ++ [covariates_metadata.csv](data/covariates/covariates_metadata.csv) - Summary metadata table of all covariates used
-    ++ [covariates_metadata.xlsx](data/covariates/covariates_metadata.xlsx) - Summary metadata table of all covariates used
+    - [climate](data/covariates/climate/) - README files ([...]_readme.txt) of covariates related to soil forming factor climate
+    - [geology](data/covariates/geology/) - README, reclassification table ([...]_reclassify.csv and [...]_reclassify.xlsx) and attribute table of original classes ([...]_attributes.csv) files of covariates related to soil forming factor geology/parent material
+    - [organism](data/covariates/organism/) - README, reclassification table, attribute table of original classes and any other metadata files of covariates related to soil forming factor organism (including land cover and land use)
+    - [relief](data/covariates/relief/) - README and reclassification table files of covariates related to soil forming factor relief/topography
+    - [soil](data/covariates/soil/) - README and any other files of soil maps (***Note:*** These were not used in modelling framework since we did not want to model/map soil properties with existing soil maps and instead only used the soil forming factors)
+    - [covariates_metadata.csv](data/covariates/covariates_metadata.csv) - Summary metadata table of all covariates used
+    - [covariates_metadata.xlsx](data/covariates/covariates_metadata.xlsx) - Summary metadata table of all covariates used
   + [covariates](data/other/) - Other spatial data not used as covariates (e.g. table of land use classes as designated in BIS database, shapefiles of provincial and country borders and probability sample strata and mapping mask used to assign "no data" values)
 
 * [out](out/) - Intermediary (e.g. changes made to input data) and final model outputs
-  + [out/data/covariates/DEM_derivatives](out/data/covariates/DEM_derivatives/) - DEM derivatives produced from AHN2 using [SAGA GIS](http://www.saga-gis.org/) functions in script [21_cov_dem_deriv_saga.R](21_cov_dem_deriv_saga.R), based on approach of [Hengl & MacMillan, 2019](www.soilmapper.org)
+  + [out/data/covariates/DEM_derivatives](out/data/covariates/DEM_derivatives/) - DEM derivatives produced from AHN2 using [SAGA GIS](http://www.saga-gis.org/) functions in script [21_cov_dem_deriv_saga.R](21_cov_dem_deriv_saga.R), based on approach of [Hengl & MacMillan, 2019](https://soilmapper.org/)
   + [out/data/model](out/data/model/) - Model evaluation and hypertuning outputs
   + [out/figs/explorative](out/figs/explorative/) - Exploratory analysis and descriptive plots of modelling input soil point data
-  + [out/figs/models/pH_KCl](out/figs/models/pH_KCl/) - Model evaluation plots: accuracy plots (i.e. predicted vs. observed)) and metrics (mean error (ME), mean squared error (MSE), root mean squared error (RMSE), model efficiency coefficient (MEC), prediction interval coverage probability (PICP)) of different accuracy assessment (statistical validation) strategies^[4 external accuracy assessment, i.e. statistical validation strategies were computed: PFB = "Profielbeschrijving" dataset, LSK = "Landelijke Steekproef Kaarteenheden" dataset, OOB = out-of-bag, CV = cross-validation, SRS = simple stratified random sample. For more information see [Helfenstein et al., submitted]()], model residuals over space per depth layer, and variable importance measures.
+  + [out/figs/models/pH_KCl](out/figs/models/pH_KCl/) - Model evaluation plots: accuracy plots and metrics (ME, MSE, RMSE, MEC, PICP) of the 4 different accuracy assessment (statistical validation) strategies, model residuals over space per depth layer, and variable importance measures
   + [out/maps/explorative](out/maps/explorative/) - Exploratory analysis maps of BIS soil point data, AHN and AHN derivatives
-  + [out/maps/other/SoilGrids_v2.0/SoilGrids_phh2o_model_evaluation_LSK_SRS_d.csv](out/maps/other/SoilGrids_v2.0/SoilGrids_phh2o_model_evaluation_LSK_SRS_d.csv) - Model evaluation accuracy metrics of SoilGrids version 2.0 soil pH [H~2~O] maps of the Netherlands ([Poggio et al., 2021](https://doi.org/10.5194/soil-7-217-2021)).
+  + [out/maps/other/SoilGrids_v2.0/SoilGrids_phh2o_model_evaluation_LSK_SRS_d.csv](out/maps/other/SoilGrids_v2.0/SoilGrids_phh2o_model_evaluation_LSK_SRS_d.csv) - Model evaluation accuracy metrics of SoilGrids version 2.0 soil pH [H<sub>2</sub>O] maps of the Netherlands ([Poggio et al., 2021](https://doi.org/10.5194/soil-7-217-2021)).
   + [out/maps/target/pH_KCl/GeoTIFFs](out/maps/target/pH_KCl/GeoTIFFs/) - tif.aux.xml files of pH [KCl] model output maps (***Note:*** Actual maps (GeoTIFFs) can be downloaded here: [Helfenstein et al. 2021, dataset](https://doi.org/10.4121/16451739.v1))
   + [out/maps/target/pH_KCl/pdf](out/maps/target/pH_KCl/pdf/) - PDFs of pH [KCl] maps
 
 
 
 ## References
+
+Arrouays, D., McBratney, A., Minasny, B., Hempel, J., Heuvelink, G.B.M., MacMillan, R.A., Hartemink, A., Lagacherie, P., McKenzie, N., 2015. The GlobalSoilMap project specifications, in: Proceedings of the 1st GlobalSoilMap Conference, pp. 9–12. doi:https://doi.org/10.1201/b16500-4.
 
 Dokuchaev, V., 1899. Report to the Transcaucasian Statistical Committee on Land Evaluation in General and Especially for the Transcaucasia. Horizontal and Vertical Soil Zones. (In Russian.). Off. Press Civ, Affairs Commander-in-Chief Cacasus, Tiflis, Russia
 
@@ -183,7 +193,7 @@ Helfenstein, A., Mulder, V.L., Heuvelink, G.B.M., Okx, J.P. Tier 4 maps of soil 
 
 Helfenstein, Anatol; Mulder, Vera L.; Heuvelink, Gerard B.M.; Okx, Joop P. (2021): Tier 4 maps of soil pH at 25 m resolution for the Netherlands. 4TU.ResearchData. Dataset. [https://doi.org/10.4121/16451739.v1](https://doi.org/10.4121/16451739.v1)
 
-Hengl, T., MacMillan, R.A., 2019. Predictive Soil Mapping with R. OpenGeoHub foundation, Wageningen, the Netherlands. [www.soilmapper.org](www.soilmapper.org)
+Hengl, T., MacMillan, R.A., 2019. Predictive Soil Mapping with R. OpenGeoHub foundation, Wageningen, the Netherlands. [https://soilmapper.org/](https://soilmapper.org/)
 
 [ISRIC's tweaked QRF predict function](https://git.wur.nl/isric/soilgrids/soilgrids/-/blob/master/models/ranger/predict_qrf_fun.R)
 
