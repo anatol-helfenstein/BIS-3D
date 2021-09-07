@@ -23,33 +23,39 @@ The published dataset of the soil pH maps (model outputs) produced using the wor
 * [12_soil_BIS_master_tibble.R](12_soil_BIS_master_tibble.R) - 
 * [15_soil_BIS_expl_analysis_BPK.Rmd](15_soil_BIS_expl_analysis_BPK.Rmd) - 
 * [15_soil_BIS_expl_analysis_LSK_CCNL.Rmd](15_soil_BIS_expl_analysis_LSK_CCNL.Rmd) - 
-* []() - 
+* [15_soil_BIS_expl_analysis_metadata.Rmd](15_soil_BIS_expl_analysis_metadata.Rmd) - 
+* [15_soil_BIS_expl_analysis_target_SOC_SOM.Rmd](15_soil_BIS_expl_analysis_target_SOC_SOM.Rmd) - 
+* [15_soil_BIS_expl_analysis_target_pH.Rmd](15_soil_BIS_expl_analysis_target_pH.Rmd) - 
+* [16_soil_BIS_remove_Ohorizon_outliers.R](16_soil_BIS_remove_Ohorizon_outliers.R) - 
 
 
 ### Covariate preparation
 
-
-* []() - 
+* [20_cov_prep_gdal.R](20_cov_prep_gdal.R) - 
+* [21_cov_dem_deriv_saga.R](21_cov_dem_deriv_saga.R) - 
+* [22_cov_cat_recl_gdal_par.R](22_cov_cat_recl_gdal_par.R) - 
+* [25_cov_expl_analysis_clorpt.Rmd](25_cov_expl_analysis_clorpt.Rmd) - 
+* [25_cov_expl_analysis_cont_cat.Rmd](25_cov_expl_analysis_cont_cat.Rmd) - 
 
 
 ### Model calibration (training)
 
-* []() - 
-* []() - 
-* []() - 
+* [30_regression_matrix.R](30_regression_matrix.R) - 
+* [35_model_data_expl_analysis_pH_KCl.Rmd](35_model_data_expl_analysis_pH_KCl.Rmd) - 
+* [40_train_RF_LLO_KFCV_hyperparameter_tuning.R](40_train_RF_LLO_KFCV_hyperparameter_tuning.R) - 
+* [41_train_QRF_LLO_KFCV_optimal_model.R](41_train_QRF_LLO_KFCV_optimal_model.R) - 
 
 
 ### Model evaluation (validation or test)
 
-* []() - 
-* []() - 
-* []() - 
+* [50_model_evaluation_all_depths_PFB-OOB_PFB-CV_LSK.R](50_model_evaluation_all_depths_PFB-OOB_PFB-CV_LSK.R) - 
+* [51_model_evaluation_depth_layers_PFB-OOB_PFB-CV_LSK_LSK-SRS.R](51_model_evaluation_depth_layers_PFB-OOB_PFB-CV_LSK_LSK-SRS.R) - 
 
 
 ### Soil maps
 
-* []() - 
-* []() - 
+* [60_predict_QRF_soil_maps.R](60_predict_QRF_soil_maps.R) - 
+* [61_map_soil_properties.R](70_map_soil_properties.R) - 
 * []() - 
 
 

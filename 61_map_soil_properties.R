@@ -1,5 +1,5 @@
 #------------------------------------------------------------------------------
-# Name:     70_map_soil_properties.R
+# Name:     61_map_soil_properties.R
 #
 # Content:  - Load stack of predicted target soil property rasters and visualize
 #             results as plots using "rasterVis" pkg:

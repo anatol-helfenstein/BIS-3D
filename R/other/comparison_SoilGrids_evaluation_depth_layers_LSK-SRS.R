@@ -1,5 +1,5 @@
 #------------------------------------------------------------------------------
-# Name:     80_comparison_SoilGrids_evaluation_depth_layers_LSK-SRS.R
+# Name:     comparison_SoilGrids_evaluation_depth_layers_LSK-SRS.R
 #
 # Content:  - Map accuracy of SoilGrids for NL using LSK probability sample as a
 #             comparison to BIS+ maps
