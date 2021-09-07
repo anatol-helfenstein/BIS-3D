@@ -1,5 +1,7 @@
 # BIS-3D
 
+![Alt text](img/NL_pH_BIS_avatar.png)
+
 This repository contains scripts and metadata used in the manuscript:
 
 Helfenstein, A., Mulder, V.L., Heuvelink, G.B.M., Okx, J.P. Tier 4 maps of soil pH at 25 m resolution for the Netherlands. Submitted, 2021.
