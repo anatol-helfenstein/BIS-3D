@@ -1,0 +1,37 @@
+﻿value,description,value_rcl,description_rcl
+0,other,9,other
+13,zoekgebied,9,other
+18,overige natuur,9,other
+27,discussie,9,other
+30,other,9,other
+34,other,9,other
+3,overig stromend en stilstaand water,1,water
+19,brak water,1,water
+28,getijdengebied en zee,1,water
+29,begeleid getijdengebied,1,water
+32,meer,1,water
+33,multifunctionele grote wateren,1,water
+1,bloemrijk grasland,2,grassland
+6,multifunctioneel grasland,2,grassland
+9,reservaatsakker,2,grassland
+10,droog schraalgrasland,2,grassland
+14,zilt grasland,2,grassland
+35,kalkgrasland,2,grassland
+2,multifunctioneel bos,3,forest
+7,bos van arme gronden,3,forest
+8,bos van laagveen en klei,3,forest
+16,bos van rijke gronden,3,forest
+21,"middenbos, hakhout en griend",3,forest
+25,bos van bron en beek,3,forest
+26,beek- en zandboslandschap,3,forest
+4,nat schraalland,4,wet areas
+5,"nat, matig voedselrijk grasland",4,wet areas
+11,beek,4,wet areas
+15,moeras,4,wet areas
+17,natte heide en ihoogveen,4,wet areas
+23,veen- en zeekleilandschap,4,wet areas
+31,rivierenlandschap,4,wet areas
+12,duinlandschap,5,"dunes, sand, heathland"
+20,ven en duinplas,5,"dunes, sand, heathland"
+22,droge heide,5,"dunes, sand, heathland"
+24,zandverstuiving,5,"dunes, sand, heathland"

@@ -1,0 +1,40 @@
+﻿value,description,value_rcl,description_rcl
+0,other,99,Other
+11,Grove den - Pinus sylvestris,11,Pinus
+12,Corsicaanse den - Pinus nigra laricio,11,Pinus
+13,Oostenrijkse den Pinus nigra nigra,11,Pinus
+14,Weymouth den - Pinus strobus,11,Pinus
+15,Draaiden - Pinus contorta,11,Pinus
+16,Doornden - Pinus rigida,11,Pinus
+17,Zeeden - Pinus pinaster,11,Pinus
+19,Overigve dennen - Pinus spec.,11,Pinus
+21,Douglas spar - pseudotsuga menziesii,21,other conifers
+31,Japanse lariks - Larix kaempferi,31,Larix
+32,Europese lariks - Larix decidua,31,Larix
+41,Fijnspar - Picea abies,41,Picea
+42,Sitkaspar - Picea sitchensis,41,Picea
+43,Omorikaspar - Picea omorika,41,Picea
+49,Overige sparren - Picea spec.,41,Picea
+51,Tsuga heterophylla,21,other conifers
+52,Thuja spec.,21,other conifers
+53,Reuzenzilverspar - Abies grandis,53,Abies
+54,Gewone zilverspar - Abies alba,53,Abies
+55,Schijncypres - Chamecyparis spec.,21,other conifers
+56,Jeneverbes - Juniperus communis,21,other conifers
+59,Overige naaldbomen - conifers,21,other conifers
+61,Inlandse eik - Quercus robur,61,Eik
+62,Amerikaanse eik - Quercus rubra,61,Eik
+63,Overige eiken - Quercus spec.,61,Eik
+70,Overige inheemse loofboomsoorten,70,other desciduous
+71,Beuk - Fagus sylvatica,71,Fagus
+81,Populier - Populus spec.,81,Populus
+82,Wilg - Salix spec.,82,Salix
+91,Berk - Betula spec.,91,Betula
+92,Es - Fraxinus spec.,92,Fraxinus
+93,Zwarte els - Alnus glutinosa,92,Fraxinus
+94,Gewone esdoorn (Acer pseudoplatanus) en Spaanse aak (Acer campestre),92,Fraxinus
+95,Acacia - Robinia pseudoacacia,70,other desciduous
+96,Zoete kers - Prunus avium,70,other desciduous
+97,Haagbeuk - Carpinus betulus,70,other desciduous
+98,lep - Ulmus spec.,70,other desciduous
+99,Overige uitheemse loofboomsoorten,70,other desciduous

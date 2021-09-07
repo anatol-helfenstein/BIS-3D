@@ -1,0 +1,109 @@
+﻿value,description,value_rcl,description_rcl
+43,Rivier,,
+59,Getijde-rivier,,
+60,Zoetwatergetijdedelta,,
+70,Natuurlijk meer,,
+80,Kleine rivier,,
+1,Stuwwal,1,Moraine (stuwwal)
+22,"Stuwwal, kliffen",1,Moraine (stuwwal)
+27,stuwwallen,1,Moraine (stuwwal)
+79,Stuwwallen,1,Moraine (stuwwal)
+81,Stuwwal van keileem,1,Moraine (stuwwal)
+83,"Stuwwallen, kames",1,Moraine (stuwwal)
+0,,2,Other
+2, ,2,Other
+8,Keileembult,2,Other
+12,"Blokzijlzanden, veenschol",2,Other
+20,Pingo's,2,Other
+21,Oude polder,2,Other
+28,Deelense was,2,Other
+36,donken,2,Other
+39,Smeltwatervorm,2,Other
+40,Dobben-pingo's,2,Other
+49,Breuktreden,2,Other
+72,"Kreekruggen, meerwallen",2,Other
+82,Pingo-ruine,2,Other
+96,Donken,2,Other
+101,Oude Scheldeloop,2,Other
+102,Gemoerde gronden,2,Other
+105,Oudland,2,Other
+3,Stuifzand,3,Drifting sand (struifzand)
+29,stuifzanden en duinen,3,Drifting sand (struifzand)
+33,Sandr,3,Drifting sand (struifzand)
+4,Beekdal,4,Brook valley (Beekdal)
+7,Beekdal in plateau,4,Brook valley (Beekdal)
+11,Oeverwallen Eem,4,Brook valley (Beekdal)
+15,Oeverwallen Boorne,4,Brook valley (Beekdal)
+38,beekdalen,4,Brook valley (Beekdal)
+58,"Beekdal, dekzandrelief",4,Brook valley (Beekdal)
+63,Beekdalen met dekzand,4,Brook valley (Beekdal)
+64,"Beekdal, laagveen",4,Brook valley (Beekdal)
+69,"Beekdal, dekzand",4,Brook valley (Beekdal)
+89,"Steilrand, kronkelwaard",4,Brook valley (Beekdal)
+106,Oude Maasloop + stroomrug,4,Brook valley (Beekdal)
+107,Pleistocene meanders,4,Brook valley (Beekdal)
+5,Hoogveenplateau,5,Bog (hoogveen)
+6,Hoogveen,5,Bog (hoogveen)
+9,Rivierduinen,9,Dunes river (Rivierduinen)
+34,rivierduinen,9,Dunes river (Rivierduinen)
+48,Rivierduinen Maas,9,Dunes river (Rivierduinen)
+88,Oeverwallen en oude lopen,9,Dunes river (Rivierduinen)
+93,Eiland in rivier,9,Dunes river (Rivierduinen)
+13,Glaciale zanden,13,Galcial sands (glaciale zanden)
+46,Glaciale rug,13,Galcial sands (glaciale zanden)
+76,Glaciale ruggen,13,Galcial sands (glaciale zanden)
+87,Glaciale hoogten,13,Galcial sands (glaciale zanden)
+14,"Dekzand, stuifzand, pingo",14,Cover sand (dekzand)
+37,dekzandruggen,14,Cover sand (dekzand)
+51,Dekzand,14,Cover sand (dekzand)
+77,Dekzandrelief,14,Cover sand (dekzand)
+86,Dekzandrug,14,Cover sand (dekzand)
+91,"Eemdelta, dekzand, wielen",14,Cover sand (dekzand)
+99,Dekzandruggen met kreken,14,Cover sand (dekzand)
+17,"Kwelderwallen, haakwallen",17,Salt marsh walls (kwelderwallen)
+18,Kwelderwallen,17,Salt marsh walls (kwelderwallen)
+19,Waddeneiland,19,Island (waddeneiland)
+84,Kampereiland,19,Island (waddeneiland)
+10,Voormalig veeneiland,23,Fen/peat (vennen)
+23,vennen,23,Fen/peat (vennen)
+25,venen,23,Fen/peat (vennen)
+50,Ven,23,Fen/peat (vennen)
+75,Laagveen,23,Fen/peat (vennen)
+90,Overgang rivier-veen,23,Fen/peat (vennen)
+103,Inversierug in veen,23,Fen/peat (vennen)
+104,Veenrivier,23,Fen/peat (vennen)
+24,uiterwaarden,24,Floodplains (uiterwaarden)
+61,Maas-uiterwaard,24,Floodplains (uiterwaarden)
+62,Overstromingsvlakte,24,Floodplains (uiterwaarden)
+65,Maasuiterwaard,24,Floodplains (uiterwaarden)
+78,Uiterwaard,24,Floodplains (uiterwaarden)
+85,Uiterwaard met ruggen,24,Floodplains (uiterwaarden)
+26,terras terrasrand,26,Terraces (terras/terrasrand)
+31,Smeltwaterterras,26,Terraces (terras/terrasrand)
+52,Oud Maasterras,26,Terraces (terras/terrasrand)
+53,"Schiervlakte, terrassen",26,Terraces (terras/terrasrand)
+54,Terrasvlakte,26,Terraces (terras/terrasrand)
+55,Jonge Maasterrassen,26,Terraces (terras/terrasrand)
+56,Terrasrand,26,Terraces (terras/terrasrand)
+57,Steilrand Schelde-terras,26,Terraces (terras/terrasrand)
+32,Droog dal,32,Dry valleys (droog dal)
+35,Droge dalen,32,Dry valleys (droog dal)
+16,Kreken Middelzee,41,Creek (kreek)
+41,Oude kreek,41,Creek (kreek)
+47,Kreekrug,41,Creek (kreek)
+92,Kreekruggen,41,Creek (kreek)
+98,Kreek,41,Creek (kreek)
+42,Voormalig estuarium,42,"Marine influence (estuarium, getijdengebied, etc.)"
+44,Marien relief,42,"Marine influence (estuarium, getijdengebied, etc.)"
+66,Voormalig getijdengebied,42,"Marine influence (estuarium, getijdengebied, etc.)"
+100,Slikken en platen,42,"Marine influence (estuarium, getijdengebied, etc.)"
+45,Woudgebied,45,Forest area (Woudgebied)
+67,"Landduinen, vennen, beekd",67,Dunes land (landduinen)
+68,Landduinen,67,Dunes land (landduinen)
+30,strandwallen,71,Dunes coastal (kustduinen)
+71,Duinmeer,71,Dunes coastal (kustduinen)
+73,Kustduinen,71,Dunes coastal (kustduinen)
+74,Strandwal,71,Dunes coastal (kustduinen)
+94,"Kustduinen, vroongronden",71,Dunes coastal (kustduinen)
+95,Overstoven kustvlakte,71,Dunes coastal (kustduinen)
+97,Slufter,71,Dunes coastal (kustduinen)

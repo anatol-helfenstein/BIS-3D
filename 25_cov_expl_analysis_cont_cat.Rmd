@@ -1,0 +1,299 @@
+---
+title: "Exploratory Analysis of Covariates"
+subtitle: "Continuous vs. categorical covariates"
+author: "Anatol Helfenstein"
+date: "2021-02-01 (updated)"
+output:
+  html_document:
+    toc: yes
+    toc_float: yes
+  '': default
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+options(width = 100) # sets width of R code output (not images)
+```
+
+```{r load required pkgs, include = FALSE}
+
+# load packages
+pkgs <- c("tidyverse", "raster", "rgdal", "sf", "rasterVis", "viridis", "foreach",
+          "RColorBrewer", "corrplot")
+lapply(pkgs, library, character.only = TRUE)
+
+```
+
+```{r list of covariates, include = FALSE}
+# locate rasters for stack
+v_cov_names <- dir("out/data/covariates/final_stack",
+                pattern = "\\.grd$", recursive = TRUE)
+
+# read in prepared rasters ready for model calibration
+ls_r_cov <- foreach(cov = 1:length(v_cov_names)) %do%
+  raster(paste0("out/data/covariates/final_stack/", v_cov_names[[cov]]))
+
+# read in prepared covariate stack
+r_stack_cov <- stack(ls_r_cov)
+
+# read in covariate metadata
+tbl_cov_meta <- read_csv("data/covariates/covariates_metadata.csv") %>% 
+  # only interested in covariates we use in model
+  filter(name %in% names(r_stack_cov)) %>% 
+  arrange(name)
+
+```
+
+
+## Continuous covariates
+
+```{r continuous covariates overview, echo=TRUE, warning=FALSE}
+# stack of continuous covariates
+r_stack_cov_cont <- r_stack_cov[[tbl_cov_meta %>%
+                                   filter(values_type %in% "continuous") %>%
+                                   .$name]]
+
+# All continuous covariates at 25m resolution
+dim(r_stack_cov_cont)
+
+# Names of all continuous covariates
+names(r_stack_cov_cont)
+
+```
+
+
+### Univariate exploratory analysis
+
+#### Histograms
+
+```{r continuous covariates histograms, echo=FALSE, warning=FALSE, message=FALSE, results='hide', out.height='100%', out.width='100%'}
+
+# set plotting layout
+par(mfrow = c(2, 3))
+# plot histograms
+raster::hist(r_stack_cov_cont[[1]], main = NULL, plot = TRUE,
+             xlab = paste0(names(r_stack_cov_cont[[1]])))
+raster::hist(r_stack_cov_cont[[2]], main = NULL, plot = TRUE,
+             xlab = paste0(names(r_stack_cov_cont[[2]])))
+raster::hist(r_stack_cov_cont[[3]], main = NULL, plot = TRUE,
+             xlab = paste0(names(r_stack_cov_cont[[3]])))
+raster::hist(r_stack_cov_cont[[4]], main = NULL, plot = TRUE,
+             xlab = paste0(names(r_stack_cov_cont[[4]])))
+raster::hist(r_stack_cov_cont[[5]], main = NULL, plot = TRUE,
+             xlab = paste0(names(r_stack_cov_cont[[5]])))
+raster::hist(r_stack_cov_cont[[6]], main = NULL, plot = TRUE,
+             xlab = paste0(names(r_stack_cov_cont[[6]])))
+
+# set plotting layout
+par(mfrow = c(2, 3))
+# plot histograms
+raster::hist(r_stack_cov_cont[[7]], main = NULL, plot = TRUE,
+             xlab = paste0(names(r_stack_cov_cont[[7]])))
+raster::hist(r_stack_cov_cont[[8]], main = NULL, plot = TRUE,
+             xlab = paste0(names(r_stack_cov_cont[[8]])))
+raster::hist(r_stack_cov_cont[[9]], main = NULL, plot = TRUE,
+             xlab = paste0(names(r_stack_cov_cont[[9]])))
+raster::hist(r_stack_cov_cont[[10]], main = NULL, plot = TRUE,
+             xlab = paste0(names(r_stack_cov_cont[[10]])))
+raster::hist(r_stack_cov_cont[[11]], main = NULL, plot = TRUE,
+             xlab = paste0(names(r_stack_cov_cont[[11]])))
+raster::hist(r_stack_cov_cont[[12]], main = NULL, plot = TRUE,
+             xlab = paste0(names(r_stack_cov_cont[[12]])))
+
+# set plotting layout
+par(mfrow = c(2, 3))
+# plot histograms
+raster::hist(r_stack_cov_cont[[13]], main = NULL, plot = TRUE,
+             xlab = paste0(names(r_stack_cov_cont[[13]])))
+raster::hist(r_stack_cov_cont[[14]], main = NULL, plot = TRUE,
+             xlab = paste0(names(r_stack_cov_cont[[14]])))
+raster::hist(r_stack_cov_cont[[15]], main = NULL, plot = TRUE,
+             xlab = paste0(names(r_stack_cov_cont[[15]])))
+raster::hist(r_stack_cov_cont[[16]], main = NULL, plot = TRUE,
+             xlab = paste0(names(r_stack_cov_cont[[16]])))
+raster::hist(r_stack_cov_cont[[17]], main = NULL, plot = TRUE,
+             xlab = paste0(names(r_stack_cov_cont[[17]])))
+raster::hist(r_stack_cov_cont[[18]], main = NULL, plot = TRUE,
+             xlab = paste0(names(r_stack_cov_cont[[18]])))
+
+# set plotting layout
+par(mfrow = c(2, 3))
+# plot histograms
+raster::hist(r_stack_cov_cont[[19]], main = NULL, plot = TRUE,
+             xlab = paste0(names(r_stack_cov_cont[[19]])))
+raster::hist(r_stack_cov_cont[[20]], main = NULL, plot = TRUE,
+             xlab = paste0(names(r_stack_cov_cont[[20]])))
+raster::hist(r_stack_cov_cont[[21]], main = NULL, plot = TRUE,
+             xlab = paste0(names(r_stack_cov_cont[[21]])))
+raster::hist(r_stack_cov_cont[[22]], main = NULL, plot = TRUE,
+             xlab = paste0(names(r_stack_cov_cont[[22]])))
+raster::hist(r_stack_cov_cont[[23]], main = NULL, plot = TRUE,
+             xlab = paste0(names(r_stack_cov_cont[[23]])))
+
+# list of histograms of continuous covariates
+# foreach(cont = 1:length(names(r_stack_cov_cont))) %dopar% {
+#    raster::hist(r_stack_cov_cont[[cont]],
+#                 main = NULL,
+#                 plot = TRUE,
+#                 xlab = paste0(names(r_stack_cov_cont[[cont]])))
+#  } # time elapse: 1.7 min
+
+```
+
+
+### Multivariate exploratory analysis: correlations
+
+```{r continuous covariates correlations, echo=FALSE, warning=FALSE, message=FALSE, results='hide', out.height='100%', out.width='100%'}
+# calculate correlation matrix
+# system.time(
+#   ls_corr <- layerStats(r_stack_cov_cont, "pearson", na.rm = TRUE)
+# )
+# # time elapse sequential: had to stop at about 2 hours
+# 
+# # make correlation plot
+# corrplot(corr = ls_corr$`pearson correlation coefficient`,
+#          is.corr = FALSE,
+#          method = "square",
+#          type =   "upper")
+
+```
+
+
+### Maps
+
+```{r continuous covariates maps, echo=FALSE, warning=FALSE, message=FALSE, results='hide', out.height='200%', out.width='200%'}
+# list of color schemes for all continuous covariates
+ls_colors_cont <- foreach(cont = 1:length(names(r_stack_cov_cont))) %do% {
+  if (grepl("ahn", names(r_stack_cov_cont))[[cont]]) {
+    terrain.colors(1000)
+    } else {
+      viridis::viridis(100)
+    }
+}
+
+# set up parallel backend to use multiple cores
+cores <- parallel::detectCores()
+cl <- parallel::makeCluster(cores - 2) # to not overload memory
+doParallel::registerDoParallel(cl)
+
+# list of plots of continuous covariates with designated description and color scheme
+foreach(cont = 1:length(names(r_stack_cov_cont))) %dopar% {
+  rasterVis::levelplot(r_stack_cov_cont[[cont]],
+                       main = paste0(names(r_stack_cov_cont[[cont]])),
+                       margin = list(FUN = 'median'),
+                       par.settings = list(axis.line = list(col = "transparent")),
+                       scales = list(draw = FALSE),
+                       col.regions = ls_colors_cont[[cont]])
+  } # time elapse: 1.5 min
+
+# stop parallel backend
+parallel::stopCluster(cl)
+
+```
+
+
+## Categorical covariates
+
+```{r categorical covariates overview, echo=TRUE, warning=FALSE}
+# stack of categorical covariates
+r_stack_cov_cat <- r_stack_cov[[tbl_cov_meta %>%
+                                   filter(values_type %in% "categorical") %>%
+                                   .$name]]
+
+# All categorical covariates at 25m resolution
+dim(r_stack_cov_cat)
+
+# Names of all categorical covariates
+names(r_stack_cov_cat)
+
+# description of classes in RAT attribute table, e.g. LGN8:
+r_stack_cov_cat$lgn8_25m@data@attributes[[1]]
+
+```
+
+
+### Univariate exploratory analysis: categories and maps
+
+```{r categorical covariates detailed, echo=FALSE, warning=FALSE, message=FALSE, results='hide', out.height='100%', out.width='100%'}
+# use RColorBrewer colors https://colorbrewer2.org/?type=qualitative&scheme=Paired&n=12#type=qualitative&scheme=Paired&n=12
+# if > 12 classes, create an assortment of categorical colors
+qual_col_pals = brewer.pal.info[brewer.pal.info$category == 'qual',]
+v_colors = unlist(mapply(brewer.pal,
+                           qual_col_pals$maxcolors,
+                           rownames(qual_col_pals)))
+
+# list of color schemes for all categorical covariates
+# if <= 12 classes, use "Paired" scheme,
+ls_colors_cat <- foreach(cat = 1:length(names(r_stack_cov_cat))) %do% {
+  if (nrow(levels(r_stack_cov_cat[[cat]])[[1]]) <= 12) {
+    brewer.pal(n = nrow(levels(r_stack_cov_cat[[cat]])[[1]]), name = "Paired")
+    } else {
+      if (nrow(levels(r_stack_cov_cat[[cat]])[[1]]) <= length(v_colors)) {
+        v_colors[1:nrow(levels(r_stack_cov_cat[[cat]])[[1]])]
+      } else {
+        sample(v_colors,
+               nrow(levels(r_stack_cov_cat[[cat]])[[1]]),
+               replace = TRUE)
+      }}}
+
+# list of pie charts for every factor
+ls_pie_cat <- foreach(cat = 1:length(names(r_stack_cov_cat))) %do% {
+  ggplot(r_stack_cov_cat[[cat]]@data@attributes[[1]],
+         aes(x = "", y = COUNT, fill = reorder(description, ID))) +
+    geom_bar(width = 1, stat = "identity") +
+    coord_polar("y") +
+    theme(axis.text = element_blank(),
+          axis.ticks = element_blank(),
+          axis.title = element_blank(),
+          plot.background = element_blank(),
+          panel.grid.minor = element_blank(),
+          panel.grid.major = element_blank()) +
+    scale_fill_manual(values = ls_colors_cat[[cat]]) +
+    labs(fill = paste(names(r_stack_cov_cat[[cat]])))
+}
+
+# set up parallel backend to use multiple cores
+cores <- parallel::detectCores()
+cl <- parallel::makeCluster(cores - 10) # to not overload memory
+doParallel::registerDoParallel(cl)
+
+# list of plots of categorical covariates with designated description and color scheme
+system.time(
+  ls_plots_cat <- foreach(cat = 1:length(names(r_stack_cov_cat))) %dopar% {
+    rasterVis::levelplot(r_stack_cov_cat[[cat]],
+                         att = "description",
+                         main = paste0(names(r_stack_cov_cat[[cat]])),
+                         par.settings = list(axis.line = list(col = "transparent")),
+                         scales = list(draw = FALSE),
+                         col.regions = ls_colors_cat[[cat]],
+                         # since we already have legend from pie chart
+                         colorkey = FALSE)
+    }
+  ) # time elapsed: 3.2 min
+
+# combine pie charts and maps alternating the combinations to get one variable after another
+ls_pie_plots_cat <- c(rbind(ls_pie_cat, ls_plots_cat))
+
+# print plots
+ls_pie_plots_cat
+
+# stop parallel backend
+parallel::stopCluster(cl)
+
+#if(.Platform$OS.type == "windows"){
+#  plan(multisession)
+#} else {
+#    plan(multicore)
+#  }
+
+# future_map(as.list(r_stack_cov_cat)[1:5],
+#     ~levelplot(.x,
+#                att = "description",
+#                main = paste0(names(.x)),
+#                par.settings = list(axis.line = list(col = "transparent")),
+#               scales = list(draw = FALSE)))
+#                #col.regions = n_color))
+
+```
+
+

@@ -1,0 +1,2320 @@
+OBJECTID,grondsoort,FREQUENCY,COUNT_gron
+1,- - - - - -,6247,6247
+2,- - - - - Klei,4,4
+3,- - - - - Klei-Zand,2,2
+4,- - - - - veen,2,2
+5,- - - - - Veen-Zand,5,5
+6,- - - -  -,16,16
+7,- - -  - ,74,74
+8,- - -  - Klei,1,1
+9,- - -  - veen,1,1
+10,- - -  - zeeklei,7,7
+11,- - -   ,2,2
+12,- - -   - -,8,8
+13,- - -   -  ,36,36
+14,- - -     ,27,27
+15,- - - Klei-Veen - Klei-Veen,5,5
+16,- - - Klei-Zand - Klei-Zand,8,8
+17,- - - Klei - -,2,2
+18,- - - Klei - Klei,44,44
+19,- - - Veen-Zand - Veen-Zand,27,27
+20,- - - Veen - -,2,2
+21,- - - Veen - Veen,1,1
+22,- - - Zand - Zand,24,24
+23,- -  - - -,136,136
+24,- -  -  -,4,4
+25,- - klei - - -,93,93
+26,- - klei  - ,18,18
+27,- - klei   ,5,5
+28,- - Klei Klei - Klei,2,2
+29,- - zand - - -,2085,2085
+30,- - zand - -  ,21,21
+31,- - zand -  -,103,103
+32,- - zand -   ,3,3
+33,- - zand - zand -,2,2
+34,- - zand  - ,79,79
+35,- - zand   ,3,3
+36,- - zand   - -,1,1
+37,- - zand   -  ,15,15
+38,- - zand   - Zand,2,2
+39,- - zand zand - -,8,8
+40,- - zand zand -  ,17,17
+41,- - zand zand - Zand,2,2
+42,- - zand zand  Zand,2,2
+43,-  - - - -,98,98
+44,-  - -  -,1828,1828
+45,-  - -   ,6,6
+46,-  - -  Klei,5,5
+47,-  - -  Klei-Zand,2,2
+48,-  - -  veen,3,3
+49,-  - -  Veen-Zand,6,6
+50,-  - -  zeeklei,1,1
+51,-  - - klei -,37,37
+52,-  - - veen -,23,23
+53,-  -  - ,14,14
+54,-  -  - Klei,8,8
+55,-  -  - zeeklei,6,6
+56,-  -   ,1599,1599
+57,-  -   -,6,6
+58,-  -    ,27,27
+59,-  -    -,40,40
+60,-  -     ,14,14
+61,-  -    veen,7,7
+62,-  -   klei,16,16
+63,-  -   Klei,121,121
+64,-  -   klei ,1,1
+65,-  -   klei veen,2,2
+66,-  -   veen,98,98
+67,-  -   zand,13,13
+68,-  -   Zand,19,19
+69,-  -   zeeklei,503,503
+70,-  -  klei ,6,6
+71,-  -  Klei ,16,16
+72,-  -  klei Klei,5,5
+73,-  -  Klei Klei,5,5
+74,-  -  klei veen,2,2
+75,-  -  veen ,4,4
+76,-  -  veen veen,1,1
+77,-  -  zand ,4,4
+78,-  -  Zand ,5,5
+79,-  - Klei-Veen  Klei-Veen,9,9
+80,-  - Klei-Zand  Klei-Zand,14,14
+81,-  - Klei  Klei,37,37
+82,-  - Veen-Zand  Veen-Zand,23,23
+83,-  - veen  -,1,1
+84,-  - veen  veen,51,51
+85,-  - veen klei -,1,1
+86,-  - veen veen -,2,2
+87,-  - zand  -,3,3
+88,-  - Zand  Zand,38,38
+89,-   - - -,108,108
+90,-   - - - -,121,121
+91,-   -  ,3,3
+92,-   -  -,522,522
+93,-   -  - ,141,141
+94,-   -   ,40,40
+95,-   -   - -,1,1
+96,-   - Zand -,4,4
+97,-    - ,6,6
+98,-     ,99,99
+99,-     -,6,6
+100,-      ,9,9
+101,-      -,3,3
+102,-       ,5,5
+103,-     veen,2,2
+104,-     Zand ,10,10
+105,-    Zand ,11,11
+106,-   zand - - -,24,24
+107,-   zand - zand -,7,7
+108,-   zand  -,11,11
+109,-   zand   ,2,2
+110,-  klei - - -,2,2
+111,-  klei -  ,1,1
+112,-  klei -  -,378,378
+113,-  klei -   ,168,168
+114,-  klei -  Klei,10,10
+115,-  klei -  Zand,8,8
+116,-  klei - klei Klei,2,2
+117,-  klei  - ,5,5
+118,-  klei   ,468,468
+119,-  klei   -,5,5
+120,-  Klei   ,10,10
+121,-  klei    ,2,2
+122,-  klei    -,5,5
+123,-  klei     ,38,38
+124,-  klei   Klei,1,1
+125,-  klei   Zand,9,9
+126,-  klei   zeeklei,4,4
+127,-  klei klei  ,1,1
+128,-  klei klei  -,6,6
+129,-  klei klei   ,8,8
+130,-  klei klei  Klei,19,19
+131,-  klei klei klei Klei,1,1
+132,-  klei zand  Zand,11,11
+133,-  veen - - -,9,9
+134,-  veen -  -,114,114
+135,-  veen - klei -,1,1
+136,-  veen - veen -,4,4
+137,-  veen   ,169,169
+138,-  veen    ,2,2
+139,-  veen    -,16,16
+140,-  veen    veen,1,1
+141,-  veen   klei ,1,1
+142,-  veen  klei ,2,2
+143,-  veen  veen ,1,1
+144,-  veen PKB  ,2,2
+145,-  veen PKB  -,98,98
+146,-  veen veen  -,34,34
+147,-  veen veen  veen,1,1
+148,-  veen veen klei -,1,1
+149,-  veen veen veen -,5,5
+150,-  zand - - -,374,374
+151,-  zand -  ,6,6
+152,-  zand -  -,37358,37358
+153,-  zand -   ,61,61
+154,-  zand -  Zand,12,12
+155,-  zand - zand -,1,1
+156,-  zand  - ,16,16
+157,-  zand   ,1242,1242
+158,-  zand   -,7,7
+159,-  Zand   ,17,17
+160,-  zand   -  ,5,5
+161,-  zand    ,13,13
+162,-  zand    -,5,5
+163,-  zand     ,93,93
+164,-  zand  klei ,1,1
+165,-  zand  Zand ,2,2
+166,-  zand PKB  ,1,1
+167,-  zand PKB  -,93,93
+168,-  zand zand  ,9,9
+169,-  zand zand  -,9,9
+170,-  zand zand   ,8,8
+171,-  zand zand  Zand,25,25
+172,-  zand zand zand -,2,2
+173,- Klei - - - -,27,27
+174,- Klei - -   ,1,1
+175,- klei - - klei -,86,86
+176,- Klei -  - ,67,67
+177,- Klei -  - Klei,1,1
+178,- klei -   ,2,2
+179,- Klei -   ,14,14
+180,- Klei -   Klei,8,8
+181,- klei -  klei ,36,36
+182,- Klei -  Klei ,2649,2649
+183,- Klei -  Klei Klei,565,565
+184,- klei - veen klei veen,1,1
+185,- Klei  -   ,6,6
+186,- Klei klei -  -,28,28
+187,- Klei klei -   ,25,25
+188,- Klei klei -  Klei,1,1
+189,- Klei klei - klei -,4,4
+190,- Klei klei - klei  ,2,2
+191,- Klei klei - klei Klei,4,4
+192,- Klei Klei   ,11,11
+193,- Klei klei klei klei ,1,1
+194,- Klei klei klei klei Klei,4,4
+195,- veen - - veen -,43,43
+196,- Veen -  - klei,1,1
+197,- Veen -  - veen,1,1
+198,- veen -  veen ,5,5
+199,- veen - veen veen veen,16,16
+200,- Zand - -  -,25,25
+201,- Zand -   ,3,3
+202,- zand -  zand ,75,75
+203,- Zand -  Zand ,436,436
+204,- Zand - zand  -,2,2
+205,- Zand  - - -,21,21
+206,- Zand  -  -,13,13
+207,- Zand  - Zand -,1,1
+208,- Zand   - ,1,1
+209,- Zand    ,5,5
+210,- Zand   zand ,1,1
+211,- Zand   Zand ,34,34
+212,- Zand  zand  -,4,4
+213,- Zand klei -   ,5,5
+214,- Zand klei   ,1,1
+215,- Zand klei  zand ,1,1
+216,- Zand zand - - -,8,8
+217,- Zand zand -  -,38,38
+218,- Zand zand - zand -,12,12
+219,- Zand zand zand  ,1,1
+220,- Zand zand zand  -,3,3
+221,- zeeklei -  - ,4,4
+222,- zeeklei -  - veen,17,17
+223,- zeeklei -  - zand,23,23
+224,- zeeklei -  - zeeklei,352,352
+225, - - - - -,2,2
+226, - - - klei -,1,1
+227, - -  - veen,192,192
+228, - -   zeeklei,2,2
+229, -  - - ,29,29
+230, -  - - -,84110,84110
+231, -  - - Klei,6,6
+232, -  - - Klei-Zand,4,4
+233, -  - - Zand,48,48
+234, -  -  ,8,8
+235, -  -  -,279,279
+236, -  -  Zand,1,1
+237, -  - klei -,5,5
+238, -  - zand -,39,39
+239, -  - Zand -,30,30
+240, -   - ,4415,4415
+241, -   - -,53,53
+242, -   - zand,6,6
+243, -   - zeeklei,7,7
+244, -    ,261,261
+245, -    -,14,14
+246, -    - ,12,12
+247, -    - -,12,12
+248, -    -  ,68,68
+249, -    - Zand,2,2
+250, -     ,2,2
+251, -      ,5,5
+252, -     Zand,1,1
+253, -    Zand,2,2
+254, -   klei ,15,15
+255, -   zand ,64,64
+256, -   Zand ,98,98
+257, -  Klei-Zand - Klei-Zand,105,105
+258, -  Klei - -,5,5
+259, -  Klei - Klei,208,208
+260, -  Veen-Zand - Veen-Zand,82,82
+261, -  Zand - ,1,1
+262, -  Zand - -,33,33
+263, -  zand -  ,1,1
+264, -  zand - Zand,2,2
+265, -  Zand - Zand,885,885
+266, -  zand   ,1,1
+267, -  zand  Zand,2,2
+268, -  Zand  Zand,2,2
+269, -  zand zand Zand,6,6
+270, - Klei-Zand Klei-Zand - Klei-Zand,1,1
+271, - klei - - -,4,4
+272, - Klei - - -,1,1
+273, - klei -  -,5,5
+274, - klei  - ,1,1
+275, - klei   ,1,1
+276, - zand - - -,187,187
+277, - Zand - - -,7,7
+278, - zand -  -,62,62
+279, - Zand -  ,1,1
+280, - Zand -  -,6,6
+281, - zand  - ,4,4
+282, - zand   ,1,1
+283, - Zand   ,3,3
+284, - Zand   - -,1,1
+285, - Zand Zand - Zand,2,2
+286, - zand zand zand -,1,1
+287,  - - - ,235,235
+288,  - - - - -,7,7
+289,  - - - -  ,31,31
+290,  - - - - Zand,1,1
+291,  - -  ,332,332
+292,  - -  -,21,21
+293,  - -  - ,3,3
+294,  - -  - veen,1,1
+295,  - -   -  ,32,32
+296,  - -   - Zand,2,2
+297,  - -     ,19,19
+298,  - -   zand  ,3,3
+299,  - -  Veen,34,34
+300,  - -  Zand,14,14
+301,  - - klei ,166,166
+302,  - - klei -,7,7
+303,  - - klei  ,1,1
+304,  - - klei Klei,1,1
+305,  - - veen ,318,318
+306,  - - veen -,4,4
+307,  - - Veen ,9,9
+308,  - - Veen Veen,8,8
+309,  - - Veen Zand,1,1
+310,  - - zand ,187,187
+311,  - - zand -,23,23
+312,  - - zand -  ,3,3
+313,  - - Zand - Zand,1,1
+314,  - - zand   ,1,1
+315,  -  - ,1014,1014
+316,  -   ,1430,1430
+317,  -   - ,1,1
+318,  -    ,327,327
+319,  -    -,12,12
+320,  -    veen,15,15
+321,  -    Veen,19,19
+322,  -    Zand,16,16
+323,  -   klei,1,1
+324,  -   klei ,7,7
+325,  -   veen,64,64
+326,  -   Veen ,13,13
+327,  -   zand,6,6
+328,  -   zeeklei,12,12
+329,  -  veen ,46,46
+330,  -  zand ,4,4
+331,  - klei - ,2,2
+332,  - Klei - Klei,2,2
+333,  - klei  ,43,43
+334,  - Klei  ,6,6
+335,  - klei  - ,2,2
+336,  - Klei  Klei,3,3
+337,  - klei  veen,7,7
+338,  - klei klei ,10,10
+339,  - PKB - ,4,4
+340,  - PKB  ,57,57
+341,  - PKB  -,9,9
+342,  - PKB  Veen,11,11
+343,  - PKB  Zand,7,7
+344,  - PKB klei ,1,1
+345,  - PKB veen ,5,5
+346,  - PKB Veen ,10,10
+347,  - PKB Veen Veen,1,1
+348,  - PKB zand ,4,4
+349,  - Veen -  ,8,8
+350,  - Veen - Zand,1,1
+351,  - veen  ,12,12
+352,  - Veen  ,41,41
+353,  - veen  veen,24,24
+354,  - Veen  Veen,131,131
+355,  - Veen Veen ,5,5
+356,  - Veen Veen Veen,52,52
+357,  - zand - - -,16,16
+358,  - zand - -  ,205,205
+359,  - zand -  -,3,3
+360,  - zand -   ,15,15
+361,  - Zand - Zand,4,4
+362,  - Zand  ,38,38
+363,  - zand   -  ,7,7
+364,  - zand   - Zand,3,3
+365,  - zand  zand,2,2
+366,  - Zand  Zand,88,88
+367,  - Zand Veen ,7,7
+368,  - Zand Veen Zand,49,49
+369,  - zand zand -  ,110,110
+370,  - zand zand   ,37,37
+371,   - - ,123,123
+372,   - - -,394,394
+373,   - - - ,1,1
+374,   - - -  ,3,3
+375,   - -  ,5,5
+376,   - -  -,31,31
+377,   - -   ,322,322
+378,   - -  Klei,1,1
+379,   - - klei ,6,6
+380,   - - klei -,1,1
+381,   - - klei  ,27,27
+382,   - - veen ,4,4
+383,   - - veen -,3,3
+384,   - - veen  ,84,84
+385,   - - Zand,14,14
+386,   - - zand -,2,2
+387,   - - zand  ,35,35
+388,   -  ,284,284
+389,   -  -,9248,9248
+390,   -  - ,3,3
+391,   -  -  ,1,1
+392,   -  - veen,4,4
+393,   -  - zeeklei,1,1
+394,   -   ,1161,1161
+395,   -   -  ,4,4
+396,   -    ,13,13
+397,   -    -,4,4
+398,   -     ,136,136
+399,   -    veen,11,11
+400,   -   klei,3,3
+401,   -   Klei,7,7
+402,   -   klei  ,1,1
+403,   -   veen,153,153
+404,   -   veen veen,3,3
+405,   -   zand,3,3
+406,   -   Zand,85,85
+407,   -   zand  ,3,3
+408,   -   zeeklei,76,76
+409,   -  Klei,16,16
+410,   -  Klei-Zand,5,5
+411,   -  veen ,121,121
+412,   -  veen veen,38,38
+413,   -  Zand,50,50
+414,   -  zand ,41,41
+415,   -  zand Zand,1,1
+416,   - klei ,9,9
+417,   - klei -,3,3
+418,   - Klei - Klei,2,2
+419,   - klei   ,2,2
+420,   - klei  klei,27,27
+421,   - klei  Klei,8,8
+422,   - Klei  Klei,66,66
+423,   - klei Klei,3,3
+424,   - veen ,4,4
+425,   - Veen   ,8,8
+426,   - veen  veen,434,434
+427,   - Veen  Veen,64,64
+428,   - veen veen veen,24,24
+429,   - zand -,9,9
+430,   - Zand -,4,4
+431,   - zand  ,4,4
+432,   - zand   ,10,10
+433,   - zand  zand,4,4
+434,   - zand  Zand,50,50
+435,   - Zand  Zand,94,94
+436,   - zand zand ,1,1
+437,   - zand zand  ,1,1
+438,   - zand zand Zand,1,1
+439,    - ,370,370
+440,    - -,2,2
+441,    - - ,37,37
+442,    - - -,900,900
+443,    - - - -,1,1
+444,    - - -  ,379,379
+445,    - -  ,510,510
+446,    -  ,3,3
+447,    -  -,122,122
+448,    -  - ,77,77
+449,    -  - Zand,19,19
+450,    -   ,21,21
+451,    -   - ,2,2
+452,    -   -  ,52,52
+453,    -   - Zand,13,13
+454,    -   zand  ,7,7
+455,    -  zand ,66,66
+456,    -  zand Zand,38,38
+457,    - Klei,1,1
+458,    - klei -,18,18
+459,    - Klei -  ,1,1
+460,    - Klei - Klei,769,769
+461,    - Klei  Klei,2,2
+462,    - Klei Veen Klei,3,3
+463,    - veen,4,4
+464,    - Veen -  ,90,90
+465,    - Veen - Veen,136,136
+466,    - Veen - Zand,10,10
+467,    - Veen   ,1,1
+468,    - Veen Zand  ,5,5
+469,    - Zand,5,5
+470,    - Zand ,3,3
+471,    - Zand -,58,58
+472,    - zand - ,1,1
+473,    - Zand -  ,38,38
+474,    - zand - Zand,86,86
+475,    - Zand - Zand,558,558
+476,    - zand zand ,5,5
+477,    - zand zand  ,19,19
+478,    - zand zand Zand,27,27
+479,    - Zand Zand Zand,26,26
+480,    - zeeklei,5,5
+481,     ,5959,5959
+482,     -,52,52
+483,     - ,853,853
+484,     - -,44,44
+485,     -  ,12,12
+486,     - Klei,3,3
+487,     - Zand,39,39
+488,      ,545,545
+489,      -,38,38
+490,      - ,31,31
+491,      - -,3,3
+492,      -  ,187,187
+493,      - Zand,19,19
+494,       ,883,883
+495,       -  ,2,2
+496,       - Zand,7,7
+497,        ,24,24
+498,         ,4,4
+499,        Zand,79,79
+500,       Zand,59,59
+501,       Zand  ,1,1
+502,       Zand Zand,8,8
+503,      klei,22,22
+504,      Klei,19,19
+505,      klei  ,1,1
+506,      veen,36,36
+507,      Zand,185,185
+508,      zand ,3,3
+509,      Zand ,51,51
+510,      zeeklei,1,1
+511,     klei,21,21
+512,     Klei,44,44
+513,     Klei-Zand,1,1
+514,     klei ,7,7
+515,     klei  ,230,230
+516,     klei klei,2,2
+517,     klei Klei,29,29
+518,     veen,82,82
+519,     veen ,4,4
+520,     Veen -  ,2,2
+521,     Veen - Zand,3,3
+522,     Veen   ,15,15
+523,     Veen  Zand,3,3
+524,     Veen Zand,2,2
+525,     Veen Zand  ,4,4
+526,     Veen Zand Zand,1,1
+527,     zand,75,75
+528,     Zand,80,80
+529,     zand ,57,57
+530,     Zand ,403,403
+531,     Zand -,32,32
+532,     Zand - Zand,2,2
+533,     zand  ,120,120
+534,     Zand   ,16,16
+535,     Zand  Zand,32,32
+536,     zand Zand,48,48
+537,     Zand Zand,2,2
+538,     zand zand ,1,1
+539,     zand zand Zand,1,1
+540,     Zand Zand Zand,1,1
+541,     zeeklei,77,77
+542,    klei ,1320,1320
+543,    Klei ,1,1
+544,    klei - ,10,10
+545,    klei - -,1,1
+546,    Klei - ,1,1
+547,    klei - - Klei,2,2
+548,    klei -  ,4,4
+549,    klei - klei,60,60
+550,    klei - Klei,5,5
+551,    Klei - Klei,25,25
+552,    Klei     ,1,1
+553,    Klei    Zand,1,1
+554,    klei  klei,3,3
+555,    Klei  Klei,7,7
+556,    klei klei,2,2
+557,    klei Klei,2,2
+558,    klei klei ,8,8
+559,    klei klei -,1,1
+560,    Klei Klei  Klei,1,1
+561,    klei klei Klei,4,4
+562,    Klei Veen   ,3,3
+563,    veen ,27,27
+564,    Veen -  ,41,41
+565,    Veen - Veen,27,27
+566,    Veen - Zand,3,3
+567,    Veen   ,9,9
+568,    Veen  Zand,5,5
+569,    veen veen,12,12
+570,    zand ,1081,1081
+571,    Zand ,85,85
+572,    zand - ,1,1
+573,    zand - -  ,20,20
+574,    Zand -  ,16,16
+575,    zand - zand,11,11
+576,    zand - Zand,265,265
+577,    Zand - Zand,17,17
+578,    zand - zand  ,10,10
+579,    zand  ,2,2
+580,    Zand  ,1,1
+581,    zand  - ,37,37
+582,    zand  - Zand,16,16
+583,    zand   ,11,11
+584,    Zand   ,42,42
+585,    zand  Zand,15,15
+586,    Zand  Zand,30,30
+587,    zand  zand ,20,20
+588,    zand  zand Zand,214,214
+589,    zand Zand,3,3
+590,    Zand Zand,2,2
+591,    zand zand ,7,7
+592,    zand zand - ,3,3
+593,    zand zand -  ,2,2
+594,    zand zand - Zand,7,7
+595,    zand zand  ,2,2
+596,    zand zand zand,2,2
+597,    zand zand Zand,62,62
+598,    Zand Zand Zand,9,9
+599,    zand zand zand ,9,9
+600,    zand zand zand  ,14,14
+601,    zand zand zand Zand,9,9
+602,   Klei-Zand  Klei-Zand,118,118
+603,   klei - ,15,15
+604,   Klei - -,2,2
+605,   klei - - ,1,1
+606,   klei -  ,4,4
+607,   klei -  -,73,73
+608,   klei -   ,226,226
+609,   klei - klei,7,7
+610,   Klei - Klei,3,3
+611,   klei  ,1097,1097
+612,   klei  -,11,11
+613,   Klei  ,1,1
+614,   Klei  -,6,6
+615,   klei   ,220,220
+616,   Klei   ,7,7
+617,   klei     ,5,5
+618,   klei   Klei,15,15
+619,   klei   Zand,58,58
+620,   klei   zeeklei,1,1
+621,   klei  klei,906,906
+622,   klei  Klei,344,344
+623,   Klei  Klei,160,160
+624,   klei  veen,16,16
+625,   Klei  Zand,2,2
+626,   klei klei ,635,635
+627,   klei klei -,1,1
+628,   klei klei  ,11,11
+629,   klei klei   ,59,59
+630,   klei klei  Klei,26,26
+631,   klei klei klei,66,66
+632,   klei klei Klei,24,24
+633,   klei klei klei Klei,2,2
+634,   klei zand ,5,5
+635,   klei zand  Zand,16,16
+636,   PKB  ,30,30
+637,   PKB  -,1,1
+638,   PKB veen ,1,1
+639,   Veen-Zand  ,1,1
+640,   Veen-Zand  -,3,3
+641,   Veen-Zand  Veen-Zand,73,73
+642,   veen - - ,3,3
+643,   veen - -  ,21,21
+644,   veen -  ,4,4
+645,   Veen -  ,15,15
+646,   veen -   ,7,7
+647,   Veen - Zand,1,1
+648,   veen  ,14,14
+649,   Veen  ,4,4
+650,   veen   ,230,230
+651,   Veen   ,74,74
+652,   veen    ,5,5
+653,   veen    veen,9,9
+654,   veen   veen,22,22
+655,   veen   veen veen,4,4
+656,   veen  veen,128,128
+657,   Veen  Veen,8,8
+658,   veen  veen ,45,45
+659,   veen  veen veen,13,13
+660,   Veen  Zand,18,18
+661,   veen  zeeklei,1,1
+662,   veen PKB -  ,3,3
+663,   veen veen  ,1,1
+664,   Veen Veen  ,11,11
+665,   veen veen   ,14,14
+666,   veen veen  veen,348,348
+667,   veen veen veen veen,41,41
+668,   Veen Zand Zand,11,11
+669,   zand - ,10,10
+670,   Zand - -,2,2
+671,   zand - - -,2,2
+672,   zand - -  ,39,39
+673,   zand -  ,4,4
+674,   zand -  -,7,7
+675,   Zand -  ,6,6
+676,   Zand -  -,2,2
+677,   zand -   ,9,9
+678,   zand -  Zand,1,1
+679,   zand - veen  ,1,1
+680,   zand - Zand,17,17
+681,   Zand - Zand,14,14
+682,   zand  ,50,50
+683,   zand  -,20,20
+684,   Zand  ,21,21
+685,   Zand  -,23,23
+686,   zand  - ,2,2
+687,   zand  - Zand,1,1
+688,   zand   ,409,409
+689,   Zand   ,122,122
+690,   zand     ,9,9
+691,   zand   Zand,46,46
+692,   zand  Klei,15,15
+693,   Zand  Veen,1,1
+694,   zand  zand,151,151
+695,   zand  Zand,1108,1108
+696,   Zand  Zand,1056,1056
+697,   zand  zand ,25,25
+698,   zand  Zand ,2,2
+699,   zand  zand Zand,12,12
+700,   zand PKB -  ,1,1
+701,   zand PKB  ,1,1
+702,   zand PKB  -,1,1
+703,   zand PKB   ,15,15
+704,   Zand Veen Zand,2,2
+705,   zand zand ,36,36
+706,   Zand Zand ,44,44
+707,   zand zand - Zand,2,2
+708,   zand zand  ,52,52
+709,   zand zand   ,3,3
+710,   zand zand  Zand,90,90
+711,   zand zand zand,17,17
+712,   zand zand Zand,26,26
+713,   Zand Zand Zand,43,43
+714,   zand zand zand ,26,26
+715,   zand zand zand  ,21,21
+716,   zand zand zand Zand,5,5
+717,  Klei-Zand Klei-Zand  -,2,2
+718,  Klei-Zand Klei-Zand  Klei-Zand,2,2
+719,  klei - - ,3,3
+720,  Klei - -  -,2,2
+721,  Klei - - klei  ,1,1
+722,  klei -  ,198,198
+723,  klei -  -,17,17
+724,  Klei -  -,2,2
+725,  klei -   ,3,3
+726,  Klei -     ,4,4
+727,  klei -   klei  ,24,24
+728,  klei -  Klei,1,1
+729,  klei -  klei ,2,2
+730,  klei - klei ,5,5
+731,  Klei - Klei Klei Klei,51,51
+732,  klei - veen ,1,1
+733,  klei - zand ,1,1
+734,  Klei  -   ,6,6
+735,  klei   ,88,88
+736,  Klei   ,2,2
+737,  klei    ,4,4
+738,  klei     ,7,7
+739,  klei    klei,4,4
+740,  klei   Klei,10,10
+741,  klei   klei ,3,3
+742,  klei   klei veen,10,10
+743,  klei  klei ,4,4
+744,  klei  zand ,1,1
+745,  klei klei - ,6,6
+746,  Klei klei -  -,2,2
+747,  Klei klei -   ,43,43
+748,  Klei klei -  Klei,1,1
+749,  klei klei  ,592,592
+750,  Klei Klei  ,46,46
+751,  Klei Klei  -,4,4
+752,  Klei klei    Klei,1,1
+753,  klei klei  klei,23,23
+754,  klei klei  Klei,2,2
+755,  Klei Klei  Klei,6,6
+756,  klei klei klei ,381,381
+757,  klei klei klei Klei,1,1
+758,  Klei klei klei klei Klei,1,1
+759,  klei klei klei veen,34,34
+760,  klei klei klei Zand,2,2
+761,  klei klei zand ,1,1
+762,  klei PKB  ,49,49
+763,  klei PKB klei ,3,3
+764,  klei PKB veen ,1,1
+765,  klei PKB zand ,2,2
+766,  klei veen  ,13,13
+767,  Klei Veen   ,2,2
+768,  klei veen  veen,62,62
+769,  klei veen klei ,1,1
+770,  klei zand  ,1,1
+771,  klei zand  Zand,7,7
+772,  veen - - ,1,1
+773,  veen - - veen ,2,2
+774,  veen - - veen -,28,28
+775,  veen -  ,114,114
+776,  veen -  -,11,11
+777,  Veen -  ,1,1
+778,  veen -  -  ,2,2
+779,  veen -  - veen,4,4
+780,  Veen -  - veen,7,7
+781,  veen -  - zeeklei,6,6
+782,  veen -   ,223,223
+783,  veen -   veen,51,51
+784,  veen -   zeeklei,1,1
+785,  veen -  veen ,160,160
+786,  veen -  veen veen,16,16
+787,  veen - klei ,1,1
+788,  Veen - Klei - Klei,1,1
+789,  Veen - Klei Veen Klei,38,38
+790,  veen - veen ,16,16
+791,  veen - veen  veen,20,20
+792,  Veen - Veen Veen  ,5,5
+793,  veen - veen veen veen,29,29
+794,  Veen - Veen Veen Veen,139,139
+795,  Veen - Zand Veen Zand,123,123
+796,  veen   ,132,132
+797,  Veen   - veen,10,10
+798,  veen    ,11,11
+799,  Veen    ,1,1
+800,  veen    veen,8,8
+801,  Veen    Zand,1,1
+802,  veen   veen,3,3
+803,  veen  veen ,16,16
+804,  veen  veen veen,14,14
+805,  veen klei klei ,1,1
+806,  Veen Klei Klei  Klei,1,1
+807,  veen PKB  ,96,96
+808,  veen PKB  -,14,14
+809,  veen PKB veen ,1,1
+810,  veen veen -  ,1,1
+811,  veen veen  ,4,4
+812,  Veen Veen  ,3,3
+813,  veen veen   ,111,111
+814,  veen veen   veen,16,16
+815,  veen veen  veen,16,16
+816,  veen veen  veen ,240,240
+817,  veen veen  veen veen,47,47
+818,  veen veen klei ,5,5
+819,  veen veen klei veen,12,12
+820,  veen veen veen  ,9,9
+821,  veen veen veen   ,1,1
+822,  veen veen veen  veen,1,1
+823,  veen veen veen veen veen,27,27
+824,  zand - - ,4,4
+825,  zand - - -,4,4
+826,  Zand - -   ,9,9
+827,  Zand - - zand  ,238,238
+828,  zand -  ,398,398
+829,  zand -  -,543,543
+830,  Zand -  ,11,11
+831,  Zand -  -,7,7
+832,  zand -  - ,23,23
+833,  Zand -  - ,23,23
+834,  zand -  - Zand,10,10
+835,  Zand -  - Zand,62,62
+836,  zand -   ,13,13
+837,  Zand -   ,6,6
+838,  Zand -   -  ,1,1
+839,  Zand -     ,4,4
+840,  zand -   Zand,22,22
+841,  Zand -   Zand,55,55
+842,  zand -   zand  ,18,18
+843,  Zand -   zand  ,2,2
+844,  Zand -   Zand  ,1,1
+845,  zand -  Klei,1,1
+846,  zand -  Veen,7,7
+847,  zand -  Zand,15,15
+848,  zand -  zand ,79,79
+849,  Zand -  zand ,78,78
+850,  zand -  zand Zand,9,9
+851,  Zand -  zand Zand,26,26
+852,  zand - klei ,1,1
+853,  Zand - Klei Zand Klei,38,38
+854,  zand - veen ,3,3
+855,  zand - Veen ,19,19
+856,  Zand - Veen -  ,2,2
+857,  Zand - Veen   ,2,2
+858,  zand - Veen Veen,3,3
+859,  zand - Veen Zand,3,3
+860,  Zand - Veen Zand  ,6,6
+861,  Zand - Veen Zand Veen,13,13
+862,  zand - zand ,34,34
+863,  zand - zand -,6,6
+864,  Zand - zand - Zand,3,3
+865,  Zand - Zand - Zand,2,2
+866,  Zand - zand  Zand,1,1
+867,  zand - zand Zand,7,7
+868,  zand - zand zand ,1,1
+869,  Zand - zand zand ,3,3
+870,  zand - zand zand Zand,4,4
+871,  Zand - zand zand Zand,674,674
+872,  Zand - Zand Zand Zand,414,414
+873,  zand  - ,1,1
+874,  Zand  -  -,1,1
+875,  Zand  -   ,11,11
+876,  Zand  - zand  ,1,1
+877,  zand   ,142,142
+878,  Zand   ,56,56
+879,  zand   - ,2,2
+880,  Zand   - Zand,28,28
+881,  zand    ,48,48
+882,  Zand    ,9,9
+883,  Zand    -,16,16
+884,  Zand    - Zand,1,1
+885,  zand     ,21,21
+886,  Zand     ,1,1
+887,  Zand      ,2,2
+888,  Zand     Zand,6,6
+889,  zand    Veen,3,3
+890,  Zand    Veen,1,1
+891,  zand    Zand,3,3
+892,  Zand    Zand,88,88
+893,  Zand    Zand  ,1,1
+894,  Zand    Zand Zand,4,4
+895,  zand   Klei,2,2
+896,  zand   Veen ,1,1
+897,  zand   Zand,13,13
+898,  zand   zand ,21,21
+899,  Zand   zand ,1,1
+900,  Zand   Zand ,5,5
+901,  zand   zand  ,2,2
+902,  zand   zand Zand,6,6
+903,  Zand   zand Zand,14,14
+904,  Zand  Veen   ,2,2
+905,  Zand  Veen Zand  ,1,1
+906,  Zand  Veen Zand Zand,1,1
+907,  zand  zand ,10,10
+908,  zand  Zand ,1,1
+909,  Zand  zand - Zand,9,9
+910,  Zand  zand   ,1,1
+911,  Zand  zand  Zand,3,3
+912,  zand  zand zand ,1,1
+913,  zand  zand zand Zand,1,1
+914,  Zand  zand zand Zand,5,5
+915,  Zand  Zand Zand Zand,1,1
+916,  Zand klei -   ,14,14
+917,  Zand klei   ,1,1
+918,  Zand Klei  Klei,1,1
+919,  zand PKB - ,3,3
+920,  zand PKB  ,298,298
+921,  zand PKB  -,12,12
+922,  Zand PKB  ,5,5
+923,  zand PKB   ,1,1
+924,  zand PKB  Veen,7,7
+925,  zand PKB  Zand,12,12
+926,  zand PKB veen ,5,5
+927,  zand PKB Veen ,14,14
+928,  zand PKB Veen Veen,3,3
+929,  zand PKB zand ,333,333
+930,  zand Veen  ,14,14
+931,  Zand Veen  ,7,7
+932,  zand Veen  Veen,32,32
+933,  Zand Veen  Veen,12,12
+934,  zand Veen Veen ,2,2
+935,  zand Veen Veen Veen,9,9
+936,  zand zand - ,1,1
+937,  Zand zand - -  ,34,34
+938,  zand zand -  ,2,2
+939,  Zand zand -   ,32,32
+940,  zand zand - Zand,3,3
+941,  Zand zand - zand  ,15,15
+942,  zand zand  ,20,20
+943,  zand Zand  ,8,8
+944,  Zand Zand  ,30,30
+945,  zand zand  - ,2,2
+946,  Zand zand  - ,20,20
+947,  Zand zand  - Zand,74,74
+948,  zand zand   ,15,15
+949,  Zand zand   ,3,3
+950,  Zand Zand   ,1,1
+951,  Zand zand   Zand,157,157
+952,  zand zand  zand,2,2
+953,  zand zand  Zand,14,14
+954,  zand Zand  Zand,18,18
+955,  Zand Zand  Zand,51,51
+956,  zand zand  zand ,28,28
+957,  Zand zand  zand ,41,41
+958,  zand zand  zand Zand,54,54
+959,  Zand zand  zand Zand,180,180
+960,  zand Zand Veen Zand,11,11
+961,  zand zand zand ,52,52
+962,  zand zand zand -,3,3
+963,  zand zand zand  ,18,18
+964,  Zand zand zand  ,1,1
+965,  Zand zand zand   ,4,4
+966,  zand zand zand  Zand,1,1
+967,  zand zand zand Zand,43,43
+968,  zand zand zand zand ,8,8
+969,  Zand zand zand zand ,4,4
+970,  zand zand zand zand Zand,17,17
+971,  Zand zand zand zand Zand,50,50
+972,  zeeklei -  - zeeklei,11,11
+973, klei - - - ,5,5
+974, klei - - - -,1,1
+975, klei - -  ,2,2
+976, klei - -  -,21,21
+977, klei - - klei ,298,298
+978, klei - - klei -,737,737
+979, klei - - klei  ,1,1
+980, klei - - veen -,2,2
+981, klei -   ,3,3
+982, klei -    -,3,3
+983, klei -   klei -,1,1
+984, klei -  klei ,5,5
+985, klei - PKB klei ,1,1
+986, Klei  - - ,5,5
+987, Klei  - - -,65,65
+988, Klei  -  ,1,1
+989, Klei  -  -,15,15
+990, Klei  -   ,7,7
+991, Klei  -  Klei,2,2
+992, Klei  - klei ,2,2
+993, Klei  - klei -,20,20
+994, Klei  - klei  ,14,14
+995, Klei  - klei Klei,9,9
+996, Klei  - zand  ,3,3
+997, klei   - ,38,38
+998, klei    ,334,334
+999, Klei    ,15,15
+1000, Klei    - ,6,6
+1001, Klei    - -,2,2
+1002, Klei     ,2,2
+1003, klei      ,9,9
+1004, Klei      ,7,7
+1005, klei     klei,2,2
+1006, Klei     Klei,1,1
+1007, klei    Klei,4,4
+1008, Klei    Klei,36,36
+1009, Klei    klei ,2,2
+1010, klei    klei  ,4383,4383
+1011, Klei    klei  ,15,15
+1012, klei    klei klei,69,69
+1013, Klei    klei Klei,5,5
+1014, klei   klei ,2895,2895
+1015, Klei   klei ,67,67
+1016, Klei   Klei ,175,175
+1017, klei   klei  ,3,3
+1018, klei   klei Klei,29,29
+1019, Klei   klei Klei,19,19
+1020, klei   zand ,78,78
+1021, Klei   zand Klei,11,11
+1022, Klei  klei - ,5,5
+1023, Klei  klei - -,2,2
+1024, Klei  klei  ,4,4
+1025, klei  klei  klei,41,41
+1026, Klei  klei  Klei,14,14
+1027, klei  klei klei ,4,4
+1028, Klei  klei klei ,7,7
+1029, Klei  klei klei -,4,4
+1030, klei  klei klei  ,7,7
+1031, Klei  klei klei  ,1,1
+1032, klei  klei klei klei,458,458
+1033, klei  klei klei Klei,4,4
+1034, Klei  klei klei Klei,258,258
+1035, Klei  Klei Klei Klei,7,7
+1036, Klei  klei zand Klei,2,2
+1037, klei  veen  veen,1,1
+1038, Klei  zand  ,4,4
+1039, Klei  zand klei ,4,4
+1040, klei  zand klei  ,7,7
+1041, klei  zand klei zand,4,4
+1042, klei  zand klei Zand,2,2
+1043, klei klei - - ,2,2
+1044, klei klei -  ,90,90
+1045, klei klei -  -,192,192
+1046, klei klei - klei ,4,4
+1047, klei klei - klei -,4,4
+1048, klei klei   ,2,2
+1049, Klei klei   ,1,1
+1050, klei klei     ,11,11
+1051, Klei klei   Klei,1,1
+1052, klei klei  klei ,16,16
+1053, klei klei klei klei  ,2,2
+1054, klei klei PKB  ,10,10
+1055, klei klei PKB  -,48,48
+1056, klei klei PKB klei -,2,2
+1057, klei veen -  ,9,9
+1058, klei veen -  -,37,37
+1059, klei veen - klei -,1,1
+1060, klei veen   ,4,4
+1061, klei veen  klei ,16,16
+1062, klei zand -  ,6,6
+1063, klei zand -  -,4,4
+1064, klei zand -   ,1,1
+1065, klei zand -  Klei,1,1
+1066, klei zand - klei -,2,2
+1067, Klei zand  klei ,1,1
+1068, klei zand PKB  -,2,2
+1069, klei zand PKB zand ,6,6
+1070, klei zand PKB zand -,4,4
+1071, veen - - - -,1,1
+1072, veen - -  ,3,3
+1073, veen - -  -,35,35
+1074, Veen - -  ,119,119
+1075, veen - -   ,1,1
+1076, Veen - -  Veen,22,22
+1077, Veen - -  Zand,3,3
+1078, veen - - klei -,13,13
+1079, veen - - veen ,312,312
+1080, veen - - veen -,650,650
+1081, Veen - - veen -,1,1
+1082, Veen - - Veen ,22,22
+1083, veen - - veen  ,4,4
+1084, Veen - - Veen Veen,26,26
+1085, Veen - - Veen Zand,6,6
+1086, veen - - zand -,53,53
+1087, veen -  - ,18,18
+1088, veen -  - veen,384,384
+1089, veen -   ,92,92
+1090, veen -   -,4,4
+1091, Veen -    ,58,58
+1092, Veen -    Veen,4,4
+1093, Veen -    Zand,6,6
+1094, Veen -   Veen ,20,20
+1095, Veen -   Veen Veen,2,2
+1096, Veen -   Veen Zand,6,6
+1097, veen -  veen ,94,94
+1098, veen -  veen -,3,3
+1099, Veen - PKB  ,65,65
+1100, Veen - PKB  Zand,8,8
+1101, veen - PKB veen ,2,2
+1102, veen - PKB veen -,6,6
+1103, Veen - PKB Veen ,27,27
+1104, Veen - PKB Veen Veen,18,18
+1105, Veen - PKB Veen Zand,30,30
+1106, Veen - Veen -  ,4,4
+1107, Veen - Veen - Zand,4,4
+1108, Veen - Veen  ,12,12
+1109, Veen - Veen  Veen,49,49
+1110, Veen - Veen Veen ,5,5
+1111, Veen - Veen Veen Veen,124,124
+1112, Veen - Zand - Zand,4,4
+1113, Veen - Zand  ,59,59
+1114, Veen - Zand  Zand,76,76
+1115, Veen - Zand Veen ,33,33
+1116, Veen - Zand Veen Veen,2,2
+1117, Veen - Zand Veen Zand,129,129
+1118, veen   - ,7,7
+1119, veen   - veen,14,14
+1120, Veen   - veen,9,9
+1121, veen   - zand,16,16
+1122, veen   - zeeklei,91,91
+1123, veen    ,63,63
+1124, veen    -,5,5
+1125, Veen    ,2,2
+1126, Veen    -  ,45,45
+1127, Veen    - Zand,1,1
+1128, Veen     Zand,26,26
+1129, veen    veen,16,16
+1130, Veen    Veen  ,22,22
+1131, Veen    Veen Zand,7,7
+1132, Veen    Zand  ,2,2
+1133, Veen    Zand Zand,31,31
+1134, veen   veen ,251,251
+1135, veen   veen -,1,1
+1136, veen   veen veen,18,18
+1137, Veen   Zand ,4,4
+1138, Veen  Klei  Klei,1,1
+1139, Veen  Klei Veen  ,7,7
+1140, Veen  Klei Veen Klei,1,1
+1141, Veen  Veen -  ,144,144
+1142, Veen  Veen - Zand,8,8
+1143, Veen  Veen   ,48,48
+1144, Veen  Veen  Zand,26,26
+1145, Veen  Veen Veen  ,188,188
+1146, Veen  Veen Veen Veen,36,36
+1147, Veen  Veen Veen Zand,23,23
+1148, Veen  Veen Zand  ,36,36
+1149, Veen  Veen Zand Zand,35,35
+1150, Veen  Zand -  ,57,57
+1151, Veen  Zand - Zand,24,24
+1152, Veen  Zand  Zand,65,65
+1153, Veen  Zand Veen  ,39,39
+1154, Veen  Zand Veen Zand,48,48
+1155, Veen  Zand Zand  ,31,31
+1156, Veen  Zand Zand Zand,62,62
+1157, veen klei - - ,1,1
+1158, veen klei - - -,1,1
+1159, veen klei -  ,6,6
+1160, veen klei -  -,19,19
+1161, veen klei - veen ,1,1
+1162, veen klei - veen -,4,4
+1163, veen klei PKB  ,2,2
+1164, veen klei PKB  -,6,6
+1165, veen klei PKB veen -,2,2
+1166, Veen Klei Veen   ,13,13
+1167, veen veen - - ,11,11
+1168, veen veen - - -,21,21
+1169, veen veen -  ,52,52
+1170, veen veen -  -,180,180
+1171, veen veen -   ,1,1
+1172, veen veen - veen ,4,4
+1173, veen veen - veen -,15,15
+1174, veen veen   ,13,13
+1175, veen veen   -,1,1
+1176, veen veen   veen,16,16
+1177, veen veen  veen ,32,32
+1178, veen veen  veen veen,47,47
+1179, veen veen PKB - -,3,3
+1180, veen veen PKB  -,20,20
+1181, veen zand - - -,33,33
+1182, veen zand -  ,8,8
+1183, veen zand -  -,70,70
+1184, Veen zand -  ,154,154
+1185, Veen zand -  Veen,5,5
+1186, Veen zand -  Zand,9,9
+1187, veen zand - veen -,4,4
+1188, Veen zand - Veen ,19,19
+1189, Veen zand - Veen Veen,9,9
+1190, Veen zand - Veen Zand,11,11
+1191, veen zand - zand -,2,2
+1192, Veen zand    ,20,20
+1193, Veen zand   Veen ,1,1
+1194, veen zand PKB - -,1,1
+1195, veen zand PKB  ,94,94
+1196, veen zand PKB  -,61,61
+1197, Veen zand PKB  ,203,203
+1198, Veen zand PKB  -,1,1
+1199, veen zand PKB   ,2,2
+1200, Veen zand PKB  Veen,8,8
+1201, Veen zand PKB  Zand,1,1
+1202, veen zand PKB veen ,2,2
+1203, veen zand PKB veen -,7,7
+1204, Veen zand PKB Veen ,50,50
+1205, Veen zand PKB Veen Veen,18,18
+1206, Veen zand PKB Veen Zand,10,10
+1207, Veen zand Veen  ,20,20
+1208, Veen zand Veen  Veen,12,12
+1209, Veen zand Veen Veen ,18,18
+1210, Veen zand Veen Veen Veen,31,31
+1211, Veen zand Zand  ,42,42
+1212, Veen zand Zand  Veen,1,1
+1213, Veen zand Zand  Zand,24,24
+1214, Veen zand Zand Veen ,1,1
+1215, Veen zand Zand Veen Veen,1,1
+1216, Veen zand Zand Veen Zand,23,23
+1217, zand - - - ,20,20
+1218, zand - - - -,6,6
+1219, zand - -  ,3,3
+1220, zand - -  -,19,19
+1221, zand - - zand ,211,211
+1222, zand - - zand -,454,454
+1223, zand - - zand  ,4,4
+1224, zand -  - ,4,4
+1225, zand -   ,20,20
+1226, zand -  zand ,23,23
+1227, zand - PKB zand -,1,1
+1228, Zand - Veen -  ,9,9
+1229, zand  - - -,46,46
+1230, Zand  - - ,15,15
+1231, Zand  - - -,373,373
+1232, zand  -  -,6,6
+1233, Zand  -  ,1,1
+1234, Zand  -  -,55,55
+1235, Zand  -   ,3,3
+1236, zand  - zand ,6,6
+1237, zand  - zand -,146,146
+1238, Zand  - zand ,1,1
+1239, Zand  - Zand ,20,20
+1240, Zand  - Zand -,143,143
+1241, Zand  - zand  ,705,705
+1242, Zand  - zand Zand,4,4
+1243, zand   - ,76,76
+1244, Zand   - ,354,354
+1245, Zand   - -,18,18
+1246, zand   - zand,73,73
+1247, zand   - Zand,10,10
+1248, Zand   - Zand,14,14
+1249, zand    ,400,400
+1250, Zand    ,134,134
+1251, Zand    -,1,1
+1252, Zand    -  ,16,16
+1253, Zand    - Zand,2,2
+1254, zand      ,9,9
+1255, Zand      ,3,3
+1256, Zand     Zand,17,17
+1257, Zand    Veen  ,6,6
+1258, zand    zand,2,2
+1259, zand    Zand,2,2
+1260, Zand    Zand,77,77
+1261, zand    zand  ,2186,2186
+1262, Zand    zand  ,28,28
+1263, Zand    Zand  ,1,1
+1264, zand    zand zand,2,2
+1265, Zand    Zand Zand,40,40
+1266, zand   klei ,57,57
+1267, zand   zand ,10806,10806
+1268, Zand   zand ,550,550
+1269, Zand   Zand ,1270,1270
+1270, Zand   Zand -,66,66
+1271, zand   zand  ,3,3
+1272, zand   zand Zand,20,20
+1273, Zand   zand Zand,29,29
+1274, Zand   Zand Zand,8,8
+1275, Zand  Klei - Klei,2,2
+1276, zand  klei  ,5,5
+1277, Zand  Klei  Klei,2,2
+1278, zand  klei zand ,4,4
+1279, Zand  Klei Zand Klei,10,10
+1280, Zand  Veen -  ,56,56
+1281, Zand  Veen - Zand,10,10
+1282, Zand  Veen   ,77,77
+1283, Zand  Veen  Zand,2,2
+1284, Zand  Veen Veen  ,63,63
+1285, Zand  Veen Veen Zand,26,26
+1286, Zand  Veen Zand  ,32,32
+1287, Zand  Veen Zand Veen,3,3
+1288, Zand  Veen Zand Zand,26,26
+1289, zand  zand - ,5,5
+1290, Zand  Zand -  ,22,22
+1291, zand  zand - Zand,7,7
+1292, Zand  zand - Zand,13,13
+1293, Zand  Zand - Zand,15,15
+1294, zand  zand  ,3,3
+1295, Zand  zand  -,3,3
+1296, Zand  Zand  ,9,9
+1297, zand  zand   ,3,3
+1298, Zand  Zand   ,13,13
+1299, zand  zand  Zand,1,1
+1300, Zand  zand  Zand,17,17
+1301, Zand  Zand  Zand,53,53
+1302, Zand  Zand Veen  ,10,10
+1303, Zand  Zand Veen Zand,15,15
+1304, zand  zand zand ,6,6
+1305, Zand  zand zand ,15,15
+1306, Zand  Zand Zand ,83,83
+1307, zand  zand zand  ,81,81
+1308, Zand  zand zand  ,2,2
+1309, Zand  Zand Zand  ,7,7
+1310, zand  zand zand zand,3,3
+1311, zand  zand zand Zand,17,17
+1312, Zand  zand zand Zand,1448,1448
+1313, Zand  Zand Zand Zand,597,597
+1314, zand klei -  -,2,2
+1315, Zand klei   ,1,1
+1316, zand klei  zand ,1,1
+1317, Zand klei  zand ,1,1
+1318, zand klei klei zand ,1,1
+1319, zand veen -  -,2,2
+1320, zand zand -  ,11,11
+1321, zand zand -  -,31,31
+1322, Zand zand -  ,1,1
+1323, Zand zand -  -,4,4
+1324, zand zand - zand ,2,2
+1325, zand zand - zand -,1,1
+1326, Zand zand - Zand ,1,1
+1327, zand zand   ,4,4
+1328, Zand zand   ,4,4
+1329, Zand Zand   ,28,28
+1330, zand zand     ,1,1
+1331, zand zand   Zand,6,6
+1332, Zand zand   Zand,1,1
+1333, zand zand   zand  ,2,2
+1334, zand zand  zand ,25,25
+1335, zand zand  zand Zand,8,8
+1336, Zand zand  zand Zand,4,4
+1337, Zand Zand Klei  Klei,1,1
+1338, zand zand PKB  ,46,46
+1339, zand zand PKB  -,162,162
+1340, zand zand PKB   ,4,4
+1341, zand zand PKB zand ,11,11
+1342, zand zand PKB zand -,25,25
+1343, Zand zand zand - Zand,1,1
+1344, Zand zand zand  ,2,2
+1345, Zand Zand Zand  ,9,9
+1346, Zand Zand Zand  Zand,6,6
+1347, Zand zand zand zand ,7,7
+1348, zand zand zand zand Zand,6,6
+1349, Zand zand zand zand Zand,31,31
+1350, zeeklei -  - ,1,1
+1351, zeeklei -  - zeeklei,3,3
+1352, zeeklei   - ,6,6
+1353, zeeklei   - veen,6,6
+1354, zeeklei   - zand,46,46
+1355, zeeklei   - zeeklei,125,125
+1356, zeeklei    zeeklei,2,2
+1357,Klei-Veen - Klei-Veen - - -,3,3
+1358,Klei-Veen - Klei-Veen Klei-Veen - Klei-Veen,9,9
+1359,Klei-Veen  Klei-Veen -  -,5,5
+1360,Klei-Veen  Klei-Veen Klei-Veen  Klei-Veen,14,14
+1361,Klei-Zand - Klei-Zand - - -,272,272
+1362,Klei-Zand - Klei-Zand - - Klei-Zand,1,1
+1363,Klei-Zand - Klei-Zand  - ,6,6
+1364,Klei-Zand - Klei-Zand   -  ,2,2
+1365,Klei-Zand - Klei-Zand Klei-Zand - -,1,1
+1366,Klei-Zand - Klei-Zand Klei-Zand - Klei-Zand,313,313
+1367,Klei-Zand - Klei-Zand Klei - Klei,1,1
+1368,Klei-Zand   Klei-Zand Klei-Zand - Klei-Zand,1,1
+1369,Klei-Zand  Klei-Zand -  -,202,202
+1370,Klei-Zand  Klei-Zand -  Klei-Zand,3,3
+1371,Klei-Zand  Klei-Zand   ,25,25
+1372,Klei-Zand  Klei-Zand     ,2,2
+1373,Klei-Zand  Klei-Zand Klei-Zand  Klei-Zand,252,252
+1374,Klei-Zand  Klei-Zand Klei  Klei,2,2
+1375,Klei - - - - -,2,2
+1376,Klei - - Klei - Klei,1,1
+1377,Klei -  - - -,7,7
+1378,Klei -  - - Klei,3,3
+1379,Klei -  -  -,2,2
+1380,klei -   - ,1,1
+1381,klei - klei - - -,5,5
+1382,Klei - Klei - - -,448,448
+1383,Klei - Klei - - Klei,7,7
+1384,Klei - klei -  -,2,2
+1385,klei - klei  - ,589,589
+1386,Klei - Klei  - ,33,33
+1387,klei - klei   ,5,5
+1388,Klei - klei   -  ,2,2
+1389,Klei - Klei   -  ,2,2
+1390,klei - klei  klei ,155,155
+1391,klei - klei  zand ,5,5
+1392,Klei - Klei Klei - -,9,9
+1393,Klei - Klei Klei - Klei,830,830
+1394,klei - zand  klei ,1,1
+1395,klei  - -  ,12,12
+1396,Klei  - -  -,5,5
+1397,Klei  - -   ,2,2
+1398,Klei  - -  Klei,1,1
+1399,klei  - - klei ,20,20
+1400,klei  - - klei -,2,2
+1401,klei  - - veen ,1,1
+1402,klei  -   ,58,58
+1403,Klei  -   ,13,13
+1404,Klei  -     ,2,2
+1405,Klei  -    Klei,54,54
+1406,Klei  -   Klei,7,7
+1407,klei  -   Zand,4,4
+1408,Klei  -   Zand,3,3
+1409,klei  -  klei ,2,2
+1410,Klei  -  Klei ,2,2
+1411,Klei  - klei  Klei,4,4
+1412,Klei  - Klei  Klei,1,1
+1413,Klei  - Klei Veen Klei,1,1
+1414,Klei  - Veen Zand  ,1,1
+1415,klei  - zand  Zand,3,3
+1416,Klei   - - -,4,4
+1417,Klei   - - Klei,9,9
+1418,Klei   -  ,1,1
+1419,Klei   -  -,27,27
+1420,Klei   -   ,15,15
+1421,Klei   -  Klei,4,4
+1422,klei     ,87,87
+1423,Klei     ,3,3
+1424,klei       ,5,5
+1425,Klei       ,3,3
+1426,Klei      Klei,1,1
+1427,Klei     Klei,4,4
+1428,klei     klei  ,8,8
+1429,klei     Zand,7,7
+1430,klei    klei ,2,2
+1431,Klei    klei ,1,1
+1432,Klei   Klei - - -,42,42
+1433,Klei   Klei - Klei,2,2
+1434,Klei   klei  ,1,1
+1435,klei   klei  - ,4,4
+1436,Klei   klei  - ,1,1
+1437,Klei   Klei  - ,48,48
+1438,klei   klei   -  ,8,8
+1439,klei   klei  klei,35,35
+1440,Klei   klei  Klei,2,2
+1441,Klei   Klei  Klei,2,2
+1442,Klei   klei klei ,7,7
+1443,klei   klei klei - klei,5,5
+1444,Klei   Klei Klei - Klei,25,25
+1445,Klei   Klei Veen - Veen,2,2
+1446,Klei   Klei Veen   ,13,13
+1447,Klei   Veen   ,4,4
+1448,Klei   Veen  Zand,4,4
+1449,klei   zand  ,8,8
+1450,klei   zand  Zand,2,2
+1451,Klei   Zand  Zand,4,4
+1452,klei  klei - - ,2,2
+1453,Klei  Klei - - -,2,2
+1454,Klei  Klei - - Klei,4,4
+1455,klei  klei -  ,321,321
+1456,Klei  klei -  -,7,7
+1457,Klei  Klei -  -,471,471
+1458,Klei  klei -   ,3,3
+1459,Klei  klei -  Klei,35,35
+1460,Klei  Klei -  Klei,8,8
+1461,klei  klei - klei ,3,3
+1462,Klei  klei - klei Klei,2,2
+1463,klei  klei - zand ,1,1
+1464,Klei  klei  - ,1,1
+1465,Klei  Klei  - Klei,1,1
+1466,klei  klei   ,2972,2972
+1467,Klei  klei   ,146,146
+1468,Klei  Klei   ,1057,1057
+1469,Klei  klei   -  ,2,2
+1470,Klei  Klei    ,1,1
+1471,klei  klei     ,901,901
+1472,Klei  klei     ,12,12
+1473,Klei  Klei     ,42,42
+1474,klei  klei    klei,39,39
+1475,Klei  Klei    Klei,5,5
+1476,Klei  Klei    Veen,3,3
+1477,Klei  Klei    Zand,1,1
+1478,klei  klei   klei,3,3
+1479,Klei  klei   Klei,2,2
+1480,Klei  Klei   Klei,147,147
+1481,klei  klei   klei  ,6,6
+1482,klei  klei   Zand,28,28
+1483,Klei  klei   Zand,2,2
+1484,klei  klei  klei ,207,207
+1485,Klei  Klei  Klei ,5,5
+1486,Klei  Klei  klei Klei,10,10
+1487,Klei  Klei  Klei Klei,2,2
+1488,klei  klei  zand ,3,3
+1489,Klei  Klei Klei - Klei,65,65
+1490,klei  klei klei  ,4,4
+1491,Klei  klei klei  ,3,3
+1492,Klei  klei klei  -,7,7
+1493,Klei  Klei Klei  ,1,1
+1494,Klei  Klei Klei  -,9,9
+1495,klei  klei klei   ,5,5
+1496,Klei  klei klei   ,8,8
+1497,Klei  Klei Klei   ,15,15
+1498,klei  klei klei  klei,720,720
+1499,Klei  klei klei  Klei,268,268
+1500,Klei  Klei Klei  Klei,2220,2220
+1501,Klei  Klei Klei  Veen,1,1
+1502,Klei  klei klei klei Klei,3,3
+1503,Klei  Klei Klei Veen Klei,3,3
+1504,Klei  Klei Klei zand Klei,2,2
+1505,klei  klei PKB  ,12,12
+1506,klei  klei PKB  -,1,1
+1507,klei  klei PKB klei -,1,1
+1508,Klei  Klei Veen   ,51,51
+1509,Klei  Klei Veen  Klei,1,1
+1510,klei  klei veen  veen,2,2
+1511,Klei  Klei Veen  Veen,255,255
+1512,klei  klei zand  ,3,3
+1513,Klei  Klei Zand   ,25,25
+1514,Klei  Klei Zand  Veen,10,10
+1515,klei  klei zand  Zand,20,20
+1516,Klei  Klei Zand  Zand,83,83
+1517,klei  veen -  ,5,5
+1518,klei  zand -  ,2,2
+1519,Klei  zand -   ,3,3
+1520,Klei  zand -  Klei,21,21
+1521,klei  zand   ,31,31
+1522,klei  zand  zand ,2,2
+1523,Klei  Zand Klei  Klei,1,1
+1524,klei  zand PKB  ,1,1
+1525,klei  zand PKB zand ,2,2
+1526,Klei Klei - -  -,2,2
+1527,Klei klei - -   ,16,16
+1528,Klei Klei - -   ,6,6
+1529,klei klei - - klei -,1,1
+1530,Klei klei - - klei  ,11,11
+1531,klei klei -   ,8,8
+1532,Klei klei -     ,3,3
+1533,Klei Klei -     ,6,6
+1534,Klei Klei -    Klei,2,2
+1535,klei klei -  klei ,11,11
+1536,Klei klei - Klei   ,5,5
+1537,Klei Klei  -  -,3,3
+1538,Klei Klei  -   ,3,3
+1539,Klei Klei      ,1,1
+1540,klei klei    klei  ,4,4
+1541,klei klei   klei ,23,23
+1542,Klei Klei  klei klei Klei,1,1
+1543,klei klei klei -  -,1,1
+1544,Klei Klei klei -  -,2,2
+1545,Klei klei Klei -   ,2,2
+1546,Klei Klei klei -   ,3,3
+1547,Klei Klei klei -  Klei,7,7
+1548,Klei Klei klei - klei  ,13,13
+1549,Klei Klei klei - klei Klei,6,6
+1550,klei klei klei  - ,85,85
+1551,klei klei klei   ,147,147
+1552,klei klei klei     ,10,10
+1553,klei klei klei    klei,3,3
+1554,Klei Klei klei    Klei,1,1
+1555,klei klei klei   klei  ,73,73
+1556,klei klei klei   klei klei,4,4
+1557,klei klei klei  klei ,6908,6908
+1558,Klei Klei klei  klei ,2,2
+1559,Klei Klei Klei  Klei ,2,2
+1560,klei klei klei  klei Zand,2,2
+1561,klei klei klei  zand ,5,5
+1562,Klei klei Klei Klei   ,13,13
+1563,Klei klei Klei Klei  Klei,2,2
+1564,klei klei klei klei klei  ,2,2
+1565,klei klei klei klei klei klei,16,16
+1566,Klei Klei klei klei klei Klei,305,305
+1567,Klei klei zand -   ,2,2
+1568,Klei klei zand -  Klei,1,1
+1569,klei klei zand  - ,3,3
+1570,klei klei zand  klei ,6,6
+1571,klei veen klei   ,1,1
+1572,klei veen klei  veen ,3,3
+1573,Klei Veen Klei Veen Veen Veen,2,2
+1574,Klei Veen Klei Zand Veen Zand,1,1
+1575,klei zand klei  - ,3,3
+1576,klei zand klei   ,15,15
+1577,klei zand klei  klei ,2,2
+1578,klei zand klei  zand ,121,121
+1579,Klei zand Klei Klei  Klei,1,1
+1580,Klei zand Klei Klei zand Klei,3,3
+1581,Klei Zand Klei Veen   ,8,8
+1582,klei zand zand  - ,3,3
+1583,klei zand zand  klei ,1,1
+1584,klei zand zand  zand ,7,7
+1585,Veen-Zand - Veen-Zand - - -,156,156
+1586,Veen-Zand - Veen-Zand - - Veen-Zand,7,7
+1587,Veen-Zand - Veen-Zand   -  ,1,1
+1588,Veen-Zand - Veen-Zand Veen-Zand - -,2,2
+1589,Veen-Zand - Veen-Zand Veen-Zand - Veen-Zand,163,163
+1590,Veen-Zand  Veen-Zand -  -,196,196
+1591,Veen-Zand  Veen-Zand -  Veen-Zand,7,7
+1592,Veen-Zand  Veen-Zand   ,13,13
+1593,Veen-Zand  Veen-Zand     ,1,1
+1594,Veen-Zand  Veen-Zand Veen-Zand  -,2,2
+1595,Veen-Zand  Veen-Zand Veen-Zand  Veen-Zand,179,179
+1596,veen - -  - ,8,8
+1597,veen - -  - klei,3,3
+1598,veen - -  - veen,440,440
+1599,Veen - -  - veen,6,6
+1600,veen - -  - zeeklei,7,7
+1601,veen - -   ,2,2
+1602,veen - -  veen ,2,2
+1603,veen - veen - - -,3,3
+1604,Veen - Veen - - -,2,2
+1605,veen - veen  - ,920,920
+1606,veen - veen   ,56,56
+1607,veen - veen  veen ,23,23
+1608,veen - veen  zand ,4,4
+1609,Veen - Veen Veen - -,3,3
+1610,Veen - Veen Veen - Veen,12,12
+1611,veen  - - - veen,2,2
+1612,veen  - -  ,19,19
+1613,veen  - -  -,2,2
+1614,veen  - -  veen,30,30
+1615,Veen  - -  Veen,1,1
+1616,veen  - - klei veen,131,131
+1617,veen  - - veen ,30,30
+1618,veen  - - veen -,14,14
+1619,veen  - - veen veen,520,520
+1620,veen  -  - ,49,49
+1621,veen  -  - veen,20,20
+1622,Veen  -  - veen,1,1
+1623,veen  -   ,959,959
+1624,Veen  -   ,6,6
+1625,veen  -   - veen,5,5
+1626,veen  -    ,13,13
+1627,veen  -    veen,33,33
+1628,Veen  -    Veen,1,1
+1629,veen  -   klei,39,39
+1630,Veen  -   klei,28,28
+1631,veen  -   klei ,1,1
+1632,veen  -   klei veen,3,3
+1633,veen  -   veen,552,552
+1634,Veen  -   veen,534,534
+1635,veen  -   veen veen,13,13
+1636,veen  -   zand,29,29
+1637,veen  -   zeeklei,93,93
+1638,veen  -  klei ,2,2
+1639,veen  -  klei veen,7,7
+1640,veen  -  veen ,177,177
+1641,veen  -  veen veen,60,60
+1642,veen  - veen   ,5,5
+1643,veen  - veen  veen,379,379
+1644,veen  - veen klei veen,23,23
+1645,veen  - veen veen veen,39,39
+1646,veen   -  - veen,13,13
+1647,veen    - veen,1,1
+1648,veen     ,53,53
+1649,veen     veen,21,21
+1650,Veen     veen,5,5
+1651,veen     zand,2,2
+1652,veen    veen ,19,19
+1653,veen    veen veen,2,2
+1654,veen   veen   ,2,2
+1655,veen   veen  veen,10,10
+1656,veen   veen  zand ,1,1
+1657,Veen   Veen Klei - Klei,1,1
+1658,Veen   Veen Veen -  ,1,1
+1659,Veen   Veen Veen - Veen,14,14
+1660,Veen   Veen Zand - Zand,3,3
+1661,veen  klei -  ,17,17
+1662,veen  klei - veen ,2,2
+1663,veen  klei - zand ,1,1
+1664,veen  klei   klei veen,2,2
+1665,veen  klei klei  veen,5,5
+1666,veen  klei klei klei ,1,1
+1667,veen  klei klei klei veen,8,8
+1668,veen  klei PKB  ,8,8
+1669,veen  klei PKB veen ,2,2
+1670,veen  klei veen  veen,33,33
+1671,veen  veen - - veen,56,56
+1672,veen  veen -  ,52,52
+1673,veen  veen -  -,78,78
+1674,veen  veen -   ,1,1
+1675,veen  veen -  veen,40,40
+1676,Veen  Veen -  Veen,1,1
+1677,veen  veen - klei veen,34,34
+1678,veen  veen - veen ,14,14
+1679,veen  veen - veen -,2,2
+1680,veen  veen - veen veen,59,59
+1681,veen  veen - zand ,1,1
+1682,veen  veen  - ,10,10
+1683,veen  veen  - veen,1,1
+1684,veen  veen   ,1740,1740
+1685,Veen  Veen   ,1,1
+1686,veen  veen   - veen,10,10
+1687,veen  veen    ,20,20
+1688,Veen  Veen     ,25,25
+1689,veen  veen    veen,39,39
+1690,Veen  Veen    Veen,2,2
+1691,Veen  Veen    Zand,2,2
+1692,veen  veen   klei veen,2,2
+1693,veen  veen   veen,19,19
+1694,veen  veen   veen veen,7,7
+1695,veen  veen   zeeklei,18,18
+1696,veen  veen  klei ,1,1
+1697,veen  veen  veen ,139,139
+1698,veen  veen  veen veen,21,21
+1699,veen  veen  zand ,4,4
+1700,veen  veen klei  ,10,10
+1701,Veen  Veen Klei   ,1,1
+1702,Veen  Veen Klei  Klei,2,2
+1703,veen  veen klei  veen,24,24
+1704,veen  veen klei klei ,6,6
+1705,veen  veen klei klei veen,40,40
+1706,veen  veen PKB  ,5,5
+1707,Veen  Veen PKB  ,4,4
+1708,veen  veen veen - veen,2,2
+1709,veen  veen veen  ,6,6
+1710,Veen  Veen Veen  ,4,4
+1711,veen  veen veen   ,17,17
+1712,Veen  Veen Veen   ,25,25
+1713,veen  veen veen  veen,2943,2943
+1714,Veen  Veen Veen  Veen,186,186
+1715,Veen  Veen Veen  Zand,5,5
+1716,veen  veen veen  zeeklei,1,1
+1717,veen  veen veen klei veen,36,36
+1718,veen  veen veen veen veen,130,130
+1719,Veen  Veen Zand   ,5,5
+1720,Veen  Veen Zand  Zand,93,93
+1721,Veen  zand -  Veen,3,3
+1722,veen  zand   ,9,9
+1723,Veen  zand    Veen,1,1
+1724,veen  zand  veen ,2,2
+1725,veen  zand  zand ,3,3
+1726,veen  zand PKB  ,2,2
+1727,veen  zand PKB  -,11,11
+1728,Veen  zand PKB  ,8,8
+1729,Veen  zand PKB  Veen,1,1
+1730,veen  zand PKB veen -,1,1
+1731,veen  zand PKB zand ,1,1
+1732,veen  zand veen  veen,2,2
+1733,Veen  Zand Veen  Veen,1,1
+1734,veen klei   klei ,15,15
+1735,veen klei veen - klei -,5,5
+1736,veen klei veen   ,8,8
+1737,veen klei veen  klei ,32,32
+1738,veen klei veen veen  veen,2,2
+1739,veen klei veen veen klei veen,4,4
+1740,veen veen - -   ,1,1
+1741,veen veen - - veen ,3,3
+1742,veen veen - - veen -,6,6
+1743,veen veen - - veen  ,2,2
+1744,veen veen -  - ,109,109
+1745,veen Veen -  - ,10,10
+1746,veen Veen -  - klei,41,41
+1747,veen veen -  - veen,571,571
+1748,veen Veen -  - veen,1577,1577
+1749,Veen Veen -  - veen,17,17
+1750,veen veen -  - zand,10,10
+1751,veen veen -  - zeeklei,15,15
+1752,veen veen -   ,541,541
+1753,veen veen -    ,1,1
+1754,veen veen -   veen,55,55
+1755,veen Veen -   veen,1,1
+1756,Veen Veen -   veen,2,2
+1757,veen veen -   zeeklei,4,4
+1758,veen veen -  veen ,829,829
+1759,veen veen -  veen veen,23,23
+1760,veen veen - veen  veen,59,59
+1761,veen veen - veen veen veen,22,22
+1762,veen Veen   - veen,1,1
+1763,veen veen    ,39,39
+1764,veen veen    veen,11,11
+1765,veen veen   veen ,23,23
+1766,veen veen   veen veen,4,4
+1767,veen veen veen -  -,9,9
+1768,veen veen veen -   ,1,1
+1769,veen veen veen - veen -,8,8
+1770,veen veen veen  - ,515,515
+1771,veen veen veen   ,745,745
+1772,veen veen veen   veen,17,17
+1773,veen veen veen  veen ,3381,3381
+1774,veen veen veen  veen veen,28,28
+1775,veen veen veen  zand ,12,12
+1776,veen veen veen veen -  ,2,2
+1777,veen veen veen veen - veen,1,1
+1778,veen veen veen veen  ,2,2
+1779,veen veen veen veen   ,2,2
+1780,veen veen veen veen  veen,38,38
+1781,Veen Veen Veen Veen Veen  ,1,1
+1782,veen veen veen veen veen veen,123,123
+1783,Veen Veen Veen Veen Veen Veen,45,45
+1784,Veen Veen Veen Zand Veen Zand,25,25
+1785,veen veen zand PKB  -,2,2
+1786,veen zand veen  - ,3,3
+1787,veen zand veen   ,8,8
+1788,veen zand veen  veen ,4,4
+1789,veen zand veen  zand ,33,33
+1790,veen zand zand  zand ,4,4
+1791,Zand - - - -  ,81,81
+1792,zand - -  - veen,1,1
+1793,zand - -  - zand,135,135
+1794,zand - -  - zeeklei,2,2
+1795,Zand - -   -  ,14,14
+1796,Zand - -   - Zand,30,30
+1797,Zand - -    Zand,8,8
+1798,Zand - -   zand Zand,3,3
+1799,Zand - - zand -  ,19,19
+1800,Zand - - zand   ,2,2
+1801,zand -  - - -,11,11
+1802,Zand -  - - -,25,25
+1803,Zand -  - -  ,6,6
+1804,Zand -  - - Zand,21,21
+1805,Zand -  -  -,1,1
+1806,Zand -  -   ,1,1
+1807,zand -   - ,3,3
+1808,Zand -   - ,2,2
+1809,Zand -    -,1,1
+1810,Zand -    -  ,4,4
+1811,Zand -    - Zand,1,1
+1812,Zand -     ,1,1
+1813,Zand -     Zand,1,1
+1814,Zand -  Zand - -,2,2
+1815,Zand -  zand -  ,4,4
+1816,Zand -  Zand - Zand,18,18
+1817,zand - klei  - ,3,3
+1818,zand - klei  klei ,1,1
+1819,zand - veen   ,2,2
+1820,zand - zand - - -,5,5
+1821,Zand - zand - - -,1,1
+1822,Zand - Zand - - -,2268,2268
+1823,Zand - zand - -  ,40,40
+1824,Zand - zand - - Zand,2,2
+1825,Zand - Zand - - Zand,29,29
+1826,Zand - Zand -  -,1,1
+1827,Zand - zand -   ,3,3
+1828,zand - zand  - ,3375,3375
+1829,Zand - Zand  - ,40,40
+1830,Zand - Zand  - -,1,1
+1831,zand - zand   ,93,93
+1832,Zand - Zand   ,1,1
+1833,Zand - Zand   - -,1,1
+1834,Zand - zand   -  ,6,6
+1835,Zand - Zand   -  ,39,39
+1836,Zand - zand   - Zand,1,1
+1837,Zand - Zand   - Zand,1,1
+1838,zand - zand  klei ,4,4
+1839,zand - zand  zand ,1101,1101
+1840,Zand - Zand Zand - ,4,4
+1841,Zand - Zand Zand - -,48,48
+1842,Zand - zand zand -  ,85,85
+1843,Zand - zand zand - Zand,55,55
+1844,Zand - Zand Zand - Zand,1910,1910
+1845,Zand - zand zand   ,20,20
+1846,Zand - zand zand  Zand,52,52
+1847,Zand - Zand Zand  Zand,3,3
+1848,Zand - zand zand zand  ,5,5
+1849,Zand - zand zand zand Zand,25,25
+1850,zand  - - - -,3,3
+1851,zand  - -  ,59,59
+1852,Zand  - -  ,8,8
+1853,Zand  - -  Veen,9,9
+1854,Zand  - -  Zand,1,1
+1855,zand  - - zand ,9,9
+1856,zand  - - zand -,1,1
+1857,Zand  - - zand Zand,1,1
+1858,zand  -  - ,6,6
+1859,zand  -  - zand,2,2
+1860,zand  -   ,185,185
+1861,Zand  -   ,47,47
+1862,Zand  -   - Zand,1,1
+1863,Zand  -    ,3,3
+1864,Zand  -     ,4,4
+1865,Zand  -    Veen,7,7
+1866,Zand  -    Zand,7,7
+1867,zand  -   veen,7,7
+1868,zand  -   zand,117,117
+1869,zand  -   Zand,30,30
+1870,Zand  -   Zand,30,30
+1871,zand  -   zeeklei,4,4
+1872,zand  -  klei ,1,1
+1873,zand  -  veen ,1,1
+1874,zand  -  zand ,43,43
+1875,Zand  -  zand ,1,1
+1876,Zand  - PKB  ,2,2
+1877,Zand  - Veen  ,4,4
+1878,Zand  - Veen  Veen,13,13
+1879,zand  - zand  ,3,3
+1880,zand  - zand  Zand,15,15
+1881,Zand  - zand  Zand,19,19
+1882,Zand  - Zand  Zand,1,1
+1883,Zand  - zand zand Zand,3,3
+1884,Zand   - - -,21,21
+1885,Zand   - - -  ,73,73
+1886,Zand   - - Zand,78,78
+1887,Zand   - - zand  ,4,4
+1888,Zand   -  ,1,1
+1889,Zand   -  -,12,12
+1890,zand   -  - ,108,108
+1891,Zand   -  - ,5,5
+1892,zand   -  - Zand,12,12
+1893,Zand   -  - Zand,22,22
+1894,zand   -   ,2,2
+1895,Zand   -   ,3,3
+1896,Zand   -   -  ,1,1
+1897,Zand   -   - Zand,17,17
+1898,Zand   -   Zand,12,12
+1899,Zand   -   zand Zand,9,9
+1900,Zand   -  Zand,8,8
+1901,zand   -  zand ,70,70
+1902,Zand   -  zand ,3,3
+1903,Zand   -  zand Zand,6,6
+1904,Zand   - Zand -,1,1
+1905,Zand   - zand - ,3,3
+1906,zand   - zand - Zand,2,2
+1907,Zand   - zand - Zand,8,8
+1908,Zand   - zand zand ,4,4
+1909,Zand   - zand zand Zand,4,4
+1910,zand    - ,2,2
+1911,Zand    - ,1,1
+1912,Zand    - -,1,1
+1913,zand    - - -,3,3
+1914,Zand    - -  ,16,16
+1915,Zand    - - Zand,4,4
+1916,Zand    -   ,6,6
+1917,zand     ,149,149
+1918,Zand     ,94,94
+1919,Zand     -,1,1
+1920,zand     - ,52,52
+1921,Zand     - ,4,4
+1922,zand     - Zand,16,16
+1923,zand      ,6,6
+1924,Zand      ,1,1
+1925,Zand      -  ,4,4
+1926,Zand      - Zand,5,5
+1927,zand       ,3,3
+1928,Zand       ,18,18
+1929,Zand       Zand,1,1
+1930,zand      Zand,4,4
+1931,Zand      Zand,14,14
+1932,Zand     Klei,1,1
+1933,zand     zand,5,5
+1934,zand     Zand,41,41
+1935,Zand     Zand,51,51
+1936,zand     zand ,11,11
+1937,Zand     zand ,1,1
+1938,Zand     Zand ,1,1
+1939,zand     zand Zand,28,28
+1940,Zand     zand Zand,4,4
+1941,zand    zand ,48,48
+1942,Zand    Zand ,25,25
+1943,zand    zand - Zand,9,9
+1944,zand    zand Zand,2,2
+1945,Zand    zand Zand,4,4
+1946,zand    zand zand ,2,2
+1947,Zand    zand zand ,1,1
+1948,zand    zand zand Zand,13,13
+1949,Zand    zand zand Zand,1,1
+1950,Zand   Klei - Klei,1,1
+1951,zand   klei  ,1,1
+1952,zand   klei  Klei,1,1
+1953,Zand   Klei  Klei,2,2
+1954,zand   zand - ,1,1
+1955,Zand   Zand - - -,6,6
+1956,Zand   zand - -  ,54,54
+1957,Zand   zand - - Zand,3,3
+1958,Zand   Zand - Zand,10,10
+1959,Zand   zand - zand  ,8,8
+1960,Zand   zand - zand Zand,10,10
+1961,zand   zand  ,5,5
+1962,Zand   Zand  ,9,9
+1963,zand   zand  - ,231,231
+1964,Zand   zand  - ,24,24
+1965,zand   zand  - Zand,12,12
+1966,Zand   zand  - Zand,2,2
+1967,zand   zand   ,48,48
+1968,Zand   Zand   ,3,3
+1969,Zand   Zand   -  ,1,1
+1970,Zand   zand   zand  ,4,4
+1971,Zand   zand   zand Zand,2,2
+1972,zand   zand  zand,1,1
+1973,zand   zand  Zand,32,32
+1974,zand   Zand  Zand,3,3
+1975,Zand   zand  Zand,6,6
+1976,Zand   Zand  Zand,40,40
+1977,zand   zand  zand ,306,306
+1978,Zand   zand  zand ,1,1
+1979,zand   zand  zand Zand,152,152
+1980,Zand   zand  zand Zand,12,12
+1981,Zand   Zand Veen -  ,1,1
+1982,Zand   Zand Veen - Veen,10,10
+1983,zand   zand zand ,13,13
+1984,Zand   zand zand ,2,2
+1985,Zand   Zand Zand ,15,15
+1986,zand   zand zand - ,7,7
+1987,Zand   zand zand - ,6,6
+1988,Zand   zand zand -  ,8,8
+1989,zand   zand zand - Zand,9,9
+1990,Zand   zand zand - Zand,611,611
+1991,Zand   Zand Zand - Zand,30,30
+1992,Zand   zand zand   ,1,1
+1993,Zand   zand zand  Zand,12,12
+1994,zand   zand zand Zand,7,7
+1995,Zand   zand zand Zand,3,3
+1996,Zand   Zand Zand Zand,11,11
+1997,zand   zand zand zand ,9,9
+1998,Zand   zand zand zand ,38,38
+1999,Zand   zand zand zand  ,10,10
+2000,zand   zand zand zand Zand,33,33
+2001,Zand   zand zand zand Zand,123,123
+2002,zand  klei -  ,1,1
+2003,Zand  klei -  -,8,8
+2004,zand  klei   ,30,30
+2005,Zand  klei   ,16,16
+2006,Zand  klei     ,2,2
+2007,Zand  klei   Zand,12,12
+2008,Zand  klei klei  ,1,1
+2009,zand  klei PKB  -,1,1
+2010,Zand  klei zand  Zand,4,4
+2011,zand  veen -  ,2,2
+2012,zand  veen   ,4,4
+2013,Zand  Veen    Zand,2,2
+2014,zand  veen  zand ,1,1
+2015,zand  veen PKB  ,1,1
+2016,Zand  Veen Veen  Veen,3,3
+2017,Zand  Veen Veen  Zand,1,1
+2018,zand  zand - - -,9,9
+2019,Zand  Zand - - -,5,5
+2020,Zand  Zand - - Zand,16,16
+2021,zand  zand -  ,308,308
+2022,zand  zand -  -,7,7
+2023,Zand  zand -  ,7,7
+2024,Zand  zand -  -,19,19
+2025,Zand  Zand -  ,10,10
+2026,Zand  Zand -  -,1422,1422
+2027,Zand  zand -   ,23,23
+2028,Zand  Zand -   ,1,1
+2029,Zand  zand -  Veen,4,4
+2030,Zand  Zand -  Veen,8,8
+2031,Zand  zand -  Zand,9,9
+2032,Zand  Zand -  Zand,38,38
+2033,zand  zand - zand ,7,7
+2034,Zand  zand - zand Zand,9,9
+2035,zand  zand  - ,312,312
+2036,Zand  Zand  - ,2,2
+2037,Zand  Zand  - -,3,3
+2038,zand  zand   ,3423,3423
+2039,Zand  zand   ,106,106
+2040,Zand  Zand   ,660,660
+2041,Zand  Zand   -,10,10
+2042,zand  zand    ,7,7
+2043,Zand  Zand    ,26,26
+2044,zand  zand     ,271,271
+2045,Zand  zand     ,44,44
+2046,Zand  Zand     ,32,32
+2047,Zand  zand    Veen,1,1
+2048,Zand  Zand    Veen,4,4
+2049,Zand  zand    Zand,1,1
+2050,Zand  Zand    Zand,3,3
+2051,zand  zand   Klei,4,4
+2052,zand  zand   zand,3,3
+2053,zand  zand   Zand,78,78
+2054,Zand  zand   Zand,15,15
+2055,Zand  Zand   Zand,12,12
+2056,Zand  zand   zand Zand,2,2
+2057,zand  zand   zeeklei,10,10
+2058,zand  zand  klei ,5,5
+2059,zand  zand  veen ,9,9
+2060,zand  zand  zand ,2336,2336
+2061,Zand  zand  zand ,10,10
+2062,zand  zand  zand Zand,27,27
+2063,zand  zand klei  ,1,1
+2064,zand  zand klei  Klei,3,3
+2065,Zand  Zand Klei  Klei,41,41
+2066,zand  zand PKB  ,9,9
+2067,zand  zand PKB  -,4,4
+2068,Zand  zand PKB  ,2,2
+2069,Zand  Zand PKB  ,7,7
+2070,Zand  zand PKB  Veen,5,5
+2071,Zand  Zand PKB  Veen,5,5
+2072,zand  zand PKB zand ,1,1
+2073,Zand  zand Veen  ,4,4
+2074,Zand  Zand Veen  ,8,8
+2075,Zand  Zand Veen   ,5,5
+2076,zand  zand veen  veen,4,4
+2077,Zand  zand Veen  Veen,12,12
+2078,Zand  Zand Veen  Veen,264,264
+2079,zand  zand zand - ,4,4
+2080,zand  zand zand - Zand,1,1
+2081,Zand  zand zand - Zand,2,2
+2082,Zand  Zand Zand - Zand,6,6
+2083,zand  zand zand  ,12,12
+2084,Zand  zand zand  ,10,10
+2085,Zand  Zand Zand  ,159,159
+2086,Zand  Zand Zand  -,33,33
+2087,zand  zand zand   ,505,505
+2088,Zand  Zand Zand   ,19,19
+2089,Zand  Zand Zand  Veen,1,1
+2090,zand  zand zand  zand,3,3
+2091,zand  zand zand  Zand,46,46
+2092,zand  zand Zand  Zand,22,22
+2093,zand  Zand Zand  Zand,2,2
+2094,Zand  zand zand  Zand,1132,1132
+2095,Zand  zand Zand  Zand,2,2
+2096,Zand  Zand Zand  Zand,2994,2994
+2097,zand  zand zand zand ,9,9
+2098,Zand  zand zand zand ,53,53
+2099,zand  zand zand zand  ,6,6
+2100,zand  zand zand zand Zand,8,8
+2101,Zand  zand zand zand Zand,50,50
+2102,Zand  Zand Zand Zand Zand,1,1
+2103,zand Klei    Klei,4,4
+2104,zand klei   klei ,1,1
+2105,zand klei klei  klei ,3,3
+2106,zand klei zand  - ,19,19
+2107,zand klei zand   ,6,6
+2108,zand Klei zand   Klei,4,4
+2109,zand klei zand  klei ,155,155
+2110,zand klei zand  zand ,11,11
+2111,zand veen -  - zand,9,9
+2112,zand veen veen  - ,1,1
+2113,zand veen veen   ,1,1
+2114,zand veen veen  veen ,5,5
+2115,zand veen veen  zand ,1,1
+2116,zand veen zand  - ,2,2
+2117,zand veen zand   ,14,14
+2118,zand veen zand  veen ,19,19
+2119,zand veen zand  zand ,2,2
+2120,Zand Veen Zand Veen Veen Veen,52,52
+2121,Zand Veen Zand Zand Veen Zand,65,65
+2122,Zand Zand - - -  ,10,10
+2123,zand zand - -  -,1,1
+2124,Zand Zand - -  Zand,2,2
+2125,zand zand - - zand ,2,2
+2126,zand zand - - zand -,4,4
+2127,Zand Zand - - zand  ,4,4
+2128,Zand Zand - - zand Zand,15,15
+2129,zand zand -  - ,59,59
+2130,zand Zand -  - ,26,26
+2131,Zand zand -  - ,1,1
+2132,Zand Zand -  - ,1,1
+2133,zand zand -  - zand,252,252
+2134,zand zand -  - Zand,7,7
+2135,zand Zand -  - Zand,29,29
+2136,Zand zand -  - Zand,12,12
+2137,Zand Zand -  - Zand,57,57
+2138,zand zand -   ,68,68
+2139,zand Zand -   ,1,1
+2140,Zand zand -   ,5,5
+2141,Zand Zand -   - Zand,2,2
+2142,Zand Zand -    Zand,6,6
+2143,zand zand -   zand,4,4
+2144,zand zand -   Zand,29,29
+2145,zand Zand -   Zand,29,29
+2146,Zand zand -   Zand,21,21
+2147,Zand Zand -   Zand,52,52
+2148,zand zand -   zand  ,1,1
+2149,Zand Zand -   zand Zand,15,15
+2150,zand zand -  zand ,131,131
+2151,zand Zand -  zand ,58,58
+2152,Zand zand -  zand ,2,2
+2153,Zand Zand -  zand ,2,2
+2154,zand zand -  zand Zand,7,7
+2155,zand Zand -  zand Zand,4,4
+2156,Zand zand -  zand Zand,12,12
+2157,Zand Zand -  zand Zand,14,14
+2158,Zand Zand - zand - ,1,1
+2159,zand Zand - zand - Zand,4,4
+2160,Zand Zand - zand - Zand,24,24
+2161,Zand Zand - zand  Zand,4,4
+2162,zand zand - zand zand ,1,1
+2163,Zand zand - zand zand ,3,3
+2164,zand zand - zand zand Zand,2,2
+2165,zand Zand - zand zand Zand,5,5
+2166,Zand zand - zand zand Zand,8,8
+2167,Zand Zand - zand zand Zand,69,69
+2168,Zand Zand  - - -,1,1
+2169,Zand Zand  - -  ,7,7
+2170,Zand Zand  -  -,29,29
+2171,Zand Zand  -   ,68,68
+2172,Zand Zand  -  Zand,13,13
+2173,Zand Zand  - zand  ,14,14
+2174,zand zand   - ,19,19
+2175,zand Zand   - ,6,6
+2176,Zand Zand   - ,2,2
+2177,zand zand   - Zand,6,6
+2178,zand Zand   - Zand,25,25
+2179,Zand Zand   - Zand,25,25
+2180,zand zand    ,30,30
+2181,zand Zand    ,4,4
+2182,Zand zand    ,1,1
+2183,Zand Zand    ,1,1
+2184,Zand Zand    -  ,1,1
+2185,Zand Zand    - Zand,7,7
+2186,Zand Zand      ,12,12
+2187,Zand Zand     Zand,14,14
+2188,zand zand    Zand,6,6
+2189,zand Zand    Zand,56,56
+2190,Zand zand    Zand,7,7
+2191,Zand Zand    Zand,154,154
+2192,zand zand    zand  ,16,16
+2193,Zand Zand    zand  ,2,2
+2194,Zand Zand    zand Zand,3,3
+2195,zand zand   zand ,71,71
+2196,zand Zand   zand ,5,5
+2197,Zand zand   zand ,2,2
+2198,Zand Zand   zand ,1,1
+2199,Zand Zand   Zand ,3,3
+2200,zand zand   zand Zand,16,16
+2201,zand Zand   zand Zand,42,42
+2202,Zand zand   zand Zand,5,5
+2203,Zand Zand   zand Zand,11,11
+2204,zand zand  zand - Zand,2,2
+2205,zand Zand  zand - Zand,9,9
+2206,Zand Zand  zand - Zand,13,13
+2207,zand zand  zand  ,1,1
+2208,Zand Zand  zand  -,3,3
+2209,Zand Zand  zand   ,2,2
+2210,zand zand  zand  Zand,6,6
+2211,Zand Zand  zand  Zand,55,55
+2212,zand zand  zand zand ,4,4
+2213,zand Zand  zand zand ,1,1
+2214,Zand Zand  zand zand ,4,4
+2215,Zand Zand  Zand Zand ,3,3
+2216,zand zand  zand zand Zand,8,8
+2217,zand Zand  zand zand Zand,38,38
+2218,Zand zand  zand zand Zand,3,3
+2219,Zand Zand  zand zand Zand,77,77
+2220,zand zand klei   ,5,5
+2221,zand zand klei  klei ,1,1
+2222,zand zand klei  zand ,15,15
+2223,zand zand veen   ,2,2
+2224,zand zand veen  zand ,7,7
+2225,Zand Zand zand - - Zand,5,5
+2226,zand zand zand -  -,4,4
+2227,Zand Zand zand - zand  ,24,24
+2228,Zand Zand zand - zand Zand,97,97
+2229,zand zand zand  - ,676,676
+2230,zand Zand zand  - ,44,44
+2231,Zand zand zand  - ,2,2
+2232,Zand Zand zand  - ,1,1
+2233,zand zand zand  - zand,2,2
+2234,zand Zand zand  - Zand,76,76
+2235,Zand Zand zand  - Zand,14,14
+2236,zand zand zand   ,336,336
+2237,zand Zand zand   ,17,17
+2238,zand zand zand     ,4,4
+2239,Zand Zand zand    Zand,3,3
+2240,zand zand zand   zand,2,2
+2241,zand zand zand   Zand,12,12
+2242,zand Zand zand   Zand,130,130
+2243,Zand Zand zand   Zand,54,54
+2244,zand zand zand   zand  ,23,23
+2245,Zand Zand zand   zand  ,7,7
+2246,Zand Zand zand   zand Zand,10,10
+2247,zand zand zand  klei ,15,15
+2248,zand zand zand  veen ,5,5
+2249,zand zand zand  zand ,12527,12527
+2250,zand Zand zand  zand ,111,111
+2251,Zand zand zand  zand ,19,19
+2252,Zand Zand zand  zand ,11,11
+2253,zand zand zand  zand Zand,138,138
+2254,zand Zand zand  zand Zand,143,143
+2255,Zand zand zand  zand Zand,8,8
+2256,Zand Zand zand  zand Zand,50,50
+2257,zand zand zand PKB  ,1,1
+2258,zand zand zand PKB zand ,1,1
+2259,zand zand zand zand - ,3,3
+2260,Zand zand zand zand - ,2,2
+2261,Zand Zand zand zand - ,4,4
+2262,zand Zand zand zand - Zand,21,21
+2263,Zand zand zand zand - Zand,1,1
+2264,Zand Zand zand zand - Zand,91,91
+2265,zand zand zand zand  ,1,1
+2266,Zand zand zand zand  ,1,1
+2267,Zand Zand zand zand  ,1,1
+2268,Zand Zand Zand Zand  ,1,1
+2269,zand zand zand zand   ,2,2
+2270,zand zand zand zand  Zand,1,1
+2271,Zand zand zand zand  Zand,4,4
+2272,Zand Zand zand zand  Zand,25,25
+2273,zand zand zand zand zand ,12,12
+2274,zand Zand zand zand zand ,3,3
+2275,Zand zand zand zand zand ,14,14
+2276,Zand Zand zand zand zand ,38,38
+2277,Zand Zand zand zand zand -,4,4
+2278,zand zand zand zand zand  ,1,1
+2279,Zand Zand zand zand zand  ,3,3
+2280,zand zand zand zand zand Zand,38,38
+2281,zand Zand zand zand zand Zand,88,88
+2282,Zand zand zand zand zand Zand,70,70
+2283,Zand zand Zand Zand zand Zand,2,2
+2284,Zand Zand zand zand zand Zand,8745,8745
+2285,Zand Zand Zand Zand Zand Zand,1,1
+2286,zand zeeklei -  - veen,9,9
+2287,zand zeeklei -  - zand,12,12
+2288,zand zeeklei -  - zeeklei,3,3
+2289,zeeklei - -  - zand,2,2
+2290,zeeklei - -  - zeeklei,6,6
+2291,zeeklei - -   zeeklei,6,6
+2292,zeeklei  - -  -,3,3
+2293,zeeklei  - -   ,14,14
+2294,zeeklei  - -  zeeklei,70,70
+2295,zeeklei  -  - zeeklei,1,1
+2296,zeeklei  -   ,32,32
+2297,zeeklei  -   -,3,3
+2298,zeeklei  -    ,22,22
+2299,zeeklei  -   veen,24,24
+2300,zeeklei  -   zand,8,8
+2301,zeeklei  -   zeeklei,2622,2622
+2302,zeeklei  - veen   ,1,1
+2303,zeeklei  - veen  veen,2,2
+2304,zeeklei  - veen  zeeklei,9,9
+2305,zeeklei   -  zeeklei,5,5
+2306,zeeklei     ,1,1
+2307,zeeklei      ,1,1
+2308,zeeklei     veen,1,1
+2309,zeeklei     zeeklei,7,7
+2310,zeeklei  klei -  -,7,7
+2311,zeeklei  klei   -,6,6
+2312,zeeklei  klei   zeeklei,2,2
+2313,zeeklei  veen -  zeeklei,17,17
+2314,zeeklei  veen   zeeklei,9,9
+2315,zeeklei  veen veen  veen,1,1
+2316,zeeklei  zand   ,1,1
+2317,zeeklei  zand   zeeklei,4,4
+2318,zeeklei veen -  - zeeklei,27,27
+2319,zeeklei zeeklei -  - zeeklei,44,44

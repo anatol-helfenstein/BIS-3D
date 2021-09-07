@@ -1,0 +1,59 @@
+﻿value,description,value_rcl,description_rcl
+1,"poplier, els en wilg (FG)",1,"poplier, els en wilg (FG)"
+22,"poplier, els en wilg (FG/G)",1,"poplier, els en wilg (FG)"
+37,"poplier, els en wilg en lokaal berk (FG/H)",1,"poplier, els en wilg (FG)"
+2,"eik, beuk en populier (DF)",2,"eik, beuk en populier (DF)"
+19,"eik, beuk en populier en lokaal populier, els en wil (DF/FG)",2,"eik, beuk en populier (DF)"
+21,"eik, beuk en populier en lokaal els en wilg (DF/G)",2,"eik, beuk en populier (DF)"
+41,"eik, beuk en populier en lokaal es, populier en els (DF/EF)",2,"eik, beuk en populier (DF)"
+47,"eik, beuk en populier en lokaal els en berk (DF/H)",2,"eik, beuk en populier (DF)"
+48,DF/I,2,"eik, beuk en populier (DF)"
+49,DF/F,2,"eik, beuk en populier (DF)"
+3,els en wilg (G),3,els en wilg (G)
+23,els en wilg en lokaal berk (G/H),3,els en wilg (G)
+54,els en wilg en lokaal berk (G/I),3,els en wilg (G)
+57,G/EF,3,els en wilg (G)
+5,eik en beuk (D),5,eik en beuk (D)
+26,eik en beuk en lokaal els en wilg (D/G),5,eik en beuk (D)
+27,eik en beuk en lokaal els en berk (D/H),5,eik en beuk (D)
+33,"eik en beuk en lokaal populier, els en wilg (D/FG)",5,eik en beuk (D)
+40,"eik en beuk en lokaal es, populier en els (D/EF)",5,eik en beuk (D)
+53,D/DF,5,eik en beuk (D)
+6,"es, eik, populier en els (EF)",6,"es, eik, populier en els (EF)"
+30,"es, eik, populier en els en lokaal wilg (EF/G)",6,"es, eik, populier en els (EF)"
+34,"es, eik, populier en els en lokaal wilg (EF/FG)",6,"es, eik, populier en els (EF)"
+11,els en berk (H),11,els en berk (H)
+13,berk (I),13,berk (I)
+12,grove den en berk (A/I),14,grove den en berk (A)
+14,grove den en berk (A),14,grove den en berk (A)
+16,"grove den, berk en lokaal eik (A/B)",14,grove den en berk (A)
+17,"grove den, berk en lokaaleik, douglas en beuk (A/BC)",14,grove den en berk (A)
+36,"grove den, berk en lokaal els (A/H)",14,grove den en berk (A)
+9,"grove den en eik en lokaal wilg, els en populier (B/FG)",15,grove den en eik (B)
+10,grove den en eik en lokaal berk (B/I),15,grove den en eik (B)
+15,grove den en eik (B),15,grove den en eik (B)
+20,grove den en eik en lokaal els en berk (B/H),15,grove den en eik (B)
+24,grove den en eik en lokaal beuk en populier (B/DF),15,grove den en eik (B)
+29,grove den en eik en lokaal beuk (B/D),15,grove den en eik (B)
+31,grove den en eik en lokaal wilg en els (B/G),15,grove den en eik (B)
+39,"grove den en eik en lokaal es, els en populier (B/EF)",15,grove den en eik (B)
+44,B/BC,15,grove den en eik (B)
+56,B/CD,15,grove den en eik (B)
+25,"douglas, beuk en eik (CD)",25,"douglas, beuk en eik (CD)"
+35,"douglas, beuk, eik en populier (CDF)",25,"douglas, beuk en eik (CD)"
+58,CDF/FG,25,"douglas, beuk en eik (CD)"
+28,"grove den, douglas, eik en beuk (BC)",28,"grove den, douglas, eik en beuk (BC)"
+32,"grove den, douglas, eik en beuk en lokaal els en berk (BC/H)",28,"grove den, douglas, eik en beuk (BC)"
+42,"grove den, douglas, eik en beuk en lokaal populier (BC/DF)",28,"grove den, douglas, eik en beuk (BC)"
+43,"grove den, douglas, eik en beuk (BC/CD)",28,"grove den, douglas, eik en beuk (BC)"
+45,"grove den, douglas, eik en beuk (BC/D)",28,"grove den, douglas, eik en beuk (BC)"
+50,BCDF,28,"grove den, douglas, eik en beuk (BC)"
+51,BC/CDF,28,"grove den, douglas, eik en beuk (BC)"
+52,BC/I,28,"grove den, douglas, eik en beuk (BC)"
+0,other,29,Other
+4,Niet beoordeeld,29,Other
+18,Niet beoordeeld,29,Other
+38,H/I,29,Other
+46, ,29,Other
+7,bebouwing,29,Other
+8,water,8,water

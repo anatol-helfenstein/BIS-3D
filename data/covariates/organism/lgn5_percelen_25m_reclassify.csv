@@ -1,0 +1,9 @@
+﻿value,description,value_rcl,description_rcl
+0,no data,16,other/unknown (overig)
+1,grass (gras),2,grassland (grasland)
+2,maize (mais),21,maize (mais)
+3,potatoes (aardappelen),22,potatoes (aardappelen)
+4,beetroot (bieten),23,beetroot (bieten)
+5,cereals (granen),20,cereals (granen)
+6,other crops (overige gewassen),25,other crops (overige landbouwgewassen)
+10,flower bulbs (bloembollen),24,flower bulbs (bloembollen)

@@ -1,0 +1,182 @@
+---
+title: "BPK variogram"
+author: "Anatol Helfenstein"
+date: "24/11/2020"
+output:
+  html_document:
+    toc: yes
+    toc_float: yes
+  '': default
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+options(width = 100) # sets width of R code output (not images)
+```
+
+```{r load required pkgs and data, include = FALSE}
+
+# load packages
+pkgs <- c("tidyverse", "raster", "rgdal", "sf", "mapview", "rasterVis", "viridis",
+          "ggspatial", "gstat")
+lapply(pkgs, library, character.only = TRUE)
+
+# read in soil data
+tbl_BIS <- read_rds("out/data/soil/01_tbl_BIS.Rds")
+
+# read in NL and Gelderland border shapefile for mapping
+sf_NL_borders <- st_read("data/other/NL_borders.shp")
+
+```
+
+
+## Background: soil data in the Netherlands
+
+The "bodemkunig informatie systeem" (BIS), the soil database of the Netherlands, contains 3 different types of soil data: 
+
+* BPK = "boring" / boreholes to a max of 5 m depth (most go to 1.2 to 2 m depth); the locations are specifically selected (purposive sampling); mostly field observations and little to no laboratory analysis (?)
+* PFB = "profielbeschrijving" / soil profile descriptions from soil pit the locations are specifically selected (purposive sampling); Almost always, samples were taken for lab analysis
+* LSK = "Landelijke Steekproef Kaarteenheden"; dataset with profile descriptions and samples including lab analysis; stratified random sampling design based on soil type and grondwatertrappe (groundwater), see Finke et al. 2001 and Visschers et al. 2007.
+
+In addition there is the "carbon content Netherlands" (CC-NL) dataset, for which LSK sampling sites were revisited 20 years later (2018). Samples were taken for the topsoil (0-30) and for the subsoil (30-100) regardless of location or soil type. Contains a lot of wet chemistry, conventional laboratory analysis as well as spectroscopy measurements (see van Tol-Leenders et al. 2019). The CC-NL has not yet been added to the BIS database (version 7.4).
+
+```{r BIS soil data, echo = TRUE}
+# number of BPK samples and locations
+tbl_BIS %>% 
+  filter(BIS_tbl %in% "BPK") %>% 
+  group_by(site_id)
+
+# number of PFB samples and locations
+tbl_BIS %>% 
+  filter(BIS_tbl %in% "PFB") %>% 
+  group_by(site_id)
+
+# number of LSK samples and locations
+tbl_BIS %>% 
+  filter(BIS_tbl %in% "LSK") %>% 
+  group_by(site_id)
+
+# number of CCNL samples and locations
+tbl_BIS %>% 
+  filter(BIS_tbl %in% "CCNL") %>% 
+  group_by(site_id)
+```
+
+
+```{r BIS map datasets, echo = FALSE}
+sf_BIS <- tbl_BIS %>% 
+  group_by(BIS_tbl, site_id) %>% 
+  slice(1L) %>% 
+  st_as_sf(., coords = c("X", "Y")) %>% # convert to spatial (sf)
+  st_set_crs(., "EPSG:28992") # set coordinate reference system of NL
+
+# gather number of locations for displaying on map
+n <- as.character(as.expression(paste0("italic(n) == ", nrow(sf_BIS))))
+
+# map Dutch soil datasets
+ggplot() +
+  theme_bw() +
+  geom_sf(data = sf_NL_borders) +
+  geom_sf(data = sf_BIS, aes(color = BIS_tbl)) +
+  scale_colour_viridis_d() +
+  geom_text(aes(x = Inf, y = -Inf, label = n), size = 3,
+            hjust = 13, vjust = -55, parse = TRUE) +
+  theme(legend.position = c(0.1, 0.8),
+        panel.border = element_blank(),
+        panel.background = element_blank(),
+        axis.title.x = element_blank(),
+        axis.text.x = element_blank(),
+        axis.ticks.x = element_blank(),
+        axis.title.y = element_blank(),
+        axis.text.y = element_blank(),
+        axis.ticks.y = element_blank()) +
+  labs(col = "BIS datasets") +
+  annotation_scale(location = "bl", width_hint = 0.5) +
+  annotation_north_arrow(location = "bl", which_north = "true", 
+                         pad_x = unit(0.75, "in"), pad_y = unit(0.5, "in"),
+                         style = north_arrow_fancy_orienteering)
+
+# interactive map using mapview
+sf_BIS %>% 
+  mapview(.,
+          zcol = "BIS_tbl",
+          layer.name = "BIS datasets",
+          legend = TRUE,
+          viewer.suppress = FALSE)
+```
+
+
+## BPK dataset
+
+The vast majority of data since 1958 are boreholes ("boring"), that were sampled for specific projects (purposive sampling). These sampling locations are often very dense, close by each other, but on the other hand do not cover the entire country well. Soil organic carbon (SOC) was not measured in the lab, but soil organic matter (SOM) was estimated in the field (or also measured in the lab???)
+
+```{r BPK maps, echo = FALSE}
+# BPK topsoil SOM
+tbl_BPK_SOM_top <- tbl_BIS %>% 
+  filter(BIS_tbl %in% "BPK") %>% 
+  dplyr::select(BIS_tbl:soil_target) %>% 
+  unnest_legacy(soil_target) %>% 
+  filter(!SOM %in% NA) %>% 
+  # do not want to include weighed averaging of horizons below 50 cm
+  # as a rough approximation to try to get only top soil SOM averages
+  filter(d_upper < 30 & d_lower <= 50) %>%
+  arrange(site_id, d_upper)
+  
+# convert to spatial
+sf_BPK_SOM_top <- tbl_BPK_SOM_top %>%
+  st_as_sf(., coords = c("X", "Y")) %>% # convert to spatial (sf)
+  st_set_crs(., "EPSG:28992") # set coordinate reference system of NL
+
+# gather number of locations for displaying on map
+n <- as.character(as.expression(paste0("italic(n) == ", nrow(sf_BPK_SOM_top))))
+
+# map Dutch soil datasets
+ggplot() +
+  theme_bw() +
+  geom_sf(data = sf_NL_borders) +
+  geom_sf(data = sf_BPK_SOM_top, aes(color = SOM)) +
+  scale_fill_viridis_c(aesthetics = "color", option = "inferno") + # or plasma
+  geom_text(aes(x = Inf, y = -Inf, label = n), size = 10,
+            hjust = 10, vjust = -30, parse = TRUE) +
+  theme(legend.position = c(0.1, 0.8),
+        panel.border = element_blank(),
+        panel.background = element_blank(),
+        axis.title.x = element_blank(),
+        axis.text.x = element_blank(),
+        axis.ticks.x = element_blank(),
+        axis.title.y = element_blank(),
+        axis.text.y = element_blank(),
+        axis.ticks.y = element_blank()) +
+  labs(col = "SOM topsoil (0-50 cm)") +
+  annotation_scale(location = "bl", width_hint = 0.5) +
+  annotation_north_arrow(location = "bl", which_north = "true", 
+                         pad_x = unit(0.75, "in"), pad_y = unit(0.5, "in"),
+                         style = north_arrow_fancy_orienteering)
+
+# interactive map using mapview
+sf_BPK_SOM_top %>% 
+  mapview(.,
+          zcol = "SOM",
+          layer.name = "SOM topsoil (0-50 cm)",
+          col.regions = viridis(n = 100, option = "inferno"),
+          #col.regions = inferno(n = length(unique(sf_BPK_SOM_top$SOM))),
+          legend = TRUE,
+          viewer.suppress = FALSE)
+```
+
+
+## Variogram of BPK topsoil SOM
+
+
+
+```{r BPK variogram, echo = TRUE}
+# calculate variogram of BPK topsoil SOM
+#(vgm_bpk_som <- variogram(SOM ~ 1, sf_BPK_SOM_top))
+
+# fit variogram to model
+#(vgm_fit_bpk_som <- fit.variogram(vgm_bpk_som, model = vgm(1, "Sph", 900, 1)))
+
+# plot variogram model
+# plot(vgm_bpk_som, vgm_fit_bpk_som)
+```
+

@@ -1,0 +1,11 @@
+﻿value,description,value_rcl,description_rcl
+1,grasland,1,grassland
+2,akker en kale grond,2,arable land
+3,heide en hoogveen,3,heathland and bogs
+4,loofbos,4,broadleafed forest
+5,naaldbos,5,coniferous forest
+6,bebouwing en wegen,6,urban
+7,water,7,water
+8,rietmoeras,8,"marshes, bogs and peat"
+9,stuifzanden en zandplaten,9,sand and dunes
+10,overig,10,other

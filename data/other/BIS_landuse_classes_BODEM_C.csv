@@ -1,0 +1,31 @@
+BODEM_C,OMSCHR_K
+WH,Heide
+AO,Bouwland ongedifferentieerd
+AB,Bouwland bieten
+AA,Bouwland aardappelen
+AG,Bouwland granen
+AM,Bouwland mais
+AX,Bouwland overige gewassen
+AK,Bouwland kaal/braak
+GO,Grasland ongedifferentieerd
+GR,Grasland (blijvend)
+GX,Grasland overig (bv. pas ingezaaid)
+FO,Boomgaard ongedifferentieerd
+FG,Boomgaard groen (grasland)
+FZ,Boomgaard zwart (bouwland)
+TO,Tuinland ongedifferentieerd
+TG,Tuinland onder glas
+TV,Tuinland volle grond
+BO,Bos ongedifferentieerd
+BN,Naaldbos
+BL,Loofbos
+BK,Boomkwekerij
+BX,Overig bos
+WO,Natuurterreinen (woest ongediff.)
+WN,Natte vegetatie (o.a. slikken)
+WD,Droge vegetatie (o.a. stuifzand)
+WX,Overige natuurterreinen
+RO,Overige terreinen (rest ongediff.)
+RS,Sportterrein
+RP,Plantsoenen
+RX,Overig (o.a. bouwputten etc.)

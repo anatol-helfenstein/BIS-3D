@@ -1,0 +1,12 @@
+﻿value,description,value_rcl,description_rcl
+0,other,9,other
+1,urban,1,urban
+2,croplands,2,croplands
+3,woodland,3,woodland
+4,grassland,4,grassland
+5,heathland,9,other
+6,sparsely vegetated land,9,other
+7,wetland,7,wetland
+8,"lagoon, coastal wetlands",8,water
+9,rivers and lakes,8,water
+10,marine (other),8,water

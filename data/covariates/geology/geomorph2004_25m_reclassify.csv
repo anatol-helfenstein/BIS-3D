@@ -1,0 +1,431 @@
+﻿value,description,value_rcl,description_rcl
+16,"1M38  Aanwasvlakte, relatief laaggelegen",11,1M
+24,1M35  Vlakte van getij-afzettingen,11,1M
+55,1M46  Ontgonnen veenvlakte (+/- klei/zand),11,1M
+63,1M30  Moerassige vlakte,11,1M
+64,1M33  Vlakte van zee-of meerbodemafzettingen,11,1M
+109,"1M41  Strandvlakte, strandplaat of slik",11,1M
+111,1M24  Beekoverstromingsvlakte,11,1M
+174,1M23  Rivierkomvlakte,11,1M
+199,1M48  Vlakte ontstaan door afgraving of egalisatie,11,1M
+202,1M47  Ontgonnen veenvlakte met petgaten,11,1M
+224,1M49  Afgegraven/geegaliseerde duinen/strandwallen,11,1M
+275,"1M39  Aanwasvlakte, relatief hoogggelegen",11,1M
+281,1M18b Terrasvlakte (geen overstromingsmateriaal),11,1M
+299,1M18a Terrasvlakte (met overstromingsmateriaal),11,1M
+50,"1R1   Dalvormige laagte, met veen",12,1R
+97,1R4   Beekdalbodem met veen,12,1R
+70,2K34  Getij-oeverwal,21,2K
+253,"2K20  Laag rivierduin, ten dele begraven (donk)",21,2K
+239,2L19 Welvingen in meerbodemafzettingen,22,2L1
+1,"2M39  Aanwasvlakte, rel hooggel.",23,2M
+6,"2M41  Strandvlakte, zandplaat of slik (+/- duinen)",23,2M
+12,2M49  Afgegraven/geegaliseerde duinen/strandwallen,23,2M
+13,2M40  Ingesloten strandvlakte (+/- vervlakte duinen),23,2M
+15,2M35  Vlakte van getij-afzettingen,23,2M
+29,2M48  Vlakte ontstaan door afgraving of egalisatie,23,2M
+31,"2M38  Aanwasvlakte, rel. laaggel.",23,2M
+36,2M32 Zeeboezemvlakte,23,2M
+40,2M3   Grondmorenevlakte,23,2M
+45,2M46  Ontgonnen veenvlakte (+/- klei/zand),23,2M
+46,2M34  Vlakte van getij-riviermondafzettingen,23,2M
+48,2M13  Dekzandvlakte,23,2M
+49,2M14  Vlakte van ten dele verspoelde dekzanden (vervlakt door veen en/of overstromingsmateriaal),23,2M
+51,2M47  Ontgonnen veenvlakte met petgaten,23,2M
+66,2M30  Moerassige vlakte,23,2M
+69,"2M44  Veenkoloniale ontginningsvlakte, rel. laaggelegen",23,2M
+79,2M22  Rivierkom en overwalachtige vlakte,23,2M
+80,2M10  Vlakte van ten dele verspoelde dekzanden/loss (laag),23,2M
+84,2M33  Vlakte van zee-of meerbodemafzettingen,23,2M
+89,"2M4   Vlakte van grondmorene (+/- welvingen, dekzand, rel. laag)",23,2M
+90,"2M45  Veenkoloniale ontginningsvlakte, rel. hooggelegen",23,2M
+91,2M9   Vlakte van ten dele verspoelde dekzanden,23,2M
+115,"2M5   Vlakte van grondmorene (+/- welvingen, dekzand, rel. hoog)",23,2M
+120,2M29  Vlakte van doorbraakafzettingen,23,2M
+130,2M24  Beekoverstromingsvlakte,23,2M
+132,2M43  Abrasievlakte,23,2M
+137,2M36  Vlakte van getijafzettingen (met veenresten),23,2M
+150,2M35  Vlakte van getij-afzettingen,23,2M
+151,2M6   Vlakte van smeltwaterafzettingen (sandr),23,2M
+153,2M8   Vlakte van sneeuwsmeltwaterafzettingen (+dekzand),23,2M
+159,2M15  Gordeldekzandvlakte,23,2M
+172,"2M26  Vlakte in uiterwaard, rel. laaggelegen",23,2M
+182,2M50  Veenrestvlakte,23,2M
+196,2M7   Vlakte van sneeuwsmeltwaterafzettingen,23,2M
+210,2M31  Binnendelta-vlakte (+/- klei/zand),23,2M
+211,2M25  Rivierkomvlakte,23,2M
+217,2M1   Vereffeningsrestvlakte (+/- dekzand),23,2M
+218,2M52  Vlakte van meeropvulling bedekt met klei,23,2M
+221,2M16 Stuifzandvlakte,23,2M
+249,2M2   Grondmorenevlakte,23,2M
+252,2M27  Vlakte in uiterwaard. Rel. hooggelegen,23,2M
+277,2M23  Rivierkomvlakte,23,2M
+288,2M17  Terrasvlakte,23,2M
+291,2M18b Terrasvlakte,23,2M
+295,2M18a Terrasvlakte,23,2M
+300,2M35  Vlakte van getij-afzettingen,23,2M
+323,2M19  Terrasafzettingsvlakte,23,2M
+324,2M20  Terrasafzettingsvlakte,23,2M
+340,2M51  Vlakte van plaatselijke gemoerde getijafzettingen,23,2M
+19,2R13/14 Getijkreekbedding/zee-erosiegeul,24,2R
+20,2R13  Getij-kreekbedding,24,2R
+22,2R11  Geul van meanderend afwateringsstelsel,24,2R
+34,2R14  Zee-erosiegeul,24,2R
+62,"2R2   Dalvormige laagte, zonder veen",24,2R
+74,"2R1   Dalvormige laagte, met veen",24,2R
+78,2R4   Beekdalbodem met veen,24,2R
+85,"2R5   Beekdalbodem, zonder veen, rel. laaggelegen",24,2R
+87,2R3   Droog dal (+/-dekzand/loss),24,2R
+170,2R12  Overloopgeul,24,2R
+241,2R10  Geul van vlechtend afwateringsstelsel,24,2R
+250,"2R6   Beekdakbodem, zonder veen, rel. hooggelegen",24,2R
+261,2R7   Beekdalbodem met meanderruggen en geulen,24,2R
+313,"2R8   Rivierdalbodem, rel. laaggel.",24,2R
+348,"2R9   Rivierdalbodem, rel. hooggel.",24,2R
+419,2R15  Beekdal in terras,24,2R
+129,2S3   Droog dal (+/- dekzand/loss),25,2S
+338,"2S6   Rivierdalbodem, rel. laaggel.",25,2S
+365,"2S4   Beekdalbodem, rel, laaggel.",25,2S
+425,"2S7   Rivierdalbodem, rel. hooggel.",25,2S
+358,"2T5  Rivierdalbodem, relatief hooggelegen",26,2T
+404,"3E11a Dalvlakteterras, bedekt met dekzand, zwak golvend",31,3E
+405,3E9a  Dalvlakteterras,31,3E
+103,3F9   Plateau-achtige veenrest,32,3F
+251,3F11  Plateau-achtig kunstmatig eiland,32,3F
+302,3F4   Plateau-achtige terrasrest door landijs beinvloedt (+/- dekzand),32,3F
+320,"3F7   Plateau-achtige terrasrest, bedekt met dekzand",32,3F
+326,3F6   Plateau-achtige terrasrest,32,3F
+423,3F14  Storthoop,32,3F
+121,3G3   Daluitspoelingswaaier,33,3G
+145,"3G7   Doorbraakwaaier, fluviatiel",33,3G
+152,3G5   Daluitspoelingswaaier (+/- dekzand),33,3G
+44,3H13  Zeestrandglooiing,34,3H
+68,3H3   Glooiing van hellingafspoelingen (+/-dekzand),34,3H
+102,3H11  Glooiing van beekdalzijde,34,3H
+108,3H14  Veenrestglooing,34,3H
+242,3H12  Rivierstrandglooiing,34,3H
+350,3H1   Horstglooiing (+/-dekzand),34,3H
+407,3H15  Lossglooiing,34,3H
+422,3H16  Kustduinglooiing,34,3H
+9,3K31  Kwelderwal,35,3K
+23,3K28  Strandwal,35,3K
+39,3K14  Dekzandrug (+/- oud bouwlanddek),35,3K
+43,3K34  Getij-oeverwal,35,3K
+60,3K33  Getij-inversierug,35,3K
+61,3K27  Getij-riviermondrug,35,3K
+83,3K7   Grondmorenerug (met klei of veen),35,3K
+96,3K6   Grondmorenerug (met dekzand),35,3K
+98,3K18  Dekzandkopje,35,3K
+107,"3K15  Dekzandwelving, met ten dele afgegraven veen",35,3K
+124,3K19  Laag landduin,35,3K
+126,3K9   Lage stuwwal (gestuwde grondmorene),35,3K
+136,3K36  Lage veenrest-heuvel,35,3K
+141,3K11  Lage smeltwaterheuvel,35,3K
+161,3K37  Meerwal,35,3K
+162,"3K2   Rug mogelijk door tect. beweging ontstaan + invloed landijs, met dekzand",35,3K
+165,3K1   Rug mogelijk door tect. beweging ontstaan +invloed landijs,35,3K
+166,"3K3   Rug mogelijk door tect. beweging ontstaan + invloed landijs, met dekzand en/of veen",35,3K
+177,3K17  Geulranddekzandrug (+/- oud bouwlanddek),35,3K
+178,3K26  Rivier-inversierug,35,3K
+179,3K16  Gordeldekzandrug (+/-oud bouwlanddek),35,3K
+187,3K25  Rivieroeverwal,35,3K
+190,3K35  Lage veenrest-dijk,35,3K
+205,"3K20  Laag rivierduin, ten dele begraven (donk)",35,3K
+208,"3K5   Lage vereffeningsrest-heuvel (+/- terrasafz./grondmorene, + dekzand)",35,3K
+216,3K39  Strandwal,35,3K
+228,3K38  Kustwal,35,3K
+243,3K24  Oeverwal in uiterwaard,35,3K
+246,3K8   Lage stuwwal,35,3K
+258,3K10  Lage smelwaterrug (+/- dekzand),35,3K
+282,"3K23  Terrasrestrug, met dekzand",35,3K
+286,3K22  Terrasrestrug,35,3K
+312,3K21  Lage stuifdijk,35,3K
+334,3K13  Dekzandrug,35,3K
+2,3L7   Lage kustduinen + bijbehorende vlakten/laagten,36,3L
+3,3L11  Welvingen in zandplaten (met duinvorming),36,3L
+27,3L24  Welvingen in getijaanwassen,36,3L
+47,3L22  Lage storthopen en/of grind/zand/klei gaten,36,3L
+54,"3L10  Dekzandwelvingen, bedekt met ten dele afgegraven veen",36,3L
+57,3L5   Dekzandruggen (+/- oud bouwlanddek),36,3L
+58,"3L2  Grondmorene (+/- welvingen, hooggelegen)",36,3L
+75,3L8   Lage landduinen + bijbehorende vlakten/laagten,36,3L
+86,3L6   Gordeldekzandwelvingen (+/- oud bouwlanddek),36,3L
+94,3L9   Lage stuifduinen + bijbehorende vlakten/laagten,36,3L
+114,3L20  Welvingen in getijafzettingen,36,3L
+127,"3L2  Grondmorene (+/- welvingen, hooggelegen)",36,3L
+146,3L21  Veenrest-ruggen,36,3L
+163,3L30  Welvingen in getij-afzettingen,36,3L
+171,"3L17  Binnendelta, met klei/zand, zwak golvend",36,3L
+181,3L3 Welvingen in sneeuwsmeltwaterafzettingen,36,3L
+222,3L15  Meanderruggen en geulen in uiterwaard,36,3L
+223,"3L2  Grondmorene (+/- welvingen, hooggelegen)",36,3L
+227,3L14  Meanderruggen en geulen,36,3L
+256,"3L18  Grondmorene of stuwwal, met dekzand en veenresten, zwak golvend",36,3L
+269,3L19 Welvingen in meerbodemafzettingen,36,3L
+273,3L16  Welvingen in uiterwaard,36,3L
+285,"3L4   Welvingen in sneeuwsmeltwaterafzettingen, met dekzand",36,3L
+287,3L23  Vereffeningsrest-welvingen,36,3L
+296,3L16  Welvingen in uiterwaard,36,3L
+304,3L16  Welvingen in uiterwaard,36,3L
+308,3L28  Terraswelvingen,36,3L
+314,"3L27  Welvingen in plaatselijk gemoerde getij-afzettingen, geegaliseerd",36,3L
+403,3L26  Welvingen in plaatselijk gemoerde getijafzettingen,36,3L
+429,3L25  Welvingen in kustoverslagafzettingen,36,3L
+327,3L12  Terrasafzettingswelvingen,36,3L
+28,"3N5   Laagte zonder randwal, niet moerassig",37,3N
+35,3N8   Laagte ontstaan door afgraving,37,3N
+41,"3N4   Laagte zonder randwal, moerassig",37,3N
+42,3N9   Zee-erosielaagte,37,3N
+73,3N20  Rivier-erosielaagte (kolk/wiel),37,3N
+76,3N11  Getij-afzettingslaagte,37,3N
+100,3N3   Laagte met randwal (incl. pingo restant),37,3N
+104,3N10  Laagte door veenafgraving (moernering),37,3N
+393,3N12  Laagte ontstaan door mijnverzakking,37,3N
+119,"3R5   Beekdalbodem, zonder veen, laaggelegen",38,3R
+147,3R3   Droog dal (+/- dekzand/loss),38,3R
+156,3R11  Geul van meanderend afwateringsstelsel,38,3R
+173,3R7   Beekdalbodem met meanderruggen en geulen,38,3R
+266,"3R6   Beekdalbodem, zonder veen, hooggelegen",38,3R
+270,3R13  Getij-kreekbedding,38,3R
+148,3S3   Droog dal (+/- dekzand/loss),39,3S
+238,"3S1   Droog dal, trechtervormig",39,3S
+307,"3S4   Beekdalbodem, rel. laaggelegen",39,3S
+322,"3S5   Beekdalbodem, rel. hooggelegen",39,3S
+417,"3S6  Rivierdalbodem, relatief laaggelegen",39,3S
+418,"3S7  Rivierdalbodem, relatief hooggelegen",39,3S
+336,4E9a  Dalvlakteterras,41,4E
+427,"4E11a Dalvlakteterras bedekt met dekzand, zwak golvend",41,4E
+30,"4F12  Storthoop, opgehoogd of opgespoten terrein",42,4F
+67,"4F8   Plateau-achtige veenrest, bedekt met klei",42,4F
+167,4F14  Plateau-achtige getij-afzetting,42,4F
+230,4F5   Dekzandplateau (+/- oud bouwlanddek),42,4F
+248,4F9   Plateau-achtige veenrest,42,4F
+309,4F4   Plateau-achtige terrasrest met invloed landijs (+/- dekz.),42,4F
+318,4F2   Plateau-achtige horst met riv. afz en dekz. aan opp.,42,4F
+319,4F1   Plateau-achtige horst met riv.afz. aan opp.,42,4F
+329,4F3   Plateau-achtige horst met dekz. aan opp.,42,4F
+413,"4F7   Plateau-achtige terrasrest, bedekt met dekzand",42,4F
+95,4G3   Daluitspoelingswaaier,43,4G
+271,"4G5   Daluitspoelingswaaier, met dekzand/loss",43,4G
+53,4H13  Zeestrandglooiing,44,4H
+65,4H3   Glooiing van hellingafspoelingen (+/- dekzand),44,4H
+105,4H11  Beekdalglooiing,44,4H
+112,4H9   Gordeldekzandglooiing (+/- oud bouwlanddek),44,4H
+133,4H5   Grondmoreneglooiing of smeltwaterglooiing,44,4H
+175,"4H2   Vereffenigsrestglooiing met resten van terrasafz. en grondmorene, bedekt met dekzand",44,4H
+184,4H4   Glooiing van hellingafspoelingen (+/- dekzand),44,4H
+198,4H8 Stuwwalglooiing,44,4H
+247,"4H6   Grondmoreneglooing, bedekt met dekz. (+/- opgevulde smeltw. dalen)",44,4H
+254,4H7 Stuwwalglooiing,44,4H
+272,4H16  Kustduinglooing,44,4H
+278,4H14  Veenrestglooiing,44,4H
+330,4H10a Glooiing in terrasafzettingsvlakte,44,4H
+335,4H10a Glooiing in terrasafzettingsvlakte,44,4H
+349,4H1   Horstglooiing,44,4H
+367,4H15  Lossglooiing,44,4H
+17,4K31  Kwelderwal,45,4K
+21,4K28  Strandwal,45,4K
+32,4K21  Lage stuifdijk,45,4K
+56,4K14  Dekzandrug (+/- oud bouwlanddek),45,4K
+72,4K6   Grondmorenerug met dekzand (+/- oud bouwlanddek),45,4K
+92,4K1   Lage stuwwal (tectonische invloed),45,4K
+123,4K19  Laag landduin,45,4K
+128,4K2   Lage stuwwal (tectonische invloed?),45,4K
+134,"4K9   Lage stuwwal (gestuwde grondmorene), (+/- dekz.)",45,4K
+154,4K11  Lage smeltwaterheuvel,45,4K
+155,"4K3   Rug mogelijk door tect. beweging ontstaan + invloed landijs, met ten dele afgegr. veen",45,4K
+169,4K36  Lage veenrest-heuvel,45,4K
+176,4K26  Rivier-inversierug,45,4K
+183,4K18  Dekzandkopje (+/- oud bouwlanddek),45,4K
+188,4K10  Lage smeltwaterrug (+/- dekz.),45,4K
+191,4K39  Strandwal,45,4K
+192,4K16  Gordeldekzandrug (+/- oud bouwlanddek),45,4K
+204,4K8   Lage stuwwal (+/-dekzand),45,4K
+206,4K35  Lage veenrest-dijk,45,4K
+212,"4K20  Laag rivierduin, ten dele begraven (donk)",45,4K
+226,4K12  Lage smeltwaterheuvel (+/- dekz.),45,4K
+232,4K25  Rivieroeverwal,45,4K
+240,4K17  Geulranddekzandrug (+/- oud bouwlanddek),45,4K
+262,4K7   Grondmorenerug met klei of veen,45,4K
+279,4K33  Getij-inversierug,45,4K
+280,4K24  Oeverwal in uiterwaard,45,4K
+298,"4K5   Lage vereffenigsrest-heuvel met dekzand, met resten riv. afz. + grondmorene",45,4K
+303,4K23  Terrasrestrug,45,4K
+325,4K34  Getij-oeverwal,45,4K
+398,4K13  Dekzandrug,45,4K
+5,4L7   Lage kustduinen + bijbehorende vlakten/laagten,46,4L
+88,4L22  Lage storthopen en/of grind/zand/klei gaten,46,4L
+116,4L8   Lage landduinen + bijbehorende vlakten/laagten,46,4L
+125,4L5   Dekzandruggen (+/- oud bouwlanddek),46,4L
+135,4L9   Lage stuifduinen + vlakten/laagten,46,4L
+142,4L21  Veenrest-ruggen,46,4L
+197,4L14  Meanderruggen en geulen,46,4L
+213,4L15  Meanderruggen en geulen in uiterwaard,46,4L
+289,4L11  Welvingen in zandplaten (met duinvorming),46,4L
+426,4L3   Welvingen in sneeuwsmeltwaterafz.,46,4L
+7,"4N5   Laagte zonder randwal, niet moerassig",47,4N
+38,"4N4   Laagte zonder randwal, moerassig",47,4N
+117,4N8   Laagte ontstaan door afgraving,47,4N
+118,4N6   Groeve,47,4N
+164,4N2 Doodijsgat,47,4N
+345,5E9a  Dalvlakteterras,51,5E
+93,"5F12  Storthoop, opgehoogd of opgespoten terrein",52,5F
+301,"5F4   Plateau-achtige terrasrest, door landijs beinvloed (+/- dekz.)",52,5F
+316,5F13  Plateau-achtige vereffeningsrest,52,5F
+401,5F6   Plateau-achtige terrasrest,52,5F
+209,5G1   Smeltwaterwaaier (sandr),53,5G
+214,5G3   Daluitspoelingswaaier,53,5G
+264,"5G2   Smeltwaterwaaier (sandr), bdekt met dekz.",53,5G
+386,"5G5  Daluitspoelingswaaier, al dan niet bedekt met dekzand of loss",53,5G
+180,5H4   Grondmorene/smeltwaterglooiing,54,5H
+189,5H7 Stuwwalglooiing,54,5H
+194,"5H6   Grondmoreneglooiing, bedekt met dekzand (+/- opgevulde smeltw. geulen)",54,5H
+235,5H5   Grondmoreneglooiing of smeltwaterglooiing,54,5H
+294,5H9   Gordeldekzand-glooiing,54,5H
+315,"5H2   Vereffenigsrestglooiing met resten van terrasafz. en grondmorene, bedekt met dekzand",54,5H
+376,5H15  Lossglooiing,54,5H
+394,"5H3  Glooiing van hellingafspoelingen, al dan niet bedekt met dekzand of loss",54,5H
+284,6G1   Smeltwaterwaaier,61,6G
+297,6G2   Smeltwaterwaaier (sandr),61,6G
+203,6H7 Stuwwalglooiing,62,6H
+372,6H15  Lossglooiing,62,6H
+200,7D2   Stuwwalplateau,70,7D
+368,"7D5  Terrasrest-plateau, bedekt met loss of zandige loss",70,7D
+379,"7D4  Vereffeningsrest-plateau, bedekt met loss",70,7D
+305,7D3   Stuwwalplateau,70,7D
+237,8D2   Stuwwalplateau,80,8D
+333,"8D3   Stuwwalplateau, bedekt met dekzand",80,8D
+373,"8D4  Vereffeningsrestplateau, bedekt met loss",80,8D
+380,"8D5  Terrasrest-plateau, bedekt met loss of zandige loss",80,8D
+361,"9D4 Vereffeningsrest-plateau, bedekt met loss",90,9D
+382,"9D5  Terrasrest-palteau, bedekt met loss of zandige loss",90,9D
+411,9D1   Schiervlakterest-plateau (+/- loss),90,9D
+110,10A3  Klif,101,10A
+101,10B1  Heuvelrug,102,10B
+106,10B6  Hoge stuwwal (gestuwde grondmorene),102,10B
+207,10B3  Hoge stuwwal,102,10B
+231,10B8  Hoge smeltwaterheuvel,102,10B
+236,"10B4  Hoge stuwwal, bedekt met dekzand",102,10B
+255,"10B14  Hoge grondmorenerug (+/- dekzand, oud bouwlanddek)",102,10B
+265,10B7  Hoge smeltwaterrug,102,10B
+353,10B12 Hoge terrasrestheuvel,102,10B
+360,10B16  Hoge lossrug,102,10B
+387,10N12  Laagte ontstaan door mijnverzakking,103,10N
+337,11/10A2  Afbraakwand,110,11A
+355,11/10A4  Losswand,110,11A
+138,11B6 Hoge stuwwal (getuwde grondmorene,111,11B
+157,11B4  Hoge stuwwal bedekt met dekzand,111,11B
+160,11B3  Hoge stuwwal,111,11B
+257,11B8  Hoge smeltwaterheuvel,111,11B
+122,11/10R3  Droog dal (+/- dekzand/loss),112,11R
+185,11/10S3  Droog dal (+/- dekzand/loss),113,11S
+195,11/10S1  Droog dal (+/- dekzand/loss),113,11S
+4,12B11 Hoge stuifdijk,122,12B
+144,12B1  Heuvelrug,122,12B
+219,12B9  Hoog landduin,122,12B
+274,12B13 Hoge storthoop,122,12B
+342,12B15 Hoge storthoop,122,12B
+18,12C1  Hoge kustduinen + bijbehorende vlakten/laagten,123,12C
+59,12C2  Hoge landduinen + bijbehorende vlakten/laagten,123,12C
+149,12C4  Hoge storthoop,123,12C
+201,12C3  Hoge stuifduinen + bijbehorende vlakten/laagten,123,12C
+113,12N6  Groeve,124,12N
+359,13/12A2  Afbraakwand,131,13A
+414,13A1  Ondergraven stuwwalzijde (+/- loss of zandige loss),131,13A
+26,13B11 Hoge stuifdijk,132,13B
+310,13B13 Hoge storthoop,132,13B
+328,13B9  Hoog landduin,132,13B
+383,"13B2a  Hoge vereffeningsrest-heuvel, al dan niet bedekt met loss",132,13B
+10,13C1  Hoge kustduinen + bijbehorende vlakten/laagten,133,13C
+225,13C2  Hoge landduinen+vlakten/laagten,133,13C
+267,13N6  Groeve,134,13N
+311,13/12R3  Droog dal (+/- dekzand/loss),135,13R
+259,"13/12S2  Droog dal, trechtervormig (+/- dekzand/loss)",136,13S
+321,13/12S3  Droog dal (+/- dekzand/loss),136,13S
+193,14B3  Hoge stuwwal,142,14B
+245,14B4  Hoge stuwwal bedekt met dekzand,142,14B
+306,"14B5  Hoge stuwwal, bedekt met smeltwaterafzettingen",142,14B
+390,15/14A4  Losswand,151,15A
+168,15B3  Hoge stuwwal,152,15B
+292,15B4  Hoge stuwwal bedekt met dekzand,152,15B
+229,15/14R3  Droog dal (+/- dekzand/loss),153,15R
+220,15/14S3  Droog dal (+/- dekzand/loss),154,15S
+392,15/14T1  Droog dal (+/- dekzand/loss),155,15T
+317,16A1  Ondergraven stuwwalzijde,161,16A
+384,"16B2a  Hoge vereffeningsrest-heuvel, al dan niet bedekt met loss",162,16B
+395,16B13  Hoge storthoop,162,16B
+82,16C1  Hoge kustduinen + bijbehorende vlakten/laagten,163,16C
+290,17A1  Ondergraven stuwwalzijde,171,17A
+351,17/16A2  Afbraakwand,171,17A
+366,17B13  Hoge storthoop,172,17B
+356,"17/16R3  Droog dal, al dan niet met dekzand og loss",173,17R
+283,17/16S3  Droog dal (+/- dekzand/loss),174,17S
+412,"18A2  Afbraakwand, al dan niet bedekt met loss",181,18A
+362,"3T2   Beekdalbodem, rel. laaggelegen",390,3T
+370,"3T3  Beekdalbodem, relatief hooggelegen",390,3T
+375,"3T4  Rivierdalbodem, relatief laaggelegen",390,3T
+381,"3T5  Rivierdalbodem, relatief hooggelegen",390,3T
+389,"3T1  Droog dal, al dan niet met dekzand og loss",390,3T
+268,AVELD Aardappelveld (akkertjes in duinen),900,Aardappelveld (akkertjes in duinen)
+71,AVELD Aardappelveld (akkertjes in duinen),900,Aardappelveld (akkertjes in duinen)
+25,Beb Bebouwing,901,Bebouwing
+14,D1 Lage dijk,902,"D1, D2, D3, Db"
+81,D2 Middenhoge dijk,902,"D1, D2, D3, Db"
+77,D3 Hoge dijk,902,"D1, D2, D3, Db"
+52,"Db Laagte zonder randwal, moerassig",902,"D1, D2, D3, Db"
+293,Groeve,903,Groeve
+33,Recreatie,904,Recreatie
+131,Holle weg,999,Unknown
+11,T  Terp of hoogwatervluchtplaats,999,Unknown
+0,Unknown,999,Unknown
+37,"3F12  Storthoop, opgehoogd of opgespoten terrein",999,Unknown
+99,,999,Unknown
+139,,999,Unknown
+143,,999,Unknown
+158,,999,Unknown
+186,,999,Unknown
+215,,999,Unknown
+233,,999,Unknown
+234,,999,Unknown
+244,,999,Unknown
+260,,999,Unknown
+263,,999,Unknown
+276,,999,Unknown
+331,,999,Unknown
+332,,999,Unknown
+339,,999,Unknown
+341,,999,Unknown
+343,,999,Unknown
+344,,999,Unknown
+346,,999,Unknown
+347,,999,Unknown
+352,,999,Unknown
+354,,999,Unknown
+357,,999,Unknown
+363,,999,Unknown
+364,,999,Unknown
+369,,999,Unknown
+371,,999,Unknown
+374,,999,Unknown
+377,,999,Unknown
+378,,999,Unknown
+385,,999,Unknown
+388,,999,Unknown
+391,,999,Unknown
+396,,999,Unknown
+397,,999,Unknown
+399,,999,Unknown
+400,,999,Unknown
+402,,999,Unknown
+406,,999,Unknown
+408,,999,Unknown
+409,,999,Unknown
+410,,999,Unknown
+415,,999,Unknown
+416,,999,Unknown
+420,,999,Unknown
+421,,999,Unknown
+424,,999,Unknown
+428,,999,Unknown
+140,vib   Vorm in bebouwing,999,Unknown
+8,Water,,

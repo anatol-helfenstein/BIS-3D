@@ -1,0 +1,19 @@
+﻿value,description,value_rcl,description_rcl
+0,,,
+1,Warenhuizen,7,urban (bebouwd gebied)
+2,Bos,6,mixed forest (gemengd bos)
+3,Bebouwd Gebied/Huizenblok,7,urban (bebouwd gebied)
+4,Emplacement,7,urban (bebouwd gebied)
+5,Luchtvaartterrein Schiphol,7,urban (bebouwd gebied)
+6,Luchtvaartterrein VLD,7,urban (bebouwd gebied)
+7,Verh.start/land.baan VLB,7,urban (bebouwd gebied)
+8,Boomgaard,8,horticulture/fruits (boomgaard)
+9,Heide,16,other/unknown (overig/onbekend)
+10,Zand,12,"sand, dunes (zand, duinen)"
+11,Overig bodemgebruik,16,other/unknown (overig/onbekend)
+12,Oeverlijn / kleinwater,1,water
+13,Grootwater (zee),1,water
+14,"Dras, moeras",18,swamp (moeras)
+15,Laagwaterlijn/droogvallende,1,water
+16,Eiland in binnenwater,,
+17,Eiland in zee,,

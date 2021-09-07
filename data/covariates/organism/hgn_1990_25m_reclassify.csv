@@ -1,0 +1,13 @@
+﻿value,description,value_rcl,description_rcl
+1,grasland,1,grassland
+2,akker en kale grond,2,arable land
+3,heide en hoogveen,3,heathland and bogs
+4,bos,4,forest
+6,bebouwing en wegen,5,urban
+7,water,6,water
+8,rietmoeras,7,"marshes, bogs and peat"
+9,stuifzanden en zandplaten,8,sand and dunes
+12,bebouwd gebied,5,urban
+13,kassen,9,greenhouses
+98,baarle nassau,5,urban
+99,noordzee en buitenland,6,water

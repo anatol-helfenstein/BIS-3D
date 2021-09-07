@@ -1,0 +1,171 @@
+﻿BRP-Gewassen en -codes per jaar (periode 2005 t/m 2014),,,,,,,,,,,,,
+,,,,,,,,,,,,,
+Count of GWS_GEWAS (1=aanwezig in jaar),,,JAAR,,,,,,,,,,
+GWS_GEWAS,GWS_GEWASC,CAT_GEWASC,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,Grand Total
+"Aardappelen, bestrijdingsmaatregel AM",2025,Bouwland,,,1,1,1,1,1,1,1,1,8
+"Aardappelen, cons. op kleigrond (vroeg, loofver voor 15-07)",1911,Bouwland,,1,1,1,1,1,1,,,,6
+"Aardappelen, cons. op zand/veen (vroeg, loofver voor 15-07)",1912,Bouwland,,1,1,1,1,1,1,,,,6
+"Aardappelen, consumptie-",253,Bouwland,1,,,,,,,,,,1
+"Aardappelen, consumptie op klei/lössgrond",2951,Bouwland,,,,,,,,1,1,1,3
+"Aardappelen, consumptie- op kleigrond",254,Bouwland,1,,,,,,,,,,1
+,1909,Bouwland,,1,1,1,1,1,1,,,,6
+"Aardappelen, consumptie op zand/veengrond",3792,Bouwland,,,,,,,,1,1,1,3
+"Aardappelen, consumptie- op zand-/veengrond",1910,Bouwland,,1,1,1,1,1,1,,,,6
+"Aardappelen, poot-",251,Bouwland,1,,,,,,,,,,1
+"Aardappelen, poot (NAK) op kleigrond",252,Bouwland,1,,1,,,,,,,,2
+"Aardappelen, poot op klei, uitgroeiteelt (loofver na 15-08)",1926,Bouwland,,1,1,1,1,1,1,,,,6
+"Aardappelen, poot op klei/lössgrond",3730,Bouwland,,,,,,,,1,1,,2
+"Aardappelen, poot op klei/lössgrond (NAK)",3730,Bouwland,,,,,,,,,,1,1
+"Aardappelen, poot op zand/veen, uitgroei (loofver na 15-08)",1927,Bouwland,,1,1,1,1,1,1,,,,6
+"Aardappelen, poot op zand/veengrond",3731,Bouwland,,,,,,,,1,1,,2
+"Aardappelen, poot op zand/veengrond (NAK)",3731,Bouwland,,,,,,,,,,1,1
+"Aardappelen, zetmeel",255,Bouwland,1,,,,,,,,,,1
+,1934,Bouwland,,1,1,1,1,1,1,,,,6
+,3732,Bouwland,,,,,,,,1,1,,2
+"Aardappelen, zetmeel (incl. TBM-pootgoed)",3732,Bouwland,,,,,,,,,,1,1
+"Aardappelen, zetmeel geleverd aan buitenland",859,Bouwland,1,1,1,1,1,1,1,,,,7
+"Aardappelen, zetmeel- TBM pootgoed",1935,Bouwland,,1,1,1,1,1,1,,,,6
+"Aardappelrassen, poot- op kleigrond",1928,Bouwland,,1,1,1,1,1,1,,,,6
+"Aardappelrassen, poot- op zand-/veengrond",1929,Bouwland,,1,1,1,1,1,1,,,,6
+Aardperen,1949,Bouwland,,1,1,1,1,,,,,,4
+Amandelen,1696,Bouwland,,1,,,,,,,,,1
+"Bieten, suiker-",256,Bouwland,1,1,1,1,1,1,1,1,1,1,10
+"Bieten, voeder-",257,Bouwland,1,1,1,1,1,1,,,,,6
+"Bieten, voeder- (inclusief aardperen)",2651,Bouwland,,,,,,,1,1,1,1,4
+Blauwmaanzaad,247,Bouwland,1,1,1,1,1,1,1,1,1,1,10
+Bloembollen en - knollen,176,Bouwland,1,1,1,1,1,1,1,1,1,1,10
+Bloemkwekerijgewassen (inclusief bloemzaden),175,Bouwland,1,1,1,1,1,1,1,1,1,1,10
+Boekweit,659,Bouwland,1,1,1,1,1,1,,,,,6
+"Bonen, bruine",242,Bouwland,1,1,1,1,1,1,1,1,1,1,10
+"Bonen, tuin- (droog te oogsten) (geen consumptie)",853,Bouwland,1,1,1,1,1,1,1,1,1,1,10
+"Bonen, tuin- (groen te oogsten)",854,Bouwland,1,1,1,1,1,1,1,1,1,1,10
+"Bonen, veld-(oa duive-, paarde-, wierbonen)(droog te oogsten",243,Bouwland,1,1,1,1,1,1,1,1,1,1,10
+Boomkwekerij en vaste planten,229,Bouwland,1,1,1,1,1,1,1,1,1,,9
+"Boomkwekerijgewassen en vaste planten, open grond",3806,Bouwland,,,,,,,,,1,1,2
+"Boomkwekerijgewassen en vaste planten, pot- en containerveld",294,Bouwland,,,,,,,,,1,1,2
+"Bos (incl kerstdennen) met beheersregime, met herplantplicht",861,Natuurterrein,1,,,,,,,,,,1
+"Bos (incl kerstdennen) zonder beheersregime, met herplantpli",862,Overige,1,,,,,,,,,,1
+Bos (SBL-regeling),2027,Overige,,,1,1,1,1,1,1,1,1,8
+Bos (set aside regeling),864,Bouwland,1,1,1,1,1,1,1,1,1,1,10
+"Bos, blijvend, met herplantplicht",1936,Overige,1,1,1,1,1,1,1,1,1,1,10
+"Bos, zonder herplantplicht",863,Bouwland,1,1,1,1,1,1,1,1,1,1,10
+"Braak (groen, tenminste 6 maanden)",668,Braakland,1,1,1,,,,,,,,3
+"Braak (zwart, minder dan 6 maanden)",869,Bouwland,1,,,,,,,,,,1
+"Braak (zwart, tenminste 6 maanden)",667,Braakland,1,1,,,,,,,,,2
+"Braak met bos (SBL regeling, na 28-01-1995)",837,Bouwland,1,1,1,,,,,,,,3
+Braak met bos (SBL-regeling na 28 juni 1995),2026,Overige,,,1,1,1,1,1,1,1,1,8
+Braak met niet in lijst voorkomend non food/non feed-gewas,1906,Bouwland,,1,1,1,,,,,,,3
+Braak met voederleguminosen,1565,Bouwland,1,1,1,,,,,,,,3
+"Braak, groene-",2034,Bouwland,,,,1,,,,,,,1
+"Braak, groene- 10 meter",1907,Bouwland,,1,1,,,,,,,,2
+"Braak, groene- 5 meter",1804,Bouwland,1,1,1,1,,,,,,,4
+"Braak, natuur-",2029,Braakland,,,,1,1,1,1,1,1,1,7
+"Braak, natuur -eenjarig",1566,Bouwland,1,1,1,,,,,,,,3
+"Braak, natuur -eenjarig met andere overheidsinstantie",1568,Bouwland,1,1,1,,,,,,,,3
+"Braak, natuur -meerjarig",1567,Bouwland,1,1,1,,,,,,,,3
+"Braak, natuur -meerjarig met andere overheidsinstantie",1569,Bouwland,1,1,1,,,,,,,,3
+"Braak, zwarte- met ontheffing",1908,Braakland,,1,1,1,,,,,,,3
+Cichorei,511,Bouwland,1,1,1,1,1,1,1,1,1,1,10
+Definitief aan de landbouw onttrokken cultuurgrond,1574,Overige,,,,,1,,,,1,1,3
+Dummycode voor dummypercelen,1959,Overige,,,,1,1,1,1,1,,,5
+Erwten inclusief schokkers (droog te oogsten),2650,Bouwland,,,,,,,1,1,1,1,4
+"Erwten, groene, droog te oogsten (geen conserven)",239,Bouwland,1,1,1,1,1,1,,,,,6
+"Erwten, groene/gele, groen te oogsten",244,Bouwland,1,1,1,1,1,1,1,1,1,1,10
+Faunaranden,1575,Bouwland,1,1,1,1,1,1,1,,,,7
+"Faunaranden, bouwland",3721,Bouwland,,,,,,,,1,1,1,3
+"Faunaranden, grasland",3720,Grasland,,,,,,,,1,1,1,3
+Fruit,212,Bouwland,1,1,1,1,1,1,1,1,1,1,10
+"Gerst, winter-",235,Bouwland,1,1,1,1,1,1,1,1,1,1,10
+"Gerst, zomer-",236,Bouwland,1,1,1,1,1,1,1,1,1,1,10
+Gierst,660,Bouwland,1,1,1,1,1,1,,,,,6
+Graansorgho,658,Bouwland,1,1,1,1,1,1,,,,,6
+"Granen, overig",2652,Bouwland,,,,,,,1,1,1,1,4
+Grasland natuurlijk,1905,Grasland,,1,1,1,,,,,,,3
+"Grasland, blijvend",265,Grasland,1,1,1,1,1,1,1,1,1,1,10
+"Grasland, natuurlijk",3718,Grasland,,,,,,,,1,1,1,3
+"Grasland, natuurlijk (max. 5 ton drogestof per ha.), tenmins",270,Grasland,1,,,,,,,,,,1
+"Grasland, natuurlijk, minder dan 50% van de oppervlakte bede",1563,Grasland,1,,,,,,,,,,1
+"Grasland, natuurlijk, voor 50-75% van de oppervlakte bedekt",1564,Grasland,1,,,,,,,,,,1
+"Grasland, tijdelijk",266,Grasland,1,1,1,1,1,1,1,1,1,1,10
+Graszaad,250,Grasland,1,,,,,,,,,,1
+Graszaad (inclusief klaverzaad),2653,Grasland,,,,,,,1,1,1,1,4
+"Graszaad, Engels raai",1913,Grasland,,1,1,,,,,,,,2
+"Graszaad, Engels raai 1e jaar",2030,Grasland,,,,1,1,1,,,,,3
+"Graszaad, Engels raai overjarig",2031,Grasland,,,,1,1,1,,,,,3
+"Graszaad, Italiaans",1920,Grasland,,1,1,1,1,1,,,,,5
+"Graszaad, overig",1914,Grasland,,1,1,1,1,1,,,,,5
+"Graszaad, rietzwenkgras",1915,Grasland,,1,1,1,1,1,,,,,5
+"Graszaad, roodzwenkgras, 1e jaar",1917,Grasland,,1,1,1,1,1,,,,,5
+"Graszaad, roodzwenkgras, overjarig",1918,Grasland,,1,1,1,1,1,,,,,5
+"Graszaad, veldbeemd",1916,Grasland,,1,1,1,1,1,,,,,5
+"Graszaad, westerwolds",1919,Grasland,,1,1,1,1,1,,,,,5
+Graszoden,1921,Grasland,,1,1,1,1,1,1,1,1,1,9
+"Groenbemesters, niet-vlinderbloemige",2299,Bouwland,,,,,1,1,1,1,1,1,6
+"Groenbemesters, niet-vlinderbloemige- (geen groene braak)",1924,Bouwland,,1,1,1,,,,,,,3
+"Groenbemesters, vlinderbloemige",2298,Bouwland,,,,,1,1,1,1,1,1,6
+"Groenbemesters, vlinderbloemige- (geen groene braak)",1932,Bouwland,,1,1,1,,,,,,,3
+Groenbemestings-gewassen,260,Bouwland,1,1,,,,,,,,,2
+Groenten open grond (inclusief groentezaden),672,Bouwland,1,1,1,1,1,1,1,1,1,1,10
+Haver,238,Bouwland,1,1,1,1,1,1,1,1,1,1,10
+Hazelnoten,1697,Bouwland,1,1,1,1,1,1,,,,,6
+Heide,3719,Natuurterrein,,,,,,,,1,1,1,3
+"Heide, begraasd",2304,Natuurterrein,,,,,1,1,1,,,,3
+"Hennep, vezel-",944,Bouwland,1,1,1,1,1,1,1,1,1,1,10
+Kanariezaad,513,Bouwland,1,1,1,1,1,1,,,,,6
+Kapucijners (en grauwe erwten),241,Bouwland,1,1,1,1,1,1,1,1,1,1,10
+Karwijzaad (oogst dit jaar),246,Bouwland,1,1,1,1,1,1,1,1,1,1,10
+Klaverzaad,1570,Bouwland,1,1,1,1,1,1,,,,,6
+Koolzaad,245,Bouwland,1,,,,,,,,,,1
+"Koolzaad, winter (ook boterzaad)",1922,Bouwland,,1,1,1,1,1,1,1,1,1,9
+"Koolzaad, zomer (ook boterzaad)",1923,Bouwland,,1,1,1,1,1,1,1,1,1,9
+Lijnzaad niet van vezelvlas (olievlas),666,Bouwland,1,1,1,1,,1,1,1,1,1,9
+"Lupinen, niet bittere-",663,Bouwland,1,1,1,1,1,1,1,1,1,1,10
+Luzerne,258,Bouwland,1,1,1,1,1,1,1,1,1,1,10
+"Maïs, corncob mix",317,Bouwland,1,1,1,1,1,1,1,1,1,1,10
+"Mais, energie-",2032,Bouwland,,,,1,1,1,1,1,1,1,7
+"Maïs, korrel-",316,Bouwland,1,1,1,1,1,1,1,1,1,1,10
+"Maïs, snij-",259,Bouwland,1,1,1,1,1,1,1,1,1,1,10
+"Maïs, suiker-",814,Bouwland,1,1,1,1,1,1,1,1,1,1,10
+Miscanthus (olifantsgras),516,Bouwland,1,1,1,1,1,1,1,1,1,1,10
+Natuurlijk grasland (begraasd) met beperkte landbouwact.,2302,Grasland,,,,,1,1,1,,,,3
+Natuurlijk grasland met hoofdfunctie landbouw,2301,Grasland,,,,,1,1,1,,,,3
+Notenbomen,2645,Bouwland,,,,,,,1,1,1,1,4
+Onbekend/gewas niet opgegeven,1950,Overige,,1,1,1,1,1,1,1,1,1,9
+Onbeteelde grond door een teeltverbod/ontheffing,2300,Braakland,,,,,1,1,1,1,1,1,6
+"Onbeteelde grond, tijdelijk",2033,Braakland,,,,1,1,1,1,1,1,1,7
+Onder- en navrucht,816,Overige,1,,,,,,,,,,1
+Overig landschapselement,2636,Landschapselement,,,,,,1,,,,,1
+Overige akkerbouwgewassen,264,Bouwland,1,,,,,,,,,,1
+,1925,Bouwland,,1,1,1,1,1,1,1,1,1,9
+Overige granen,661,Bouwland,1,1,1,1,1,1,,,,,6
+Overige natuurterreinen,866,Natuurterrein,1,1,1,1,,,,,,,4
+,2303,Natuurterrein,,,,,1,1,1,,,,3
+,3722,Natuurterrein,,,,,,,,1,1,1,3
+Overige nonfood/nonfeedgewassen,842,Bouwland,1,,,,,,,,,,1
+Overige toegestane voedergewassen,657,Bouwland,1,,,,,,,,,,1
+Overige voedergewassen,876,Bouwland,1,,,,,,,,,,1
+Pronkbonen,855,Bouwland,1,,,,,,,,,,1
+Raapzaad,664,Bouwland,1,1,1,1,1,1,1,1,1,1,10
+Rogge (geen snijrogge),237,Bouwland,1,1,1,1,1,1,1,1,1,1,10
+Schokkers,240,Bouwland,,1,1,1,1,1,,,,,5
+Sint-Jansbrood,1700,Bouwland,,,1,,,,,,,,1
+Slabonen,856,Bouwland,1,,,,,,,,,,1
+Sojabonen,665,Bouwland,1,1,1,1,1,1,1,1,1,1,10
+Stamslabonen,158,Bouwland,1,,,,,,,,,,1
+"Tagetes (zand, loss) (geen groene braak)",1930,Bouwland,,1,1,1,1,1,1,1,1,1,9
+"Tarwe, winter-",233,Bouwland,1,1,1,1,1,1,1,1,1,1,10
+"Tarwe, zomer-",234,Bouwland,1,1,1,1,1,1,1,1,1,1,10
+Triticale,314,Bouwland,1,1,1,1,1,1,1,1,1,1,10
+Tuinbouwzaden,172,Bouwland,1,1,1,1,1,,,,,,5
+"Uien, poot en plant (incl. sjalotten)",1931,Bouwland,,1,1,1,1,1,1,1,1,1,9
+"Uien, poot- en plant- (incl. sjalotten)",261,Bouwland,1,,,,,,,,,,1
+"Uien, zaai-",262,Bouwland,1,1,1,1,1,1,1,1,1,1,10
+"Uien, zilver-",263,Bouwland,1,1,1,1,,,,,,,4
+Vezelvlas,3736,Bouwland,,,,,,,,1,1,1,3
+"Vlas, vezel- (niet voor zaaizaad)",249,Bouwland,1,1,1,1,1,1,1,,,,7
+"Vlas, vezel- (voor zaaizaad)",1933,Bouwland,,1,1,1,1,1,1,,,,6
+Voor- en nasnede,817,Overige,1,,,,,,,,,,1
+Walnoten,1698,Bouwland,1,1,1,1,1,1,,,,,6
+Woudbomen met korte omlooptijd,2297,Overige,,,,,1,1,1,1,1,1,6
+Zonnebloemen,515,Bouwland,1,1,1,1,1,1,1,1,1,1,10
+Grand Total,,,89,101,103,99,98,97,81,74,76,75,893

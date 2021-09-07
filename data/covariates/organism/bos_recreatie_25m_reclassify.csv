@@ -1,0 +1,17 @@
+﻿value,description,value_rcl,description_rcl
+0,other,16,other
+5,all other values,16,other
+1,Opengesteld laag niveau,1,Opengesteld laag niveau
+2,Beleefbaar,2,Beleefbaar
+3,Opengesteld basisniveau,3,Opengesteld basisniveau
+4,Opengesteld niveau plus,4,Opengesteld niveau plus
+6,Tijdelijk opengesteld laag niveau,6,Tijdelijk opengesteld laag niveau
+7,Natuurkampeerterrein,16,other
+8,Natuur- en activiteitencentrum (NAC),16,other
+9,Afgesloten geen recreatieve betekenis,9,Afgesloten geen recreatieve betekenis
+10,Waterrecreatie kleine recreatievaart,10,Waterrecreatie kleine recreatievaart
+11,Waterrecreatie grote recreatievaart,11,Waterrecreatie grote recreatievaart
+12,Speelbos,16,other
+13,Groepskampeerterrein,16,other
+14,"Opengesteld, niveau druk",14,"Opengesteld, niveau druk"
+15,niet doelstellingsgericht m.b.t. recreatie,15,niet doelstellingsgericht m.b.t. recreatie

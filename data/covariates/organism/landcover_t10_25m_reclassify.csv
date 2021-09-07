@@ -1,0 +1,27 @@
+﻿value,description,value_rcl,description_rcl
+11,gebouwen,1,urban
+12,gebouwen,1,urban
+13,gebouwen,1,urban
+14,overig bodem gebruik,1,urban
+15,begraafplaats,1,urban
+21,vennen/poelen,2,"marshes, bogs and peat"
+22,loofbos,3,broad-leafed forest
+26,populierenopstand,3,broad-leafed forest
+23,naaldbos,4,coniferous forest
+24,gemengd bos,5,mixed forest
+25,griend,5,mixed forest
+27,heide,6,heathland
+28,zand en duinen,7,sand & dunes
+31,bouwland,8,arable land
+32,grasland,9,grassland
+33,boomgaard,10,tree nursery & horticulture
+34,boomkwekerij,10,tree nursery & horticulture
+35,fruitkwekerij,10,tree nursery & horticulture
+0,other,11,water & other
+44,kribben,11,water & other
+45,?,11,water & other
+99,?,11,water & other
+41,water,11,water & other
+42,zee,11,water & other
+43,droogvallende gronden,11,water & other
+255,,11,water & other

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SAGA_METADATA>
+  <DATABASE></DATABASE>
+  <SOURCE></SOURCE>
+  <HISTORY saga-version="7.3.0">
+    <TOOL library="ta_channels" id="7" name="Valley Depth">
+      <OPTION type="grid_system" id="PARAMETERS_GRID_SYSTEM" name="Grid system">
+        <CELLSIZE>25</CELLSIZE>
+        <XMIN>10012.5</XMIN>
+        <XMAX>279987.5</XMAX>
+        <YMIN>306262.5</YMIN>
+        <YMAX>618737.5</YMAX>
+      </OPTION>
+      <OPTION type="double" id="THRESHOLD" name="Tension Threshold">1.000000</OPTION>
+      <OPTION type="integer" id="MAXITER" name="Maximum Iterations">0</OPTION>
+      <OPTION type="boolean" id="NOUNDERGROUND" name="Keep Ridge Level above Surface">true</OPTION>
+      <OPTION type="integer" id="ORDER" name="Ridge Detection Threshold">4</OPTION>
+      <INPUT type="grid" id="ELEVATION" name="Elevation" system="PARAMETERS_GRID_SYSTEM">
+        <FILE>out/data/covariates/DEM_derivatives/ahn2_25m.sgrd</FILE>
+      </INPUT>
+      <OUTPUT type="grid" id="VALLEY_DEPTH" name="Valley Depth">Valley Depth</OUTPUT>
+    </TOOL>
+  </HISTORY>
+  <FILE></FILE>
+  <DESCRIPTION></DESCRIPTION>
+  <PROJECTION>
+    <OGC_WKT>PROJCS["unknown",GEOGCS["GCS_unknown",DATUM["D_Unknown_based_on_Bessel_1841_ellipsoid",SPHEROID["Bessel_1841",6377397.155,299.1528128]],PRIMEM["Greenwich",0.0],UNIT["Degree",0.0174532925199433]],PROJECTION["Double_Stereographic"],PARAMETER["False_Easting",155000.0],PARAMETER["False_Northing",463000.0],PARAMETER["Central_Meridian",5.38763888888889],PARAMETER["Scale_Factor",0.9999079],PARAMETER["Latitude_Of_Origin",52.1561605555556],UNIT["Meter",1.0]]
+</OGC_WKT>
+    <PROJ4>Double_Stereographic +no_defs</PROJ4>
+    <EPSG>-1</EPSG>
+  </PROJECTION>
+</SAGA_METADATA>

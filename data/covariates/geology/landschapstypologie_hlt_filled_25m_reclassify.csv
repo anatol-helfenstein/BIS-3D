@@ -1,0 +1,72 @@
+﻿value,description,value_rcl,description_rcl
+0,Unknown,20,Unknown
+1,filled in value (unknown),20,Unknown
+98,"Grote wateren, zoet water",1,water
+99,stedelijk gebied HISTLAND,2,urban
+110,"Veenkolonien, Fries-Gronings type",3,raised bog
+120,"Veenkolonien, West-Brabantstype",3,raised bog
+130,"Veenkolonien, Utrechts-Gelders type",3,raised bog
+140,"Veenkolonien, Fries type",3,raised bog
+210,"Laagveengebied, Hollandveenontginning",4,blanket bog (laagveen)
+211,"Laagveengebied, Hollandveenontginning",4,blanket bog (laagveen)
+212,"Laagveengebied, Hollandveenontginning",4,blanket bog (laagveen)
+220,"Laagveengebied, Hollandveenontginning",4,blanket bog (laagveen)
+230,"Laagveengebied, Hollandveenontginning",4,blanket bog (laagveen)
+240,"Laagveengebied, Hollandveenontginning",4,blanket bog (laagveen)
+250,"Laagveengebied, Hollandveenontginning",4,blanket bog (laagveen)
+260,"Zandgebied, Hollandveenontginning",5,sand
+270,"Laagveengebied, Hollandveenontginning",4,blanket bog (laagveen)
+310,"Rivierengebied, stroomrugontginningen",6,stream ridges
+311,"Rivierengebied, stroomrugontginningen",6,stream ridges
+320,"Rivierengebied, komontginningen",7,komontginningen
+330,"Rivierengebied, uiterwaarden",8,uiterwaarden
+340,"Rivierengebied, rivierdeltaontginningen",9,delta
+350,"Rivierengebied, riviervlakteontginningen",10,riviervlakteontginningen
+410,"Rivierengebied, hogere terrasontginningen",11,high terrace
+420,"Rivierengebied, lagere terrasontginningen",12,low terrace
+510,"Zeekleigebied, kwelderwalontginningen ",13,kwelder/knikkleiontginningen
+520,"Zeekleigebied, knikkleiontginningen",13,kwelder/knikkleiontginningen
+530,"Zeekleigebied, kwelderwal- en knikkleiontginningen",13,kwelder/knikkleiontginningen
+540,"Zeekleigebied, kreekrug- en poelontginningen",14,zeekleigebied
+610,"Zeekleigebied, nieuwlandpolders",14,zeekleigebied
+611,"Zeekleigebied, landaanwinningswerken",14,zeekleigebied
+622,"Zeekleigebied, grienden",14,zeekleigebied
+700,"Droogmakerijen, oud onbepaald",15,droogmakerijen
+710,"Droogmakerijen, oud natuurlijke meren",15,droogmakerijen
+720,"Droogmakerijen, oud veenplassen",15,droogmakerijen
+740,"Droogmakerijen, Zuiderzeepolders",15,droogmakerijen
+741,"Droogmakerijen, Zuiderzeepolders bos",15,droogmakerijen
+810,"Kustzone, strandwalontginningen",16,kustzone
+812,"Kustzone, strandwalontginningen afgevlakt",16,kustzone
+820,"Kustzone, strandvlakteontginningen",16,kustzone
+830,"Kustzone, duinbebossingen",16,kustzone
+910,"Heuvelland, lossontginningen",17,highlands
+911,"Heuvelland, oud bos",17,highlands
+1010,"Laag-middelhoog zandgebied, kampontginningen",18,Laag-middelhoog zandgebied
+1030,"Laag-middelhoog zandgebied, esontginningen",18,Laag-middelhoog zandgebied
+1040,"Laag-middelhoog zandgebied, beekdalontginningen",18,Laag-middelhoog zandgebied
+1120,"Laag-middelhoog zandgebied, natte heide- en veenontginningen",18,Laag-middelhoog zandgebied
+1130,"Laag-middelhoog zandgebied, droge en natte heideontginningen",18,Laag-middelhoog zandgebied
+1131,"Laag-middelhoog zandgebied, heidebossingen",18,Laag-middelhoog zandgebied
+1140,"Laag-middelhoog zandgebied, oude bossen",18,Laag-middelhoog zandgebied
+1150,"Laag-middelhoog zandgebied, zandverstuivingen",18,Laag-middelhoog zandgebied
+1210,"Kustzone, duinen en strand",16,kustzone
+1220,"Laag-middelhoog zandgebied, natte heide en veen",18,Laag-middelhoog zandgebied
+1230,"Laag-middelhoog zandgebied, droge en hatte heide",18,Laag-middelhoog zandgebied
+1260,"Grote wateren, kwelders",1,water
+1261,"Grotewateren, vooroevers",1,water
+1300,Noordzee,1,water
+1310,"Waddenzee, Eems, Dollard",1,water
+1350,Wester- en Oosterschelde,1,water
+1500,overig zoet water,1,water
+1600,platen,1,water
+11010,"Hoog zandgebied, kampontginningen",19,Hoog zandgebied
+11040,"Hoog zandgebied, beekdalontginningen",19,Hoog zandgebied
+11120,"Hoog zandgebied, natte heide- en veenontginningen",19,Hoog zandgebied
+11130,"Hoog zandgebied, droge en natte heidetginningen",19,Hoog zandgebied
+11131,"Hoog zandgebied, heidebebossingen",19,Hoog zandgebied
+11140,"Hoog zandgebied, oud bos",19,Hoog zandgebied
+11150,"Hoog zandgebied, zandverstuivingen",19,Hoog zandgebied
+11220,"Hoog zandgebied, natte heide en veen",19,Hoog zandgebied
+11230,"Hoog zandgebied, droge en hatte heide",19,Hoog zandgebied
+110030,"Hoog zandgebied, esontginningen",19,Hoog zandgebied

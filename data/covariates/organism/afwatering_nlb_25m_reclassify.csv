@@ -1,0 +1,11 @@
+﻿value,description,value_rcl,description_rcl
+0,areas outside of the Netherlands,7,stored water before discharging through dike
+1,closed freshwater,1,closed freshwater
+2,closed saltwater,2,salty and brackish
+3,flowing water slow,3,flowing water slow
+4,flowing water fast,4,flowing water fast
+5,large rivers,5,large rivers
+6,"large rivers, fast flowing",5,large rivers
+7,stored water before discharging through dike,7,stored water before discharging through dike
+10,salty and brackish,2,salty and brackish
+11,large seas,7,stored water before discharging through dike

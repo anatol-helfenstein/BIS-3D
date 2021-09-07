@@ -1,0 +1,35 @@
+﻿value,description,value_rcl,description_rcl
+1,Continuous urban fabric,7,urban (bebouwd gebied)
+2,Discontinuous urban fabric,7,urban (bebouwd gebied)
+3,Industrial or commercial units,7,urban (bebouwd gebied)
+4,Road and rail networks,7,urban (bebouwd gebied)
+5,Port areas,7,urban (bebouwd gebied)
+6,Airports,7,urban (bebouwd gebied)
+7,Mineral extraction sites,7,urban (bebouwd gebied)
+8,Dump areas,7,urban (bebouwd gebied)
+9,Construction sites,7,urban (bebouwd gebied)
+10,Green urban areas,7,urban (bebouwd gebied)
+11,Sport and leisure facilities,7,urban (bebouwd gebied)
+12,Non-irrigated arable land,25,arable land (non-irrigated)
+19,Annual crops associated with permanent crops,3,arable land (permanent crops)
+20,Complex cultivation patterns,3,arable land (permanent crops)
+16,Fruit trees and berry plantations,8,horticulture/fruits (boomgaard)
+18,Pastures,2,grassland (grasland)
+26,Natural grasslands,2,grassland (grasland)
+21,Land principally occupied by agriculture,26,extensive agricultural land
+23,Broad-leaf forest,4,deciduous forest (loofbos)
+24,Coniferous forest,5,coniferous forest (naaldbos)
+25,Mixed forest,6,mixed forest (gemengd bos)
+29,Transitional woodland-scrub,6,mixed forest (gemengd bos)
+27,Moors and heathland,10,heathlands (heide) & raised bog (hoogveen)
+30,"Beaches, sand and dunes",12,"beaches, dunes, sand"
+32,Sparsely vegetated areas,12,"beaches, dunes, sand"
+35,Inland marshes,11,"marshes, bogs and peat"
+36,Peat bogs,11,"marshes, bogs and peat"
+37,Salt marshes,11,"marshes, bogs and peat"
+0,Other,16,other/unknown (overig)
+39,,,
+40,Water Courses,1,water
+41,Water bodies,1,water
+42,Coastal lagoons,1,water
+43,Estuaries,1,water

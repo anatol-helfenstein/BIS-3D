@@ -1,0 +1,8 @@
+﻿value,description,value_rcl,description_rcl
+0,Dry,5,Dry
+1,Permanent water,1,Permanent or temporary water
+2,Temporary water,1,Permanent or temporary water
+3,Permanent wetness,3,Permanent wetness
+4,Temporary wetness,4,Temporary wetness
+254,Sea and outside borders,5,Dry
+255,Sea and outside borders,5,Dry

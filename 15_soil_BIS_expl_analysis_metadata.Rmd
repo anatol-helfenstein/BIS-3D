@@ -1,0 +1,596 @@
+---
+title: "Exploratory Analysis of BIS data"
+author: "Anatol Helfenstein"
+date: "updated 22/02/2021"
+output:
+  html_document:
+    toc: yes
+    toc_float: yes
+  '': default
+---
+
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+options(width = 100) # sets width of R code output (not images)
+```
+
+```{r load required pkgs and load data, include = FALSE}
+# required packages
+pkgs <- c("tidyverse", "sf", "rgdal", "gstat", "ggspatial", "cowplot", "raster",
+          "viridis", "mapview")
+# ggspatial Pkg to create scale bars on map
+# make sure 'mapview' pkg installed from github to avoid pandoc error:
+# remotes::install_github("r-spatial/mapview")
+lapply(pkgs, library, character.only = TRUE)
+
+# read in all Dutch soil point data from the BIS DB
+tbl_BIS <- read_rds("out/data/soil/01_tbl_BIS.Rds")
+
+# for now, ignore spatial support & assume midpoint of each depth increment = d_mid
+tbl_BIS <- tbl_BIS %>% 
+  mutate(d_mid = (d_lower - d_upper)/2 + d_upper,
+         .after = d_lower)
+
+# read in NL and Gelderland border shapefile for mapping
+sf_NL_borders <- st_read("data/other/NL_borders.shp")
+spdf_NL_borders <- readOGR("data/other/NL_borders.shp")
+sf_GE_borders <- st_read("data/other/Gelderland_borders.shp")
+
+# read in raster of AHN no data (water and urban areas)
+# -> want to predict for remaining area
+r_ahn2_nodata <- raster("data/other/ahn2_nodata_25m.tif") %>% 
+  ratify() # binary of urban areas and water bodies
+
+# read in AHN raster as example of grid over which we want to predict
+r_ahn2 <- raster("data/covariates/relief/ahn2_25m.tif")
+
+# remove areas with bodies of water and buildings from prediction raster
+r_ahn2 <- mask(r_ahn2, r_ahn2_nodata, inverse = TRUE)
+
+# crop for Gelderland province
+r_ahn2_GE <- mask(r_ahn2, sf_GE_borders)
+
+# convert to grid
+sgdf_ahn2_GE <- as(r_ahn2_GE, "SpatialGridDataFrame")
+
+```
+
+
+
+***
+# Soil properties in Dutch soil database (BIS)
+
+There are a range of different soil properties in the Dutch soil database, or "Bodemkundig informatie systeem" (BIS). See figure below for a flowchart of the current BIS database (version 7.4).
+
+```{r BIS versie 7.4, out.width="100%", fig.align = "center", fig.cap="Flowchart of current BIS database, version 7.4", echo = FALSE}
+
+knitr::include_graphics(path = "db/2020-01-01_organigram_flowchart_BIS.jpg")
+```
+
+Possible target soil properties were nested into the list-column `soil_target` and include properties related to soil organic carbon (SOC) and soil organic matter (SOM), pH, soil texture (clay, silt, sand), nitrogen (N), phosphorus (P), cation exchange capacity (CEC) and others. Additional soil properties not considered as potential targets that are related to soil chemical properties, soil physical properties or remaining non-chemical and non-physical soil properties are in nested list-columns `soil_chem`, `soil_phys` and `soil_other`, respectively. Additional aggregated information related to the soil profile, environmental factors, metadata and other unknown variables (if available) for each soil observation are also included as nested list-columns.
+
+```{r target variables, include = TRUE, echo = TRUE}
+tbl_BIS
+
+# get an overview of possible target soil properties (response variable):
+tbl_BIS %>% 
+  dplyr::select(soil_target) %>% 
+  unnest_legacy() %>% 
+  colnames()
+
+```
+
+```{r expl analysis, include = TRUE, echo = TRUE}
+#------------------------------------------------------------------------------
+# Name:     13_soil_BIS_expl_analysis_datasets.R
+#
+# Content:  - Explore BIS datasets, focusing on sample ages
+#           - TO DO: interpolate age of samples taken for Netherlands using
+#             kriging (THIS IS TOO SLOW with large datasets)
+#
+# Inputs:   - BIS soil data: "out/data/soil/tbl_BIS.Rds"
+#
+# Output:   - maps of BIS soil sampling locations colored by age and project
+#             (BPK, PFB, LSK): out/maps/explorative/
+#
+# Project:  BIS+ 
+# Author:   Anatol Helfenstein
+# Updated:  February 2020
+
+
+
+### install & load required packages ---------------------------------------
+
+pkgs <- c("tidyverse", "sf", "gstat", "ggspatial", "cowplot", "raster")
+# ggspatial Pkg to create scale bars on map
+lapply(pkgs, library, character.only = TRUE)
+
+
+
+### Load datasets (spatial and soil point data) --------------------------------
+
+# read in all Dutch soil point data from the BIS DB
+tbl_BIS <- read_rds("out/data/soil/tbl_BIS.Rds")
+
+# for now, ignore spatial support & assume midpoint of each depth increment = d_mid
+tbl_BIS <- tbl_BIS %>% 
+  mutate(d_mid = (d_lower - d_upper)/2 + d_upper,
+         .after = d_lower)
+
+# read in NL and Gelderland border shapefile for mapping
+sf_NL_borders <- st_read("data/other/NL_borders.shp")
+sf_GE_borders <- st_read("data/other/Gelderland_borders.shp")
+
+# read in raster of AHN no data (water and urban areas)
+# -> want to predict for remaining area
+r_ahn2_nodata <- raster("data/other/ahn2_nodata_25m.tif") %>% 
+  ratify() # binary of urban areas and water bodies
+
+# read in AHN raster as example of grid over which we want to predict
+r_ahn2 <- raster("data/covariates/relief/ahn2_25m.tif")
+
+# remove areas with bodies of water and buildings from prediction raster
+r_ahn2 <- mask(r_ahn2, r_ahn2_nodata, inverse = TRUE)
+
+# crop for Gelderland province
+r_ahn2_GE <- mask(r_ahn2, sf_GE_borders)
+
+# convert to grid
+sgdf_ahn2_GE <- as(r_ahn2_GE, "SpatialGridDataFrame")
+
+
+
+### Explore all BIS datasets together ------------------------------------------
+
+# Explore age of samples of all BIS datasets -----------------------------------
+
+sf_BIS_sites <- tbl_BIS %>% 
+  group_by(X,Y) %>% 
+  # this also removes CCNL sites because have same coordinates as LSK
+  slice(1L) %>% 
+  ungroup() %>% 
+  # unnest_legacy apparently doesn't work if list-cols are of different lengths
+  unnest(metadata) %>%
+  # add year col to LSK data as well
+  mutate(year = case_when(BIS_tbl %in% "LSK" ~ as.numeric(str_extract(date,
+                                                                      "[[:digit:]]{4}")),
+                          !BIS_tbl %in% "LSK" ~ year)) %>% 
+  st_as_sf(., coords = c("X", "Y")) %>% # convert to spatial (sf)
+  st_set_crs(., "EPSG:28992") # set coordinate reference system of Netherlands
+
+
+# gather number of locations for displaying on map
+n <- as.character(as.expression(paste0("italic(n) == ", nrow(sf_BIS_sites))))
+
+# plot BIS sampling locations by sample age
+m_BIS_sampling_dates_NL <- ggplot() +
+  theme_bw() +
+  geom_sf(data = sf_NL_borders) +
+  geom_sf(data = sf_BIS_sites, aes(color = year)) +
+  scale_fill_viridis_c(aesthetics = "color") +
+  geom_text(aes(x = Inf, y = -Inf, label = n), size = 3,
+            hjust = 10, vjust = -55, parse = TRUE) +
+  theme(legend.position = c(0.1, 0.8),
+        panel.border = element_blank(),
+        panel.background = element_blank(),
+        axis.title.x = element_blank(),
+        axis.text.x = element_blank(),
+        axis.ticks.x = element_blank(),
+        axis.title.y = element_blank(),
+        axis.text.y = element_blank(),
+        axis.ticks.y = element_blank()) +
+  annotation_scale(location = "bl", width_hint = 0.5) +
+  annotation_north_arrow(location = "bl", which_north = "true", 
+                         pad_x = unit(0.75, "in"), pad_y = unit(0.5, "in"),
+                         style = north_arrow_fancy_orienteering)
+
+# ggsave("out/maps/explorative/m_BIS_locations_sampling_dates.pdf",
+#        m_BIS_sampling_dates_NL,
+#        height = 8,
+#        width = 8)
+
+# plot BIS sampling locations by project (BPK, PFB, LSK)
+m_BIS_project_NL <- ggplot() +
+  theme_bw() +
+  geom_sf(data = sf_NL_borders) +
+  geom_sf(data = sf_BIS_sites, aes(color = BIS_tbl)) +
+  geom_text(aes(x = Inf, y = -Inf, label = n), size = 3,
+            hjust = 10, vjust = -55, parse = TRUE) +
+  theme(legend.position = c(0.1, 0.8),
+        panel.border = element_blank(),
+        panel.background = element_blank(),
+        axis.title.x = element_blank(),
+        axis.text.x = element_blank(),
+        axis.ticks.x = element_blank(),
+        axis.title.y = element_blank(),
+        axis.text.y = element_blank(),
+        axis.ticks.y = element_blank()) +
+  annotation_scale(location = "bl", width_hint = 0.5) +
+  annotation_north_arrow(location = "bl", which_north = "true", 
+                         pad_x = unit(0.75, "in"), pad_y = unit(0.5, "in"),
+                         style = north_arrow_fancy_orienteering)
+
+# ggsave("out/maps/explorative/m_BIS_locations_project.pdf",
+#        m_BIS_project_NL,
+#        height = 8,
+#        width = 8)
+
+# gather number of locations for displaying on map
+n <- as.character(as.expression(paste0("italic(n) == ",
+                                       st_join(sf_BIS_sites, sf_GE_borders, left = FALSE) %>% 
+                                         nrow())))
+
+# plot BIS sampling locations in Gelderland based on sample age
+m_BIS_sampling_dates_GE <- st_join(sf_BIS_sites, sf_GE_borders, left = FALSE) %>% 
+  ggplot() +
+  theme_bw() +
+  geom_sf(data = sf_GE_borders) +
+  geom_sf(aes(color = year)) +
+  scale_fill_viridis_c(aesthetics = "color") +
+  geom_text(aes(x = Inf, y = -Inf, label = n), size = 3,
+            hjust = 13, vjust = -35, parse = TRUE) +
+  theme(legend.position = c(0.1, 0.8),
+        panel.border = element_blank(),
+        panel.background = element_blank(),
+        axis.title.x = element_blank(),
+        axis.text.x = element_blank(),
+        axis.ticks.x = element_blank(),
+        axis.title.y = element_blank(),
+        axis.text.y = element_blank(),
+        axis.ticks.y = element_blank()) +
+  annotation_scale(location = "br", width_hint = 0.5) +
+  annotation_north_arrow(location = "br", which_north = "true", 
+                         pad_x = unit(0.75, "in"), pad_y = unit(0.5, "in"),
+                         style = north_arrow_fancy_orienteering)
+
+# ggsave("out/maps/explorative/m_BIS_locations_sampling_dates_GE.pdf",
+#        m_BIS_sampling_dates_GE,
+#        height = 8,
+#        width = 8)
+
+# plot BIS sampling locations in Gelderland based on project
+m_BIS_project_GE <- st_join(sf_BIS_sites, sf_GE_borders, left = FALSE) %>% 
+  ggplot() +
+  theme_bw() +
+  geom_sf(data = sf_GE_borders) +
+  geom_sf(aes(color = BIS_tbl)) +
+  geom_text(aes(x = Inf, y = -Inf, label = n), size = 3,
+            hjust = 13, vjust = -35, parse = TRUE) +
+  theme(legend.position = c(0.1, 0.8),
+        panel.border = element_blank(),
+        panel.background = element_blank(),
+        axis.title.x = element_blank(),
+        axis.text.x = element_blank(),
+        axis.ticks.x = element_blank(),
+        axis.title.y = element_blank(),
+        axis.text.y = element_blank(),
+        axis.ticks.y = element_blank()) +
+  annotation_scale(location = "br", width_hint = 0.5) +
+  annotation_north_arrow(location = "br", which_north = "true", 
+                         pad_x = unit(0.75, "in"), pad_y = unit(0.5, "in"),
+                         style = north_arrow_fancy_orienteering)
+
+# ggsave("out/maps/explorative/m_BIS_locations_project_GE.pdf",
+#       m_BIS_project_GE,
+#       height = 8,
+#       width = 8)
+
+# Spatially interpolate age of samples using kriging (gstat pkg)
+# first fit variogram; assume constant trend for variable sample age (~ 1)
+# system.time(
+#   vgm_BIS_date <- variogram(year ~ 1, sf_BIS_date)
+# )
+# takes very long
+
+
+# system.time(
+#   vgm_fit_BIS_date <- fit.variogram(vgm_BIS_date, model = vgm(1, "Sph", 900, 1))
+# )
+
+# plot(vgm_BIS_date, vgm_fit_BIS_date)
+# TO BE CONTINUED!
+
+
+
+### Explore all BIS datasets separately ----------------------------------------
+
+# Explore BPK age of samples ---------------------------------------------------
+
+# explore time when samples were gathered (sample age)
+# first retrieve metadata
+tbl_BPK_un <- tbl_BIS %>% 
+  filter(BIS_tbl %in% "BPK") %>% 
+  unnest_legacy(metadata)
+
+tbl_BPK_un %>% 
+  dplyr::select(date, year, month, date_valid) %>% 
+  summary()
+
+# Prepare sf object
+sf_BPK_sites <- tbl_BPK_un %>% 
+  group_by(site_id) %>% 
+  slice(1L) %>% # slice by site
+  ungroup %>% 
+  st_as_sf(., coords = c("X", "Y")) %>% # convert to spatial (sf)
+  st_set_crs(., "EPSG:28992") # set coordinate reference system of Netherlands
+
+# gather number of locations for displaying on map
+n <- as.character(as.expression(paste0("italic(n) == ", nrow(sf_BPK_sites))))
+
+# plot BPK sampling locations
+m_BPK_sampling_dates_NL <- ggplot() +
+  theme_bw() +
+  geom_sf(data = sf_NL_borders) +
+  geom_sf(data = sf_BPK_sites, aes(color = year)) +
+  scale_fill_viridis_c(aesthetics = "color") +
+  geom_text(aes(x = Inf, y = -Inf, label = n), size = 3,
+            hjust = 10, vjust = -55, parse = TRUE) +
+  theme(legend.position = c(0.1, 0.8),
+        panel.border = element_blank(),
+        panel.background = element_blank(),
+        axis.title.x = element_blank(),
+        axis.text.x = element_blank(),
+        axis.ticks.x = element_blank(),
+        axis.title.y = element_blank(),
+        axis.text.y = element_blank(),
+        axis.ticks.y = element_blank()) +
+  annotation_scale(location = "bl", width_hint = 0.5) +
+  annotation_north_arrow(location = "bl", which_north = "true", 
+                         pad_x = unit(0.75, "in"), pad_y = unit(0.5, "in"),
+                         style = north_arrow_fancy_orienteering)
+
+# ggsave("out/maps/explorative/m_BPK_locations_sampling_dates.pdf",
+#        m_BPK_sampling_dates_NL,
+#        height = 8,
+#        width = 8)
+
+# gather number of locations for displaying on map
+n <- as.character(
+  as.expression(paste0("italic(n) == ",
+                       st_join(sf_BPK_sites, sf_GE_borders, left = FALSE) %>% 
+                                         nrow())))
+
+# plot BPK sampling locations in Gelderland
+m_BPK_sampling_dates_GE <- st_join(sf_BPK_sites, sf_GE_borders, left = FALSE) %>% 
+  ggplot() +
+  theme_bw() +
+  geom_sf(data = sf_GE_borders) +
+  geom_sf(aes(color = year)) +
+  scale_fill_viridis_c(aesthetics = "color") +
+  geom_text(aes(x = Inf, y = -Inf, label = n), size = 3,
+            hjust = 13, vjust = -35, parse = TRUE) +
+  theme(legend.position = c(0.1, 0.8),
+        panel.border = element_blank(),
+        panel.background = element_blank(),
+        axis.title.x = element_blank(),
+        axis.text.x = element_blank(),
+        axis.ticks.x = element_blank(),
+        axis.title.y = element_blank(),
+        axis.text.y = element_blank(),
+        axis.ticks.y = element_blank()) +
+  annotation_scale(location = "br", width_hint = 0.5) +
+  annotation_north_arrow(location = "br", which_north = "true", 
+                         pad_x = unit(0.75, "in"), pad_y = unit(0.5, "in"),
+                         style = north_arrow_fancy_orienteering)
+
+# ggsave("out/maps/explorative/m_BPK_locations_sampling_dates_GE.pdf",
+#        m_BPK_sampling_dates_GE,
+#        height = 8,
+#        width = 8)
+
+# Spatially interpolate age of samples using kriging (gstat pkg)
+# TO BE CONTINUED!
+
+
+
+# Explore PFB age of samples ---------------------------------------------------
+
+# explore time when samples were gathered (sample age)
+# first retrieve metadata
+tbl_PFB_lab_un <- tbl_BIS %>% 
+  filter(BIS_tbl %in% "PFB") %>% 
+  filter(BIS_type %in% "lab") %>% 
+  unnest_legacy(metadata)
+
+tbl_PFB_lab_un %>% 
+  dplyr::select(date, date_bep, date_mon, date_valid, year, month) %>% 
+  summary()
+
+# Prepare sf object
+sf_PFB_lab_sites <- tbl_PFB_lab_un %>% 
+  group_by(site_id) %>% 
+  slice(1L) %>% # slice by site
+  ungroup %>% 
+  st_as_sf(., coords = c("X", "Y")) %>% # convert to spatial (sf)
+  st_set_crs(., "EPSG:28992") # set coordinate reference system of Netherlands
+
+# gather number of locations for displaying on map
+n <- as.character(as.expression(paste0("italic(n) == ", nrow(sf_PFB_lab_sites))))
+
+# plot PFB sampling locations
+m_PFB_sampling_dates_NL <- ggplot() +
+  theme_bw() +
+  geom_sf(data = sf_NL_borders) +
+  geom_sf(data = sf_PFB_lab_sites, aes(color = year)) +
+  scale_fill_viridis_c(aesthetics = "color")  +
+  geom_text(aes(x = Inf, y = -Inf, label = n), size = 3,
+            hjust = 13, vjust = -55, parse = TRUE) +
+  theme(legend.position = c(0.1, 0.8),
+        panel.border = element_blank(),
+        panel.background = element_blank(),
+        axis.title.x = element_blank(),
+        axis.text.x = element_blank(),
+        axis.ticks.x = element_blank(),
+        axis.title.y = element_blank(),
+        axis.text.y = element_blank(),
+        axis.ticks.y = element_blank()) +
+  annotation_scale(location = "bl", width_hint = 0.5) +
+  annotation_north_arrow(location = "bl", which_north = "true", 
+                         pad_x = unit(0.75, "in"), pad_y = unit(0.5, "in"),
+                         style = north_arrow_fancy_orienteering)
+
+# ggsave("out/maps/explorative/m_PFB_locations_sampling_dates.pdf",
+#        m_PFB_sampling_dates_NL,
+#        height = 8,
+#        width = 8)
+
+# gather number of locations for displaying on map
+n <- as.character(
+  as.expression(paste0("italic(n) == ",
+                       st_join(sf_PFB_lab_sites, sf_GE_borders, left = FALSE) %>%
+                         nrow())))
+
+# plot PFB sampling locations in Gelderland
+m_PFB_sampling_dates_GE <- st_join(sf_PFB_lab_sites, sf_GE_borders, left = FALSE) %>% 
+  ggplot() +
+  theme_bw() +
+  geom_sf(data = sf_GE_borders) +
+  geom_sf(aes(color = year)) +
+  scale_fill_viridis_c(aesthetics = "color") +
+  geom_text(aes(x = Inf, y = -Inf, label = n), size = 3,
+            hjust = 15, vjust = -35, parse = TRUE) +
+  theme(legend.position = c(0.1, 0.8),
+        panel.border = element_blank(),
+        panel.background = element_blank(),
+        axis.title.x = element_blank(),
+        axis.text.x = element_blank(),
+        axis.ticks.x = element_blank(),
+        axis.title.y = element_blank(),
+        axis.text.y = element_blank(),
+        axis.ticks.y = element_blank()) +
+  annotation_scale(location = "br", width_hint = 0.5) +
+  annotation_north_arrow(location = "br", which_north = "true", 
+                         pad_x = unit(0.75, "in"), pad_y = unit(0.5, "in"),
+                         style = north_arrow_fancy_orienteering)
+
+# ggsave("out/maps/explorative/m_PFB_locations_sampling_dates_GE.pdf",
+#        m_PFB_sampling_dates_GE,
+#        height = 8,
+#        width = 8)
+
+# Spatially interpolate age of samples using kriging (gstat pkg)
+# first fit variogram; assume constant trend for variable sample age (~ 1)
+vgm_PFB_date <- variogram(year ~ 1,
+                          st_join(sf_PFB_lab_sites,
+                                  sf_GE_borders,
+                                  left = FALSE))
+
+# set variogram parameters in vgm() based on knowledge of spatial distribution of variable
+vgm_fit_PFB_date <- fit.variogram(vgm_PFB_date,
+                                  model = vgm(model = "Sph"))
+
+# plot the semivariogram
+plot(vgm_PFB_date, vgm_fit_PFB_date)
+
+<- st_join(sf_PFB_date, sf_GE_borders, left = FALSE)
+
+# ordinary kriging
+krig_PFB_date <- krige(formula = year ~ 1,
+                       locations = sf_PFB_date_GE,
+                       newdata = sgdf_ahn2_GE,
+                       model = vgm_fit_PFB_date)
+
+spplot(krig_PFB_date)
+
+
+
+# Explore LSK age of samples ---------------------------------------------------
+
+# explore time when samples were gathered (sample age)
+# first retrieve metadata
+tbl_LSK_lab_un <- tbl_BIS %>% 
+  filter(BIS_tbl %in% "LSK") %>% 
+  filter(BIS_type %in% "lab") %>% 
+  unnest_legacy(metadata) %>% 
+  mutate(year = as.numeric(str_extract(date,
+                                       "[[:digit:]]{4}"))) %>% 
+  mutate(year = as.integer(year))
+
+tbl_LSK_lab_un %>% 
+  dplyr::select(date, date_bep, date_valid, year) %>% 
+  summary()
+
+# Prepare sf object
+sf_LSK_lab_sites <- tbl_LSK_lab_un %>% 
+  group_by(site_id) %>% 
+  slice(1L) %>% # slice by site
+  ungroup %>% 
+  st_as_sf(., coords = c("X", "Y")) %>% # convert to spatial (sf)
+  st_set_crs(., "EPSG:28992") # set coordinate reference system of Netherlands
+
+# gather number of locations for displaying on map
+n <- as.character(as.expression(paste0("italic(n) == ", nrow(sf_LSK_lab_sites))))
+
+# plot LSK sampling locations
+m_LSK_sampling_dates_NL <- ggplot() +
+  theme_bw() +
+  geom_sf(data = sf_NL_borders) +
+  geom_sf(data = sf_LSK_lab_sites, aes(color = year)) +
+  scale_fill_viridis_c(aesthetics = "color",
+                       breaks = c(1990, 1995, 2000),
+                       labels = c(1990, 1995, 2000)) +
+  geom_text(aes(x = Inf, y = -Inf, label = n), size = 3,
+            hjust = 13, vjust = -55, parse = TRUE) +
+  theme(legend.position = c(0.1, 0.8),
+        panel.border = element_blank(),
+        panel.background = element_blank(),
+        axis.title.x = element_blank(),
+        axis.text.x = element_blank(),
+        axis.ticks.x = element_blank(),
+        axis.title.y = element_blank(),
+        axis.text.y = element_blank(),
+        axis.ticks.y = element_blank()) +
+  annotation_scale(location = "bl", width_hint = 0.5) +
+  annotation_north_arrow(location = "bl", which_north = "true", 
+                         pad_x = unit(0.75, "in"), pad_y = unit(0.5, "in"),
+                         style = north_arrow_fancy_orienteering)
+
+# ggsave("out/maps/explorative/m_LSK_locations_sampling_dates.pdf",
+#        m_LSK_sampling_dates_NL,
+#        height = 8,
+#        width = 8)
+
+# gather number of locations for displaying on map
+n <- as.character(
+  as.expression(paste0("italic(n) == ",
+                       st_join(sf_LSK_lab_sites, sf_GE_borders, left = FALSE) %>%
+                         nrow())))
+
+# plot LSK sampling locations in Gelderland
+m_LSK_sampling_dates_GE <- st_join(sf_LSK_lab_sites, sf_GE_borders, left = FALSE) %>% 
+  ggplot() +
+  theme_bw() +
+  geom_sf(data = sf_GE_borders) +
+  geom_sf(aes(color = year)) +
+  scale_fill_viridis_c(aesthetics = "color",
+                       breaks = c(1990, 1995, 2000),
+                       labels = c(1990, 1995, 2000)) +
+  geom_text(aes(x = Inf, y = -Inf, label = n), size = 3,
+            hjust = 17.5, vjust = -35, parse = TRUE) +
+  theme(legend.position = c(0.1, 0.8),
+        panel.border = element_blank(),
+        panel.background = element_blank(),
+        axis.title.x = element_blank(),
+        axis.text.x = element_blank(),
+        axis.ticks.x = element_blank(),
+        axis.title.y = element_blank(),
+        axis.text.y = element_blank(),
+        axis.ticks.y = element_blank()) +
+  annotation_scale(location = "br", width_hint = 0.5) +
+  annotation_north_arrow(location = "br", which_north = "true", 
+                         pad_x = unit(0.75, "in"), pad_y = unit(0.5, "in"),
+                         style = north_arrow_fancy_orienteering)
+
+# ggsave("out/maps/explorative/m_LSK_locations_sampling_dates_GE.pdf",
+#        m_LSK_sampling_dates_GE,
+#        height = 8,
+#        width = 8)
+
+# Spatially interpolate age of samples using kriging (gstat pkg)
+# TO BE CONTINUED!
+
+```
+
+

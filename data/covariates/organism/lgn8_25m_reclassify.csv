@@ -1,0 +1,50 @@
+﻿value,description,value_rcl,description_rcl
+1,pasture,2,grassland (grasland)
+23,grass in built-up areas (gras in primair bebouwd gebied),2,grassland (grasland)
+28,grass in semi built-up areas (gras in secundair bebouwd gebied),2,grassland (grasland)
+45,natural grasslands (natuurgraslanden),2,grassland (grasland)
+46,Grass in coastal areas,2,grassland (grasland)
+47,other grass,2,grassland (grasland)
+2,maize (mais),21,maize (mais)
+3,potatoes (aardappelen),22,potatoes (aardappelen)
+4,sugar beet,23,beetroot (bieten)
+5,cereals (granen),20,cereals (granen)
+6,other agricultural crops (overige landbouwgewassen),25,other crops (overige landbouwgewassen)
+27,other land use outside urban areas,25,other crops (overige landbouwgewassen)
+24,bare soil in built-up areas (kale grond in bebouwd buitengebied),7,urban (bebouwd gebied)
+8,greenhouses (glastuinbouw),9,greenhouses (glastuinbouw)
+9,fruits / orchard (boomgaard),8,horticulture/fruits (boomgaard)
+61,tree nurseries (boomwekerijen),8,horticulture/fruits (boomgaard)
+62,fruit cultivation (fruitwekerijen),8,horticulture/fruits (boomgaard)
+10,flower bulbs (bloembollen),24,flower bulbs (bloembollen)
+11,deciduous forest (loofbos),4,deciduous forest (loofbos)
+20,forest in built-up areas,4,deciduous forest (loofbos)
+22,forest in semi built-up areas,4,deciduous forest (loofbos)
+12,coniferous forest (naaldbos),5,coniferous forest (naaldbos)
+36,heathland (heide),10,heathlands (droge heide)
+37,grassy heathland (matig vergraste heide),10,heathlands (droge heide)
+38,very grassy heathland (sterk vergraste heide),10,heathlands (droge heide)
+323,other bush/shrub vegetation (low),10,heathlands (droge heide)
+333,other bush/shrub vegetation (high),10,heathlands (droge heide)
+30,salt marshes (kwelders),17,salt marshes (kwelders)
+16,fresh water (zoet water),1,water
+17,salt water (zout water),1,water
+18,urban built-up areas (bebouwing in primair bebouwd gebied),7,urban (bebouwd gebied)
+19,semi-urban built-up areas (bebouwing in secundair bebouwd gebied),7,urban (bebouwd gebied)
+25,main roads and railways (hoofdwegen en spoorwegen),7,urban (bebouwd gebied)
+26,built-up areas outside urban areas (bebouwing in het buitengebied),7,urban (bebouwd gebied)
+31,costal sands (open zand in kustgebied),12,"beaches, dunes, sand"
+32,coastal dune areas with low vegetation (duinen met lage vegetatie),12,"beaches, dunes, sand"
+33,coastal dune areas with high vegetation (duinen met hoge vegetatie),12,"beaches, dunes, sand"
+34,heathland in coastal areas (duin-heide),12,"beaches, dunes, sand"
+35,drifting sands/river sandbanks (open stuifzand en/ of rivierzand),12,"beaches, dunes, sand"
+39,peat bogs (hoogveen),11,raised bog (hoogveen)
+40,forest in peat bogs (bos in hoogveengebied),11,raised bog (hoogveen)
+321,bush/shrub vegetation in peat bogs (low),11,raised bog (hoogveen)
+331,bush/shrub vegetation in peat bogs (high),11,raised bog (hoogveen)
+41,other swamp vegetation (overige moerasvegetatie),18,swamp (moeras)
+42,reeds (rietvegetatie),18,swamp (moeras)
+43,forest in swamp areas (bos in boerasgebied),18,swamp (moeras)
+322,bush/shrub vegetation in swamp areas (low),18,swamp (moeras)
+332,bush/shrub vegetation in swamp areas (high),18,swamp (moeras)
+0,no data,,

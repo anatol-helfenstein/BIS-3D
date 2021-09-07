@@ -1,0 +1,15 @@
+﻿value,description,value_rcl,description_rcl
+0,other,,
+10,overige graslanden,10,overige graslanden
+11,natuurgraslanden,11,natuurgraslanden
+14,weidevogel graslanden,11,natuurgraslanden
+20,akker,20,akker
+21,reservaat akkers,21,reservaat akkers
+22,weidevogel akkers,21,reservaat akkers
+30,heide,30,heide
+40,bos,40,bos
+60,bebouwd gebied en infrastructuur,60,bebouwd gebied en infrastructuur
+70,water,70,water
+80,rietmoeras,80,rietmoeras
+90,stuifzanden,90,stuifzanden
+91,"duinen, strand en zandplaten",91,"duinen, strand en zandplaten"

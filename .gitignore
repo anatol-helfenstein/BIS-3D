@@ -1,0 +1,65 @@
+### PUBLIC version for paper ###
+36_QRF-SI_3D_near_obs_dist.Rmd
+anunna/
+data/covariates/geodesk_comments.txt
+data/soil/
+db/
+img/
+man/
+out/figs/explorative/histograms_bpk.pdf
+out/figs/explorative/histograms_bpk.png
+out/figs/explorative/ts_outdated_SOC.pdf
+out/figs/models/p_pfb_rf_ctot.pdf
+out/figs/models/p_pfb_rf_ctot.png
+R/archive/
+R/other/near_obs_3D.R
+R/other/near_obs_dist_toy_example.R
+R/Rproject_BISplus_README.txt
+
+
+
+### GitLab and GitHub ###
+
+# History files
+.Rhistory
+
+# Session Data files
+.RData
+
+# User-specific files
+.Ruserdata
+
+# Rstudio files
+.Rproj.user/
+.Rproj.user
+*.Rproj
+
+# large files (GeoTiffs, Shapefiles, raster R package gridded files (.grd, .gri), SAGA GIS .sdat files, html files and .Rds files)
+*.tif
+*.grd
+*.gri
+*.sdat
+*.html
+*.Rds
+
+
+
+### GitHub (due to 100 MB file max.) ###
+
+# BISplus outputs (covariates, soil tibbles, models)
+# out/data/
+
+
+
+### GitLab ###
+
+
+
+### Sidenote ###
+
+# The rules in your .gitignore file only apply to untracked files.
+# Since the files under that directory were already committed in your repository,
+# you have to unstage them, create a commit, and push that to GitHub:
+# git rm -r --cached some-directory
+# git commit -m 'Remove the now ignored directory "some-directory"'
+# git push origin master

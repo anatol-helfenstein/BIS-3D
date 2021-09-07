@@ -1,0 +1,210 @@
+---
+title: "Exploratory Analysis of Covariates"
+subtitle: "Based on CLORPT soil forming factors"
+author: "Anatol Helfenstein"
+date: "2021-06-02 (updated)"
+output:
+  html_document:
+    toc: yes
+    toc_float: yes
+  '': default
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+options(width = 100) # sets width of R code output (not images)
+```
+
+```{r load required pkgs, include = FALSE}
+
+# load packages
+pkgs <- c("tidyverse", "raster", "rgdal", "sf", "rasterVis", "viridis", "foreach",
+          "RColorBrewer")
+lapply(pkgs, library, character.only = TRUE)
+
+```
+
+
+## Complete List of Covariates
+
+```{r list of covariates, echo = TRUE, warning = FALSE}
+# locate rasters for stack
+v_cov_names <- dir("out/data/covariates/final_stack",
+                pattern = "\\.grd$", recursive = TRUE)
+
+# read in prepared rasters ready for model calibration
+ls_r_cov <- foreach(cov = 1:length(v_cov_names)) %do%
+  raster(paste0("out/data/covariates/final_stack/", v_cov_names[[cov]]))
+
+# read in prepared covariate stack
+r_stack_cov <- stack(ls_r_cov)
+
+# All covariates at 25m resolution excluding soil maps
+dim(r_stack_cov)
+
+# Names of all covariates
+names(r_stack_cov)
+
+```
+
+
+## A glimpse of a few covariates according to soil formation factors
+
+### Climate
+
+```{r climate covariates, echo=TRUE, warning=FALSE, out.height='100%', out.width='100%'}
+# Example of covariate belonging to clorpt factor "climate": average precipitation
+r_stack_cov$precip_yearly_1981_2010_25m
+
+hist(r_stack_cov$precip_yearly_1981_2010_25m)
+
+levelplot(r_stack_cov$precip_yearly_1981_2010_25m,
+          margin = list(FUN = 'median'),
+          par.settings = list(axis.line = list(col = "transparent")),
+          scales = list(draw = FALSE),
+          main = "Precipitation: long term average (1981-2010)",
+          col.regions = viridis(n = 100))
+
+plot(r_stack_cov$precip_yearly_1981_2010_25m,
+     main = "Precipitation: long term average (1981-2010)",
+     col = bpy.colors(),
+     axes = FALSE,
+     box = FALSE)
+
+
+# Example of covariate belonging to clorpt factor "climate": average max temperature
+r_stack_cov$temp_yearlymax_1981_2010_25m
+
+hist(r_stack_cov$temp_yearlymax_1981_2010_25m)
+
+levelplot(r_stack_cov$temp_yearlymax_1981_2010_25m,
+          margin = list(FUN = 'median'),
+          main = "Temperature: average yearly max temperature (1981-2010)")
+
+plot(r_stack_cov$temp_yearlymax_1981_2010_25m,
+     col = heat.colors(100, rev = TRUE),
+     main = "Temperature: average yearly max temperature (1981-2010)",
+     axes = FALSE,
+     box = FALSE)
+```
+
+
+### Organisms (mostly vegetation and anthropogenic influence)
+
+```{r organism covariates, echo = TRUE, warning = FALSE}
+# Example of covariate belonging to clorpt factor "organism": Tree Height
+r_stack_cov$boomhoogte_2017_25m
+
+hist(r_stack_cov$boomhoogte_2017_25m)
+
+plot(r_stack_cov$boomhoogte_2017_25m,
+     main = "Tree Heights in 2017",
+     axes = FALSE,
+     box = FALSE,
+     col = viridis(n = 100))
+
+# Example of covariate belonging to clorpt factor "organism": Landuse (LGN8)
+r_stack_cov$lgn8_25m
+
+r_stack_cov$lgn8_25m@data@attributes[[1]]
+
+n_classes <- nrow(levels(r_stack_cov$lgn8_25m)[[1]])
+
+# if > 12 classes, create an assortment of categorical colors
+qual_col_pals = brewer.pal.info[brewer.pal.info$category == 'qual',]
+v_colors = unlist(mapply(brewer.pal,
+                           qual_col_pals$maxcolors,
+                           rownames(qual_col_pals)))
+
+levelplot(r_stack_cov$lgn8_25m,
+          att = "description",
+          main = "Land Use (LGN8)",
+          par.settings = list(axis.line = list(col = "transparent")),
+          scales = list(draw = FALSE),
+          col.regions = v_colors[1:n_classes])
+```
+
+
+## Relief
+
+```{r relief covariates, echo = TRUE, warning = FALSE}
+# Example of covariate belonging to clorpt factor "relief": DEM (AHN2)
+r_stack_cov$ahn2_25m
+
+hist(r_stack_cov$ahn2_25m)
+
+levelplot(r_stack_cov$ahn2_25m,
+          margin = list(FUN = 'median'),
+          main = "DEM (AHN2)")
+
+
+# Examples of covariate belonging to clorpt factor "relief": some DEM derivatives
+r_stack_DEMderiv <- stack(r_stack_cov$ahn2_25m_slope, r_stack_cov$ahn2_25m_twi,
+                          r_stack_cov$ahn2_25m_vbf, r_stack_cov$ahn2_25m_vdepth)
+
+plot(r_stack_DEMderiv, col = rev(magma(10, alpha = 0.8)),
+     axes = FALSE,
+     box = FALSE)
+```
+
+
+
+## Parent Material (Geology/Lithology/Geomorphology)
+
+```{r parent material covariates, echo = TRUE, warning = FALSE}
+# Example of covariate belonging to clorpt factor "parent material": geomorphological map 2019
+r_stack_cov$geomorph2019_25m
+
+r_stack_cov$geomorph2019_25m@data@attributes[[1]]
+
+n_classes <- nrow(levels(r_stack_cov$geomorph2019_25m)[[1]])
+
+levelplot(r_stack_cov$geomorph2019_25m,
+          att = "description",
+          main = "Geomorphological Map 2019",
+          par.settings = list(axis.line = list(col = "transparent")),
+          scales = list(draw = FALSE),
+          col.regions = sample(v_colors, n_classes, replace = TRUE))
+
+
+# Example of covariate belonging to clorpt factor "parent material": geomorphological genesis classes
+r_stack_cov$geomorph2019_genese_25m
+
+r_stack_cov$geomorph2019_genese_25m@data@attributes[[1]]
+
+n_classes <- nrow(levels(r_stack_cov$geomorph2019_genese_25m)[[1]])
+
+levelplot(r_stack_cov$geomorph2019_genese_25m,
+          att = "description",
+          main = "Geomorphological Genesis Classes (2019 Map)",
+          par.settings = list(axis.line = list(col = "transparent")),
+          scales = list(draw = FALSE),
+          col.regions = RColorBrewer::brewer.pal(n = n_classes, name = "Paired"))
+```
+
+
+### Time (?)
+
+Time is incorporated in time series of several other covariates, mostly belonging to soil formation factor "organism". E.g. land use maps, vegetation maps, satellite derived data, etc.
+
+- Time Series of Landuse Maps:
+
+![Land use of Ede-Wageningen region across time](img/landuse_ede_wageningen_hgn.jpg)
+
+```{r time covariates, echo = TRUE, warning = FALSE}
+# Example of time-varying covariate belonging to clorpt factor "organism": Landuse 1900 (HGN)
+r_stack_cov$hgn_1900_filled_25m
+
+r_stack_cov$hgn_1900_filled_25m@data@attributes[[1]]
+
+n_classes <- nrow(levels(r_stack_cov$hgn_1900_filled_25m)[[1]])
+
+levelplot(r_stack_cov$hgn_1900_filled_25m,
+          att = "description",
+          main = "Land Use in 1900",
+          par.settings = list(axis.line = list(col = "transparent")),
+          scales = list(draw = FALSE),
+          col.regions = RColorBrewer::brewer.pal(n = n_classes, name = "Paired"))
+```
+
+

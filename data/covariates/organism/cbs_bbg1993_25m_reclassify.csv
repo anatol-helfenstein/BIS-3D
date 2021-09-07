@@ -1,0 +1,36 @@
+﻿value,description,value_rcl,description_rcl
+0,other,16,other/unknown (overig)
+11,Glastuinbouw,9,greenhouses (glastuinbouw)
+12,Overig agrarisch gebruik,3,agricultural area (agrarisch gebied)
+21,Bos,4,forest (bos)
+31,Woongebied,7,urban (bebouwd gebied)
+32,Delfstoffenwinning,7,urban (bebouwd gebied)
+33,Bedrijfstrerreinen,7,urban (bebouwd gebied)
+34,Dienstverlenende sector,7,urban (bebouwd gebied)
+35,Overige openbare voorzieningen,7,urban (bebouwd gebied)
+36,Social-culturele voorzieningen,7,urban (bebouwd gebied)
+41,"Spoor-, tram- en metrowegen",7,urban (bebouwd gebied)
+42,Verharde wegen,7,urban (bebouwd gebied)
+43,Onverharde en halfverharde wegen,7,urban (bebouwd gebied)
+44,Vliegvelden,7,urban (bebouwd gebied)
+51,Parken en plantsoenen,15,recreational (recreatie)
+52,Sportterreinen,15,recreational (recreatie)
+53,Dagrecreatieve objecten en terreinen,15,recreational (recreatie)
+54,Volkstuinen,15,recreational (recreatie)
+55,Verblijfsrecreatie,15,recreational (recreatie)
+61,Droog natuurlijk terrein,14,nature (natuur)
+62,Nat natuurlijk terrein,14,nature (natuur)
+71,Stortplaatsen,16,other/unknown (overig)
+72,Wrakkenopslagplaatsen,16,other/unknown (overig)
+73,Begraafplaatsen,16,other/unknown (overig)
+74,Bouwterrein voor bedrijfsterreinen,16,other/unknown (overig)
+75,Bouwterrein voor overige bestemmingen,16,other/unknown (overig)
+76,Overige gronden,16,other/unknown (overig)
+81,Ijsselmeer,1,water
+82,Spaarbekkens (waterreservoirs),16,other/unknown (overig)
+83,Water met een recreatieve hoofdfunctie,15,recreational (recreatie)
+84,Overig water breder dan 6 meter,1,water
+85,"Waddenzee, Eems, Dollard",1,water
+86,Ooster- en Westerschelde,1,water
+87,Noordzee,1,water
+91,Buitenland,16,other/unknown (overig)

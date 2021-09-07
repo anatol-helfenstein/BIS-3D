@@ -1,0 +1,67 @@
+﻿value,description,value_rcl,description_rcl
+1111,Continuous urban fabric (in-situ based or IM.D. >80-100%),1,urban built-up areas
+1112,"Dense urban fabric (IM.D. >30-80% + industrial, commercial, public, military and private units)",1,urban built-up areas
+1113,"Dense urban fabric (IM.D. >30-80% + industrial, commercial, public, military and private units)",1,urban built-up areas
+1120,Low density urban fabric (IM.D. 0-30%),1,urban built-up areas
+1121,Low density urban fabric (IM.D. 0-30%),1,urban built-up areas
+1211,Road networks and associated land,1,urban built-up areas
+1212,Railways and associated land,1,urban built-up areas
+1213,Port areas,1,urban built-up areas
+1214,Airports,1,urban built-up areas
+1311,"Mineral extraction, dump and construction sites",1,urban built-up areas
+1321,Land without current use,1,urban built-up areas
+1411,Green urban areas T.C.D. > = 30%,1,urban built-up areas
+1412,Green urban areas T.C.D. < 30%,1,urban built-up areas
+1420,Sport and leisure facilities,1,urban built-up areas
+1421,Sports and leisure facilities T.C.D > = 30%,1,urban built-up areas
+1422,Sports and leisure facilities T.C.D < 30%,1,urban built-up areas
+2111,Non-irrigated arable land,2,arable land
+2321,Complex cultivation patterns,2,arable land
+2331,Land principally occupied by agriculture with significant areas of natural vegetation,2,arable land
+2121,Greenhouses,3,greenhouses
+2211,Vineyards,4,horticulture
+2221,High stem fruit trees (extensively managed),4,horticulture
+2222,Low stem fruit trees and berry plantations,4,horticulture
+3000,Urban Atlas - Forest,5,Mixed forest
+3211,Riparian and fluvial coniferous forest (T.C.D. > 80%),5,Mixed forest
+3231,Riparian and fluvial coniferous forest (T.C.D > 30 - 50%),5,Mixed forest
+3311,Riparian and fluvial mixed forest (T.C.D. > 80%),5,Mixed forest
+3331,Riparian and fluvial mixed forest (T.C.D > 30 - 50%),5,Mixed forest
+3341,Riparian and fluvial mixed forest (T.C.D >= 10 - 30%),5,Mixed forest
+3411,Transitional woodland and scrub,5,Mixed forest
+3412,Lines of trees and scrub,5,Mixed forest
+3111,Riparian and fluvial Broadleaved forest (T.C.D > 80%),6,Broadleaved forest
+3131,Riparian and fluvial Broadleaved forest (T.C.D > 30 - 50%),6,Broadleaved forest
+3151,Highly artificial broadleaved plantations,6,Broadleaved forest
+4000,Urban Atlas - Pastures,8,Grasslands
+4111,Managed grasslands without trees and scrubs (T.C.D < 30%),8,Grasslands
+4112,Managed grasslands without trees and scrubs (T.C.D >= 30%),8,Grasslands
+4212,Mesic grasslands without trees (T.C.D. < 30%),8,Grasslands
+4222,Mesic grasslands without trees (T.C.D. >= 30%),8,Grasslands
+7000,Urban Atlas - Wetlands,11,Marshes & bogs
+7111,Inland freshwater marshes without reeds,11,Marshes & bogs
+7112,Inland freshwater marshes with reeds,11,Marshes & bogs
+7211,Exploited peat bog,11,Marshes & bogs
+7212,Unexploited peat bog,11,Marshes & bogs
+8111,Salt marshes without reeds,11,Marshes & bogs
+8121,Intertidal flats,14,Water
+8221,Estuaries,14,Water
+9000,Urban Atlas - Water,14,Water
+9111,Permannent interconnected running water courses,14,Water
+9112,Intermittently running water courses,14,Water
+9113,Highly modified natural water courses and canals,14,Water
+9121,Permanent separated water bodies belonging to the river system,14,Water
+9211,Natural water bodies,14,Water
+9212,Temporary natural water bodies,14,Water
+9213,Ponds and lakes with copletely man-made structure,14,Water
+9214,Intensively managed fish ponds,14,Water
+9215,Standing water bodies of extractive industrial sites,14,Water
+10111,Marine (other),14,Water
+0,other,15,other
+5000,Urban Atlas - Herbaceous vegetation associations,15,other
+5111,Heathlands and Moorlands,15,other
+6111,Sparsely vegetated areas,15,other
+6211,Beaches,15,other
+6212,Dunes,15,other
+6213,River banks,15,other
+6221,Bare rocks and rock debris,15,other

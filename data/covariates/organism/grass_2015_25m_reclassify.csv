@@ -1,0 +1,5 @@
+﻿value,description,value_rcl,description_rcl
+1,grassland,1,grassland
+0,not grassland,2,not grassland
+254,?,2,not grassland
+255,outside area (outside Netherlands),,

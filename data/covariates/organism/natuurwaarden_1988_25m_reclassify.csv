@@ -1,0 +1,26 @@
+﻿value,description,value_rcl,description_rcl
+0,other,9,other
+23,other,9,other
+24,other,9,other
+1,Schor of kwelder,1,salt marsh (kwelder)
+2,Moeras (excl. Moerasbos),2,swamp
+11,"combi. 2, 3",2,swamp
+13,"combi. 2, 8",2,swamp
+3,Nat schraalland,3,wet grasslands (nat schraalland)
+8,"Natte grond, overw. grasland",3,wet grasslands (nat schraalland)
+12,"combi. 3, 8",3,wet grasslands (nat schraalland)
+14,"combi. 3, 4",3,wet grasslands (nat schraalland)
+19,"combi. 3, 4, 5",3,wet grasslands (nat schraalland)
+21,"combi. 3, 5",3,wet grasslands (nat schraalland)
+22,"combi. 3, 7",3,wet grasslands (nat schraalland)
+4,Droog schraalland,4,dry grasslands (droog schraaland)
+15,"combi. 4, 5",4,dry grasslands (droog schraaland)
+18,"combi. 4, 10",4,dry grasslands (droog schraaland)
+20,"combi. 4, 6",4,dry grasslands (droog schraaland)
+5,Droge of natte heide,5,heathlands (droge of natte heide)
+6,"Levend rustend, ontwaterd of vergraven hoogveen",6,"peatlands (Levend rustend, ontwaterd of vergraven hoogveen)"
+7,bos of struweel,7,forest (bos of struweel)
+16,"combi. 7, 5",7,forest (bos of struweel)
+17,"combi. 7, 4",7,forest (bos of struweel)
+9,zout water,8,water
+10,Zoet of brak water,8,water

@@ -1,0 +1,16 @@
+﻿value,description,value_rcl,description_rcl
+7,agrarisch gebied,3,agricultural area (agrarisch gebied)
+11,loofbos,4,desciduous forest (loofbos)
+12,naaldbos,5,coniferous forest (naaldbos)
+16,zoet water,1,water
+17,zout water,1,water
+18,bebouwd gebied,7,urban (bebouwd gebied)
+30,kustgebied,12,"beaches, dunes, sand"
+35,heidegebied,10,heathlands (heidegebied)
+39,hoogveen,11,raised bog (hoogveen)
+41,moeras,18,swamp (moeras)
+44,veenweidegebied,27,peatland pasture (veenweidegebied)
+45,overige natuur,14,other nature (overige natuur)
+46,kale grond in natuurgebied,26,bare soil in nature area (kale grond in natuurgebied)
+0,no data,7,urban (bebouwd gebied)
+255,,7,urban (bebouwd gebied)

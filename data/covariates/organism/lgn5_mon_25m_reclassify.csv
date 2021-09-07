@@ -1,0 +1,11 @@
+﻿value,description,value_rcl,description_rcl
+0,no data,7,urban (bebouwd gebied)
+7,agrarisch gebied,3,agricultural area (agrarisch gebied)
+8,glastuinbouw,9,greenhouse (glastuinbouw)
+9,boomgaarden,8,horticulture/fruits (boomgaarden)
+11,bos,4,forest (bos)
+16,water,1,water
+18,bebouwd gebied,7,urban (bebouwd gebied)
+25,infrastructuur,7,urban (bebouwd gebied)
+30,natuur,14,nature (natuur)
+255,,7,urban (bebouwd gebied)

@@ -1,0 +1,34 @@
+﻿value,description,value_rcl,description_rcl
+0,Other,1,water
+1,Discontinuous urban fabric,7,urban (bebouwd gebied)
+8,Industrial and commercial units,7,urban (bebouwd gebied)
+10,Mineral extraction sites,7,urban (bebouwd gebied)
+16,Road and rail network,7,urban (bebouwd gebied)
+17,Construction sites,7,urban (bebouwd gebied)
+18,Airports,7,urban (bebouwd gebied)
+21,Dump sites,7,urban (bebouwd gebied)
+23,Port areas,7,urban (bebouwd gebied)
+26,Continuous urban fabric,7,urban (bebouwd gebied)
+11,Non-irrigated arable land,25,arable land (non-irrigated)
+6,Complex cultivation patterns,3,arable land (permanent crops)
+13,Fruit trees and berry plantations,8,horticulture/fruits (boomgaard)
+5,Pastures,2,grassland (grasland)
+22,Natural grasslands,2,grassland (grasland)
+7,Land principally occupied by agriculture with siginficant areas of natural vegetation,26,extensive agricultural land
+3,Broad leaved forest,4,deciduous forest (loofbos)
+15,Coniferous forest,5,coniferous forest (naaldbos)
+12,Mixed forest,6,mixed forest (gemengd bos)
+20,Transitional woodland-shrub,6,mixed forest (gemengd bos)
+19,Moors and heathland,10,heathlands (heide) & raised bog (hoogveen)
+28,"Beaches, dunes and sands",12,"beaches, dunes, sand"
+32,Sparsely vegetated areas,12,"beaches, dunes, sand"
+24,Inland marshes,11,"marshes, bogs and peat"
+27,Salt marshes,11,"marshes, bogs and peat"
+30,Peat bogs,11,"marshes, bogs and peat"
+4,Water bodies,1,water
+14,Water courses,1,water
+25,Intertidal flats,1,water
+29,Estuaries,1,water
+31,Sea and ocean,1,water
+2,Sport and leisure facilities,15,recreational (recreatie)
+9,Green urban areas,15,recreational (recreatie)

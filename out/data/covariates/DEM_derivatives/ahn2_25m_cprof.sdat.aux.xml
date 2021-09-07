@@ -1,0 +1,13 @@
+<PAMDataset>
+  <SRS dataAxisToSRSAxisMapping="1,2">PROJCS["unknown",GEOGCS["GCS_unknown",DATUM["D_Unknown_based_on_Bessel_1841_ellipsoid",SPHEROID["Bessel 1841",6377397.155,299.1528128,AUTHORITY["EPSG","7004"]]],PRIMEM["Greenwich",0],UNIT["Degree",0.0174532925199433]],PROJECTION["Oblique_Stereographic"],PARAMETER["latitude_of_origin",52.1561605555556],PARAMETER["central_meridian",5.38763888888889],PARAMETER["scale_factor",0.9999079],PARAMETER["false_easting",155000],PARAMETER["false_northing",463000],UNIT["metre",1,AUTHORITY["EPSG","9001"]],AXIS["Easting",EAST],AXIS["Northing",NORTH]]</SRS>
+  <PAMRasterBand band="1">
+    <Metadata>
+      <MDI key="STATISTICS_APPROXIMATE">YES</MDI>
+      <MDI key="STATISTICS_MAXIMUM">0.028331849724054</MDI>
+      <MDI key="STATISTICS_MEAN">-1.6821527247199e-05</MDI>
+      <MDI key="STATISTICS_MINIMUM">-0.031077077612281</MDI>
+      <MDI key="STATISTICS_STDDEV">0.0011416247647901</MDI>
+      <MDI key="STATISTICS_VALID_PERCENT">40.3</MDI>
+    </Metadata>
+  </PAMRasterBand>
+</PAMDataset>

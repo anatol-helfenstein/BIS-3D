@@ -1,0 +1,12 @@
+﻿value,description,value_rcl,description_rcl
+0,no data,7,urban (bebouwd gebied)
+1,grasland (grass),2,grassland (grasland)
+2,akker en kale grond,3,crop and bare land (akker en kale grond)
+3,heide en hoogveen,10,heath- & peatland (heide en hoogveen)
+4,bos,4,forest (bos)
+5,bos,4,forest (bos)
+6,bebouwing en wegen,7,urban (bebouwd gebied)
+7,water,1,water
+8,rietmoeras,18,swamp (moeras)
+9,zand,12,"beaches, dunes, sand"
+255,,7,urban (bebouwd gebied)

@@ -1,0 +1,41 @@
+﻿value,description,value_rcl,description_rcl
+20,natuur (natuurlijke graslanden en insluitsels < 1 ha),2,grassland (grasland)
+45,agrarisch grasland,2,grassland (grasland)
+46,landschappelijke elementen binnen agrarisch en stedelijke groen,2,grassland (grasland)
+50,erf (overig bodemgebruik agrarisch gebied),2,grassland (grasland)
+51,erf (20% bebouwing in agrarisch grasland),2,grassland (grasland)
+40,akkers en overig agrarisch,3,arable land (bouwland)
+5,loof/gemengd bos,6,mixed forest (gemengd bos)
+4,naaldbos,5,coniferous forest (naaldbos)
+7,zand en duinen,12,"sand, dunes (zand, duinen)"
+17,water binnen stedelijk,1,water
+18,sloten binnen stedelijk,1,water
+27,water binnen natuur,1,water
+28,sloten binnen natuur,1,water
+30,water,1,water
+31,huizen over water,1,water
+33,doorgaande wegen over water,1,water
+34,overige wegen over water,1,water
+36,landschappelijke elementen binnen water,1,water
+47,water binnen agrarisch en stedelijk groen,1,water
+48,sloten binnen agrarisch en stedelijk groen,1,water
+10,stedelijk,7,urban (bebouwd gebied)
+11,huizen binnen stedelijk,7,urban (bebouwd gebied)
+12,snelwegen binnen stedelijk,7,urban (bebouwd gebied)
+13,doorgaande wegen binnen stedelijk,7,urban (bebouwd gebied)
+14,overige wegen binnen stedelijk,7,urban (bebouwd gebied)
+16,landschappelijke elementen binnen stedelijk,7,urban (bebouwd gebied)
+19,spoorwegen binnen stedelijk,7,urban (bebouwd gebied)
+21,huizen binnen natuur,7,urban (bebouwd gebied)
+22,snelwegen binnen natuur,7,urban (bebouwd gebied)
+23,doorgaande wegen binnen natuur,7,urban (bebouwd gebied)
+24,overige wegen binnen natuur,7,urban (bebouwd gebied)
+29,spoorwegen binnen natuur,7,urban (bebouwd gebied)
+32,snelwegen over water,7,urban (bebouwd gebied)
+41,huizen binnen agrarisch en stedelijk groen,7,urban (bebouwd gebied)
+42,snelwegen binnen agrarisch en stedelijk groen,7,urban (bebouwd gebied)
+43,doorgaande wegen binnen agrarisch en stedlijk groen,7,urban (bebouwd gebied)
+44,landbouwwegen,7,urban (bebouwd gebied)
+49,spoorwegen binnen agrarisch en stedelijk groen,7,urban (bebouwd gebied)
+6,heide,10,heathlands (heide)
+255,,1,water

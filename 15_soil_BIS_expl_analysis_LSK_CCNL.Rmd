@@ -1,0 +1,368 @@
+---
+title: "Exploratory Analysis of Soil Carbon (SC) in LSK and CCNL Datasets"
+author: "Anatol Helfenstein"
+date: "09/07/2020"
+output:
+html_document:
+  toc: true
+  toc_float: true
+---
+
+
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+options(width = 120) # sets width of R code output (not images)
+```
+
+```{r load required pkgs and load data, include = FALSE}
+
+# load packages
+pkgs <- c("tidyverse", "raster", "rgdal", "sf")
+lapply(pkgs, library, character.only = TRUE)
+
+# read in LSK and CCNL lab data
+tbl_LSK_lab <- read_rds("out/data/soil/tbl_LSK_lab.Rds")
+tbl_LSK_field <- read_rds("out/data/soil/tbl_LSK_field.Rds")
+tbl_CCNL <- read_rds("out/data/soil/tbl_CCNL.Rds")
+
+```
+
+
+***
+## The LSK and CCNL datasets
+
+
+### "Landelijke Steekproef kaarteenheden" (LSK)
+
+* nation-wide soil sampling campaign to check quality of conventional soil maps
+* 1400 sampled locations based on stratified random sampling design
+    + stratas based on combinations of generalized soil type and land use
+
+```{r deelgebieden, out.width="80%", fig.align = "center", fig.cap="Source: van Tol-Leenders et al. 2019", echo = FALSE}
+knitr::include_graphics(path = "img/vanTol-Leenders_et_al_2019_deelgebieden.png")
+```
+
+
+### "Carbon Content in the Netherlands" (CCNL)
+
+* In 2018, sites were revisited in order to estimate changes in SOC stocks
+* Sampling occured by 30 trained eurofins workers (not soil scientists) between October and December 2018
+* Some conventional lab measurements and predictions of many soil properties based on spectroscopic NIR models; penetrometer measurements
+
+
+***
+## Comparing LSK with CCNL
+
+* Due to different objectives of sampling campaigns, LSK and CCNL data are not harmonized
+* Some of the main differences are outlined here:
+
+```{r methodiek, out.width="80%", fig.align = "center", fig.cap="Source: van Tol-Leenders et al. 2019", echo = FALSE}
+knitr::include_graphics(path = "img/vanTol-Leenders_et_al_2019_methodiekverschillen.png")
+```
+
+
+### Sampling locations
+
+* There seem to be no common ID of locations/sites measured in LSK and CCNL datasets
+* How close are the "monitored" sites really?
+    + LSK coordinates recorded in BIS DB seemed to have been estimated in hindsight
+    + LSK and CCNL coordinates of revisited sites are the same in BIS and can only be visualized here using sf::st_jitter() and when we zoom in very close
+
+```{r load spatial pkgs and read in data, include = FALSE}
+library(sf)
+library(raster)
+library(mapview)
+
+# read in covariate stack
+r_stack_cov <- stackOpen("out/data/covariates/02_r_stack_cov.grd")
+```
+
+```{r map LSK and CCNL locations, echo = FALSE, out.width="100%", fig.align = "center"}
+# combine LSK and CCNL datasets and convert to simple feature to compare directly using advantages of sf pkg
+tbl_LSK_lab <- tbl_LSK_lab %>% 
+  mutate(dataset = "LSK")
+# lab and field LSK originate from exact same locations, i.e. all sites from which there is field data, there is also lab data and vice versa: don't need field tbl for now
+tbl_CCNL <- tbl_CCNL %>% 
+    mutate(dataset = "CCNL")
+
+# convert to simple feature, group by coordinates, assign ID for revisited sites (monitoring), and restructure order of columns
+sf_LSK_CCNL_lab <- bind_rows(tbl_LSK_lab, tbl_CCNL) %>% 
+  st_as_sf(., coords = c("X", "Y"), crs = crs(r_stack_cov)) %>% 
+  rename(CCNL_site_id = site_id) %>% 
+  mutate(X = st_coordinates(geometry)[,1]) %>% 
+  mutate(Y = st_coordinates(geometry)[,2]) %>% 
+  group_by(X, Y) %>% 
+  mutate(site_id = cur_group_id()) %>% 
+  ungroup() %>% 
+  dplyr::select(site_id, dataset, LSK_site_id, CCNL_site_id, sample_id,
+                d_upper:soil_chem, soil_other,
+                soil_profile:BWST_GHG, ID_EA,
+                os_cor_glv:geometry) %>% 
+  arrange(site_id, dataset, d_upper, d_lower)
+
+# These are sites that were sampled twice over time: both LSK and CCNL
+monitoring_sites <- sf_LSK_CCNL_lab %>% 
+  group_by(site_id, dataset) %>% 
+  summarise() %>% 
+  filter(duplicated(site_id)) %>% 
+  pull(site_id)
+
+# remove sites that were only sampled once in time (either LSK or CCNL but not both)
+sf_LSK_CCNL_lab <- sf_LSK_CCNL_lab %>% 
+  filter(site_id %in% monitoring_sites)
+
+# observe sampling locations on map
+sf_LSK_CCNL_lab %>% 
+  group_by(LSK_site_id, site_id) %>% 
+  # just take uppermost sample per site per dataset
+  slice(1) %>% 
+  st_jitter(., factor = 0.00001) %>%
+  mapview(.,
+          zcol = "dataset",
+          layer.name = "Datasets",
+          legend = TRUE,
+          viewer.suppress = FALSE)
+```
+
+* If we combine LSK and CCNL data and group them by X and Y coordinates, create a unique monitoring site ID, we obtain 1'151 locations??? Supposed to be 1'152 sites revisited (as stated in van Tol-Leenders et al. 2019)...
+
+```{r revisited sites, echo = TRUE}
+# why not 1152 sites?
+length(unique(sf_LSK_CCNL_lab$site_id))
+```
+
+
+***
+## Different forms of soil carbon (SC)
+
+
+### SC in the LSK dataset
+
+* LSK lab measurements were only made of total C (not e.g. SOC)
+    + Only measured for topsoils (uppermost horizon; varying depth) at 200 sites
+* (Note: The only soil properties for which there are abundant lab measurements of many sites in LSK are pH (KCl), P (oxalate), BD (and PAL = p-amm.lactaat-azijnzuur))
+* Although LSK field observations were made of SOM, these are rough approximations which would in addition have to be converted to SOC (another approximation)
+    + the uncertainty of such calculations may be larger than the differences in SOC due to "real" changes over time between the LSK and CCNL sampling campaigns! This has to be explored further or at least has to be kept in mind!
+
+```{r glimpse LSK, echo = TRUE}
+# LSK lab contains total C
+tbl_LSK_lab %>% 
+  unnest(soil_target) %>% 
+  filter(!C_tot %in% NA) %>% 
+  group_by(LSK_site_id)
+
+# LSK field contains SOM field estimations (n ~ 10K, sites > 3K)
+tbl_LSK_field %>% 
+  unnest(soil_target) %>% 
+  filter(!SOM_LAAG %in% NA) %>% 
+  group_by(LSK_site_id)
+
+# SOM_O = rounded estimations of SOM_LAAG
+tbl_LSK_field %>% 
+    unnest(soil_target) %>% 
+    dplyr::select(SOM_LAAG, SOM_O) %>% 
+    glimpse()
+
+# same summary stats
+tbl_LSK_field %>% 
+    unnest(soil_target) %>% 
+    dplyr::select(SOM_LAAG, SOM_O) %>% 
+    summary()
+```
+    
+* Conversion factors of OM to SOC vary considerably
+    + Litature values suggest 0.5 or 0.58
+    + In CCNL data, found empirical values of 0.54 for topsoil and 0.51 for subsoil
+    
+    ```{r koolstofratio, out.width="80%", fig.align = "center", fig.cap="Source: van Tol-Leenders et al. 2019", echo = FALSE}
+knitr::include_graphics(path = "img/vanTol-Leenders_et_al_2019_koolstofratio.png")
+```
+        
+
+### SC in the CCNL dataset
+
+* Here, the measurements of SC are much more complete (makes sense given aim of CCNL)
+* Many forms of SC were measured:
+    + Total C [%] (conventional)
+    + Org. C [%] (conventional)
+    + SOC [g/kg] (NIR predictions)
+    + Total org. C [g/kg] (NIR predictions)
+    + SOM [%] (conventional)
+    + SOM [g/kg] (NIR predictions)
+* All attributes related to SC were measured at every site/location
+* CCNL data can be used to the fullest! :-)
+
+```{r glimpse CCNL, echo = TRUE}
+# CCNL; many forms of SC measured
+tbl_CCNL %>% 
+  unnest(soil_target) %>% 
+  dplyr::select(sample_id:d_lower,
+                C_tot_per:SOM_NIR_gkg,
+                pH_NIR:NaCEC_NIR_mmolkg,
+                N_tot_mgNkg:site_id_WUR)
+
+# measurements are complete: no NA's
+tbl_CCNL %>% 
+  unnest(soil_target) %>% 
+  dplyr::select(C_tot_per:SOM_NIR_gkg) %>% 
+  summary()
+```
+
+
+***
+## Using only what we already have!
+
+* Can we model changes in SC using an AR model with time-forcing variables using only the LSK and CCNL datasets?
+
+```{r tbl LSK & CCNL, echo = TRUE}
+# tbl of combined LSK and CCNL datasets
+sf_LSK_CCNL_lab
+```
+
+
+### LSK and CCNL sites with total Carbon [%] lab measurements: a closer look
+
+* (Only) 176 sites with revisited total Carbon [%] conventional lab measurements
+* National-scale changes in SC over time cannot be predicted with only these measurements:
+    + Sampling sites don't cover entire feature space (e.g. Heuvelland)
+* **However, extrapolations onto a national scale do not have to be the goal of a smaller case study (MSc thesis Cristina)!**
+    + **If the focus is on these 176 locations, it may be interesting to test the performance of a AR model with a nice set of covariates between 1990s and 2018**
+
+```{r map Ctot, echo = FALSE, out.width="100%", fig.align = "center"}
+# sites with repeated Ctot lab measurements
+sf_LSK_CCNL_lab %>% 
+  unnest(soil_target) %>% 
+  filter(!C_tot %in% NA) %>% 
+  mapview(.,
+          layer.name = "Sites with total C [%] measurements (n = 176)",
+          legend = TRUE,
+          viewer.suppress = FALSE)
+```
+
+
+
+### Using LSK field approximations and CCNL lab data: a closer look
+
+* If we also consider LSK field approximations (LSK_LAAG), then more data is available
+* trade-off: less precise, but more data 
+* Field approximations of OM are supposedly quite precise, because they are done by experts and furthermore adjusted by empirical calibration curves (?)
+
+```{r map SOM, echo = FALSE, out.width="100%", fig.align = "center"}
+# make an sf object with LSK field and CCNL lab data
+tbl_LSK_field <- tbl_LSK_field %>% 
+    mutate(dataset = "LSK",
+           type = "field")
+
+# designate whether field and lab data with variable "type"
+tbl_CCNL <- tbl_CCNL %>% 
+    mutate(type = "lab")
+
+# convert to simple feature, group by coordinates, assign ID for revisited sites (monitoring), and restructure order of columns
+sf_LSK_CCNL_field <- bind_rows(tbl_LSK_field, tbl_CCNL) %>% 
+  st_as_sf(., coords = c("X", "Y"), crs = crs(r_stack_cov)) %>% 
+  rename(CCNL_site_id = site_id) %>% 
+  mutate(X = st_coordinates(geometry)[,1]) %>% 
+  mutate(Y = st_coordinates(geometry)[,2]) %>% 
+  group_by(X, Y) %>% 
+  mutate(site_id = cur_group_id()) %>% 
+  ungroup() %>% 
+  dplyr::select(site_id, dataset, type, LSK_site_id, CCNL_site_id, sample_id,
+                hor_nr:metadata,
+                OPSTEL_C:BWST_GHG, ID_EA,
+                os_cor_glv:geometry) %>% 
+  arrange(site_id, dataset, d_upper, d_lower)
+
+# These are sites that were sampled twice over time: both LSK and CCNL
+monitoring_sites <- sf_LSK_CCNL_field %>% 
+  group_by(site_id, dataset) %>% 
+  summarise() %>% 
+  filter(duplicated(site_id)) %>% 
+  pull(site_id)
+
+# remove sites that were only sampled once in time (either LSK or CCNL but not both)
+sf_LSK_CCNL_field <- sf_LSK_CCNL_field %>% 
+  filter(site_id %in% monitoring_sites)
+
+# sites with repeated SOM information (LSK field approximations, CCNL lab measurements)
+sf_LSK_CCNL_field %>% 
+  unnest(soil_target) %>% 
+  filter(!SOM_LAAG %in% NA) %>% 
+  group_by(site_id) %>% 
+  slice(1) %>% 
+  mapview(.,
+          layer.name = "Sites with SOM: field (LSK) and lab (CCNL) (n = 1'151)",
+          legend = TRUE,
+          viewer.suppress = FALSE)
+```
+
+
+***
+## Some Conclusions of Alterra Report from WENR
+
+### Overall Changes in OM
+
+* Slight overall decline in OM on average for all soil types over 20 years between 1998 and 2018 (van Tol-Leender et al. 2019)
+    + Unclear how uncertainty (standard error) was calculated
+    + Based on estimated values in the field, extrapolated from every site for all areas in the Netherlands belonging to the same general "deelgebied"/strata
+        + based on a few land use and soil types
+
+    ```{r avg OM all, out.width="80%", fig.align = "center", fig.cap="Source: van Tol-Leenders et al. 2019", echo = FALSE}
+knitr::include_graphics(path="img/vanTol-Leenders_et_al_2019_avg_changes_OM.png")
+```
+
+* Much smaller or no decline in OM on average for mineral soils in the Netherlands between 1998 and 2018
+* Therefore, one of the main conclusions of the report is that national declines in OM are mainly due to declines in OM of organic soils...
+
+    ```{r avg OM min, out.width="80%", fig.align = "center", fig.cap="Source: van Tol-Leenders et al. 2019", echo = FALSE}
+knitr::include_graphics(path="img/vanTol-Leenders_et_al_2019_avg_changes_OM_min.png")
+```
+
+
+### Changes in OM per "deelgebied"/strata
+
+    ```{r OM deelgebieden top, out.width="80%", fig.align = "center", fig.cap="Source: van Tol-Leenders et al. 2019", echo = FALSE}
+knitr::include_graphics(path="img/vanTol-Leenders_et_al_2019_changes_OM_soiltype_top.png")
+```
+
+Why are these images not shown?
+
+    ```{r OM deelgebieden sub, out.width="80%", fig.align = "center", fig.cap="Source: van Tol-Leenders et al. 2019", echo = FALSE}
+knitr::include_graphics(path="img/vanTol-Leenders_et_al_2019_changes_OM_soiltype_sub.png")
+```
+
+
+***
+## Discussion
+
+* Cristina MSc thesis, several possibilities regarding the use of soil data:
+    1. Only use LSK and CCNL **lab** data of total Carbon (C) from 176 sites
+    2. Same as (1), but in addition **measure archived LSK data** for total C, thereby adding more sites that can be used in time series approach
+        + Are archived samples still representative of the state of the soil when sampled?
+        + Are these archived samples really available?
+        + Advantage: Cristina could still do lab work
+    3. Only compare SOM: **LSK field approximations** of SOM and CCNL lab measurements of SOM
+    4. Same as (4) but target variable is SOC, so additional uncertainty of **converting SOM to SOC**
+    5. **Combination of all the above (1-4)**: target variable is total C but use all available data of different quality, precision and uncertainty (so both lab and field data)
+    6. Increase number of monitoring locations: **revisit PFB or BPK locations**, collect samples, analyze in the lab
+        + Advantage: increase monitoring locations, possibly also from older samples (as far back as 1960s)
+        + Disadvantage: field work would most likely have to wait until after pregnancy
+
+***
+
+* Anatol PhD: Focus of outdated soil information and time series analysis in Chapter 2
+    + Anatol will think about this a lot, and then some more ;-) (not the focus here, more a personal note)
+    
+***
+
+* General Questions:
+    + What is most efficient to improve predictive ability of time series model
+        + on different scales: sites, regional, national
+    + via collecting new samples of current soil conditions?
+        + plan field campaign accordingly
+    + via measuring archived samples?
+    + other ways?
+    + Is there other soil monitoring data available in the Netherlands?
+        + perhaps only on field scale
+
+

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SAGA_METADATA>
+  <DATABASE></DATABASE>
+  <SOURCE></SOURCE>
+  <HISTORY saga-version="7.3.0">
+    <TOOL library="ta_morphometry" id="8" name="Multiresolution Index of Valley Bottom Flatness (MRVBF)">
+      <OPTION type="grid_system" id="PARAMETERS_GRID_SYSTEM" name="Grid system">
+        <CELLSIZE>25</CELLSIZE>
+        <XMIN>10012.5</XMIN>
+        <XMAX>279987.5</XMAX>
+        <YMIN>306262.5</YMIN>
+        <YMAX>618737.5</YMAX>
+      </OPTION>
+      <OPTION type="double" id="T_SLOPE" name="Initial Threshold for Slope">10.000000</OPTION>
+      <OPTION type="double" id="T_PCTL_V" name="Threshold for Elevation Percentile (Lowness)">0.400000</OPTION>
+      <OPTION type="double" id="T_PCTL_R" name="Threshold for Elevation Percentile (Upness)">0.350000</OPTION>
+      <OPTION type="double" id="P_SLOPE" name="Shape Parameter for Slope">3.000000</OPTION>
+      <OPTION type="double" id="P_PCTL" name="Shape Parameter for Elevation Percentile">3.000000</OPTION>
+      <OPTION type="boolean" id="UPDATE" name="Update Views">true</OPTION>
+      <OPTION type="boolean" id="CLASSIFY" name="Classify">false</OPTION>
+      <OPTION type="double" id="MAX_RES" name="Maximum Resolution (Percentage)">100.000000</OPTION>
+      <INPUT type="grid" id="DEM" name="Elevation" system="PARAMETERS_GRID_SYSTEM">
+        <FILE>out/data/covariates/DEM_derivatives/ahn2_25m.sgrd</FILE>
+      </INPUT>
+      <OUTPUT type="grid" id="MRVBF" name="MRVBF">MRVBF</OUTPUT>
+    </TOOL>
+  </HISTORY>
+  <FILE></FILE>
+  <DESCRIPTION></DESCRIPTION>
+  <PROJECTION>
+    <OGC_WKT>PROJCS["unknown",GEOGCS["GCS_unknown",DATUM["D_Unknown_based_on_Bessel_1841_ellipsoid",SPHEROID["Bessel_1841",6377397.155,299.1528128]],PRIMEM["Greenwich",0.0],UNIT["Degree",0.0174532925199433]],PROJECTION["Double_Stereographic"],PARAMETER["False_Easting",155000.0],PARAMETER["False_Northing",463000.0],PARAMETER["Central_Meridian",5.38763888888889],PARAMETER["Scale_Factor",0.9999079],PARAMETER["Latitude_Of_Origin",52.1561605555556],UNIT["Meter",1.0]]
+</OGC_WKT>
+    <PROJ4>Double_Stereographic +no_defs</PROJ4>
+    <EPSG>-1</EPSG>
+  </PROJECTION>
+</SAGA_METADATA>

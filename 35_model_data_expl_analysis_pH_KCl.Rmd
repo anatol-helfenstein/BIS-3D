@@ -1,0 +1,486 @@
+---
+title: "Exploratory Analysis of Modelling Data"
+subtitle: "Soil pH [KCl]"
+author: "Anatol Helfenstein"
+date: "2021-03-05 (updated)"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+options(width = 100) # sets width of R code output (not images)
+```
+
+```{r load required pkgs and data, include = FALSE}
+
+# load packages
+pkgs <- c("tidyverse", "raster", "rgdal", "sf", "rasterVis", "viridis",
+          "foreach", "ggspatial", "cowplot")
+lapply(pkgs, library, character.only = TRUE)
+
+# 1) Specify DSM target soil property (response):
+TARGET = "pH_KCl"
+TARGET_EXP = "pH [KCl]"
+
+# 2) Read in regression matrix specific to target soil property
+tbl_regmat_target <- read_rds(paste0("out/data/model/tbl_regmat_",
+                                     TARGET, ".Rds"))
+
+# remane "train" and "test" to match other plots in paper and specify number
+tbl_regmat_target <- tbl_regmat_target %>% 
+  mutate(split = case_when(split %in% "train" ~ "Calibration",
+                           split %in% "test" ~ "Validation"))
+
+# set order of datasets so we always show calibration first, then validation
+dataset_order <- c("Calibration", "Validation")
+tbl_regmat_target$split <- factor(x = tbl_regmat_target$split,
+                                 levels = dataset_order)
+
+# convert to sf
+sf_regmat_target <- tbl_regmat_target %>% 
+  st_as_sf(., coords = c("X", "Y"), crs = "EPSG:28992")
+
+# 3) Set plotting axis min, max, range and breaks
+XY_MIN = min(tbl_regmat_target[TARGET])
+XY_MAX = max(tbl_regmat_target[TARGET])
+XY_RANGE = diff(range(XY_MIN, XY_MAX))
+XY_BREAKS = unique(round(seq(XY_MIN, XY_MAX, XY_RANGE/10)))
+
+# 4) Read in NL border shapefile for mapping
+sf_NL_borders <- st_read("data/other/NL_borders.shp")
+
+# 5) Read in regression matrix of entire BIS to also retrieve metadata of target
+# soil property
+system.time(
+  tbl_regmat_target_meta <- read_rds("out/data/model/tbl_regmat_BIS.Rds") %>% 
+    unnest_legacy(soil_target, .preserve = c(cov, soil_chem, soil_phys, soil_profile,
+                                             env_fact, metadata, unknown)) %>% 
+    filter_at(vars(all_of(TARGET)), all_vars(!is.na(.))) %>% 
+    nest(soil_target = c(SOM:grain_size_m))
+  ) # time elapse: 12 min
+
+```
+
+
+## Maps
+
+```{r map cal and val data locations, echo = FALSE, warning = FALSE, message = FALSE}
+# number of calibration locations
+n_cal_sites = as.character(as.expression(paste0(
+  "italic(n) == ",
+  tbl_regmat_target %>%
+    filter(split %in% "Calibration") %>%
+    group_by(X,Y) %>%
+    tally() %>%
+    nrow())))
+
+# number of validation locations
+n_val_sites = as.character(as.expression(paste0(
+  "italic(n) == ",
+  tbl_regmat_target %>%
+    filter(split %in% "Validation") %>%
+    group_by(X,Y) %>%
+    tally() %>%
+    nrow())))
+
+# plot calibration locations
+m_pH_cal <- ggplot() +
+  theme_bw() +
+  geom_sf(data = sf_NL_borders) +
+  geom_sf(data = sf_regmat_target %>% 
+            filter(split %in% "Calibration"),
+          color = "black", shape = 21, size = 0.5) +
+  geom_text(aes(x = Inf, y = -Inf, label = n_cal_sites),
+            size = 3, hjust = 6, vjust = -32, parse = TRUE) +
+  ggtitle("Calibration (PFB)") +
+  theme(legend.position = c(0.1, 0.8),
+        plot.title = element_text(hjust = 0.5, vjust = 0.5, size = 10),
+        panel.border = element_blank(),
+        panel.background = element_blank(),
+        panel.grid.major = element_line(colour = "transparent"),
+        axis.title.x = element_blank(),
+        axis.text.x = element_blank(),
+        axis.ticks.x = element_blank(),
+        axis.title.y = element_blank(),
+        axis.text.y = element_blank(),
+        axis.ticks.y = element_blank()) +
+  annotation_scale(location = "bl", width_hint = 0.5) +
+  annotation_north_arrow(location = "bl", which_north = "true", 
+                         pad_x = unit(0.05, "in"), pad_y = unit(0.25, "in"),
+                         style = north_arrow_fancy_orienteering,
+                         height = unit(1, "cm"), width = unit(1, "cm"))
+
+# plot validation locations
+m_pH_val <- ggplot() +
+  theme_bw() +
+  geom_sf(data = sf_NL_borders) +
+  geom_sf(data = sf_regmat_target %>% 
+            filter(split %in% "Validation"),
+          color = "blue", shape = 25, size = 0.5) +
+  geom_text(aes(x = Inf, y = -Inf, label = n_val_sites),
+            size = 3, hjust = 6, vjust = -32, parse = TRUE) +
+  ggtitle("Validation (LSK)") +
+  theme(legend.position = c(0.1, 0.8),
+        plot.title = element_text(hjust = 0.5, vjust = 0.5, size = 10),
+        panel.border = element_blank(),
+        panel.background = element_blank(),
+        panel.grid.major = element_line(colour = "transparent"),
+        axis.title.x = element_blank(),
+        axis.text.x = element_blank(),
+        axis.ticks.x = element_blank(),
+        axis.title.y = element_blank(),
+        axis.text.y = element_blank(),
+        axis.ticks.y = element_blank())
+
+```
+
+
+## histograms
+
+```{r plot cal and val data histograms, echo = FALSE, warning = FALSE, message = FALSE}
+# number of calibration locations
+n_cal_samples = as.character(as.expression(paste0(
+  "italic(n) == ",
+  tbl_regmat_target %>%
+    filter(split %in% "Calibration") %>%
+    nrow())))
+
+# number of validation locations
+n_val_samples = as.character(as.expression(paste0(
+  "italic(n) == ",
+  tbl_regmat_target %>%
+    filter(split %in% "Validation") %>%
+    nrow())))
+
+tbl_n_samples <- tibble(split = c("Calibration", "Validation"),
+                        n_samples = c(n_cal_samples, n_val_samples))
+
+# histogram of all data split by dataset
+p_hist_cal_val <- tbl_regmat_target %>%
+    ggplot(aes(pH_KCl, color = split)) +
+    geom_histogram(binwidth = 0.1, fill = "white") +
+    scale_y_continuous() +
+    scale_x_continuous(breaks = XY_BREAKS,
+                       limits = c(XY_MIN - 0.01 * XY_RANGE,
+                                  XY_MAX + 0.01 * XY_RANGE)) +
+    labs(x = "pH [KCl]", y = "Count") + 
+    facet_wrap(~ split) +
+    scale_color_manual(values = c("black", "blue")) +
+    labs(col = "Split") +
+    geom_text(data = tbl_n_samples,
+              aes(x = Inf, y = -Inf, label = n_samples),
+              size = 3, hjust = c(5.8, 6.6), vjust = c(-13, -13), parse = TRUE) +
+    theme_bw() +
+    theme(strip.background = element_blank(),
+          strip.text = element_blank(),
+          axis.title.x = element_blank(),
+          legend.position = "none")
+```
+
+## boxplot
+
+```{r plot cal and val data boxplots, echo = FALSE, warning = FALSE, message = FALSE}
+tbl_regmat_target <- tbl_regmat_target %>% 
+  filter(d_mid < 200) %>% 
+  mutate(d_gsm = cut(d_mid,
+                     breaks = c(0, 5, 15, 30, 60, 100, 200),
+                     labels = c("0-5", "5-15", "15-30", "30-60", "60-100", "100-200"),
+                     right = FALSE))
+
+# counts per split and depth increment
+tbl_calval_counts <- tbl_regmat_target %>% 
+    group_by(split, d_gsm) %>% 
+    mutate(count = n()) %>% 
+    distinct(count) %>% 
+    arrange(d_gsm, split) %>% 
+    mutate(n = as.character(as.expression(paste0("italic(n) == ", count))))
+
+# assign levels to depth increments so that they are in reverse order
+depth_order <- c("100-200", "60-100", "30-60", "15-30", "5-15", "0-5")
+tbl_regmat_target$d_gsm <- factor(x = tbl_regmat_target$d_gsm,
+                                 levels = depth_order)
+
+# boxplots split by dataset
+p_boxplot_cal_val <- tbl_regmat_target %>%
+  ggplot(aes(x = pH_KCl, y = d_gsm, color = split)) +
+  geom_boxplot(outlier.shape = 21) +
+  scale_color_manual(values = c("black", "blue")) +
+  facet_wrap(~ split) +
+  xlab(as.expression(paste(TARGET_EXP))) +
+  ylab(expression("Depth [cm]")) +
+  scale_x_continuous(breaks = XY_BREAKS,
+                     limits = c(XY_MIN - 0.01 * XY_RANGE,
+                                XY_MAX + 0.01 * XY_RANGE)) +
+  geom_text(data = tbl_calval_counts,
+            aes(x = Inf, y = -Inf, label = n),
+            size = 3,
+            hjust = rep(1.05, 12),
+            vjust = c(-13.25,  # cal 0-5
+                      -14,  # val 0-5
+                      -10.5,  # cal 5-15
+                      -11,  # val 5-15
+                      -8,  # cal 15-30
+                      -8,   # val 15-30
+                      -5.5,  # cal 30-60
+                      -5.5,  # val 30-60
+                      -2.75,  # cal 60-100
+                      -2.8,  # val 60-100
+                      -0.6, # cal 100-200
+                      -0.6),  # val 100-200
+            parse = TRUE) +
+  theme_bw() +
+  theme(strip.background = element_blank(),
+        strip.text = element_blank(),
+        legend.position = "none")
+
+# save to disk
+# ggsave(filename = paste0("p_", TARGET, "_boxplots_cal_val_d.pdf"),
+#        plot = p_boxplot_cal_val,
+#        path = "out/figs/explorative",
+#        width = 10, height = 5)
+
+```
+
+
+```{r combine plots using cowplot, echo = FALSE, warning = FALSE, message = FALSE}
+# combine descriptive plots using cowplot
+p_pH_descriptive <- plot_grid(plot_grid(m_pH_cal, m_pH_val,
+                                        align = "hv", nrow = 1, ncol = 2),
+                              p_hist_cal_val,
+                              p_boxplot_cal_val,
+                              nrow = 3, ncol = 1,
+                              align = "v", axis = "l",
+                              rel_heights = c(0.5, 0.25, 0.25),
+                              #rel_heights = c(3, 1, 1),
+                              rel_widths = c(1.2, 1, 1.2))
+
+# save to disk
+# ggsave(filename = paste0("p_", TARGET, "_descriptive.pdf"),
+#        plot = p_pH_descriptive,
+#        path = "out/figs/explorative",
+#        width = 8, height = 8)
+
+```
+
+
+```{r barchart of pH measurement age, echo = FALSE, warning = FALSE, message = FALSE}
+# retrieve age (year) of soil measurement
+tbl_regmat_target_meta <- tbl_regmat_target_meta %>% 
+  mutate(split = case_when(BIS_tbl %in% "LSK" ~ "Validation (LSK)",
+                           BIS_tbl %in% "PFB" ~ "Calibration (PFB)")) %>% 
+  unnest_legacy(metadata) %>% 
+  mutate(year = format(date_valid, format = "%Y"))
+
+# change year column to integer
+tbl_regmat_target_meta$year <- as.integer(tbl_regmat_target_meta$year)
+
+# set order of datasets so we always show calibration first, then validation
+dataset_order <- c("Validation (LSK)", "Calibration (PFB)")
+tbl_regmat_target_meta$split <- factor(x = tbl_regmat_target_meta$split,
+                                 levels = dataset_order)
+
+# plot barchart of ages of soil measurements
+p_target_age <- tbl_regmat_target_meta %>% 
+    ggplot(aes(year, fill = split)) +
+    geom_histogram(stat = "count") +
+    labs(x = "Year", y = "Count") + 
+    scale_fill_manual(values = c( "blue", "black")) +
+    scale_x_continuous(breaks = seq(1960, 2010, 10)) +
+    theme_bw() +
+    theme(strip.background = element_blank(),
+          strip.text = element_blank(),
+          legend.title = element_blank())
+
+# save to disk
+# ggsave(filename = paste0("p_", TARGET, "_age.pdf"),
+#        plot = p_target_age,
+#        path = "out/figs/explorative",
+#        width = 8, height = 4)
+
+```
+
+
+## Map locations of soil point data over DEM (AHN2)
+
+```{r plot locations on DEM, echo = FALSE, warning = FALSE}
+
+# plot PFB sampled locations over DEM map (and save it as pdf)
+# lab
+# pdf("out/maps/explorative/m_PFB_lab_locations_AHN2.pdf")
+plot(r_stack_cov$ahn2_25m,
+     main = "PFB lab locations over DEM (AHN2) [25m res]",
+     col = rev(viridis::magma(10, alpha = 0.8)),
+     axes = FALSE,
+     box = FALSE,
+     legend.args = list(text = 'Elevation [m]'))
+# plot(spdf_NL_borders,
+#      add = TRUE)
+points(spdf_PFB_lab, pch = 1, cex = 0.25)
+# dev.off()
+
+# field
+# pdf("out/maps/explorative/m_PFB_field_locations_AHN2.pdf")
+plot(r_stack_cov$ahn2_25m,
+     main = "PFB field locations over DEM (AHN2) [25m res]",
+     col = rev(viridis::magma(10, alpha = 0.8)),
+     axes = FALSE,
+     box = FALSE,
+     legend.args = list(text = 'Elevation [m]'))
+# plot(spdf_NL_borders,
+#      add = TRUE)
+points(spdf_PFB_field, pch = 1, cex = 0.25)
+# dev.off()
+
+# plot BPK sampled locations over DEM map (and save it as pdf)
+# pdf("out/maps/explorative/m_BPK_locations_AHN2.pdf")
+plot(r_stack_cov$ahn2_25m,
+     main = "BPK locations over DEM (AHN2) [25m res]",
+     col = rev(viridis::magma(10, alpha = 0.8)),
+     axes = FALSE,
+     box = FALSE,
+     legend.args = list(text = 'Elevation [m]'))
+# plot(spdf_NL_borders,
+#      add = TRUE)
+points(spdf_BPK, pch = 1, cex = 0.25)
+# dev.off()
+
+# plot LSK sampled locations over DEM map (and save it as pdf)
+# lab
+# pdf("out/maps/explorative/m_LSK_lab_locations_AHN2.pdf")
+plot(r_stack_cov$ahn2_25m,
+     main = "LSK lab locations over DEM (AHN2) [25m res]",
+     col = rev(viridis::magma(10, alpha = 0.8)),
+     axes = FALSE,
+     box = FALSE,
+     legend.args = list(text = 'Elevation [m]'))
+# plot(spdf_NL_borders,
+#      add = TRUE)
+points(spdf_LSK_lab, pch = 1, cex = 0.25)
+# dev.off()
+
+# field
+# pdf("out/maps/explorative/m_LSK_field_locations_AHN2.pdf")
+plot(r_stack_cov$ahn2_25m,
+     main = "LSK field locations over DEM (AHN2) [25m res]",
+     col = rev(viridis::magma(10, alpha = 0.8)),
+     axes = FALSE,
+     box = FALSE,
+     legend.args = list(text = 'Elevation [m]'))
+# plot(spdf_NL_borders,
+#      add = TRUE)
+points(spdf_LSK_field, pch = 1, cex = 0.25)
+# dev.off()
+
+```
+
+
+## Soil property point data
+
+```{r soil property point data, echo = FALSE, warning = FALSE}
+
+# Exploratory analysis of modelling data ----------------------------------
+
+# read in NL and Gelderland border shapefile for mapping
+sf_NL_borders <- st_read("data/other/NL_borders.shp")
+sf_GE_borders <- st_read("data/other/Gelderland_borders.shp")
+
+# Prepare sf object: topsoil
+sf_target_topsoil <- tbl_regmat_PFB_lab %>% 
+  select(PFB_site_id:metadata) %>% 
+  # retrieve target variables
+  unnest_legacy(soil_target, .preserve = c(cov, soil_chem, soil_phys,
+                                           soil_profile, env_fact, metadata)) %>% 
+  # remove NAs of target variable
+  filter(!pH_KCl %in% NA) %>% 
+  group_by(PFB_site_id) %>% 
+  slice(1L) %>% # slice by site to only get topsoil observations
+  ungroup %>% 
+  st_as_sf(., coords = c("X", "Y")) %>% # convert to spatial (sf)
+  st_set_crs(., "EPSG:28992") # set coordinate reference system of Netherlands
+
+# Prepare sf object: subsoil
+sf_target_subsoil <- tbl_regmat_PFB_lab %>% 
+  select(PFB_site_id:metadata) %>% 
+  # retrieve target variables
+  unnest_legacy(soil_target, .preserve = c(cov, soil_chem, soil_phys,
+                                           soil_profile, env_fact, metadata)) %>% 
+  # remove NAs of target variable
+  filter(!pH_KCl %in% NA) %>% 
+  group_by(PFB_site_id) %>% 
+  slice(tail(row_number(), 1)) %>% # slice by lowest sample at each site to only get subsoil observations
+  ungroup %>% 
+  st_as_sf(., coords = c("X", "Y")) %>% # convert to spatial (sf)
+  st_set_crs(., "EPSG:28992") # set coordinate reference system of Netherlands
+
+# gather number of locations for displaying on map
+n <- as.character(as.expression(paste0("italic(n) == ", nrow(sf_target_topsoil))))
+
+# define range in order to use identical color scheme for top- and subsoil
+min <- if (min(sf_target_topsoil$pH_KCl) < min(sf_target_subsoil$pH_KCl)) {
+  min(sf_target_topsoil$pH_KCl)} else {min(sf_target_subsoil$pH_KCl)}
+max <- if (max(sf_target_topsoil$pH_KCl) > max(sf_target_subsoil$pH_KCl)) {
+  max(sf_target_topsoil$pH_KCl)} else {max(sf_target_subsoil$pH_KCl)}
+
+# map target variable sampling locations for topsoil values
+m_target_locations_top <- ggplot() +
+  theme_bw() +
+  geom_sf(data = sf_NL_borders) +
+  geom_sf(data = sf_target_topsoil, aes(color = pH_KCl)) +
+  scale_fill_viridis_c(aesthetics = "color", option = "inferno",
+                       limits = c(min, max)) + # or plasma
+  geom_text(aes(x = Inf, y = -Inf, label = n), size = 3,
+            hjust = 13, vjust = -55, parse = TRUE) +
+  theme(legend.position = c(0.1, 0.8),
+        panel.border = element_blank(),
+        panel.background = element_blank(),
+        axis.title.x = element_blank(),
+        axis.text.x = element_blank(),
+        axis.ticks.x = element_blank(),
+        axis.title.y = element_blank(),
+        axis.text.y = element_blank(),
+        axis.ticks.y = element_blank()) +
+  labs(col = "Topsoil pH [KCl]") +
+  annotation_scale(location = "bl", width_hint = 0.5) +
+  annotation_north_arrow(location = "bl", which_north = "true", 
+                         pad_x = unit(0.75, "in"), pad_y = unit(0.5, "in"),
+                         style = north_arrow_fancy_orienteering)
+
+# ggsave("out/maps/explorative/m_pH_KCl_topsoil_locations.pdf",
+#        m_target_locations_top,
+#         height = 8,
+#         width = 8)
+
+# map target variable sampling locations for subsoil values
+m_target_locations_sub <- ggplot() +
+  theme_bw() +
+  geom_sf(data = sf_NL_borders) +
+  geom_sf(data = sf_target_subsoil, aes(color = pH_KCl)) +
+  scale_fill_viridis_c(aesthetics = "color", option = "inferno",
+                       limits = c(min, max)) + # or plasma
+  geom_text(aes(x = Inf, y = -Inf, label = n), size = 3,
+            hjust = 13, vjust = -55, parse = TRUE) +
+  theme(legend.position = c(0.1, 0.8),
+        panel.border = element_blank(),
+        panel.background = element_blank(),
+        axis.title.x = element_blank(),
+        axis.text.x = element_blank(),
+        axis.ticks.x = element_blank(),
+        axis.title.y = element_blank(),
+        axis.text.y = element_blank(),
+        axis.ticks.y = element_blank()) +
+  labs(col = "Subsoil pH [KCl]") +
+  annotation_scale(location = "bl", width_hint = 0.5) +
+  annotation_north_arrow(location = "bl", which_north = "true", 
+                         pad_x = unit(0.75, "in"), pad_y = unit(0.5, "in"),
+                         style = north_arrow_fancy_orienteering)
+
+# ggsave("out/maps/explorative/m_pH_KCl_subsoil_locations.pdf",
+#        m_target_locations_sub,
+#        height = 8,
+#        width = 8)
+
+```
+
+

@@ -1,0 +1,40 @@
+﻿value,description,value_rcl,description_rcl
+0,other,7,urban (bebouwd gebied)
+10,Spoorweg,7,urban (bebouwd gebied)
+11,Hoofdweg,7,urban (bebouwd gebied)
+12,Vliegveld,7,urban (bebouwd gebied)
+20,Woongebied,7,urban (bebouwd gebied)
+21,Detailhandel en horeca,7,urban (bebouwd gebied)
+22,Openbare voorziening,7,urban (bebouwd gebied)
+23,Sociaal-culturele voorziening,7,urban (bebouwd gebied)
+24,Bedrijfsterrein,7,urban (bebouwd gebied)
+30,Stortplaats,7,urban (bebouwd gebied)
+31,Wrakkenopslagplaats,7,urban (bebouwd gebied)
+32,Begraafplaats,7,urban (bebouwd gebied)
+33,Delfstofwinplaats,7,urban (bebouwd gebied)
+34,Bouwterrein,7,urban (bebouwd gebied)
+35,Semi verhard overig terrein,7,urban (bebouwd gebied)
+40,Park en plantsoen,15,recreational (recreatie)
+41,Sportterrein,15,recreational (recreatie)
+42,Volkstuin,15,recreational (recreatie)
+43,Dagrecreatief terrein,15,recreational (recreatie)
+44,Verblijfsrecreatie,15,recreational (recreatie)
+50,Glastuinbouw,9,greenhouses (glastuinbouw)
+51,Overig agrarisch gebruik,3,agricultural area (agrarisch gebied)
+60,Bos,4,forest (bos)
+61,Droog natuurlijk terrein,14,nature (natuur)
+62,Nat natuurlijk terrein,14,nature (natuur)
+70,Ijselmeer / Markermeer,1,water
+71,Afgesloten zeearm,1,water
+72,Rijn & Maas,1,water
+73,Randmeer,1,water
+74,Spaarbekken,1,water
+75,Water met recreatieve functie,1,water
+76,Water me delfstofwinningsfunctie,1,water
+77,Vloei- en/of slibveld,1,water
+78,Overig binnenwater,1,water
+80,"Waddenzee, Eems, Dollard",1,water
+81,Oosterschelde,1,water
+82,Westerschelde,1,water
+83,Noordzee,1,water
+90,Buitenland,7,urban (bebouwd gebied)

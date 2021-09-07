@@ -1,0 +1,21 @@
+﻿value,description,value_rcl,description_rcl
+0,other,16,other/unknown (overig/onbekend)
+3,overig,16,other/unknown (overig/onbekend)
+1,grasland,2,grassland (grasland)
+2,populieren,4,deciduous forest (loofbos)
+5,bos: loofbos,4,deciduous forest (loofbos)
+4,akkerland,3,arable land (bouwland)
+6,bos: gemengd bos,6,mixed forest (gemengd bos)
+19,bos: griend,6,mixed forest (gemengd bos)
+7,bos: naaldbos,5,coniferous forest (naaldbos)
+8,fruitkwekerij,8,horticulture/fruits (boomgaard)
+12,boomgaard,8,horticulture/fruits (boomgaard)
+13,boomkwekerij,8,horticulture/fruits (boomgaard)
+9,zand,12,sand (zand)
+10,"basaltblokken, steenglooiing",1,water
+16,aanlegsteiger,1,water
+11,dodenakker,7,urban (bebouwd gebied)
+14,bebouwd gebied,7,urban (bebouwd gebied)
+15,spoorbaanlichaam,7,urban (bebouwd gebied)
+18,dodenakker met bos,7,urban (bebouwd gebied)
+17,heide,10,heathlands (heide)

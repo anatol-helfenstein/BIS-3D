@@ -1,0 +1,12 @@
+﻿value,description,value_rcl,description_rcl
+0,other,1,other
+10,overige graslanden,10,non-nature grasslands (overige graslanden)
+11,natuurgraslanden,11,natural grasslands (natuurgraslanden)
+20,akker / kale grond,20,arable & bare land (akker / kale grond)
+30,heide,30,heathlands (heide)
+40,bos,40,forest (bos)
+60,bebouwd gebied en infrastructuur,60,urban (bebouwd gebied en infrastructuur)
+70,water,70,water
+80,rietmoeras,80,swamps (rietmoeras)
+90,stuifzanden,90,drift sands (stuifzanden)
+91,"duinen, strand en zandplaten",91,"dunes, beach and sand (duinen, strand en zandplaten)"

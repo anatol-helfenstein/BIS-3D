@@ -1,0 +1,32 @@
+﻿value,description,value_rcl,description_rcl
+0,Other,1,water
+2,Urban,7,urban (bebouwd gebied)
+7,Port areas,7,urban (bebouwd gebied)
+11,Industrial and commercial units,7,urban (bebouwd gebied)
+18,Airports,7,urban (bebouwd gebied)
+19,Dump sites,7,urban (bebouwd gebied)
+21,Road and rail network,7,urban (bebouwd gebied)
+26,Construction sites,7,urban (bebouwd gebied)
+27,Mineral extraction sites,7,urban (bebouwd gebied)
+9,Non-irrigated arable land,25,arable land (non-irrigated)
+15,Complex cultivation patterns,3,arable land (permanent crops)
+25,Fruit trees and berry plantations,8,horticulture/fruits (boomgaard)
+1,Pastures,2,grassland (grasland)
+22,Natural grassland,2,grassland (grasland)
+13,Land principally occupied by agriculture with significant areas of natural vegetation,26,extensive agricultural land
+12,Broad leaved forest,4,deciduous forest (loofbos)
+16,Coniferous forest,5,coniferous forest (naaldbos)
+4,Mixed forest,6,mixed forest (gemengd bos)
+29,Transitional woodland-shrub,6,mixed forest (gemengd bos)
+8,Moors and heathlands,10,heathlands (heide) & raised bog (hoogveen)
+20,"Beaches, dunes and sands",12,"beaches, dunes, sand"
+10,Inland marshes,11,"marshes, bogs and peat"
+24,Peat bogs,11,"marshes, bogs and peat"
+28,Salt marshes,11,"marshes, bogs and peat"
+3,Water bodies,1,water
+5,Intertidal flats,1,water
+14,Water courses,1,water
+17,Sea and ocean,1,water
+30,Estuaries,1,water
+6,Sport and leisure facilities,15,recreational (recreatie)
+23,Green urban areas,15,recreational (recreatie)

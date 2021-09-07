@@ -1,0 +1,100 @@
+﻿value,description,value_rcl,description_rcl
+0,non-nature areas,22,non-nature areas
+93,,22,non-nature areas
+62,Kwelder,1,nagenoeg natuurlijke eenheid
+91,Zee,1,nagenoeg natuurlijke eenheid
+96,Stuivend duin,1,nagenoeg natuurlijke eenheid
+57,Moeras,2,begeleid natuurlijke eenheid
+63,Afgesloten zoete zeearmen,2,begeleid natuurlijke eenheid
+84,Iepen-Essenwoud,2,begeleid natuurlijke eenheid
+94,Dynamisch duinlandschap,2,begeleid natuurlijke eenheid
+1,Dennenbossen op kalkarme (land)duinen,3,bosgemeenschap
+4,Loofbossen op arme zandgronden,3,bosgemeenschap
+13,Beekbegeleidende loofbossen,3,bosgemeenschap
+15,Loofbossen op lemen en kalkrijke zandgronden,3,bosgemeenschap
+34,Loofbossen op kalkrijke bodems,3,bosgemeenschap
+35,Loofbossen op arme zandgronden,3,bosgemeenschap
+48,Broekbossen op zure venen,3,bosgemeenschap
+61,Loofbossen op klei- en zavelgronden,3,bosgemeenschap
+85,Broekbossen op laagveen,3,bosgemeenschap
+86,Loofbossen op kalkrijke (zee)duinen,3,bosgemeenschap
+7,Overige Natuurbossen,4,bosvervangingsgemeenschap
+49,Eiken-hakhout,4,bosvervangingsgemeenschap
+68,Park- en stinse bos,4,bosvervangingsgemeenschap
+71,Grienden & essen/elzenhakhout,4,bosvervangingsgemeenschap
+90,Middenbos,4,bosvervangingsgemeenschap
+39,Natte heide,5,"natte heide, hoogveen en natte duinvalleien"
+58,Hoogveen,5,"natte heide, hoogveen en natte duinvalleien"
+72,Natte duinvalleien,5,"natte heide, hoogveen en natte duinvalleien"
+89,Hoogveenvennen,5,"natte heide, hoogveen en natte duinvalleien"
+28,Heide met struweel en bos,6,droge heide en duinen
+38,"Droge, open heide",6,droge heide en duinen
+69,Open duin,6,droge heide en duinen
+73,Overige heiden,6,droge heide en duinen
+74,Duinstruweel,6,droge heide en duinen
+82,Stuifzanden,6,droge heide en duinen
+20,Jonge verlanding,7,verlandingsvegetaties
+32,Oude riet ruigten,7,verlandingsvegetaties
+87,Brakwater-(verlanding),7,verlandingsvegetaties
+40,Natte schraallanden,8,moerashooiland
+83,Veenmosrietlanden en trilvenen,8,moerashooiland
+6,Glanshaverhooiland,9,bloemrijk grasland en droog schraalgrasland
+8,Overige bloemrijke graslanden,9,bloemrijk grasland en droog schraalgrasland
+14,Kamgrasweiden en zilverschoongraslanden,9,bloemrijk grasland en droog schraalgrasland
+37,Zilte graslanden,9,bloemrijk grasland en droog schraalgrasland
+42,Kalkgraslanden,9,bloemrijk grasland en droog schraalgrasland
+43,Droge schraallanden,9,bloemrijk grasland en droog schraalgrasland
+29,Vochtig schraal grasland,10,vochtig schraalgrasland
+79,Veenweide,10,vochtig schraalgrasland
+17,Zoet watergemeenschappen in laagveen en kleigebieden,20,overige landschappelijke elementen
+75,"Vennen en plassen op zand, zwak gebufferd",20,overige landschappelijke elementen
+80,Beken en rellen,20,overige landschappelijke elementen
+18,"Complex van bos, rietruigten, gras en water op laagveen en klei",12,kleinschalig begeleid natuurlijke eenheid3
+23,"Complex van bos, ruigten en water op zandgronden",12,kleinschalig begeleid natuurlijke eenheid3
+36,"Complex van bos, ruigten, gras op kalkrijke gronden",12,kleinschalig begeleid natuurlijke eenheid3
+47,"Complex van ooibos, pionier- en watervegetaties in uiterwaarden",12,kleinschalig begeleid natuurlijke eenheid3
+3,"Grove dennen-Eikenbos op droog, leemarm zand",13,multifunctioneel bos
+9,Essenbos met exoten op nat veen en klei met cultuurinvloed,13,multifunctioneel bos
+11,Grove dennen-Eikenbos met exoten op zand met cultuur-invloed,13,multifunctioneel bos
+16,Wintereiken-Beukenbos op leemhoudend zand,13,multifunctioneel bos
+19,Wintereiken-Beukenbos met exoten op leemhoudend zand,13,multifunctioneel bos
+24,Vochtig Wintereiken-Beukenbos op leemhoudend zand,13,multifunctioneel bos
+25,Essen-Iepenbos op vochtige klei en zavel,13,multifunctioneel bos
+33,Essen-Iepenbos met exoten op vochtige klei en zavel,13,multifunctioneel bos
+41,Grove dennen-Eikenbos op zand met cultuur-invloed,13,multifunctioneel bos
+51,"Grove dennen-Eikenbos op vochtig tot nat, leemarm zand",13,multifunctioneel bos
+54,Elzen-Wilgenbos op nat veen en klei met cultuurinvloed,13,multifunctioneel bos
+65,Eiken-Haagbeukenbos op natte lemige gronden,13,multifunctioneel bos
+66,Vochtig Wintereiken-Beukenbos met exoten op leemhoudend zand,13,multifunctioneel bos
+78,"Grove dennen-Berkenbos op zuur, arm zand",13,multifunctioneel bos
+88,Elzenbos op zeer nat veen met cultuurinvloed,13,multifunctioneel bos
+46,Rietcultuur,20,overige landschappelijke elementen
+26,Weidevogelgrasland,15,weidevogel grasland
+70,Wintergastenweide,15,weidevogel grasland
+10,Akker,16,akker
+52,Overig water,20,overige landschappelijke elementen
+27,Bloemdijken,18,landschapselementen met natuurfunctie
+31,"Houtwallen, brede singels en graften",18,landschapselementen met natuurfunctie
+21,Overige korte vegetaties,19,korte vegetaties
+97,Korte vegetaties,19,bosvervangingsgemeenschap
+5,Landschappelijke beplantingen en overige bossen,20,overige landschappelijke elementen
+22,Dijken,20,overige landschappelijke elementen
+50,Knotwilgen en heggen,20,overige landschappelijke elementen
+56,Hoogstamboomgaarden,20,overige landschappelijke elementen
+59,Lanen en singels,20,overige landschappelijke elementen
+60,Rustende eendekooien,20,overige landschappelijke elementen
+67,Historische tuinen,20,overige landschappelijke elementen
+77,Forten,20,overige landschappelijke elementen
+95,Historische gebouwen,20,overige landschappelijke elementen
+98,Demonstratie kooien,20,overige landschappelijke elementen
+2,"Wegen, paden en parkeerterreinen",21,niet doelstellingsgericht
+12,In erfpacht gegeven aan Natuurmonumenten,21,niet doelstellingsgericht
+30,Recreatieweide,21,niet doelstellingsgericht
+44,Beheer uitbesteed aan andere overheden,21,niet doelstellingsgericht
+45,Erven en ondergrond gebouwen in eigen beheer,21,niet doelstellingsgericht
+53,In erfpacht gegeven aan Recreatieschappen,21,niet doelstellingsgericht
+55,Ondergrond hunebed e.d.,21,niet doelstellingsgericht
+64,Verpachte erven en ondergrond van gebouwen,21,niet doelstellingsgericht
+76,Zandwinputten,21,niet doelstellingsgericht
+81,In erfpacht gegeven aan Provinciale Landschappen,21,niet doelstellingsgericht
+92,Vuilstorten en vervuilde gronden,21,niet doelstellingsgericht

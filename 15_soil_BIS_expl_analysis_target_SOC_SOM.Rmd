@@ -1,0 +1,137 @@
+---
+title: "Exploratory Analysis of Potential BIS-3D Target Soil Properties"
+subtitle: "SOM and SOC"
+author: "Anatol Helfenstein"
+date: "17/02/2021"
+output:
+html_document:
+    toc: true
+    toc_float: true
+    '': default
+---
+
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+options(width = 100) # sets width of R code output (not images)
+```
+
+```{r load required pkgs and load data, include = FALSE}
+# required packages
+pkgs <- c("tidyverse", "sf", "rgdal", "gstat", "ggspatial", "cowplot", "raster",
+          "viridis", "mapview")
+# ggspatial Pkg to create scale bars on map
+# make sure 'mapview' pkg installed from github to avoid pandoc error:
+# remotes::install_github("r-spatial/mapview")
+lapply(pkgs, library, character.only = TRUE)
+
+# read in all Dutch soil point data from the BIS DB
+tbl_BIS <- read_rds("out/data/soil/01_tbl_BIS.Rds")
+
+# for now, ignore spatial support & assume midpoint of each depth increment = d_mid
+tbl_BIS <- tbl_BIS %>% 
+  mutate(d_mid = (d_lower - d_upper)/2 + d_upper,
+         .after = d_lower)
+
+# read in NL and Gelderland border shapefile for mapping
+sf_NL_borders <- st_read("data/other/NL_borders.shp")
+spdf_NL_borders <- readOGR("data/other/NL_borders.shp")
+sf_GE_borders <- st_read("data/other/Gelderland_borders.shp")
+
+# read in raster of AHN no data (water and urban areas)
+# -> want to predict for remaining area
+r_ahn2_nodata <- raster("data/other/ahn2_nodata_25m.tif") %>% 
+  ratify() # binary of urban areas and water bodies
+
+# read in AHN raster as example of grid over which we want to predict
+r_ahn2 <- raster("data/covariates/relief/ahn2_25m.tif")
+
+# remove areas with bodies of water and buildings from prediction raster
+r_ahn2 <- mask(r_ahn2, r_ahn2_nodata, inverse = TRUE)
+
+# crop for Gelderland province
+r_ahn2_GE <- mask(r_ahn2, sf_GE_borders)
+
+# convert to grid
+sgdf_ahn2_GE <- as(r_ahn2_GE, "SpatialGridDataFrame")
+
+```
+
+
+
+***
+## Soil properties in Dutch soil database (BIS)
+
+There are a range of different soil properties in the Dutch soil database, or "Bodemkundig informatie systeem" (BIS). See figure below for a flowchart of the current BIS database (version 7.4).
+
+```{r BIS versie 7.4, out.width="100%", fig.align = "center", fig.cap="Flowchart of current BIS database, version 7.4", echo = FALSE}
+
+knitr::include_graphics(path = "db/2020-01-01_organigram_flowchart_BIS.jpg")
+```
+
+Possible target soil properties were nested into the list-column `soil_target` and include properties related to soil organic carbon (SOC) and soil organic matter (SOM), pH, soil texture (clay, silt, sand), nitrogen (N), phosphorus (P), cation exchange capacity (CEC) and others. Additional soil properties not considered as potential targets that are related to soil chemical properties, soil physical properties or remaining non-chemical and non-physical soil properties are in nested list-columns `soil_chem`, `soil_phys` and `soil_other`, respectively. Additional aggregated information related to the soil profile, environmental factors, metadata and other unknown variables (if available) for each soil observation are also included as nested list-columns.
+
+```{r target variables, include = TRUE, echo = TRUE}
+tbl_BIS
+
+# get an overview of possible target soil properties (response variable):
+tbl_BIS %>% 
+  dplyr::select(soil_target) %>% 
+  unnest_legacy() %>% 
+  colnames()
+
+```
+
+As of now, we will limit the exploratory analysis to the top-priority target soil properties (response variables) for implementing a high-resolution soil information system for the Netherlands in 3D (BIS-3D). These are 1) soil pH, 2) SOC and 3) soil texture (clay, silt and sand). Here, we look at SOM and SOC.
+
+
+
+***
+## Different response variables related to SOM and SOC
+
+In the entire Dutch soil data base (BIS versie 7.4) there are different field observations and lab measurements associated with soil carbon (SC), soil organic carbon (SOC) and soil organic matter (SOM). These different types of data are from the BPK, PFB, LSK and CCNL datasets. In terms of shear quantity, most of the observations are field (?) observations of SOM from the BPK locations, as can be seen in the `SOM` variable below (n = )
+
+```{r response variables, include = TRUE, echo = TRUE, out.width = "100%"}
+# remove response/target variables not related to SOM or SOC
+tbl_BIS_OM <- tbl_BIS %>% 
+  unnest_legacy(soil_target, .preserve = c(soil_chem, soil_phys, soil_profile,
+                                           env_fact, metadata, unknown)) %>% 
+  dplyr::select(BIS_tbl:d_lower, SOM, SOM_per, SOM_LAAG, SOM_O, SOM_CHT,
+                SOM_NIR_gkg, C_org, C_org2, C_org_per, SOC_NIR_gkg, C_tot_per,
+                C_tot, TOC_NIR_gkg, soil_chem, soil_phys, soil_profile,
+                env_fact, metadata, unknown) %>% 
+  filter_at(vars(SOM:TOC_NIR_gkg), any_vars(!is.na(.)))
+
+# BIS soil data containing carbon or organic matter information
+tbl_BIS_OM
+
+# vast majority are SOM field observations from BPK
+tbl_BIS_OM %>% 
+  filter(!SOM %in% NA)
+
+# different response variables related to SOM or SOC:
+tbl_BIS_OM %>% 
+    dplyr::select(SOM:TOC_NIR_gkg) %>% 
+    colnames()
+
+```
+
+
+In the BIS3D maps we are aiming for here, we will used BPK and PFB soil observations for model calibration and LSK and CCNL soil observations for independent model validation. LSK and CCNL locations are based on a stratified random sampling design and are from (almost) the same X and Y coordinates: the CCNL project revisited LSK locations.
+
+
+***
+### Calibration data from BPK and PFB
+
+```{r cal data, include = TRUE, echo = TRUE, out.width = "100%"}
+# calibration data only includes data from BPK and PFB
+tbl_BIS_OM_cal <- tbl_BIS_OM %>% 
+  filter(BIS_tbl %in% "BPK" | BIS_tbl %in% "PFB")
+```
+
+
+***
+### Validation data from LSK or CCNL
+
+

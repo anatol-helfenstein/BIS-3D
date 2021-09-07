@@ -1,0 +1,36 @@
+﻿value,description,value_rcl,description_rcl
+35,water (grote oppervlakte),1,water
+36,water (kleine opp),1,water
+37,droogvallend,1,water
+38,steenglooiing/krib,1,water
+39,aanlegsteiger,1,water
+24,bouwland,3,arable land (bouwland)
+26,boomgaard,8,horticulture/fruits (boomgaard)
+27,boomkwekerij,8,horticulture/fruits (boomgaard)
+32,fruitwekerij,8,horticulture/fruits (boomgaard)
+21,gemengd bos,6,mixed forest (gemengd bos)
+22,griend,6,mixed forest (gemengd bos)
+19,loofbos,4,deciduous forest (loofbos)
+23,populierenopstand,4,deciduous forest (loofbos)
+20,naaldbos,5,coniferous forest (naaldbos)
+25,weiland,2,grassland (grasland)
+1,bebouwing,7,urban (bebouwd gebied)
+8,Auto(snel)weg,7,urban (bebouwd gebied)
+9,Hoofdverbinding,7,urban (bebouwd gebied)
+10,Lokale weg,7,urban (bebouwd gebied)
+11,Verbindingsroute,7,urban (bebouwd gebied)
+12,overige weg >2m,7,urban (bebouwd gebied)
+13,Ged. verharde weg,7,urban (bebouwd gebied)
+14,onverharde weg,7,urban (bebouwd gebied)
+15,voetgangersgebied,7,urban (bebouwd gebied)
+16,rijwielpad,7,urban (bebouwd gebied)
+17,parkeerterrein,7,urban (bebouwd gebied)
+18,spoor,7,urban (bebouwd gebied)
+31,begraafplaats,7,urban (bebouwd gebied)
+28,heide,10,heathlands (heide)
+29,zand,12,"sand, dunes (zand, duinen)"
+42,Rietmoeras(W),18,swamp (moeras)
+43,Rietmoeras(G),18,swamp (moeras)
+30,overig bodemgebruik,16,other/unknown (overig/onbekend)
+128,,16,other/unknown (overig/onbekend)
+255,,16,other/unknown (overig/onbekend)

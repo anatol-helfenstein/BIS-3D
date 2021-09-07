@@ -1,0 +1,357 @@
+﻿Count of GWS_GEWAS,,,JAAR,,,,
+GWS_GEWASC,GWS_GEWAS,CAT_GEWASC,2015,2016,2017,2018,Grand Total
+174,Bloemzaden open grond,Bouwland,1,1,1,1,4
+233,"Tarwe, winter-",Bouwland,1,1,1,1,4
+234,"Tarwe, zomer-",Bouwland,1,1,1,1,4
+235,"Gerst, winter-",Bouwland,1,1,1,1,4
+236,"Gerst, zomer-",Bouwland,1,1,1,1,4
+237,Rogge (geen snijrogge),Bouwland,1,1,1,1,4
+238,Haver,Bouwland,1,1,1,1,4
+241,Kapucijners (en grauwe erwten),Bouwland,1,1,1,1,4
+242,"Bonen, bruine-",Bouwland,1,1,1,1,4
+244,"Erwten, groene/gele (groen te oogsten)",Bouwland,1,1,1,1,4
+246,Karwijzaad (oogst dit jaar),Bouwland,1,1,1,1,4
+247,Blauwmaanzaad,Bouwland,1,1,1,1,4
+256,"Bieten, suiker-",Bouwland,1,1,1,1,4
+257,"Bieten, voeder-",Bouwland,1,1,1,1,4
+258,Luzerne,Bouwland,1,1,1,1,4
+259,"Ma├»s, snij-",Bouwland,,,,1,1
+,"Maïs, snij-",Bouwland,1,1,1,,3
+262,"Uien, zaai-",Bouwland,1,1,1,1,4
+263,"Uien, zilver-",Bouwland,1,1,1,1,4
+265,"Grasland, blijvend",Grasland,1,1,1,1,4
+266,"Grasland, tijdelijk",Grasland,1,1,1,1,4
+308,Erwten (droog te oogsten),Bouwland,1,1,1,1,4
+311,"Bonen, veld- (onder andere duiven-, paarden-, wierbonen)",Bouwland,1,1,1,1,4
+314,Triticale,Bouwland,1,1,1,1,4
+316,"Ma├»s, korrel-",Bouwland,,,,1,1
+,"Maïs, korrel-",Bouwland,1,1,1,,3
+317,"Ma├»s, corncob mix",Bouwland,,,,1,1
+,"Maïs, corncob mix",Bouwland,1,1,1,,3
+331,"Grasland, natuurlijk. Hoofdfunctie landbouw.",Grasland,1,1,1,1,4
+332,"Grasland, natuurlijk. Hoofdfunctie natuur.",Grasland,1,1,1,1,4
+333,"Rand, grenzend aan blijvend grasland of een blijvende teelt,",Grasland,1,,,,1
+,"Rand, grenzend aan blijvend grasland of een blijvende teelt, hoofdzakelijk bestaand uit blijvend gras",Grasland,,1,1,1,3
+334,"Rand, grenzend aan bouwland, hoofdzakelijk bestaand uit blij",Grasland,1,,,,1
+,"Rand, grenzend aan bouwland, hoofdzakelijk bestaand uit blijvend gras",Grasland,,1,1,1,3
+335,Natuurterreinen (incl. heide),Natuurterrein,1,1,1,1,4
+336,"Grasland, natuurlijk. Areaal met een natuurbeheertype dat overwegend voor landbouwactiviteiten-GLB wordt gebruikt",Grasland,,1,1,1,3
+343,"Sloot, grenzend aan beheerde akkerrand",Overige,1,1,1,1,4
+344,"Rand, grenzend aan blijvend grasland of een blijvende teelt,",Bouwland,1,,,,1
+,"Rand, grenzend aan blijvend grasland of een blijvende teelt, hoofdzakelijk bestaand uit een ander gewas dan gras",Bouwland,,1,1,1,3
+345,"Rand, grenzend aan bouwland, hoofdzakelijk bestaand uit een",Bouwland,1,,,,1
+,"Rand, grenzend aan bouwland, hoofdzakelijk bestaand uit een ander gewas dan gras",Bouwland,,1,,,1
+346,Tagetes erecta (Afrikaantje),Bouwland,1,1,1,1,4
+347,Tagetes patula (Afrikaantje),Bouwland,1,1,1,1,4
+370,"Rand, grenzend aan blijvend grasland of een blijvende teelt,",Grasland,1,,,,1
+,"Rand, grenzend aan blijvend grasland of een blijvende teelt, hoofdzakelijk bestaand uit tijdelijk gras",Grasland,,1,1,1,3
+372,"Rand, grenzend aan bouwland, hoofdzakelijk bestaand uit tijd",Grasland,1,,,,1
+,"Rand, grenzend aan bouwland, hoofdzakelijk bestaand uit tijdelijk gras",Grasland,,1,1,1,3
+375,Hop,Bouwland,1,1,1,1,4
+381,Teff,Bouwland,1,1,1,1,4
+382,Spelt,Bouwland,1,1,1,1,4
+383,Graszaad,Grasland,1,1,1,1,4
+426,"Overige groenbemesters, vlinderbloemige-",Bouwland,1,1,1,1,4
+427,"Overige groenbemesters, niet-vlinderbloemige-",Bouwland,1,1,1,1,4
+428,Gele mosterd,Bouwland,1,1,1,1,4
+511,Cichorei,Bouwland,1,1,1,1,4
+515,Zonnebloemen,Bouwland,1,1,1,1,4
+516,Miscanthus (olifantsgras),Bouwland,1,1,1,1,4
+652,Meekrap,Bouwland,1,,1,1,3
+653,Teunisbloem,Bouwland,1,1,1,1,4
+654,Brandnetel,Bouwland,1,1,1,,3
+655,Zwarte mosterd,Bouwland,1,1,1,1,4
+662,Bos (SBL-regeling),Overige,1,1,1,1,4
+663,"Lupinen, niet bittere",Bouwland,1,1,1,1,4
+664,Raapzaad,Bouwland,1,,1,1,3
+665,Sojabonen,Bouwland,1,1,1,1,4
+666,"Vlas, olie-. Lijnzaad niet van vezelvlas",Bouwland,1,1,1,1,4
+669,Zwaardherik (aaltjesvanggewas),Bouwland,1,1,1,1,4
+670,Japanse haver,Bouwland,1,1,1,1,4
+671,Raketblad (aaltjesvanggewas),Bouwland,1,1,1,1,4
+794,Woudbomen met korte omlooptijd (excl. Wilgenhakhout),Overige,1,1,1,1,4
+795,Wilgenhakhout,Overige,1,1,1,1,4
+796,Kerstbomen,Bouwland,1,1,1,1,4
+799,"Klaver, rode",Bouwland,1,1,1,1,4
+800,Rolklaver,Bouwland,1,1,1,1,4
+801,Esparcette,Bouwland,1,1,1,1,4
+802,"Wikke, bonte",Bouwland,,1,1,1,3
+803,"Wikke, voeder-",Bouwland,1,1,1,1,4
+804,Klaverzaad,Grasland,1,1,1,1,4
+814,"Ma├»s, suiker-",Bouwland,,,,1,1
+,"Maïs, suiker-",Bouwland,1,1,1,,3
+853,"Bonen, tuin- (droog te oogsten) (geen consumptie)",Bouwland,1,1,1,1,4
+854,"Bonen, tuin- (groen te oogsten)",Bouwland,1,1,1,1,4
+863,Bos zonder herplantplicht,Bouwland,1,1,1,1,4
+864,Bos (set aside regeling),Bouwland,1,1,1,1,4
+944,"Hennep, vezel-",Bouwland,1,1,1,1,4
+964,"Dahlia, overige bloemkwekerijgewassen",Bouwland,1,1,1,1,4
+965,"Dahlia, droogbloemen",Bouwland,1,,1,1,3
+967,"Gladiool, overige bloemkwekerijgewassen",Bouwland,1,1,1,1,4
+968,"Gladiool, droogbloemen",Bouwland,1,1,1,1,4
+970,"Hyacint, overige bloemkwekerijgewassen",Bouwland,1,1,1,1,4
+973,"Iris, overige bloemkwekerijgewassen",Bouwland,1,1,1,1,4
+976,"Krokus, overige bloemkwekerijgewassen",Bouwland,1,1,1,,3
+979,"Lelie, overige bloemkwekerijgewassen",Bouwland,1,1,1,1,4
+982,"Narcis, overige bloemkwekerijgewassen",Bouwland,1,1,1,1,4
+983,"Narcis, droogbloemen",Bouwland,,1,,,1
+985,"Tulp, overige bloemkwekerijgewassen",Bouwland,1,1,1,1,4
+988,"Zantedeschia, overige bloemkwekerijgewassen",Bouwland,1,1,1,1,4
+991,"Overige bloemen, overige bloemkwekerijgewassen",Bouwland,1,1,1,1,4
+992,"Overige bloemen, droogbloemen",Bouwland,1,1,1,1,4
+994,"Amaryllis, overige bloemkwekerijgewassen",Bouwland,1,1,1,1,4
+995,"Amaryllis, droogbloemen",Bouwland,,1,,,1
+997,"Dahlia, bloembollen en - knollen",Bouwland,1,1,1,1,4
+998,"Gladiool, bloembollen en - knollen",Bouwland,1,1,1,1,4
+999,"Hyacint, bloembollen en - knollen",Bouwland,1,1,1,1,4
+1000,"Iris, bloembollen en -knollen",Bouwland,1,1,1,,3
+1001,"Krokus, bloembollen en - knollen",Bouwland,1,1,1,1,4
+1002,"Lelie, bloembollen en -knollen",Bouwland,1,1,1,1,4
+1003,"Narcis, bloembollen en -knollen",Bouwland,1,1,1,1,4
+1004,"Tulp, bloembollen en -knollen",Bouwland,1,1,1,1,4
+1005,"Zantedeschia, bloembollen en -knollen",Bouwland,1,1,1,1,4
+1006,"Overige bloemen, bloembollen en -knollen",Bouwland,1,1,1,1,4
+1007,"Amaryllis, bloembollen en -knollen",Bouwland,1,1,1,1,4
+1010,"Sierui, overige bloemkwekerijgewassen",Bouwland,,1,1,1,3
+1012,"Sierui, bloembollen en -knollen",Bouwland,,1,1,1,3
+1013,"Blauw druifje, overige bloemkwekerijgewassen",Bouwland,,1,1,1,3
+1014,"Blauw druifje, droogbloemen",Bouwland,,1,,,1
+1015,"Blauw druifje, bloembollen en -knollen",Bouwland,,1,1,1,3
+1016,"Kuifhyacint, overige bloemkwekerijgewassen",Bouwland,,1,,,1
+1019,"Valeriaan, productie",Bouwland,,1,1,1,3
+1020,"Valeriaan, zaden en opkweekmateriaal",Bouwland,,1,1,1,3
+1021,Knoflook,Bouwland,,1,1,1,3
+1022,Quinoa,Bouwland,,1,1,1,3
+1023,"Pastinaak, productie",Bouwland,,1,1,1,3
+1024,"Pastinaak, zaden en opkweekmateriaal",Bouwland,,1,1,1,3
+1025,"Pioenroos, overige bloemkwekerijgewassen",Bouwland,,1,1,1,3
+1026,"Pioenroos, droogbloemen",Bouwland,,,1,1,2
+1027,"Pioenroos, bloembollen en -knollen",Bouwland,,1,1,,2
+1028,"Lavas (Maggiplant), productie",Bouwland,,1,1,,2
+1030,"Wilde marjolein (Oregano), productie",Bouwland,,,1,,1
+1032,Goudsbloem,Bouwland,,1,,1,2
+1033,Igniscum Candy,Bouwland,,1,1,1,3
+1034,Kanariezaad,Bouwland,,1,1,1,3
+1035,Naaldaar (Setaria),Bouwland,,1,1,1,3
+1036,Wortelpeterselie,Bouwland,,1,1,1,3
+1037,"Peterselie, productie",Bouwland,,1,1,1,3
+1038,"Peterselie, zaden en opkweekmateriaal",Bouwland,,1,1,1,3
+1039,"Chrysant, overige bloemkwekerijgewassen",Bouwland,,1,1,1,3
+1042,"Angelica, productie",Bouwland,,1,1,1,3
+1043,"Angelica, zaden en opkweekmateriaal",Bouwland,,,1,1,2
+1044,Papaver,Bouwland,,1,1,1,3
+1045,Adonis,Bouwland,,,1,1,2
+1046,Vergeet mij nietje,Bouwland,,,1,1,2
+1047,Cranberry,Bouwland,,1,1,1,3
+1048,"Echinacea (zonnehoed), productie",Bouwland,,1,1,1,3
+1049,"Echinacea (zonnehoed), zaden en opkweekmateriaal",Bouwland,,1,,,1
+1050,Leeuwenbekjes,Bouwland,,,1,1,2
+1067,"Bos- en haagplanten, open grond,",Bouwland,1,1,1,1,4
+1068,"Buxus, open grond,",Bouwland,1,1,1,1,4
+1069,"Ericaceae (Zoals erica, calluna, rododendron, azalea), open",Bouwland,1,,,,1
+,"Ericaceae (Zoals erica, calluna, rododendron, azalea), open grond,",Bouwland,,1,1,1,3
+1070,"Laanbomen/parkbomen, onderstammen, open grond,",Bouwland,1,1,1,1,4
+1071,"Laanbomen/parkbomen, opzetters, open grond,",Bouwland,1,1,1,1,4
+1072,"Laanbomen/parkbomen, spillen, open grond,",Bouwland,1,1,1,1,4
+1073,"Rozenstruiken (incl, zaailingen en onderstammen), open grond",Bouwland,1,,,,1
+,"Rozenstruiken (incl, zaailingen en onderstammen), open grond,",Bouwland,,1,1,1,3
+1074,"Sierconiferen, open grond,",Bouwland,1,1,1,1,4
+1075,"Sierheesters en klimplanten, open grond,",Bouwland,1,1,1,1,4
+1076,"Trek- en besheesters, open grond,",Bouwland,1,1,1,1,4
+1077,"Vruchtbomen, moerbomen, open grond,",Bouwland,1,1,1,1,4
+1078,"Vruchtbomen, onderstammen, open grond,",Bouwland,1,1,1,1,4
+1079,"Vruchtbomen, overig, open grond,",Bouwland,1,1,1,1,4
+1080,"Vaste planten, open grond,",Bouwland,1,1,1,1,4
+1081,"Bos- en haagplanten, pot- en containerveld,",Bouwland,1,1,1,1,4
+1082,"Buxus, pot- en containerveld,",Bouwland,1,1,1,1,4
+1083,"Ericaceae (Zoals erica, calluna, rododendron, azalea), pot-",Bouwland,1,,,,1
+,"Ericaceae (Zoals erica, calluna, rododendron, azalea), pot- en containerveld,",Bouwland,,1,1,1,3
+1084,"Laanbomen/parkbomen, onderstammen, pot- en containerveld,",Bouwland,1,1,1,1,4
+1085,"Laanbomen/parkbomen, opzetters, pot- en containerveld,",Bouwland,1,1,1,1,4
+1086,"Laanbomen/parkbomen, spillen, pot- en containerveld,",Bouwland,1,1,1,1,4
+1087,"Rozenstruiken (incl, zaailingen en onderstammen), pot- en co",Bouwland,1,,,,1
+,"Rozenstruiken (incl, zaailingen en onderstammen), pot- en containerveld,",Bouwland,,1,1,1,3
+1088,"Sierconiferen, pot- en containerveld,",Bouwland,1,1,1,1,4
+1089,"Sierheesters en klimplanten, pot- en containerveld,",Bouwland,1,1,1,1,4
+1090,"Trek- en besheesters, pot- en containerveld,",Bouwland,1,1,1,1,4
+1091,"Vruchtbomen, moerbomen, pot- en containerveld,",Bouwland,1,1,1,1,4
+1092,"Vruchtbomen, onderstammen, pot- en containerveld,",Bouwland,,1,,1,2
+1093,"Vruchtbomen, overig, pot- en containerveld,",Bouwland,1,1,1,1,4
+1094,"Vaste planten, pot- en containerteelt,",Bouwland,1,1,1,1,4
+1095,Appelen. Aangeplant lopende seizoen.,Bouwland,1,1,1,1,4
+1096,Appelen. Aangeplant voorafgaande aan lopende seizoen.,Bouwland,1,1,1,1,4
+1097,Peren. Aangeplant lopende seizoen.,Bouwland,1,1,1,1,4
+1098,Peren. Aangeplant voorafgaande aan lopende seizoen.,Bouwland,1,1,1,1,4
+1099,Wijndruiven,Bouwland,1,1,1,1,4
+1100,"Overige pit- en steenvruchten (zoals perziken, tafeldruiven)",Bouwland,1,1,1,1,4
+1574,Definitief aan de landbouw onttrokken cultuurgrond,Overige,1,,,,1
+1869,"Bessen, blauwe",Bouwland,1,1,1,1,4
+1870,Pruimen,Bouwland,1,1,1,1,4
+1872,"Kersen, zuur (opbrengst bestemd voor verwerkende industrie)",Bouwland,1,1,1,1,4
+1873,"Bessen, zwarte (opbrengst verwerkt voor verwerkende industri",Bouwland,1,,,,1
+,"Bessen, zwarte (opbrengst verwerkt voor verwerkende industrie)",Bouwland,,1,1,1,3
+1874,"Overig kleinfruit (zoals kruisbessen, kiwi's)",Bouwland,1,1,1,1,4
+1876,Snijgroen,Bouwland,1,1,1,1,4
+1921,Graszoden,Grasland,1,1,1,1,4
+1922,"Koolzaad, winter (incl. boterzaad)",Bouwland,1,1,1,1,4
+1923,"Koolzaad, zomer (incl. boterzaad)",Bouwland,1,1,1,1,4
+1925,Overige akkerbouwgewassen,Bouwland,1,1,1,,3
+1926,Agrarisch natuurmengsel,Grasland,,1,1,1,3
+1931,"Uien, poot- en plant- (incl. sjalotten)",Bouwland,1,1,1,1,4
+1936,"Bos, blijvend, met herplantplicht",Overige,1,1,1,1,4
+1949,Aardperen,Bouwland,1,1,1,1,4
+2014,"Aardappelen, consumptie",Bouwland,1,1,1,1,4
+2015,"Aardappelen, poot NAK",Bouwland,1,1,1,1,4
+2016,"Aardappelen, poot TBM",Bouwland,1,1,1,1,4
+2017,"Aardappelen, zetmeel",Bouwland,1,1,1,1,4
+2025,"Aardappelen, bestrijdingsmaatregel AM",Bouwland,1,1,1,1,4
+2032,"Ma├»s, energie-",Bouwland,,,,1,1
+,"Maïs, energie-",Bouwland,1,1,1,,3
+2033,"Onbeteelde grond, tijdelijk",Braakland,1,1,,,2
+2300,Onbeteelde grond vanwege een teeltverbod/ontheffing,Braakland,1,1,1,1,4
+2325,"Bessen, rode",Bouwland,1,1,1,1,4
+2326,Frambozen,Bouwland,1,1,1,1,4
+2327,Bramen,Bouwland,1,1,1,1,4
+2328,"Kersen, zoet",Bouwland,1,1,1,1,4
+2645,Notenbomen,Bouwland,1,1,1,1,4
+2652,Overige granen,Bouwland,1,1,1,1,4
+2700,"Aardbeien open grond, vermeerdering",Bouwland,1,1,1,1,4
+2701,"Aardbeien open grond, wachtbed",Bouwland,1,1,1,1,4
+2702,"Aardbeien open grond, productie",Bouwland,1,1,1,1,4
+2703,"Aardbeien open grond, zaden en opkweekmateriaal",Bouwland,1,1,1,1,4
+2704,"Aardbeien op stellingen, vermeerdering",Bouwland,1,1,1,1,4
+2705,"Aardbeien op stellingen, wachtbed",Bouwland,1,1,1,1,4
+2706,"Aardbeien op stellingen, productie",Bouwland,1,1,1,1,4
+2707,"Aardbeien op stellingen, zaden en opkweekmateriaal",Bouwland,1,1,1,1,4
+2708,"Andijvie, productie",Bouwland,1,1,1,1,4
+2709,"Andijvie, zaden en opkweekmateriaal",Bouwland,1,,,,1
+2710,"Asperges, oppervlakte die productie oplevert",Bouwland,1,1,1,1,4
+2711,"Asperges, oppervlakte die nog geen productie oplevert",Bouwland,1,1,1,1,4
+2712,"Asperges, zaden en opkweekmateriaal",Bouwland,1,1,1,1,4
+2713,"Bloemkool, productie",Bouwland,1,,,,1
+2714,"Bloemkool, zaden en opkweekmateriaal",Bouwland,1,,,,1
+2715,"Boerenkool, productie",Bouwland,1,1,1,1,4
+2716,"Boerenkool, zaden en opkweekmateriaal",Bouwland,1,1,1,1,4
+2717,"Bospeen, productie",Bouwland,1,1,1,1,4
+2718,"Bospeen, zaden en opkweekmateriaal",Bouwland,,1,1,1,3
+2719,"Broccoli, productie",Bouwland,1,1,1,1,4
+2720,"Brocolli, zaden en opkweekmateriaal",Bouwland,1,1,1,1,4
+2721,"Chinese kool, productie",Bouwland,1,1,1,1,4
+2723,"Courgette, productie",Bouwland,1,1,1,1,4
+2724,"Courgette, zaden en opkweekmateriaal",Bouwland,1,,1,1,3
+2725,"Knolselderij, productie",Bouwland,1,1,1,1,4
+2726,"Knolselderij, zaden en opkweekmateriaal",Bouwland,1,1,1,1,4
+2727,"Knolvenkel/venkel, productie",Bouwland,1,1,1,1,4
+2729,"Komkommer, productie",Bouwland,1,1,1,1,4
+2731,"Augurk, productie",Bouwland,1,1,1,1,4
+2732,"Augurk, zaden en opkweekmateriaal",Bouwland,1,1,1,1,4
+2734,"Meloen, zaden en opkweekmateriaal",Bouwland,,1,,,1
+2735,"Pompoen, productie",Bouwland,1,1,1,1,4
+2736,"Pompoen, zaden en opkweekmateriaal",Bouwland,1,1,1,1,4
+2737,"Koolraap, productie",Bouwland,1,1,1,1,4
+2739,"Koolrabi, productie",Bouwland,1,1,1,1,4
+2740,"Koolrabi, zaden en opkweekmateriaal",Bouwland,1,1,,1,3
+2741,"Kroten/rode bieten, productie",Bouwland,1,1,1,1,4
+2742,"Kroten/rode bieten, zaden en opkweekmateriaal",Bouwland,1,1,1,1,4
+2743,"Kruiden, productie",Bouwland,1,1,1,1,4
+2744,"Kruiden, zaden en opkweekmateriaal",Bouwland,1,1,1,1,4
+2745,"Paksoi, productie",Bouwland,1,1,1,1,4
+2747,"Peulen, productie",Bouwland,1,1,1,1,4
+2748,"Peulen, zaden en opkweekmateriaal",Bouwland,1,1,1,1,4
+2749,"Prei, productie",Bouwland,1,,,,1
+2750,"Prei, zaden en opkweekmateriaal",Bouwland,1,,,,1
+2751,"Pronkbonen, productie",Bouwland,1,1,1,1,4
+2752,"Pronkbonen, zaden en opkweekmateriaal",Bouwland,1,1,1,1,4
+2753,"Raapstelen, productie",Bouwland,1,1,1,1,4
+2754,"Raapstelen, zaden en opkweekmateriaal",Bouwland,,1,,,1
+2755,"Rabarber, productie",Bouwland,1,1,1,1,4
+2756,"Rabarber, zaden en opkweekmateriaal",Bouwland,1,1,1,1,4
+2757,"Radijs, productie",Bouwland,1,1,1,1,4
+2758,"Radijs, zaden en opkweekmateriaal",Bouwland,1,1,1,1,4
+2759,"Rodekool, productie",Bouwland,1,1,1,1,4
+2761,"Savooiekool, productie",Bouwland,1,1,1,1,4
+2762,"Savooiekool, zaden en opkweekmateriaal",Bouwland,1,1,,1,3
+2763,Schorseneren; productie,Bouwland,1,1,1,1,4
+2764,"Schorseneren, zaden en opkweekmateriaal",Bouwland,,,1,,1
+2765,"Selderij, bleek- en groen-, productie",Bouwland,1,1,1,1,4
+2766,"Selderij, bleek- en groen-, zaden en opkweekmateriaal",Bouwland,1,1,1,1,4
+2767,"Sla, ijsberg-, productie",Bouwland,1,1,1,1,4
+2768,"Sla, ijsberg-, zaden en opkweekmateriaal",Bouwland,1,1,1,1,4
+2769,"Sla; radicchio rosso, productie",Bouwland,1,1,1,1,4
+2770,"Sla; radicchio rosso, zaden en opkweekmateriaal",Bouwland,,1,,1,2
+2771,"Sla; overig, productie",Bouwland,1,1,1,1,4
+2772,"Sla; overig, zaden en opkweekmateriaal",Bouwland,1,1,1,1,4
+2773,"Spinazie, productie",Bouwland,1,1,1,1,4
+2774,"Spinazie, zaden en opkweekmateriaal",Bouwland,1,1,1,1,4
+2775,"Spitskool, productie",Bouwland,1,1,1,1,4
+2776,"Spitskool, zaden en opkweekmateriaal",Bouwland,1,,1,1,3
+2777,"Spruitkool/spruitjes, productie",Bouwland,1,1,1,1,4
+2778,"Spruitkool/spruitjes, zaden en opkweekmateriaal",Bouwland,1,1,1,1,4
+2779,"Stamsperziebonen (=stamslabonen), productie",Bouwland,1,1,1,1,4
+2780,"Stamsperziebonen (=stamslabonen), zaden en opkweekmateriaal",Bouwland,1,1,1,1,4
+2781,"Stoksnijbonen en stokslabonen, productie",Bouwland,1,1,1,1,4
+2782,"Stoksnijbonen en stokslabonen, zaden en opkweekmateriaal",Bouwland,1,1,1,1,4
+2783,"Waspeen, productie",Bouwland,1,1,1,1,4
+2784,"Waspeen, zaden en opkweekmateriaal",Bouwland,1,1,1,1,4
+2785,"Winterpeen, productie",Bouwland,1,1,1,1,4
+2786,"Winterpeen, zaden en opkweekmateriaal",Bouwland,1,1,1,1,4
+2787,"Witlofwortel, productie",Bouwland,1,1,1,1,4
+2788,"Witlofwortel, zaden en opkweekmateriaal",Bouwland,1,1,1,1,4
+2789,"Witte kool, productie",Bouwland,1,1,1,1,4
+2790,"Witte kool, zaden en opkweekmateriaal",Bouwland,1,1,1,1,4
+2791,"Overige niet genoemde bladgewassen, productie",Bouwland,1,1,1,1,4
+2792,"Overige niet genoemde bladgewassen, zaden en opkweekmateriaa",Bouwland,1,,,,1
+,"Overige niet genoemde bladgewassen, zaden en opkweekmateriaal",Bouwland,,1,1,1,3
+2793,"Overige niet genoemde groenten, productie",Bouwland,1,1,1,1,4
+2794,"Overige niet genoemde groenten, zaden en opkweekmateriaal",Bouwland,1,1,1,1,4
+2795,"Bloemkool, winter, productie",Bouwland,,1,1,1,3
+2796,"Bloemkool, winter, zaden en opkweekmateriaal",Bouwland,,1,1,1,3
+2797,"Bloemkool, zomer, productie",Bouwland,,1,1,1,3
+2798,"Bloemkool, zomer, zaden en opkweekmateriaal",Bouwland,,1,1,1,3
+2799,"Prei, winter, productie",Bouwland,,1,1,1,3
+2800,"Prei, winter, zaden en opkweekmateriaal",Bouwland,,1,1,1,3
+2801,"Prei, zomer, productie",Bouwland,,1,1,1,3
+2802,"Prei, zomer, zaden en opkweekmateriaal",Bouwland,,1,1,1,3
+3500,"Klaver, Alexandrijnse",Bouwland,,1,1,1,3
+3501,Beemdlangbloem,Bouwland,1,,,1,2
+3502,Bladkool,Bouwland,1,1,1,1,4
+3503,Bladraap,Bouwland,,,1,,1
+3504,Bladrammenas,Bouwland,1,1,1,1,4
+3505,Deder,Bouwland,1,1,1,1,4
+3506,Engels raaigras,Bouwland,1,1,1,1,4
+3507,Ethiopische mosterd,Bouwland,1,1,1,1,4
+3508,Facelia,Bouwland,1,1,1,1,4
+3509,Festulolium,Bouwland,1,1,1,1,4
+3510,Franse boekweit,Bouwland,1,1,1,1,4
+3512,Italiaans raaigras,Bouwland,1,1,1,1,4
+3513,Westerwolds raaigras,Bouwland,1,1,1,1,4
+3516,Rietzwenkgras,Bouwland,1,1,,,2
+3517,Sarepta mosterd/Caliente,Bouwland,1,1,1,1,4
+3519,Soedangras/Sorghum,Bouwland,1,1,1,1,4
+3521,Stoppelknollen,Bouwland,,1,1,1,3
+3522,Timothee,Bouwland,1,1,1,1,4
+3523,Veldbeemdgras,Bouwland,1,1,1,1,4
+3524,"Klaver, witte",Bouwland,1,1,1,1,4
+3736,"Vlas, vezel-",Bouwland,1,1,1,1,4
+3801,"Tijdelijk onbeteelde grond, i.v.m. publieke werken",Braakland,,,1,1,2
+3802,"Tijdelijk onbeteelde grond, anders dan voor publieke werken",Braakland,,,1,1,2
+3803,"Rand, grenzend aan bouwland, hoofdzakelijk bestaand uit een ander gewas dan gras. (EA: beheer)",Bouwland,,,1,1,2
+3804,"Rand, grenzend aan bouwland, hoofdzakelijk bestaand uit een ander gewas dan gras. (EA: onbeheerd)",Bouwland,,,1,1,2
+3805,"Rietzwenkgras, industriegras",Grasland,,,1,1,2
+3807,"Rietzwenkgras, anders dan voor industriegras",Grasland,,,1,1,2
+337,"Bufferstrook, rand (inclusief eventuele oevervegetatie)",Overige,,,,1,1
+2722,"Chinese kool, zaden en opkweekmateriaal",Bouwland,,,,1,1
+971,"Hyacint, droogbloemen",Bouwland,,,,1,1
+1051,"Iris, Bolvormend",Bouwland,,,,1,1
+1052,"Iris, Rhizoomvormend",Bouwland,,,,1,1
+3511,"Klaver, incarnaat",Bouwland,,,,1,1
+2738,"Koolraap, zaden en opkweekmateriaal",Bouwland,,,,1,1
+2733,"Meloen, productie",Bouwland,,,,1,1
+1927,Overige akkerbouwgewassen,Bouwland,,,,1,1
+2746,"Paksoi, zaden en opkweekmateriaal",Bouwland,,,,1,1
+1054,"Pioenroos, vermeerdering",Bouwland,,,,1,1
+338,"Rand, liggend op bouwland en direct grenzend aan bos. Geen landbouwproductie.",Overige,,,,1,1
+2760,"Rodekool, zaden en opkweekmateriaal",Bouwland,,,,1,1
+636,Saffloer,Bouwland,,,,1,1
+986,"Tulp, droogbloemen",Bouwland,,,,1,1
+Grand Total,,,260,296,300,312,1168

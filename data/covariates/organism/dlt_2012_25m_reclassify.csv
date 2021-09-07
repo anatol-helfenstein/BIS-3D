@@ -1,0 +1,6 @@
+﻿value,description,value_rcl,description_rcl
+0,all non-tree covered areas,1,No trees
+1,broadleaved trees,2,Broadleaved trees
+2,coniferous trees,3,Coniferous trees
+254,outside area (outside of Netherlands?),,
+255,,,

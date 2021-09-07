@@ -1,0 +1,815 @@
+---
+title: "Exploratory Analysis of pH for BIS-3D"
+author: "Anatol Helfenstein"
+date: "updated 19/02/2021"
+output:
+  html_document:
+    toc: yes
+    toc_float: yes
+  '': default
+---
+
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+options(width = 100) # sets width of R code output (not images)
+```
+
+```{r load required pkgs and load data, include = FALSE}
+# required packages
+pkgs <- c("tidyverse", "sf", "rgdal", "gstat", "ggspatial", "cowplot", "raster",
+          "viridis", "mapview")
+# ggspatial Pkg to create scale bars on map
+# make sure 'mapview' pkg installed from github to avoid pandoc error:
+# remotes::install_github("r-spatial/mapview")
+lapply(pkgs, library, character.only = TRUE)
+
+# read in all Dutch soil point data from the BIS DB
+tbl_BIS <- read_rds("out/data/soil/01_tbl_BIS.Rds")
+
+# for now, ignore spatial support & assume midpoint of each depth increment = d_mid
+tbl_BIS <- tbl_BIS %>% 
+  mutate(d_mid = (d_lower - d_upper)/2 + d_upper,
+         .after = d_lower)
+
+# read in NL and Gelderland border shapefile for mapping
+sf_NL_borders <- st_read("data/other/NL_borders.shp")
+spdf_NL_borders <- readOGR("data/other/NL_borders.shp")
+sf_GE_borders <- st_read("data/other/Gelderland_borders.shp")
+
+# read in raster of AHN no data (water and urban areas)
+# -> want to predict for remaining area
+r_ahn2_nodata <- raster("data/other/ahn2_nodata_25m.tif") %>% 
+  ratify() # binary of urban areas and water bodies
+
+# read in AHN raster as example of grid over which we want to predict
+r_ahn2 <- raster("data/covariates/relief/ahn2_25m.tif")
+
+# remove areas with bodies of water and buildings from prediction raster
+r_ahn2 <- mask(r_ahn2, r_ahn2_nodata, inverse = TRUE)
+
+# crop for Gelderland province
+r_ahn2_GE <- mask(r_ahn2, sf_GE_borders)
+
+# convert to grid
+sgdf_ahn2_GE <- as(r_ahn2_GE, "SpatialGridDataFrame")
+
+```
+
+
+
+***
+# Soil properties in Dutch soil database (BIS)
+
+There are a range of different soil properties in the Dutch soil database, or "Bodemkundig informatie systeem" (BIS). See figure below for a flowchart of the current BIS database (version 7.4).
+
+```{r BIS versie 7.4, out.width="100%", fig.align = "center", fig.cap="Flowchart of current BIS database, version 7.4", echo = FALSE}
+
+knitr::include_graphics(path = "db/2020-01-01_organigram_flowchart_BIS.jpg")
+```
+
+Possible target soil properties were nested into the list-column `soil_target` and include properties related to soil organic carbon (SOC) and soil organic matter (SOM), pH, soil texture (clay, silt, sand), nitrogen (N), phosphorus (P), cation exchange capacity (CEC) and others. Additional soil properties not considered as potential targets that are related to soil chemical properties, soil physical properties or remaining non-chemical and non-physical soil properties are in nested list-columns `soil_chem`, `soil_phys` and `soil_other`, respectively. Additional aggregated information related to the soil profile, environmental factors, metadata and other unknown variables (if available) for each soil observation are also included as nested list-columns.
+
+```{r target variables, include = TRUE, echo = TRUE}
+tbl_BIS
+
+# get an overview of possible target soil properties (response variable):
+tbl_BIS %>% 
+  dplyr::select(soil_target) %>% 
+  unnest_legacy() %>% 
+  colnames()
+
+```
+
+As of now, we will limit the exploratory analysis to the top-priority target soil properties (response variables) for implementing a high-resolution soil information system for the Netherlands in 3D (BIS-3D). These are 1) soil pH, 2) SOC and 3) soil texture (clay, silt and sand). Here, we focus on pH.
+
+
+
+***
+# Soil pH
+
+***
+## Different methods of measuring soil pH
+
+Soil pH was measured in different ways, depending on the project/dataset and other (to me) unknown reasons:
+
+* suspension of soil in KCl
+* suspension of soil in H2O
+* suspension of soil in CaCl2
+* predictions/estimates of soil pH based on NIR spectroscopy (only in CCNL data)
+
+Excluding the NIR spectroscopy predictions/estimates in the CCNL dataset, there is only pH data available from the PFB and LSK dataset, as can be seen below. This offers the opportunity to use observations from the PFB dataset for model training/calibration and observations from the LSK dataset for independent model testing/validation...
+
+First we will look at the different information available for soil pH and see what is really useful for BIS-3D...
+
+```{r pH different methods, include = TRUE, echo = TRUE}
+# extract target variables
+tbl_BIS_pH <- tbl_BIS %>% 
+  unnest(soil_target) %>% 
+  dplyr::select(BIS_tbl:d_mid,
+                pH_KCl, pH_H2O, pH, pH_CaCl2, pH_NIR,
+                soil_chem:unknown) %>% 
+  filter_at(vars(pH_KCl:pH_NIR), any_vars(!is.na(.)))
+
+# different methods used to measure pH; vast majority using KCl method
+tbl_BIS_pH %>% 
+  dplyr::select(pH_KCl, pH_H2O, pH, pH_CaCl2, pH_NIR) %>% 
+  summary()
+# strange to get pH values below 2! Check these values later...
+
+# Predictions of pH based on NIR in the CCNL dataset
+tbl_BIS_pH %>% 
+  filter(!pH_NIR %in% NA) %>% 
+  pull(BIS_tbl) %>% 
+  unique()
+
+# Remove NIR predictions
+tbl_BIS_pH <- tbl_BIS_pH %>% 
+  dplyr::select(-pH_NIR) %>% 
+  filter_at(vars(pH_KCl:pH_CaCl2), any_vars(!is.na(.)))
+
+# < 1K samples that could be used from other methods besides KCl suspension
+tbl_BIS_pH %>% 
+    filter(pH_KCl %in% NA & !(pH_H2O | pH | pH_CaCl2) %in% NA) %>% 
+    dplyr::select(pH, pH_CaCl2, pH_H2O, pH_KCl)
+
+
+# pH [KCl] vs. pH [H2O] --------------------------------------------------------
+n <- tbl_BIS_pH %>% 
+  filter(!pH_KCl %in% NA & !pH_H2O %in% NA) %>%
+  nrow()
+
+n <- as.character(as.expression(paste0("italic(n) == ", n)))
+
+# pH KCl vs pH H2O
+tbl_BIS_pH %>% 
+  filter(!pH_KCl %in% NA & !pH_H2O %in% NA) %>% 
+  ggplot(aes(x = pH_KCl, y = pH_H2O)) +
+  geom_point(shape = 21) +
+  geom_abline(slope = 1, intercept = 0, color = "gray") +
+  geom_text(aes(x = Inf, y = -Inf, label = n), size = 3,
+            hjust = 1.07, vjust = -1.25, parse = TRUE) +
+  xlab("pH [KCl]") +
+  ylab("pH [H2O]") +
+  coord_fixed(ratio = 1) +
+  theme_bw()
+
+
+# pH KCl vs pH -----------------------------------------------------------------
+n <- tbl_BIS_pH %>% 
+  filter(!pH_KCl %in% NA & !pH %in% NA) %>%
+  nrow()
+
+n <- as.character(as.expression(paste0("italic(n) == ", n)))
+
+# pH KCl vs pH
+tbl_BIS_pH %>% 
+  filter(!pH_KCl %in% NA & !pH %in% NA) %>% 
+  ggplot(aes(x = pH_KCl, y = pH)) +
+  geom_point(shape = 21) +
+  geom_abline(slope = 1, intercept = 0, color = "gray") +
+  geom_text(aes(x = Inf, y = -Inf, label = n), size = 3,
+            hjust = 1.07, vjust = -1.25, parse = TRUE) +
+  xlab("pH [KCl]") +
+  ylab("pH") +
+  coord_fixed(ratio = 1) +
+  theme_bw()
+
+```
+
+Some 210 measurements were only done using CaCl2 method, so we cannot plot it as a function of pH [KCl] for comparison...
+
+
+
+***
+## pH [KCl]
+
+Since vast majority of measurements were done using suspension in KCl method (n = approx. 22,000), we will only use these as the response variable in BIS-3D. The extra few hundred observations that could be used from other methods are too difficult to convert, would be associated with a large error and not worth the effort since they are so few in comparison to the number of pH [KCl] observations.
+
+We will now do some exploratory analysis of the BIS-3D target variable pH [KCl]. First we will look at the distribution of all measured samples ignoring 3D space (CODE NOT SHOWN).
+
+```{r pH distribution, echo = FALSE, out.width = "100%"}
+# remove observations where pH [KCl] is NA
+tbl_BIS_pH <- tbl_BIS_pH %>% 
+  filter(!pH_KCl %in% NA)
+
+# total number of pH [KCl] observations in LSK and PFB
+n = as.character(as.expression(paste0("italic(n) == ", nrow(tbl_BIS_pH))))
+
+# plot histogram
+tbl_BIS_pH %>% 
+  ggplot(aes(pH_KCl)) +
+  geom_histogram(binwidth = 0.1) +
+  scale_y_continuous() +
+  scale_x_continuous(breaks = seq(0, 10, 1)) +
+  xlab("pH [KCl]") + 
+  geom_text(aes(x = Inf, y = -Inf, label = n), size = 3,
+            hjust = 3, vjust = -70, parse = TRUE) +
+  theme_bw() +
+  theme(axis.title.y = element_blank())
+
+```
+
+This bimodal distribution seen above is typical for pH, as the example of pH data from the global soil database WOSIS below shows (Hengl & MacMillan 2019).
+
+```{r pH distribution WOSIS, out.width = "100%", fig.cap="Histogram and soil-depth density distribution for a global compilation of measurements of soil pH (suspension of soil in KCl). Based on the records from WOSIS (http://www.earth-syst-sci-data.net/9/1/2017/).", echo = FALSE}
+
+knitr::include_graphics(path = "img/hist_soil_pH_KCl_global.png")
+```
+
+
+
+***
+### Possible outliers?
+
+There are some strange/unrealistic values (< pH 2 and >= pH 9) that could be possible outliers (n = 10):
+
+* LSK sites: 3172
+* PFB sites: 417, 474, 2085, 2523 (4 samples), 3587, 3682
+
+There are no other pH measurements (e.g. water or calcium carbonate suspension) for these unrealistic values, so this makes is difficult to detect if we have good reason to suspect e.g. a measurement error... However, we can plot the spatial locations of these samples and compare them with other samples from the same soil depth profile. In addition, we can retrieve any metadata we have for these samples.
+
+
+```{r define color scheme, include = FALSE}
+# range of pH values of all pH data
+v_pH <- seq(round(min(tbl_BIS_pH$pH_KCl)),
+            round(max(tbl_BIS_pH$pH_KCl)),
+            0.1)
+
+# get color scheme for all pH maps
+cols = magma(n = length(v_pH))
+
+# vector of outlier pH values
+v_pH_outliers <- tbl_BIS_pH %>% 
+  filter(pH_KCl < 2 | pH_KCl >= 9) %>% 
+  .$pH_KCl %>% 
+  sort() %>% 
+  unique()
+
+# logical vector
+v_lg_outliers <- v_pH %in% v_pH_outliers
+# WHY DOES IT NOT PICK UP 1.2 AND 1.9??????
+
+v_lg_outliers <- c(FALSE, FALSE, TRUE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE,
+                   TRUE, FALSE, TRUE, TRUE, FALSE, FALSE, TRUE, FALSE, FALSE,
+                   TRUE, TRUE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE,
+                   FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE,
+                   FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE,
+                   FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE,
+                   FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE,
+                   FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE,
+                   FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE,
+                   FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE,
+                   TRUE)
+```
+
+```{r pH possible outliers, echo = TRUE, out.width = "100%", warning = FALSE, message = FALSE}  
+# view possible outliers on map
+tbl_BIS_pH %>% 
+  filter(pH_KCl < 2 | pH_KCl >= 9) %>% 
+  st_as_sf(., coords = c("X", "Y"), crs = "EPSG:28992") %>% 
+  st_jitter(., factor = 0.00001) %>% # so we can see samples from same location
+  mapview(.,
+          zcol = "pH_KCl",
+          layer.name = "pH [KCl]",
+          col.regions = c(cols[v_lg_outliers]),
+          legend = TRUE,
+          viewer.suppress = FALSE)
+
+
+## check out other observations per site ---------------------------------------
+
+# LSK site 3172: large decrease in pH over depth, but could still be correct
+tbl_BIS_pH %>% 
+  filter(BIS_tbl %in% "LSK" & site_id %in% 3172)
+
+# PFB site 417: could be correct; found CaCO3 here (see metadata below)
+tbl_BIS_pH %>% 
+  filter(site_id %in% 417)
+
+# PFB site 474: seems to be measurement error!
+tbl_BIS_pH %>% 
+  filter(site_id %in% 474)
+
+# PFB site 2085: strange but not impossible (?)
+tbl_BIS_pH %>% 
+  filter(site_id %in% 2085)
+
+# PFB site 2523: seems that all samples have very low values, so strange site (?)
+tbl_BIS_pH %>% 
+    filter(BIS_tbl %in% "PFB" & site_id %in% 2523)
+
+# PFB site 3587: strange but not impossible (?)
+tbl_BIS_pH %>% 
+    filter(site_id %in% 3587)
+
+# PFB site 3682: interesting profile! hmmm...?
+tbl_BIS_pH %>% 
+    filter(site_id %in% 3682) %>% 
+    arrange(d_upper)
+
+
+## any other useful metadata that can give us clues? ---------------------------
+
+# check out strange pH values < 2 and >= 9 and any related metadata we have
+tbl_BIS_pH %>%
+  filter(pH_KCl < 2 | pH_KCl >= 9) %>% 
+  # remove soil_other because its empty (otherwise get error) and unnest metadata
+  dplyr::select(-soil_other) %>% 
+  unnest() %>% 
+  # remove all cols with only NAs
+  dplyr::select_if(~sum(!is.na(.)) > 0) %>% 
+  glimpse() # to get it in long format
+
+```
+
+
+
+***
+### pH over depth
+
+Now let's include depth as one spatial component and explore the distribution of total samples for which pH was measured over the soil profile for all locations combined. Observation counts can be grouped in regular bins or using the designated GlobalSoilMap (GSM) depth increments. Thirdly, we can also calculate the average (mean) measured pH [KCl] grouped per GSM depth increment. For BIS-3D, we probably don't want to include soil pH observations of the O horizon (humus layer above mineral soil; n = 672)...(CODE NOT SHOWN).
+
+```{r pH over depth distribution, echo = FALSE, out.width = "100%"}
+# distribution of samples for which pH was measured over depth
+tbl_BIS_pH %>% 
+  filter(d_mid < 200) %>% 
+  ggplot(aes(d_mid)) +
+  geom_histogram(binwidth = 10) +
+  scale_x_reverse(breaks = seq(0, 200, 20)) +
+  xlab("Depth [cm]") + 
+  ylab("Count") +
+  coord_flip() +
+  geom_text(aes(x = Inf, y = -Inf, label = n), size = 3,
+            hjust = 3, vjust = -70, parse = TRUE) +
+  theme_bw()
+
+# distribution over GSM depth layers
+tbl_BIS_pH %>% 
+  filter(d_mid < 200) %>% 
+  mutate(d_gsm = cut(d_mid,
+                     breaks = c(-Inf, 0, 5, 15, 30, 60, 100, 200),
+                     labels = c("O_hor", "0_5", "5_15", "15_30",
+                                "30_60", "60_100", "100_200"))) %>% 
+  group_by(d_gsm) %>% 
+  mutate(count = n()) %>% 
+  distinct(count) %>% 
+  arrange(d_gsm) %>% 
+  add_column(d_dist = c(10, 5, 10, 15, 30, 40, 100),
+             d_pos = c(-5, 2.5, 10, 22.5, 45, 80, 150)) %>% 
+  ggplot(aes(x = d_pos, y = count, width = d_dist, fill = d_gsm)) +
+  geom_bar(colour = "black", stat = "identity") +
+  scale_fill_brewer(palette = "Set1") +
+  scale_x_reverse() +
+  xlab("Depth [cm]") + 
+  ylab("Count") +
+  coord_flip() +
+  labs(fill = "GSM depth layers") +
+  theme_bw() +
+  theme()
+
+# Average (mean) measured pH [KCl] per GSM depth increment
+tbl_BIS_pH %>% 
+  filter(d_mid < 200) %>% 
+  mutate(d_gsm = cut(d_mid,
+                     breaks = c(-Inf, 0, 5, 15, 30, 60, 100, 200),
+                     labels = c("O_hor", "0_5", "5_15", "15_30",
+                                "30_60", "60_100", "100_200"))) %>% 
+  group_by(d_gsm) %>% 
+  mutate(pH_mean_d = mean(pH_KCl, na.rm = TRUE)) %>% 
+  distinct(pH_mean_d) %>% 
+  dplyr::select(order(colnames(.))) %>% 
+  arrange(d_gsm) %>% 
+  add_column(d_dist = c(10, 5, 10, 15, 30, 40, 100),
+             d_pos = c(-5, 2.5, 10, 22.5, 45, 80, 150)) %>% 
+  ggplot(aes(x = d_pos, y = pH_mean_d, width = d_dist, fill = d_gsm)) +
+  geom_bar(colour = "black", stat = "identity") +
+  scale_fill_brewer(palette = "Set1") +
+  scale_x_reverse() +
+  xlab("Depth [cm]") + 
+  ylab("Average (mean) pH [KCl]") +
+  coord_flip() +
+  labs(fill = "GSM depth layers") +
+  theme_bw() +
+  theme()
+
+```
+
+
+***
+### pH over space (2D)
+
+Now let's look at where pH [KCl] samples were taken over 2D space throughout the NL. The maps below show all the locations at which (at least) 1 sample was taken in the Netherlands in the PFB and LSK datasets. Since it is hard to visualize the soil profile (3rd dimension) on a 2D map, the second map shows pH [KCl] values of only the uppermost sample at each location, regardless of the depth increment that this observation covers; i.e. it could be 10cm or 50cm, etc..... (CODE NOT SHOWN).
+
+```{r pH over space, echo = FALSE, out.width = "100%"}
+# convert tbl to spatial points dataframe so we can map the points
+spdf_BIS_pH <- tbl_BIS_pH # rename first so we don't overwrite tibble
+coordinates(spdf_BIS_pH) <- ~X+Y
+proj4string(spdf_BIS_pH) <- crs(r_ahn2)
+
+# or convert to simple feature
+sf_BIS_pH <- tbl_BIS_pH %>% 
+  st_as_sf(., coords = c("X", "Y"), crs = "EPSG:28992")
+
+# plot pH [KCl] sampling locations over DEM map
+plot(r_ahn2,
+     main = "pH [KCl] sampling locations over DEM (AHN2) [25m res]",
+     axes = FALSE,
+     box = FALSE,
+     legend.args = list(text = 'Elevation [m]'))
+plot(spdf_NL_borders, add = TRUE)
+points(spdf_BIS_pH, pch = 1, cex = 0.25)
+
+# number of sampling locations
+n <- sf_BIS_pH %>% 
+  group_by(site_id) %>% 
+  slice(1L) %>% 
+  ungroup() %>% 
+  nrow()
+n <- as.character(as.expression(paste0("italic(n) == ", n)))
+
+# or using sf method on gray background
+# we take the soil pH value at each location of the uppermost sample
+ggplot() +
+  theme_bw() +
+  geom_sf(data = sf_NL_borders) +
+  geom_sf(data = sf_BIS_pH, aes(color = pH_KCl)) +
+  geom_text(aes(x = Inf, y = -Inf, label = n), size = 3,
+            hjust = 13, vjust = -55, parse = TRUE) +
+  scale_fill_viridis_c(aesthetics = "color", option = "magma",
+                       limits = c(min(v_pH), max(v_pH))) +
+  theme(legend.position = c(0.1, 0.8),
+        panel.border = element_blank(),
+        panel.background = element_blank(),
+        axis.title.x = element_blank(),
+        axis.text.x = element_blank(),
+        axis.ticks.x = element_blank(),
+        axis.title.y = element_blank(),
+        axis.text.y = element_blank(),
+        axis.ticks.y = element_blank()) +
+  labs(col = "pH [KCl] of uppermost sample") +
+  annotation_scale(location = "bl", width_hint = 0.5) +
+  annotation_north_arrow(location = "bl", which_north = "true", 
+                         pad_x = unit(0.75, "in"), pad_y = unit(0.5, "in"),
+                         style = north_arrow_fancy_orienteering)
+```
+
+Now let's go a step further and map pH [KCl] observations over 2D space according to their specific depth increment. We will again use the GSM depth layers, but combine the 0 to 5 cm and 5 to 15 cm layers because there are not enough observations that only cover the uppermost 5 cm.
+
+```{r split into GSM depth layers, include = FALSE}
+# split data into designated GSM depth increments
+sf_BIS_pH_0_15 <- sf_BIS_pH %>% 
+  filter(between(d_mid, 0, 14.9))
+sf_BIS_pH_15_30 <- sf_BIS_pH %>% 
+  filter(between(d_mid, 15, 29.9))
+sf_BIS_pH_30_60 <- sf_BIS_pH %>% 
+  filter(between(d_mid, 30, 59.9))
+sf_BIS_pH_60_100 <- sf_BIS_pH %>% 
+  filter(between(d_mid, 60, 99.9))
+sf_BIS_pH_100_200 <- sf_BIS_pH %>% 
+  filter(between(d_mid, 100, 200))
+
+# number of samples below 2m
+n_below_2m <- sf_BIS_pH %>% 
+  filter(d_mid > 200) %>% 
+  nrow()
+
+# number of samples above 0m (O horizon)
+n_O_hor <- sf_BIS_pH %>% 
+  filter(d_lower <= 0) %>% 
+  nrow()
+
+# CHECK: If no samples were forgotten, this should be TRUE:
+nrow(sf_BIS_pH_0_15) + nrow(sf_BIS_pH_15_30) +
+  nrow(sf_BIS_pH_30_60) + nrow(sf_BIS_pH_60_100) +
+  nrow(sf_BIS_pH_100_200) + n_below_2m + n_O_hor == nrow(sf_BIS_pH)
+
+```
+
+#### 0 to 15 cm depth
+
+```{r pH map 0 to 15, include = TRUE, echo = FALSE, warning = FALSE, message = FALSE, out.width = "100%"}
+# 0 to 15 cm -------------------------------------------------------------------
+
+# number of samples in this layer
+n = as.character(as.expression(paste0("italic(n) == ", nrow(sf_BIS_pH_0_15))))
+
+# sf map
+ggplot() +
+  theme_bw() +
+  geom_sf(data = sf_NL_borders) +
+  geom_sf(data = sf_BIS_pH_0_15, aes(color = pH_KCl)) +
+  geom_text(aes(x = Inf, y = -Inf, label = n), size = 3,
+            hjust = 13, vjust = -55, parse = TRUE) +
+  scale_fill_viridis_c(aesthetics = "color", option = "magma",
+                       limits = c(min(v_pH), max(v_pH))) +
+  theme(legend.position = c(0.1, 0.8),
+        panel.border = element_blank(),
+        panel.background = element_blank(),
+        axis.title.x = element_blank(),
+        axis.text.x = element_blank(),
+        axis.ticks.x = element_blank(),
+        axis.title.y = element_blank(),
+        axis.text.y = element_blank(),
+        axis.ticks.y = element_blank()) +
+  labs(col = "pH [KCl] 0 to 15 cm") +
+  annotation_scale(location = "bl", width_hint = 0.5) +
+  annotation_north_arrow(location = "bl", which_north = "true", 
+                         pad_x = unit(0.75, "in"), pad_y = unit(0.5, "in"),
+                         style = north_arrow_fancy_orienteering)
+
+# mapview map
+mapview(sf_BIS_pH_0_15,
+        zcol = "pH_KCl",
+        layer.name = "pH [KCl] 0 to 15 cm",
+        col.regions = viridis(n = length(v_pH), option = "magma"),
+        legend = TRUE,
+        viewer.suppress = FALSE)
+```
+
+#### 15 to 30 cm depth
+
+```{r pH map 15 to 30, include = TRUE, echo = FALSE, warning = FALSE, message = FALSE, out.width = "100%"}
+# 15 to 30 cm -------------------------------------------------------------------
+
+# number of samples in this layer
+n = as.character(as.expression(paste0("italic(n) == ", nrow(sf_BIS_pH_15_30))))
+
+# sf map
+ggplot() +
+  theme_bw() +
+  geom_sf(data = sf_NL_borders) +
+  geom_sf(data = sf_BIS_pH_15_30, aes(color = pH_KCl)) +
+  geom_text(aes(x = Inf, y = -Inf, label = n), size = 3,
+            hjust = 13, vjust = -55, parse = TRUE) +
+  scale_fill_viridis_c(aesthetics = "color", option = "magma",
+                       limits = c(min(v_pH), max(v_pH))) +
+  theme(legend.position = c(0.1, 0.8),
+        panel.border = element_blank(),
+        panel.background = element_blank(),
+        axis.title.x = element_blank(),
+        axis.text.x = element_blank(),
+        axis.ticks.x = element_blank(),
+        axis.title.y = element_blank(),
+        axis.text.y = element_blank(),
+        axis.ticks.y = element_blank()) +
+  labs(col = "pH [KCl] 15 to 30 cm") +
+  annotation_scale(location = "bl", width_hint = 0.5) +
+  annotation_north_arrow(location = "bl", which_north = "true", 
+                         pad_x = unit(0.75, "in"), pad_y = unit(0.5, "in"),
+                         style = north_arrow_fancy_orienteering)
+
+# mapview map
+mapview(sf_BIS_pH_15_30,
+        zcol = "pH_KCl",
+        layer.name = "pH [KCl] 15 to 30 cm",
+        col.regions = viridis(n = length(v_pH), option = "magma"),
+        legend = TRUE,
+        viewer.suppress = FALSE)
+```
+
+#### 30 to 60 cm depth
+
+```{r pH map 30 to 60, include = TRUE, echo = FALSE, warning = FALSE, message = FALSE, out.width = "100%"}
+# 30 to 60 cm -------------------------------------------------------------------
+
+# number of samples in this layer
+n = as.character(as.expression(paste0("italic(n) == ", nrow(sf_BIS_pH_30_60))))
+
+# sf map
+ggplot() +
+  theme_bw() +
+  geom_sf(data = sf_NL_borders) +
+  geom_sf(data = sf_BIS_pH_30_60, aes(color = pH_KCl)) +
+  geom_text(aes(x = Inf, y = -Inf, label = n), size = 3,
+            hjust = 13, vjust = -55, parse = TRUE) +
+  scale_fill_viridis_c(aesthetics = "color", option = "magma",
+                       limits = c(min(v_pH), max(v_pH))) +
+  theme(legend.position = c(0.1, 0.8),
+        panel.border = element_blank(),
+        panel.background = element_blank(),
+        axis.title.x = element_blank(),
+        axis.text.x = element_blank(),
+        axis.ticks.x = element_blank(),
+        axis.title.y = element_blank(),
+        axis.text.y = element_blank(),
+        axis.ticks.y = element_blank()) +
+  labs(col = "pH [KCl] 30 to 60 cm") +
+  annotation_scale(location = "bl", width_hint = 0.5) +
+  annotation_north_arrow(location = "bl", which_north = "true", 
+                         pad_x = unit(0.75, "in"), pad_y = unit(0.5, "in"),
+                         style = north_arrow_fancy_orienteering)
+
+# mapview map
+mapview(sf_BIS_pH_30_60,
+        zcol = "pH_KCl",
+        layer.name = "pH [KCl] 30 to 60 cm",
+        col.regions = viridis(n = length(v_pH), option = "magma"),
+        legend = TRUE,
+        viewer.suppress = FALSE)
+```
+
+#### 60 to 100 cm depth
+
+```{r pH map 60 to 100, include = TRUE, echo = FALSE, warning = FALSE, message = FALSE, out.width = "100%"}
+# 60 to 100 cm -------------------------------------------------------------------
+
+# number of samples in this layer
+n = as.character(as.expression(paste0("italic(n) == ", nrow(sf_BIS_pH_60_100))))
+
+# sf map
+ggplot() +
+  theme_bw() +
+  geom_sf(data = sf_NL_borders) +
+  geom_sf(data = sf_BIS_pH_60_100, aes(color = pH_KCl)) +
+  geom_text(aes(x = Inf, y = -Inf, label = n), size = 3,
+            hjust = 13, vjust = -55, parse = TRUE) +
+  scale_fill_viridis_c(aesthetics = "color", option = "magma",
+                       limits = c(min(v_pH), max(v_pH))) +
+  theme(legend.position = c(0.1, 0.8),
+        panel.border = element_blank(),
+        panel.background = element_blank(),
+        axis.title.x = element_blank(),
+        axis.text.x = element_blank(),
+        axis.ticks.x = element_blank(),
+        axis.title.y = element_blank(),
+        axis.text.y = element_blank(),
+        axis.ticks.y = element_blank()) +
+  labs(col = "pH [KCl] 60 to 100 cm") +
+  annotation_scale(location = "bl", width_hint = 0.5) +
+  annotation_north_arrow(location = "bl", which_north = "true", 
+                         pad_x = unit(0.75, "in"), pad_y = unit(0.5, "in"),
+                         style = north_arrow_fancy_orienteering)
+
+# mapview map
+mapview(sf_BIS_pH_60_100,
+        zcol = "pH_KCl",
+        layer.name = "pH [KCl] 60 to 100 cm",
+        col.regions = viridis(n = length(v_pH), option = "magma"),
+        legend = TRUE,
+        viewer.suppress = FALSE)
+```
+
+#### 100 to 200 cm depth
+
+```{r pH map 100 to 200, include = TRUE, echo = FALSE, warning = FALSE, message = FALSE, out.width = "100%"}
+# 100 to 200 cm -------------------------------------------------------------------
+
+# number of samples in this layer
+n = as.character(as.expression(paste0("italic(n) == ", nrow(sf_BIS_pH_100_200))))
+
+# sf map
+ggplot() +
+  theme_bw() +
+  geom_sf(data = sf_NL_borders) +
+  geom_sf(data = sf_BIS_pH_100_200, aes(color = pH_KCl)) +
+  geom_text(aes(x = Inf, y = -Inf, label = n), size = 3,
+            hjust = 13, vjust = -55, parse = TRUE) +
+  scale_fill_viridis_c(aesthetics = "color", option = "magma",
+                       limits = c(min(v_pH), max(v_pH))) +
+  theme(legend.position = c(0.1, 0.8),
+        panel.border = element_blank(),
+        panel.background = element_blank(),
+        axis.title.x = element_blank(),
+        axis.text.x = element_blank(),
+        axis.ticks.x = element_blank(),
+        axis.title.y = element_blank(),
+        axis.text.y = element_blank(),
+        axis.ticks.y = element_blank()) +
+  labs(col = "pH [KCl] 100 to 200 cm") +
+  annotation_scale(location = "bl", width_hint = 0.5) +
+  annotation_north_arrow(location = "bl", which_north = "true", 
+                         pad_x = unit(0.75, "in"), pad_y = unit(0.5, "in"),
+                         style = north_arrow_fancy_orienteering)
+
+# mapview map
+mapview(sf_BIS_pH_100_200,
+        zcol = "pH_KCl",
+        layer.name = "pH [KCl] 100 to 200 cm",
+        col.regions = viridis(n = 80, option = "magma"),
+        legend = TRUE,
+        viewer.suppress = FALSE)
+```
+
+
+***
+### Split into calibration and validation set
+
+For all BIS-3D maps in this project, we want to validate each soil property map with a separate and independent validation set. In the Netherlands, the LSK and CCNL datasets are ideal for validation, since they are based on a stratified random sampling design, where the stratas are based on soil types and groundwater classes (Visschers et al 2007)^[https://doi.org/10.1016/j.geoderma.2007.01.008].
+
+For pH [KCl], this means we can use all PFB observations to calibrate/train/fit a model and use all LSK observations to validate/test the model and assess its performance. Here we show some of the same exploratory analysis plots and maps as above but split into the PFB (calibration) and LSK (validation) datasets.
+
+```{r cal val split, include = TRUE, echo = FALSE, warning = FALSE, message = FALSE, out.width = "100%"}
+# boxplots split by dataset
+tbl_BIS_pH %>% 
+  ggplot(aes(pH_KCl)) +
+  geom_boxplot() +
+  facet_wrap(~ BIS_tbl) +
+  xlab("pH [KCl]") + 
+  coord_flip() +
+  theme_bw()
+
+# histogram of all data split by dataset
+tbl_BIS_pH %>% 
+  ggplot(aes(pH_KCl)) +
+  geom_histogram(binwidth = 0.1) +
+  scale_y_continuous() +
+  scale_x_continuous(breaks = seq(0, 10, 1)) +
+  xlab("pH [KCl]") + 
+  facet_wrap(~ BIS_tbl) +
+  #geom_text(aes(x = Inf, y = -Inf, label = n), size = 3,
+  #          hjust = 3, vjust = -70, parse = TRUE) +
+  theme_bw() +
+  theme(axis.title.y = element_blank())
+
+# distribution over GSM depth layers split by dataset
+tbl_BIS_pH %>% 
+  filter(d_mid < 200) %>% 
+  mutate(d_gsm = cut(d_mid,
+                     breaks = c(-Inf, 0, 5, 15, 30, 60, 100, 200),
+                     labels = c("O_hor", "0_5", "5_15", "15_30",
+                                "30_60", "60_100", "100_200"))) %>% 
+  group_by(d_gsm, BIS_tbl) %>% 
+  mutate(count = n()) %>% 
+  distinct(count) %>% 
+  arrange(BIS_tbl, d_gsm) %>% 
+  add_column(d_dist = c(5, 10, 15, 30, 40, 100, 10, 5, 10, 15, 30, 40, 100),
+             d_pos = c(2.5, 10, 22.5, 45, 80, 150, -5, 2.5, 10, 22.5, 45, 80, 150)) %>% 
+  ggplot(aes(x = d_pos, y = count, width = d_dist, fill = d_gsm)) +
+  geom_bar(colour = "black", stat = "identity") +
+  scale_fill_brewer(palette = "Set1") +
+  scale_x_reverse() +
+  xlab("Depth [cm]") + 
+  ylab("Count") +
+  coord_flip() +
+  labs(fill = "GSM depth layers") +
+  facet_wrap(~ BIS_tbl) +
+  theme_bw() +
+  theme()
+
+# Average (mean) measured pH [KCl] per GSM depth increment
+tbl_BIS_pH %>% 
+  filter(d_mid < 200) %>% 
+  mutate(d_gsm = cut(d_mid,
+                     breaks = c(-Inf, 0, 5, 15, 30, 60, 100, 200),
+                     labels = c("O_hor", "0_5", "5_15", "15_30",
+                                "30_60", "60_100", "100_200"))) %>% 
+  group_by(d_gsm, BIS_tbl) %>% 
+  mutate(pH_mean_d = mean(pH_KCl, na.rm = TRUE)) %>% 
+  distinct(pH_mean_d) %>% 
+  dplyr::select(order(colnames(.))) %>% 
+  arrange(BIS_tbl, d_gsm) %>% 
+  add_column(d_dist = c(5, 10, 15, 30, 40, 100, 10, 5, 10, 15, 30, 40, 100),
+             d_pos = c(2.5, 10, 22.5, 45, 80, 150, -5, 2.5, 10, 22.5, 45, 80, 150)) %>%
+  ggplot(aes(x = d_pos, y = pH_mean_d, width = d_dist, fill = d_gsm)) +
+  geom_bar(colour = "black", stat = "identity") +
+  scale_fill_brewer(palette = "Set1") +
+  scale_x_reverse() +
+  xlab("Depth [cm]") + 
+  ylab("Average (mean) pH [KCl]") +
+  coord_flip() +
+  labs(fill = "GSM depth layers") +
+  facet_wrap(~ BIS_tbl) +
+  theme_bw() +
+  theme()
+
+# location of samples split by dataset
+
+# change order so that its easier to see LSK locations
+dataset_order <- c("PFB", "LSK")
+sf_BIS_pH$BIS_tbl <- factor(x = sf_BIS_pH$BIS_tbl, levels = dataset_order)
+
+# sf map
+ggplot() +
+  theme_bw() +
+  geom_sf(data = sf_NL_borders) +
+  geom_sf(data = sf_BIS_pH, aes(color = BIS_tbl)) +
+  theme(legend.position = c(0.1, 0.8),
+        panel.border = element_blank(),
+        panel.background = element_blank(),
+        axis.title.x = element_blank(),
+        axis.text.x = element_blank(),
+        axis.ticks.x = element_blank(),
+        axis.title.y = element_blank(),
+        axis.text.y = element_blank(),
+        axis.ticks.y = element_blank()) +
+  labs(col = "Dataset") +
+  annotation_scale(location = "bl", width_hint = 0.5) +
+  annotation_north_arrow(location = "bl", which_north = "true", 
+                         pad_x = unit(0.75, "in"), pad_y = unit(0.5, "in"),
+                         style = north_arrow_fancy_orienteering)
+
+# mapview map
+mapview(sf_BIS_pH,
+        zcol = "BIS_tbl",
+        layer.name = "Dataset",
+        col.regions = c("#00BFC4", "#F8766D"),
+        legend = TRUE,
+        viewer.suppress = FALSE)
+
+```
+
+The End!
+
+
