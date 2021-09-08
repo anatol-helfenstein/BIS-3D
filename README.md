@@ -199,7 +199,7 @@ Helfenstein, Anatol; Mulder, Vera L.; Heuvelink, Gerard B.M.; Okx, Joop P. (2021
 
 Hengl, T., MacMillan, R.A., 2019. Predictive Soil Mapping with R. OpenGeoHub foundation, Wageningen, the Netherlands. [https://soilmapper.org/](https://soilmapper.org/)
 
-[ISRIC's tweaked QRF predict function](https://git.wur.nl/isric/soilgrids/soilgrids/-/blob/master/models/ranger/predict_qrf_fun.R). Code for public release of [Poggio et al., 2021]((https://doi.org/10.5194/soil-7-217-2021)). soilgrids/models/ranger/predict_qrf_fun.R
+[ISRIC's tweaked QRF predict function](https://git.wur.nl/isric/soilgrids/soilgrids/-/blob/master/models/ranger/predict_qrf_fun.R). Code for public release of [Poggio et al., 2021](https://doi.org/10.5194/soil-7-217-2021). soilgrids/models/ranger/predict_qrf_fun.R
 
 Jenny, H., 1941. Factors of Soil Formation: A System of Quantitative Pedology. McGraw- Hill, New York.
 
