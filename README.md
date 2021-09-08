@@ -158,7 +158,7 @@ For more information, see [Helfenstein et al., submitted](#references).
   + [target_prediction_depth_GSM.R](R/other/target_prediction_depth_GSM.R) - Create target *GSM* prediction depth layers
   + [tiling_rasters.R](R/other/tiling_rasters.R) - Functions (sequential and parallel) to tile rasters (***Note:*** tiling may be useful for users with RAM issues; see also [split raster into tiles](https://stackoverflow.com/questions/52484216/split-a-raster-into-5-pixel-x-5-pixel-tiles-in-r))
 
-* [data](data/) - Input data for modelling workflow (***Note:*** for model inputs accessibility, see [model inputs](#model-inputs))
+* [data](data/) - Input data for modelling workflow (***Note:*** for model inputs accessibility, see [data accessibility](#data-accessibility))
   + [covariates](data/covariates/) - metadata (e.g. README and reclassification table files) of covariates, which are based on the soil forming factors climate, geology, organism and relief (***Note:*** The soil forming factor time is incorporated indirectly in the other soil forming factors since the covariates represent data from different times).
     - [climate](data/covariates/climate/) - README files ([...]_readme.txt) of covariates related to soil forming factor climate
     - [geology](data/covariates/geology/) - README, reclassification table ([...]_reclassify.csv and [...]_reclassify.xlsx) and attribute table of original classes ([...]_attributes.csv) files of covariates related to soil forming factor geology/parent material
@@ -183,7 +183,11 @@ For more information, see [Helfenstein et al., submitted](#references).
 
 ## References
 
+[4 Dimensional Information About the Skin of the Earth (BIS-4D video supplement)](https://www.youtube.com/watch?v=ENCYUnqc-wo)
+
 Arrouays, D., McBratney, A., Minasny, B., Hempel, J., Heuvelink, G.B.M., MacMillan, R.A., Hartemink, A., Lagacherie, P., McKenzie, N., 2015. The GlobalSoilMap project specifications, in: Proceedings of the 1st GlobalSoilMap Conference, pp. 9–12. doi:https://doi.org/10.1201/b16500-4.
+
+[Developing a high-resolution 4-dimensional soil modelling and mapping platform for the Netherlands (BIS-4D): project website](https://www.wur.nl/en/project/Developing-a-high-resolution-4-dimensional-soil-modelling-and-mapping-platform-for-the-Netherlands-BIS-4D.htm)
 
 Dokuchaev, V., 1899. Report to the Transcaucasian Statistical Committee on Land Evaluation in General and Especially for the Transcaucasia. Horizontal and Vertical Soil Zones. (In Russian.). Off. Press Civ, Affairs Commander-in-Chief Cacasus, Tiflis, Russia
 
@@ -195,19 +199,15 @@ Helfenstein, Anatol; Mulder, Vera L.; Heuvelink, Gerard B.M.; Okx, Joop P. (2021
 
 Hengl, T., MacMillan, R.A., 2019. Predictive Soil Mapping with R. OpenGeoHub foundation, Wageningen, the Netherlands. [https://soilmapper.org/](https://soilmapper.org/)
 
-[ISRIC's tweaked QRF predict function](https://git.wur.nl/isric/soilgrids/soilgrids/-/blob/master/models/ranger/predict_qrf_fun.R)
+[ISRIC's tweaked QRF predict function](https://git.wur.nl/isric/soilgrids/soilgrids/-/blob/master/models/ranger/predict_qrf_fun.R). Code for public release of [Poggio et al., 2021]((https://doi.org/10.5194/soil-7-217-2021)). soilgrids/models/ranger/predict_qrf_fun.R
 
 Jenny, H., 1941. Factors of Soil Formation: A System of Quantitative Pedology. McGraw- Hill, New York.
 
 Poggio, L., de Sousa, L.M., Batjes, N.H., Heuvelink, G.B.M., Kempen, B., Ribeiro, E., Rossiter, D., 2021. SoilGrids 2.0: Producing soil information for the globe with quantified spatial uncertainty. SOIL 7, 217–240. doi:[https://doi.org/10.5194/soil-7-217-2021](https://doi.org/10.5194/soil-7-217-2021)
 
-[Project website](https://www.wur.nl/en/project/Developing-a-high-resolution-4-dimensional-soil-modelling-and-mapping-platform-for-the-Netherlands-BIS-4D.htm)
-
-[split raster into tiles](https://stackoverflow.com/questions/52484216/split-a-raster-into-5-pixel-x-5-pixel-tiles-in-r)
+[Stackoverflow question: Split a raster into tiles in R](https://stackoverflow.com/questions/52484216/split-a-raster-into-5-pixel-x-5-pixel-tiles-in-r)
 
 Van Tol-Leender, D., Knotters, M., de Groot, W., Gerritsen, P., Reijneveld, A., van Egmond, F., Wösten, H., & Kuikman, P. (2019). Koolstofvoorraad in de bodem van Nederland (1998-2018): CC-NL. (Wageningen Environmental Research rapport; No. 2974). Wageningen Environmental Research. [https://doi.org/10.18174/509781](https://doi.org/10.18174/509781)
-
-[Video supplement](https://www.youtube.com/watch?v=ENCYUnqc-wo)
 
 Visschers, R., Finke, P.A., de Gruijter, J.J., 2007. A soil sampling program for the Netherlands. Geoderma 139, 60–72. doi:[https://doi.org/10.1016/j.geoderma.2007.01.008](https://doi.org/10.1016/j.geoderma.2007.01.008)
 
