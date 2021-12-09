@@ -306,7 +306,7 @@ v_d_dist_mid_eq_5_15 <- sf_predobs_val_5_15 %>%
 # GSM depth layer, or average (mean) if distances are the same
 if (any(duplicated(sf_predobs_val_5_15$site_id))) {
   sf_predobs_val_5_15 <- sf_predobs_val_5_15 %>% 
-    mutate(d_dist_mid = abs(10 - d_mid)) %>% 
+    mutate(d_dist_mid = abs(10 - d_mid)) %>% # MIDPOINT OF GSM DEPTH LAYER = 10
     group_by(site_id) %>% 
     # average observations and predictions at same location where both observations
     # have equal distance to GSM depth layer (see defined vector above)
@@ -607,7 +607,7 @@ v_d_dist_mid_eq_15_30 <- sf_predobs_val_15_30 %>%
 # GSM depth layer, or average (mean) if distances are the same
 if (any(duplicated(sf_predobs_val_15_30$site_id))) {
   sf_predobs_val_15_30 <- sf_predobs_val_15_30 %>% 
-    mutate(d_dist_mid = abs(10 - d_mid)) %>% 
+    mutate(d_dist_mid = abs(22.5 - d_mid)) %>% # MIDPOINT OF GSM DEPTH LAYER = 22.5
     group_by(site_id) %>% 
     # average observations and predictions at same location where both observations
     # have equal distance to GSM depth layer (see defined vector above)
@@ -872,7 +872,7 @@ v_d_dist_mid_eq_30_60 <- sf_predobs_val_30_60 %>%
 # GSM depth layer, or average (mean) if distances are the same
 if (any(duplicated(sf_predobs_val_30_60$site_id))) {
   sf_predobs_val_30_60 <- sf_predobs_val_30_60 %>% 
-    mutate(d_dist_mid = abs(10 - d_mid)) %>% 
+    mutate(d_dist_mid = abs(45 - d_mid)) %>% # MIDPOINT OF GSM DEPTH LAYER = 45
     group_by(site_id) %>% 
     # average observations and predictions at same location where both observations
     # have equal distance to GSM depth layer (see defined vector above)
@@ -1137,7 +1137,7 @@ v_d_dist_mid_eq_60_100 <- sf_predobs_val_60_100 %>%
 # GSM depth layer, or average (mean) if distances are the same
 if (any(duplicated(sf_predobs_val_60_100$site_id))) {
   sf_predobs_val_60_100 <- sf_predobs_val_60_100 %>% 
-    mutate(d_dist_mid = abs(10 - d_mid)) %>% 
+    mutate(d_dist_mid = abs(80 - d_mid)) %>% # MIDPOINT OF GSM DEPTH LAYER = 80
     group_by(site_id) %>% 
     # average observations and predictions at same location where both observations
     # have equal distance to GSM depth layer (see defined vector above)
@@ -1402,7 +1402,7 @@ v_d_dist_mid_eq_100_200 <- sf_predobs_val_100_200 %>%
 # GSM depth layer, or average (mean) if distances are the same
 if (any(duplicated(sf_predobs_val_100_200$site_id))) {
   sf_predobs_val_100_200 <- sf_predobs_val_100_200 %>% 
-    mutate(d_dist_mid = abs(10 - d_mid)) %>% 
+    mutate(d_dist_mid = abs(150 - d_mid)) %>% # MIDPOINT OF GSM DEPTH LAYER = 150
     group_by(site_id) %>% 
     # average observations and predictions at same location where both observations
     # have equal distance to GSM depth layer (see defined vector above)
