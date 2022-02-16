@@ -2,7 +2,7 @@
 
 This repository contains scripts and metadata used in the manuscript:
 
-Helfenstein, A., Mulder, V.L., Heuvelink, G.B.M., Okx, J.P. Tier 4 maps of soil pH at 25 m resolution for the Netherlands. Submitted, 2021.
+Helfenstein, A., Mulder, V.L., Heuvelink, G.B., Okx, J.P., 2022. Tier 4 maps of soil pH at 25 m resolution for the Netherlands. Geoderma 410, 115659. [doi:10.1016/j.geoderma.2021.115659](https://doi.org/10.1016/j.geoderma.2021.115659)
 
 
 
@@ -36,7 +36,7 @@ We can only provide metadata (e.g. README and reclassification table files) and 
 
 ## Dataset of model outputs (soil pH maps [25m])
 
-The published dataset of the soil pH maps (model outputs) produced using the workflow in this repository are available for download: [Helfenstein et al. 2021, dataset](https://doi.org/10.4121/16451739.v1). The GeoTIFFs can e.g. be opened in a GIS software. The dataset includes mean predictions and estimates of the 5<sup>th</sup>, 50<sup>th</sup> (median), and 95<sup>th</sup> quantile, as well as the 90% prediction interval (PI90) and a categorical map of the accuracy thresholds ("none", A, AA, AAA) based on *GlobalSoilMap* specifications for Tier 4 products ([Arrouays et al., 2015](#references)). These maps are available for six standard depth layers from 0 cm to 5 cm, 5 cm to 15 cm, 15 cm to 30 cm, 30 cm to 60 cm, 60 cm to 100 cm and 100 cm to 200 cm, although the calibrated model can be used to predict at any user-defined depth layer between 0 m and 2 m.
+The published dataset of the soil pH maps (model outputs) produced using the workflow in this repository are available for download: [Helfenstein et al., 2021, dataset](https://doi.org/10.4121/16451739.v1). The GeoTIFFs can e.g. be opened in a GIS software. The dataset includes mean predictions and estimates of the 5<sup>th</sup>, 50<sup>th</sup> (median), and 95<sup>th</sup> quantile, as well as the 90% prediction interval (PI90) and a categorical map of the accuracy thresholds ("none", A, AA, AAA) based on *GlobalSoilMap* specifications for Tier 4 products ([Arrouays et al., 2015](#references)). These maps are available for six standard depth layers from 0 cm to 5 cm, 5 cm to 15 cm, 15 cm to 30 cm, 30 cm to 60 cm, 60 cm to 100 cm and 100 cm to 200 cm, although the calibrated model can be used to predict at any user-defined depth layer between 0 m and 2 m.
 
 
 
@@ -102,7 +102,7 @@ Model were evaluated using accuracy plots (i.e. predicted vs. observed)) and the
 * LSK: independent validation using LSK dataset
 * LSK-SRS: design-based inference of the LSK probability sample separated by depth layer.
 
-For more information, see [Helfenstein et al., submitted](#references).
+For more information, see [Helfenstein et al., 2022](#references).
 
 * [50_model_evaluation_all_depths_PFB-OOB_PFB-CV_LSK.R](50_model_evaluation_all_depths_PFB-OOB_PFB-CV_LSK.R) - Model evaluation across all depths combined:
   + Read in target variable regression matrix and fitted model
@@ -176,7 +176,7 @@ For more information, see [Helfenstein et al., submitted](#references).
   + [out/figs/models/pH_KCl](out/figs/models/pH_KCl/) - Model evaluation plots: accuracy plots and metrics (ME, MSE, RMSE, MEC, PICP) of the 4 different accuracy assessment (statistical validation) strategies, model residuals over space per depth layer, and variable importance measures
   + [out/maps/explorative](out/maps/explorative/) - Exploratory analysis maps of BIS soil point data, AHN and AHN derivatives
   + [out/maps/other/SoilGrids_v2.0/SoilGrids_phh2o_model_evaluation_LSK_SRS_d.csv](out/maps/other/SoilGrids_v2.0/SoilGrids_phh2o_model_evaluation_LSK_SRS_d.csv) - Model evaluation accuracy metrics of SoilGrids version 2.0 soil pH [H<sub>2</sub>O] maps of the Netherlands ([Poggio et al., 2021](https://doi.org/10.5194/soil-7-217-2021)).
-  + [out/maps/target/pH_KCl/GeoTIFFs](out/maps/target/pH_KCl/GeoTIFFs/) - tif.aux.xml files of pH [KCl] model output maps (***Note:*** Actual maps (GeoTIFFs) can be downloaded here: [Helfenstein et al. 2021, dataset](https://doi.org/10.4121/16451739.v1))
+  + [out/maps/target/pH_KCl/GeoTIFFs](out/maps/target/pH_KCl/GeoTIFFs/) - tif.aux.xml files of pH [KCl] model output maps (***Note:*** Actual maps (GeoTIFFs) can be downloaded here: [Helfenstein et al., 2021, dataset](https://doi.org/10.4121/16451739.v1))
   + [out/maps/target/pH_KCl/pdf](out/maps/target/pH_KCl/pdf/) - PDFs of pH [KCl] maps
 
 
@@ -193,7 +193,7 @@ Dokuchaev, V., 1899. Report to the Transcaucasian Statistical Committee on Land 
 
 Finke, P.A., J.J. de Gruijter en R. Visschers, 2001. Status 2001 Landelijke Steekproef Kaarteenhedenen toepassingen; Gestructureerde bemonstering en karakterisering Nederlandse bodems. Wageningen, Alterra, Research Instituut voor de Groene Ruimte. Alterra-rapport 389. [https://library.wur.nl/WebQuery/wurpubs/316229](https://library.wur.nl/WebQuery/wurpubs/316229)
 
-Helfenstein, A., Mulder, V.L., Heuvelink, G.B.M., Okx, J.P. Tier 4 maps of soil pH at 25 m resolution for the Netherlands. Submitted, 2021.
+Helfenstein, A., Mulder, V.L., Heuvelink, G.B., Okx, J.P., 2022. Tier 4 maps of soil pH at 25 m resolution for the Netherlands. Geoderma 410, 115659. [doi:10.1016/j.geoderma.2021.115659](https://doi.org/10.1016/j.geoderma.2021.115659)
 
 Helfenstein, Anatol; Mulder, Vera L.; Heuvelink, Gerard B.M.; Okx, Joop P. (2021): Tier 4 maps of soil pH at 25 m resolution for the Netherlands. 4TU.ResearchData. Dataset. [https://doi.org/10.4121/16451739.v1](https://doi.org/10.4121/16451739.v1)
 
